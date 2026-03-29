@@ -5,6 +5,7 @@ import argparse
 import json
 import re
 import shutil
+import time
 from pathlib import Path
 from typing import Any
 
@@ -133,6 +134,28 @@ def _write_text(path: Path, content: str) -> None:
     path.write_text(content, encoding="utf-8", newline="\n")
 
 
+def _remove_tree(path: Path, retries: int = 5, delay_seconds: float = 0.25) -> None:
+    if not path.exists():
+        return
+    if path.is_symlink() or path.is_file():
+        path.unlink()
+        return
+
+    last_error: Exception | None = None
+    for attempt in range(retries):
+        try:
+            shutil.rmtree(path)
+            return
+        except PermissionError as exc:
+            last_error = exc
+            if attempt == retries - 1:
+                raise
+            time.sleep(delay_seconds * (attempt + 1))
+
+    if last_error is not None:
+        raise last_error
+
+
 def _clean_group_label(group: str) -> str:
     return re.sub(r"^[^A-Za-z0-9]+", "", group).strip()
 
@@ -157,7 +180,7 @@ def _bundle_codex_long_description(bundle: dict[str, Any]) -> str:
     remaining = len(bundle["skills"]) - len(highlights)
 
     if not highlights:
-        return f'{audience} Includes {len(bundle["skills"])} curated skills from Antigravity Awesome Skills.'
+        return f'{audience} Includes {len(bundle["skills"])} curated skills from AI-Agents-Safe-Coding-Skills.'
 
     if remaining > 0:
         return f"{audience} Covers {', '.join(highlights)}, and {remaining} more skills."
@@ -323,7 +346,7 @@ def _copy_skill_directory(root: Path, skill_id: str, destination_root: Path) -> 
 
     skill_dest = destination_root / skill_id
     if skill_dest.exists():
-        shutil.rmtree(skill_dest)
+        _remove_tree(skill_dest)
 
     for child in source.iterdir():
         _copy_file_contents(child, skill_dest / child.name, skills_root)
@@ -338,7 +361,7 @@ def _root_claude_plugin_manifest(metadata: dict[str, Any], supported_skill_count
         "name": ROOT_CLAUDE_PLUGIN_NAME,
         "version": metadata["version"],
         "description": (
-            f"Plugin-safe Claude Code distribution of Antigravity Awesome Skills with "
+            f"Plugin-safe Claude Code distribution of AI-Agents-Safe-Coding-Skills with "
             f"{supported_label} supported skills."
         ),
         "author": AUTHOR,
@@ -360,7 +383,7 @@ def _root_codex_plugin_manifest(metadata: dict[str, Any], supported_skill_count:
     return {
         "name": ROOT_CODEX_PLUGIN_NAME,
         "version": metadata["version"],
-        "description": "Plugin-safe Codex plugin for the Antigravity Awesome Skills library.",
+        "description": "Plugin-safe Codex plugin for the AI-Agents-Safe-Coding-Skills library.",
         "author": AUTHOR,
         "homepage": REPO_URL,
         "repository": REPO_URL,
@@ -374,12 +397,12 @@ def _root_codex_plugin_manifest(metadata: dict[str, Any], supported_skill_count:
         ],
         "skills": "./skills/",
         "interface": {
-            "displayName": "Antigravity Awesome Skills",
+            "displayName": "AI-Agents-Safe-Coding-Skills",
             "shortDescription": (
                 f"{supported_label} plugin-safe skills for coding, security, product, and ops workflows."
             ),
             "longDescription": (
-                "Install a plugin-safe Codex distribution of Antigravity Awesome Skills. "
+                "Install a plugin-safe Codex distribution of AI-Agents-Safe-Coding-Skills. "
                 "Skills that still need hardening or target-specific setup remain available in the repo "
                 "but are excluded from this plugin."
             ),
@@ -402,7 +425,7 @@ def _bundle_claude_plugin_manifest(metadata: dict[str, Any], bundle: dict[str, A
         "name": _bundle_plugin_name(bundle["id"]),
         "version": metadata["version"],
         "description": (
-            f'Editorial "{bundle["name"]}" bundle for Claude Code from Antigravity Awesome Skills.'
+            f'Editorial "{bundle["name"]}" bundle for Claude Code from AI-Agents-Safe-Coding-Skills.'
         ),
         "author": AUTHOR,
         "homepage": REPO_URL,
@@ -426,7 +449,7 @@ def _bundle_codex_plugin_manifest(metadata: dict[str, Any], bundle: dict[str, An
         "name": plugin_name,
         "version": metadata["version"],
         "description": (
-            f'Install the "{bundle["name"]}" editorial skill bundle from Antigravity Awesome Skills.'
+            f'Install the "{bundle["name"]}" editorial skill bundle from AI-Agents-Safe-Coding-Skills.'
         ),
         "author": AUTHOR,
         "homepage": REPO_URL,
@@ -486,7 +509,7 @@ def _render_claude_marketplace(
             "name": ROOT_CLAUDE_PLUGIN_NAME,
             "version": metadata["version"],
             "description": (
-                "Expose the plugin-safe Claude Code subset of Antigravity Awesome Skills "
+                "Expose the plugin-safe Claude Code subset of AI-Agents-Safe-Coding-Skills "
                 "through a single marketplace entry."
             ),
             "author": AUTHOR,
@@ -513,7 +536,7 @@ def _render_claude_marketplace(
         "owner": AUTHOR,
         "metadata": {
             "description": (
-                "Claude Code marketplace entries for the plugin-safe Antigravity Awesome Skills "
+                "Claude Code marketplace entries for the plugin-safe AI-Agents-Safe-Coding-Skills "
                 "library and its compatible editorial bundles."
             ),
             "version": metadata["version"],
@@ -562,7 +585,7 @@ def _render_codex_marketplace(
     return {
         "name": ROOT_CODEX_PLUGIN_NAME,
         "interface": {
-            "displayName": "Antigravity Awesome Skills",
+            "displayName": "AI-Agents-Safe-Coding-Skills",
         },
         "plugins": plugins,
     }
@@ -572,7 +595,7 @@ def _materialize_plugin_skills(root: Path, destination_root: Path, skill_ids: li
     if destination_root.is_symlink() or destination_root.is_file():
         destination_root.unlink()
     elif destination_root.exists():
-        shutil.rmtree(destination_root)
+        _remove_tree(destination_root)
     destination_root.mkdir(parents=True, exist_ok=True)
 
     for skill_id in skill_ids:
@@ -628,7 +651,7 @@ def _sync_bundle_plugin_directory(
     plugin_name = _bundle_plugin_name(bundle["id"])
     plugin_root = root / "plugins" / plugin_name
     if plugin_root.exists():
-        shutil.rmtree(plugin_root)
+        _remove_tree(plugin_root)
 
     bundle_skills_root = plugin_root / "skills"
     bundle_skills_root.mkdir(parents=True, exist_ok=True)
@@ -657,7 +680,7 @@ def sync_editorial_bundle_plugins(
     plugins_root = root / "plugins"
     for candidate in plugins_root.glob("antigravity-bundle-*"):
         if candidate.is_dir():
-            shutil.rmtree(candidate)
+            _remove_tree(candidate)
 
     for bundle in bundles:
         _sync_bundle_plugin_directory(root, metadata, bundle, bundle_support[bundle["id"]])

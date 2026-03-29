@@ -76,7 +76,7 @@ class EditorialBundlesTests(unittest.TestCase):
             for skill in next(bundle for bundle in self.manifest_bundles if bundle["id"] == "essentials")["skills"]
         }
         actual_ids = {
-            str(path.relative_to(essentials_plugin))
+            str(path.relative_to(essentials_plugin)).replace("\\", "/")
             for path in essentials_plugin.rglob("SKILL.md")
         }
         self.assertEqual(actual_ids, {f"{skill_id}/SKILL.md" for skill_id in expected_ids})

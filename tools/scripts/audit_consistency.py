@@ -202,10 +202,10 @@ def main() -> int:
 
     if issues:
         for issue in issues:
-            print(f"❌ {issue}")
+            print(f"[error] {issue}")
         return 1
 
-    print("✅ Repository consistency audit passed.")
+    print("[ok] Repository consistency audit passed.")
     return 0
 
 

@@ -119,7 +119,7 @@ function printHelp() {
   console.log(`
 AI-Agents-Safe-Coding-Skills — installer
 
-  npx AI-Agents-Safe-Coding-Skills [install] [options]
+  npx ai-agents-safe-coding-skills [install] [options]
 
   Clones the skills repo into your agent's skills directory.
 
@@ -135,13 +135,13 @@ Options:
   --tag <tag>      After clone, checkout this tag (e.g. v4.6.0)
 
 Examples:
-  npx AI-Agents-Safe-Coding-Skills
-  npx AI-Agents-Safe-Coding-Skills --cursor
-  npx AI-Agents-Safe-Coding-Skills --kiro
-  npx AI-Agents-Safe-Coding-Skills --antigravity
-  npx AI-Agents-Safe-Coding-Skills --version 4.6.0
-  npx AI-Agents-Safe-Coding-Skills --path ./my-skills
-  npx AI-Agents-Safe-Coding-Skills --claude --codex    Install to multiple targets
+  npx ai-agents-safe-coding-skills
+  npx ai-agents-safe-coding-skills --cursor
+  npx ai-agents-safe-coding-skills --kiro
+  npx ai-agents-safe-coding-skills --antigravity
+  npx ai-agents-safe-coding-skills --version 4.6.0
+  npx ai-agents-safe-coding-skills --path ./my-skills
+  npx ai-agents-safe-coding-skills --claude --codex    Install to multiple targets
 `);
 }
 

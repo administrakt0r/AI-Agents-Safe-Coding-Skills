@@ -6,10 +6,10 @@ This release cleans up the registry (removal of 44 SKILL.md files that contained
 
 ### New Skills
 
-- **audit-skills** — Audit-safe skills (PR #236)
-- **senior-frontend** — React, Next.js, TypeScript, Tailwind (PR #233)
-- **shadcn** — shadcn/ui ecosystem (PR #233)
-- **pakistan-payments-stack** — JazzCash, Easypaisa, PKR billing (PR #228)
+- **audit-skills** â€” Audit-safe skills (PR #236)
+- **senior-frontend** â€” React, Next.js, TypeScript, Tailwind (PR #233)
+- **shadcn** â€” shadcn/ui ecosystem (PR #233)
+- **pakistan-payments-stack** â€” JazzCash, Easypaisa, PKR billing (PR #228)
 
 ### Improvements
 
@@ -29,4 +29,4 @@ This release cleans up the registry (removal of 44 SKILL.md files that contained
 
 ---
 
-_Upgrade: `git pull origin main` or `npx AI-Agents-Safe-Coding-Skills`._
+_Upgrade: `git pull origin main` or `npx ai-agents-safe-coding-skills`._

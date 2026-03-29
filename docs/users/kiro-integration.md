@@ -2,7 +2,7 @@
 
 ## Overview
 
-This guide explains how to use Antigravity Awesome Skills with **Kiro CLI**, AWS's agentic AI-powered coding assistant.
+This guide explains how to use AI-Agents-Safe-Coding-Skills with **Kiro CLI**, AWS's agentic AI-powered coding assistant.
 
 ## What is Kiro?
 
@@ -18,7 +18,7 @@ Kiro is AWS's agentic AI IDE that combines:
 
 Kiro's agentic capabilities are enhanced by skills that provide:
 
-- **Domain expertise** across 1,331+ specialized areas
+- **Domain expertise** across 1,275+ specialized areas
 - **Best practices** from Anthropic, OpenAI, Google, Microsoft, and AWS
 - **Workflow automation** for common development tasks
 - **AWS-specific patterns** for serverless, infrastructure, and cloud architecture
@@ -29,7 +29,7 @@ Kiro's agentic capabilities are enhanced by skills that provide:
 
 ```bash
 # Install to Kiro's default skills directory
-npx AI-Agents-Safe-Coding-Skills --kiro
+npx ai-agents-safe-coding-skills --kiro
 ```
 
 This installs skills to `~/.kiro/skills/`
@@ -216,7 +216,7 @@ ls -la ~/.kiro/skills/
 
 # Reinstall if needed
 rm -rf ~/.kiro/skills
-npx AI-Agents-Safe-Coding-Skills --kiro
+npx ai-agents-safe-coding-skills --kiro
 ```
 
 ### Skill Not Found

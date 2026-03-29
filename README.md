@@ -1,9 +1,9 @@
-<!-- registry-sync: version=9.1.0; skills=1331; stars=28053; updated_at=2026-03-28T15:48:03+00:00 -->
-# 🌌 Antigravity Awesome Skills: 1,331+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
+<!-- registry-sync: version=9.1.0; skills=1275; stars=28053; updated_at=2026-03-28T15:48:03+00:00 -->
+# 🌌 AI-Agents-Safe-Coding-Skills: 1,331+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **Installable GitHub library of 1,331+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
+> **English-first GitHub library of 1,275+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
 
-Antigravity Awesome Skills is a GitHub repository and installer CLI for reusable `SKILL.md` playbooks. Instead of collecting random prompts, you get a searchable, installable skill library for planning, coding, debugging, testing, security review, infrastructure work, product workflows, and growth tasks across the major AI coding assistants.
+AI-Agents-Safe-Coding-Skills is a maintained fork of `antigravity-awesome-skills` for reusable `SKILL.md` playbooks. Instead of collecting random prompts, you get a searchable, installable skill library for planning, coding, debugging, testing, security review, infrastructure work, product workflows, and growth tasks across the major AI coding assistants.
 
 **Start here:** [Star the repo](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/stargazers) · [Install in 1 minute](#installation) · [Plugins for Claude Code and Codex](docs/users/plugins.md) · [Choose your tool](#choose-your-tool) · [Best skills by tool](#best-skills-by-tool) · [Bundles](docs/users/bundles.md) · [Workflows](docs/users/workflows.md)
 
@@ -14,19 +14,25 @@ Antigravity Awesome Skills is a GitHub repository and installer CLI for reusable
 [![Codex CLI](https://img.shields.io/badge/Codex%20CLI-OpenAI-green)](https://github.com/openai/codex)
 [![Gemini CLI](https://img.shields.io/badge/Gemini%20CLI-Google-blue)](https://github.com/google-gemini/gemini-cli)
 [![Latest Release](https://img.shields.io/github/v/release/administrakt0r/AI-Agents-Safe-Coding-Skills?display_name=tag&style=for-the-badge)](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/releases/latest)
-[![Install with NPX](https://img.shields.io/badge/Install-npx%20antigravity--awesome--skills-black?style=for-the-badge&logo=npm)](#installation)
+[![Install with NPX](https://img.shields.io/badge/Install-npx%20ai--agents--safe--coding--skills-black?style=for-the-badge&logo=npm)](#installation)
 [![Kiro](https://img.shields.io/badge/Kiro-AWS-orange?style=for-the-badge)](https://kiro.dev)
 [![Copilot](https://img.shields.io/badge/Copilot-GitHub-lightblue?style=for-the-badge)](https://github.com/features/copilot)
 [![OpenCode](https://img.shields.io/badge/OpenCode-CLI-gray?style=for-the-badge)](https://github.com/opencode-ai/opencode)
 [![Antigravity](https://img.shields.io/badge/Antigravity-AI%20IDE-red?style=for-the-badge)](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills)
 
-**Current release: V9.1.0.** Trusted by 28k+ GitHub stargazers, this repository combines official and community skill collections with bundles, workflows, installation paths, and docs that help you go from first install to daily use quickly.
+**Current release: V9.1.0.** Trusted by 28k+ GitHub stargazers, this actively maintained fork combines official and community skill collections with bundles, workflows, installation paths, and review processes that keep the library current and safer to use.
+
+This repository is curated for English-first usage. Skills and workflow assets that are fully non-English, or materially mixed-language in their core instructions, are removed instead of being silently carried forward.
+
+The collection also includes curated marketing and growth skills imported from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), alongside official and community engineering sources.
+
+Autonomous AI agents continuously audit the library for stale content, suspicious prompt/tool behavior, and missing modern coverage. Human maintainers review the resulting PRs, issues, and logs before changes are treated as accepted repository state.
 
 ## Why Developers Star This Repo
 
-- **Installable, not just inspirational**: use `npx AI-Agents-Safe-Coding-Skills` to put skills where your tool expects them.
+- **Installable, not just inspirational**: use `npx ai-agents-safe-coding-skills` to put skills where your tool expects them.
 - **Built for major agent workflows**: Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, Kiro, OpenCode, Copilot, and more.
-- **Broad coverage with real utility**: 1,331+ skills across development, testing, security, infrastructure, product, and marketing.
+- **Broad coverage with real utility**: 1,275+ skills across development, testing, security, infrastructure, product, and marketing.
 - **Faster onboarding**: bundles and workflows reduce the time from "I found this repo" to "I used my first skill".
 - **Useful whether you want breadth or curation**: browse the full catalog, start with top bundles, or compare alternatives before installing.
 
@@ -64,7 +70,7 @@ If you searched for **Claude Code skills**, **Cursor skills**, **Codex CLI skill
 
 ### 1. 🐣 Context: What is this?
 
-**Antigravity Awesome Skills** (Release 9.1.0) is a large, installable skill library for AI coding assistants. It includes onboarding docs, bundles, workflows, generated catalogs, and a CLI installer so you can move from discovery to actual usage without manually stitching together dozens of repos.
+**AI-Agents-Safe-Coding-Skills** (Release 9.1.0) is a large, installable skill library for AI coding assistants. It is a maintained fork of Antigravity Awesome Skills with English-first curation, marketing skills, onboarding docs, bundles, workflows, generated catalogs, and a CLI installer.
 
 AI agents are smart, but they still need **task-specific operating instructions**. Skills are focused markdown playbooks that teach an agent how to perform a workflow repeatedly and with better context, whether that means deployment, API design, testing, product strategy, SEO, or documentation.
 
@@ -76,7 +82,7 @@ Install once; then use Starter Packs in [docs/users/bundles.md](docs/users/bundl
 
    ```bash
    # Default: ~/.gemini/antigravity/skills (Antigravity global). Use --path for other locations.
-   npx AI-Agents-Safe-Coding-Skills
+   npx ai-agents-safe-coding-skills
    ```
 2. **Verify**:
 
@@ -125,7 +131,7 @@ If you want the clearest explanation of **skills vs MCP/tools**, start here:
 
 ## Integration Guides
 
-If your real question is "how do I use Antigravity Awesome Skills with my tool?", use the matching guide:
+If your real question is "how do I use AI-Agents-Safe-Coding-Skills with my tool?", use the matching guide:
 
 - **[Claude Code](docs/users/claude-code-skills.md)**: install paths, starter prompts, plugin marketplace flow, and first-use guidance.
 - **[Cursor](docs/users/cursor-skills.md)**: chat-first usage, frontend/full-stack starter skills, and practical prompts.
@@ -135,13 +141,13 @@ If your real question is "how do I use Antigravity Awesome Skills with my tool?"
 
 ## Quick FAQ
 
-### What is Antigravity Awesome Skills?
+### What is AI-Agents-Safe-Coding-Skills?
 
 It is an installable GitHub library of reusable `SKILL.md` playbooks for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and related AI coding assistants.
 
 ### How do I install it?
 
-Use `npx AI-Agents-Safe-Coding-Skills`, or a tool-specific flag like `--codex`, `--cursor`, `--gemini`, or `--claude` when you want the installer to target a specific skills directory.
+Use `npx ai-agents-safe-coding-skills`, or a tool-specific flag like `--codex`, `--cursor`, `--gemini`, or `--claude` when you want the installer to target a specific skills directory.
 
 ### What is the difference between skills and MCP tools?
 
@@ -186,7 +192,7 @@ To use these skills with **Claude Code**, **Gemini CLI**, **Codex CLI**, **Kiro 
 ### Option A: npx (recommended)
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills
+npx ai-agents-safe-coding-skills
 ```
 
 2. Verify the default install:
@@ -233,7 +239,7 @@ Like the Claude distribution, the Codex plugin only exposes plugin-safe skills. 
 
 Release `9.0.0` formalizes plugins as a first-class distribution model for this repository.
 
-- The **full library install** remains the broadest path: use `npx AI-Agents-Safe-Coding-Skills --claude` or `--codex` when you want the largest available catalog.
+- The **full library install** remains the broadest path: use `npx ai-agents-safe-coding-skills --claude` or `--codex` when you want the largest available catalog.
 - The **root plugin** gives Claude Code or Codex a marketplace-friendly installable distribution of the repository.
 - **Bundle plugins** give you narrower role-based installs such as `Essentials`, `Security Engineer`, or `Web Wizard`.
 - Plugin distributions are intentionally **plugin-safe**. Skills that still depend on host-specific paths, undeclared setup, or extra hardening remain in the repository, but stay out of marketplace publication until they are ready.
@@ -246,21 +252,21 @@ If you want the full explanation of root plugins, bundle plugins, full-library i
 
 | Tool           | Install                                                                  | First Use                                              |
 | -------------- | ------------------------------------------------------------------------ | ------------------------------------------------------ |
-| Claude Code    | `npx AI-Agents-Safe-Coding-Skills --claude` or Claude plugin marketplace | `>> /brainstorming help me plan a feature`           |
-| Cursor         | `npx AI-Agents-Safe-Coding-Skills --cursor`                              | `@brainstorming help me plan a feature`              |
-| Gemini CLI     | `npx AI-Agents-Safe-Coding-Skills --gemini`                              | `Use brainstorming to plan a feature`                |
-| Codex CLI      | `npx AI-Agents-Safe-Coding-Skills --codex`                               | `Use brainstorming to plan a feature`                |
-| Antigravity    | `npx AI-Agents-Safe-Coding-Skills --antigravity`                         | `Use @brainstorming to plan a feature`               |
-| Kiro CLI       | `npx AI-Agents-Safe-Coding-Skills --kiro`                                | `Use brainstorming to plan a feature`                |
-| Kiro IDE       | `npx AI-Agents-Safe-Coding-Skills --path ~/.kiro/skills`                 | `Use @brainstorming to plan a feature`               |
+| Claude Code    | `npx ai-agents-safe-coding-skills --claude` or Claude plugin marketplace | `>> /brainstorming help me plan a feature`           |
+| Cursor         | `npx ai-agents-safe-coding-skills --cursor`                              | `@brainstorming help me plan a feature`              |
+| Gemini CLI     | `npx ai-agents-safe-coding-skills --gemini`                              | `Use brainstorming to plan a feature`                |
+| Codex CLI      | `npx ai-agents-safe-coding-skills --codex`                               | `Use brainstorming to plan a feature`                |
+| Antigravity    | `npx ai-agents-safe-coding-skills --antigravity`                         | `Use @brainstorming to plan a feature`               |
+| Kiro CLI       | `npx ai-agents-safe-coding-skills --kiro`                                | `Use brainstorming to plan a feature`                |
+| Kiro IDE       | `npx ai-agents-safe-coding-skills --path ~/.kiro/skills`                 | `Use @brainstorming to plan a feature`               |
 | GitHub Copilot | _No installer — paste skills or rules manually_                       | `Ask Copilot to use brainstorming to plan a feature` |
-| OpenCode       | `npx AI-Agents-Safe-Coding-Skills --path .agents/skills`                 | `opencode run @brainstorming help me plan a feature` |
-| AdaL CLI       | `npx AI-Agents-Safe-Coding-Skills --path .adal/skills`                   | `Use brainstorming to plan a feature`                |
-| Custom path    | `npx AI-Agents-Safe-Coding-Skills --path ./my-skills`                    | Depends on your tool                                   |
+| OpenCode       | `npx ai-agents-safe-coding-skills --path .agents/skills`                 | `opencode run @brainstorming help me plan a feature` |
+| AdaL CLI       | `npx ai-agents-safe-coding-skills --path .adal/skills`                   | `Use brainstorming to plan a feature`                |
+| Custom path    | `npx ai-agents-safe-coding-skills --path ./my-skills`                    | Depends on your tool                                   |
 
 ## Best Skills By Tool
 
-If you want a faster answer than "browse all 1,331+ skills", start with a tool-specific guide:
+If you want a faster answer than "browse all 1,275+ skills", start with a tool-specific guide:
 
 - **[Claude Code skills](docs/users/claude-code-skills.md)**: install paths, starter skills, prompt examples, and plugin marketplace flow.
 - **[Cursor skills](docs/users/cursor-skills.md)**: best starter skills for `.cursor/skills/`, UI-heavy work, and pair-programming flows.
@@ -403,7 +409,7 @@ Initial workflows include:
 
 Need to compare this repository with other skill libraries before you install? Start here:
 
-- **[Antigravity Awesome Skills vs Awesome Claude Skills](docs/users/AI-Agents-Safe-Coding-Skills-vs-awesome-claude-skills.md)** for breadth vs curated-list tradeoffs.
+- **[AI-Agents-Safe-Coding-Skills vs Awesome Claude Skills](docs/users/ai-agents-safe-coding-skills-vs-awesome-claude-skills.md)** for breadth vs curated-list tradeoffs.
 - **[Best Claude Code skills on GitHub](docs/users/best-claude-code-skills-github.md)** for a high-intent shortlist.
 - **[Best Cursor skills on GitHub](docs/users/best-cursor-skills-github.md)** for Cursor-compatible options and selection criteria.
 
@@ -425,7 +431,7 @@ The repository is organized into specialized domains to transform your AI into a
 
 Counts change as new skills are added. For the current full registry, see [CATALOG.md](CATALOG.md).
 
-## Browse 1,331+ Skills
+## Browse 1,275+ Skills
 
 - Open the interactive browser in [`apps/web-app`](apps/web-app).
 - Read the full catalog in [`CATALOG.md`](CATALOG.md).
@@ -455,7 +461,7 @@ Use the normal install flow on Windows:
 git clone https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills.git .agent/skills
 ```
 
-If you have an older clone created around the removed symlink workaround, reinstall into a fresh directory or rerun the `npx AI-Agents-Safe-Coding-Skills` installer.
+If you have an older clone created around the removed symlink workaround, reinstall into a fresh directory or rerun the `npx ai-agents-safe-coding-skills` installer.
 
 ### Windows truncation or context crash loop
 
@@ -799,6 +805,6 @@ Original documentation and other non-code written content are licensed under [CC
 
 [![Star History Chart](https://api.star-history.com/svg?repos=administrakt0r/AI-Agents-Safe-Coding-Skills&type=date&legend=top-left)](https://www.star-history.com/#administrakt0r/AI-Agents-Safe-Coding-Skills&type=date&legend=top-left)
 
-If Antigravity Awesome Skills has been useful, consider ⭐ starring the repo!
+If AI-Agents-Safe-Coding-Skills has been useful, consider ⭐ starring the repo!
 
 <!-- GitHub Topics (for maintainers): claude-code, gemini-cli, codex-cli, antigravity, cursor, github-copilot, opencode, agentic-skills, ai-coding, llm-tools, ai-agents, autonomous-coding, mcp, ai-developer-tools, ai-pair-programming, vibe-coding, skill, skills, SKILL.md, rules.md, CLAUDE.md, GEMINI.md, CURSOR.md -->

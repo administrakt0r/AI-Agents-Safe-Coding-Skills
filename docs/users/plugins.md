@@ -6,7 +6,7 @@ This page is the canonical explanation of what those plugins are, how they diffe
 
 ## What a plugin is in this repo
 
-In Antigravity Awesome Skills, a plugin is a packaged, installable distribution of skills plus the metadata a host tool needs to expose that distribution through its plugin or marketplace flow.
+In AI-Agents-Safe-Coding-Skills, a plugin is a packaged, installable distribution of skills plus the metadata a host tool needs to expose that distribution through its plugin or marketplace flow.
 
 Plugins are useful when you want:
 
@@ -25,8 +25,8 @@ You now have two valid ways to use this repository with Claude Code or Codex.
 Use the installer or clone the repository directly when you want the broadest possible coverage:
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills --claude
-npx AI-Agents-Safe-Coding-Skills --codex
+npx ai-agents-safe-coding-skills --claude
+npx ai-agents-safe-coding-skills --codex
 ```
 
 Or clone manually into your preferred skills directory.

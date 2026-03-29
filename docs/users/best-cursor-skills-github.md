@@ -52,11 +52,11 @@ Choose this if you want:
 
 ## How to choose quickly
 
-- Choose **Antigravity Awesome Skills** if you want the strongest install-and-use path for real day-to-day Cursor work.
+- Choose **AI-Agents-Safe-Coding-Skills** if you want the strongest install-and-use path for real day-to-day Cursor work.
 - Choose **VoltAgent Awesome Agent Skills** if you want curation first and installation later.
 - Choose **Ai-Agent-Skills** if you want a smaller installable library.
 - Choose **cursor-skills** if you want the most Cursor-specific starting point.
 
 ## Recommended next step
 
-If your goal is to start working in Cursor today, install [Antigravity Awesome Skills](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills) and continue with [`cursor-skills.md`](cursor-skills.md).
+If your goal is to start working in Cursor today, install [AI-Agents-Safe-Coding-Skills](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills) and continue with [`cursor-skills.md`](cursor-skills.md).

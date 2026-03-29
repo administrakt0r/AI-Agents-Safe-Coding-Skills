@@ -1,4 +1,4 @@
-import importlib.util
+﻿import importlib.util
 import json
 import sys
 import tempfile
@@ -37,7 +37,7 @@ class AuditConsistencyTests(unittest.TestCase):
         (root / "package.json").write_text(
             json.dumps(
                 {
-                    "name": "AI-Agents-Safe-Coding-Skills",
+                    "name": "ai-agents-safe-coding-skills",
                     "version": "8.4.0",
                     "description": f"{count_label} agentic skills for Claude Code, Gemini CLI, Cursor, Antigravity & more. Installer CLI.",
                 }
@@ -47,13 +47,13 @@ class AuditConsistencyTests(unittest.TestCase):
         (root / "skills_index.json").write_text(json.dumps([{}] * total_skills), encoding="utf-8")
         (root / "README.md").write_text(
             f"""<!-- registry-sync: version=8.4.0; skills={total_skills}; stars=26132; updated_at=2026-03-21T00:00:00+00:00 -->
-# 🌌 Antigravity Awesome Skills: {count_label} Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
+# ðŸŒŒ AI-Agents-Safe-Coding-Skills: {count_label} Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **Installable GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
+> **English-first GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
 
-[![GitHub stars](https://img.shields.io/badge/⭐%2026%2C000%2B%20Stars-gold?style=for-the-badge)](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/stargazers)
+[![GitHub stars](https://img.shields.io/badge/â­%2026%2C000%2B%20Stars-gold?style=for-the-badge)](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/stargazers)
 
-**Current release: V8.4.0.** Trusted by 26k+ GitHub stargazers, this repository combines official and community skill collections with bundles, workflows, installation paths, and docs that help you go from first install to daily use quickly.
+**Current release: V8.4.0.** Trusted by 26k+ GitHub stargazers, this actively maintained fork combines official and community skill collections with bundles, workflows, installation paths, and review processes that keep the library current and safer to use.
 
 - **Broad coverage with real utility**: {count_label} skills across development, testing, security, infrastructure, product, and marketing.
 
@@ -62,7 +62,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             encoding="utf-8",
         )
         (root / "docs" / "users" / "getting-started.md").write_text(
-            "# Getting Started with Antigravity Awesome Skills (V8.4.0)\n",
+            "# Getting Started with AI-Agents-Safe-Coding-Skills (V8.4.0)\n",
             encoding="utf-8",
         )
         (root / "docs" / "users" / "claude-code-skills.md").write_text(
@@ -74,7 +74,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             encoding="utf-8",
         )
         (root / "docs" / "users" / "usage.md").write_text(
-            f"✅ **Downloaded {count_label} skill files**\n- You installed a toolbox with {count_label} tools\nDon't try to use all {count_label} skills at once.\nNo. Even though you have {count_label} skills installed locally\n",
+            f"âœ… **Downloaded {count_label} skill files**\n- You installed a toolbox with {count_label} tools\nDon't try to use all {count_label} skills at once.\nNo. Even though you have {count_label} skills installed locally\n",
             encoding="utf-8",
         )
         (root / "docs" / "users" / "visual-guide.md").write_text(
@@ -82,7 +82,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             encoding="utf-8",
         )
         (root / "docs" / "users" / "bundles.md").write_text(
-            f'### 🚀 The "Essentials" Pack\n_Last updated: March 2026 | Total Skills: {count_label} | Total Bundles: 1_\n',
+            f'### ðŸš€ The "Essentials" Pack\n_Last updated: March 2026 | Total Skills: {count_label} | Total Bundles: 1_\n',
             encoding="utf-8",
         )
         (root / "docs" / "users" / "kiro-integration.md").write_text(
@@ -90,7 +90,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             encoding="utf-8",
         )
         (root / "docs" / "maintainers" / "repo-growth-seo.md").write_text(
-            f"> Installable GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.\n> Installable GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes installer CLI, bundles, workflows, and official/community skill collections.\n- use a clean preview image that says `{count_label} Agentic Skills`;\n",
+            f"> English-first GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.\n> English-first GitHub library of {count_label} agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. Includes a safe-coding installer CLI, curated bundles, user workflows, marketing imports, and maintained official/community skill collections.\n- use a clean preview image that says `{count_label} Agentic Skills`;\n",
             encoding="utf-8",
         )
         (root / "docs" / "maintainers" / "skills-update-guide.md").write_text(
@@ -98,7 +98,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             encoding="utf-8",
         )
         (root / "docs" / "integrations" / "jetski-cortex.md").write_text(
-            "1.304+ skill\nCon oltre 1.304 skill, questo approccio\n",
+            f"{count_label} skills\nWith {count_label} skills available, this approach keeps prompt loading under control.\n",
             encoding="utf-8",
         )
         (root / "docs" / "integrations" / "jetski-gemini-loader" / "README.md").write_text(
@@ -120,7 +120,7 @@ If you want a faster answer than "browse all {count_label} skills", start with a
             root = Path(temp_dir)
             self.write_repo_state(root, count_label="1,304+")
             (root / "docs" / "users" / "usage.md").write_text(
-                "✅ **Downloaded 1,273+ skill files**\n",
+                "âœ… **Downloaded 1,273+ skill files**\n",
                 encoding="utf-8",
             )
 
@@ -131,3 +131,4 @@ If you want a faster answer than "browse all {count_label} skills", start with a
 
 if __name__ == "__main__":
     unittest.main()
+

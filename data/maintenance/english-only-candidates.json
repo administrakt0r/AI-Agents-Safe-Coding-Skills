@@ -1,0 +1,97 @@
+{
+  "version": 1,
+  "updatedAt": "2026-03-29T00:00:00Z",
+  "policyPath": "docs/contributors/english-only-policy.md",
+  "removedOn2026-03-29": [
+    "skills/00-andruia-consultant",
+    "skills/007",
+    "skills/10-andruia-skill-smith",
+    "skills/20-andruia-niche-intelligence",
+    "skills/advogado-criminal",
+    "skills/advogado-especialista",
+    "skills/agent-orchestrator",
+    "skills/ai-studio-image",
+    "skills/amazon-alexa",
+    "skills/analytics-product",
+    "skills/andrej-karpathy",
+    "skills/auri-core",
+    "skills/bill-gates",
+    "skills/claude-code-expert",
+    "skills/claude-monitor",
+    "skills/context-agent",
+    "skills/context-guardian",
+    "skills/cred-omega",
+    "skills/devops-deploy",
+    "skills/elon-musk",
+    "skills/geoffrey-hinton",
+    "skills/growth-engine",
+    "skills/ilya-sutskever",
+    "skills/image-studio",
+    "skills/instagram",
+    "skills/junta-leiloeiros",
+    "skills/leiloeiro-avaliacao",
+    "skills/leiloeiro-edital",
+    "skills/leiloeiro-ia",
+    "skills/leiloeiro-juridico",
+    "skills/leiloeiro-mercado",
+    "skills/leiloeiro-risco",
+    "skills/llm-ops",
+    "skills/matematico-tao",
+    "skills/monetization",
+    "skills/multi-advisor",
+    "skills/nerdzao-elite",
+    "skills/nerdzao-elite-gemini-high",
+    "skills/product-design",
+    "skills/product-inventor",
+    "skills/sam-altman",
+    "skills/skill-installer",
+    "skills/skill-sentinel",
+    "skills/social-orchestrator",
+    "skills/stability-ai",
+    "skills/steve-jobs",
+    "skills/task-intelligence",
+    "skills/telegram",
+    "skills/warren-buffett",
+    "skills/web-scraper",
+    "skills/whatsapp-cloud-api",
+    "skills/yann-lecun",
+    "skills/yann-lecun-debate",
+    "skills/yann-lecun-filosofia",
+    "skills/yann-lecun-tecnico",
+    "skills/sankhya-dashboard-html-jsp-custom-best-pratices",
+    "skills/SPDD"
+  ],
+  "normalizedOn2026-03-29": [
+    {
+      "path": "skills/audio-transcriber",
+      "action": "Replaced non-English output examples with English-first wording."
+    },
+    {
+      "path": "skills/local-legal-seo-audit",
+      "action": "Replaced non-English keyword and page-title examples with English equivalents."
+    },
+    {
+      "path": "skills/prompt-engineer",
+      "action": "Shifted multilingual guidance so the default prompt output remains English-first."
+    },
+    {
+      "path": "skills/youtube-summarizer",
+      "action": "Removed Portuguese-specific triggers and converted output headings to English."
+    },
+    {
+      "path": "skills/voice-ai-engine-development",
+      "action": "Replaced stale repository branding in README text."
+    }
+  ],
+  "allowedNarrowExamples": [
+    {
+      "path": "skills/azure-ai-translation-text-py/SKILL.md",
+      "reason": "Translation SDK examples legitimately include source-language sample text."
+    },
+    {
+      "path": "skills/azure-speech-to-text-rest-py/SKILL.md",
+      "reason": "Locale tables list language codes and language names as reference data."
+    }
+  ],
+  "reviewQueue": []
+}

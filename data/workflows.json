@@ -268,6 +268,175 @@
           "notes": "Use evented patterns where consistency and scale tradeoffs are explicit and accepted."
         }
       ]
+    },
+    {
+      "id": "refresh-obsolete-skill",
+      "name": "Refresh an Obsolete Skill",
+      "description": "Review exactly one skill for staleness, modernize it with current guidance, and record the work without duplicating active maintenance.",
+      "category": "maintenance",
+      "relatedBundles": [
+        "core-dev",
+        "ops-core"
+      ],
+      "prerequisites": [
+        "Read data/maintenance/ledger.json before selecting a skill.",
+        "Confirm the target skill is not already active or recently resolved.",
+        "Have access to current primary documentation for the technology the skill covers."
+      ],
+      "requiredArtifacts": [
+        "Updated data/maintenance/ledger.json entry",
+        "Dated log in docs/maintainers/agent-runs/",
+        "Linked PR or issue for human review"
+      ],
+      "steps": [
+        {
+          "title": "Claim one skill",
+          "goal": "Reserve exactly one target and avoid duplicate maintenance work.",
+          "recommendedSkills": [
+            "project-skill-audit",
+            "writing-skills"
+          ],
+          "notes": "Refuse any skill that is already marked active, blocked, or recently resolved in the maintenance ledger."
+        },
+        {
+          "title": "Verify obsolescence",
+          "goal": "Separate genuinely outdated guidance from content that is still current.",
+          "recommendedSkills": [
+            "verification-before-completion"
+          ],
+          "notes": "Compare the skill against current primary documentation and note concrete evidence with dates."
+        },
+        {
+          "title": "Update safely",
+          "goal": "Modernize the skill without introducing stale or unsafe guidance.",
+          "recommendedSkills": [
+            "writing-skills",
+            "skill-creator"
+          ],
+          "notes": "Apply the English-only policy first; if the skill fails that check, remove it or mark it for removal before doing deeper modernization work."
+        },
+        {
+          "title": "Log and hand off",
+          "goal": "Record the work and route it to human review.",
+          "recommendedSkills": [
+            "verification-before-completion"
+          ],
+          "notes": "Update the ledger, write a dated run log, and link the resulting PR or issue."
+        }
+      ]
+    },
+    {
+      "id": "audit-skill-malicious-behavior",
+      "name": "Audit a Skill for Malicious or Unsafe Behavior",
+      "description": "Review exactly one skill for malicious prompt patterns, unsafe commands, suspicious scripts, or hidden tool abuse and either harden it or mark it for removal.",
+      "category": "maintenance",
+      "relatedBundles": [
+        "security-core",
+        "ops-core"
+      ],
+      "prerequisites": [
+        "Read data/maintenance/ledger.json before selecting a skill.",
+        "Confirm the target skill is not already active or recently resolved.",
+        "Apply the English-only policy before deeper security review."
+      ],
+      "requiredArtifacts": [
+        "Updated data/maintenance/ledger.json entry",
+        "Dated log in docs/maintainers/agent-runs/",
+        "Linked PR or issue for human review"
+      ],
+      "steps": [
+        {
+          "title": "Select one review target",
+          "goal": "Pick one high-risk or not-yet-reviewed skill.",
+          "recommendedSkills": [
+            "project-skill-audit",
+            "audit-skills"
+          ],
+          "notes": "Prefer skills with no recent audit history, elevated risk metadata, or command-heavy instructions."
+        },
+        {
+          "title": "Inspect prompts, commands, and scripts",
+          "goal": "Detect malicious prompt engineering, dangerous command delivery, suspicious network or filesystem behavior, and hidden tool abuse.",
+          "recommendedSkills": [
+            "skill-scanner",
+            "security-auditor"
+          ],
+          "notes": "Review SKILL.md instructions, helper scripts, examples, and referenced files together rather than in isolation."
+        },
+        {
+          "title": "Harden or mark for removal",
+          "goal": "Either make the skill safe or create a removal recommendation with evidence.",
+          "recommendedSkills": [
+            "verification-before-completion"
+          ],
+          "notes": "Do not keep a risky skill in circulation without either a verified hardening pass or a removal handoff."
+        },
+        {
+          "title": "Log and hand off",
+          "goal": "Record the outcome and route it to human review.",
+          "recommendedSkills": [
+            "verification-before-completion"
+          ],
+          "notes": "Update the ledger, write a dated run log, and link the resulting PR or issue."
+        }
+      ]
+    },
+    {
+      "id": "import-or-modernize-skill",
+      "name": "Import or Modernize a Skill",
+      "description": "Add exactly one high-value new skill or refresh one trusted upstream skill source while enforcing English-first and safety review requirements.",
+      "category": "maintenance",
+      "relatedBundles": [
+        "core-dev",
+        "data-core"
+      ],
+      "prerequisites": [
+        "Read data/maintenance/ledger.json before selecting a skill or source.",
+        "Confirm the target source or skill is not already active.",
+        "Apply the English-only policy before import or update work begins."
+      ],
+      "requiredArtifacts": [
+        "Updated data/maintenance/ledger.json entry",
+        "Dated log in docs/maintainers/agent-runs/",
+        "Linked PR or issue for human review"
+      ],
+      "steps": [
+        {
+          "title": "Choose one gap or source",
+          "goal": "Pick one high-value addition or update target.",
+          "recommendedSkills": [
+            "project-skill-audit",
+            "skill-creator"
+          ],
+          "notes": "Prefer trusted upstream material, including the English-language marketing skills imported from coreyhaines31/marketingskills."
+        },
+        {
+          "title": "Validate the source",
+          "goal": "Reject unsafe or non-English-first imports before spending time on integration.",
+          "recommendedSkills": [
+            "skill-scanner",
+            "audit-skills"
+          ],
+          "notes": "Review prompts, commands, licensing notes, and structural quality before importing or refreshing anything."
+        },
+        {
+          "title": "Create or update the skill",
+          "goal": "Land one scoped improvement with current guidance and repository conventions.",
+          "recommendedSkills": [
+            "skill-creator",
+            "writing-skills"
+          ],
+          "notes": "Keep the change scoped to one skill per run and align it with the repository's English-first, safety-reviewed conventions."
+        },
+        {
+          "title": "Log and hand off",
+          "goal": "Record the work and route it to human review.",
+          "recommendedSkills": [
+            "verification-before-completion"
+          ],
+          "notes": "Update the ledger, write a dated run log, and link the resulting PR or issue."
+        }
+      ]
     }
   ]
 }

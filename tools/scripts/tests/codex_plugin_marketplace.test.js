@@ -21,7 +21,7 @@ assert.strictEqual(
 );
 assert.strictEqual(
   marketplace.interface?.displayName,
-  "Antigravity Awesome Skills",
+  "AI-Agents-Safe-Coding-Skills",
   "Codex marketplace display name should be present",
 );
 assert.ok(Array.isArray(marketplace.plugins), "marketplace.json must define a plugins array");

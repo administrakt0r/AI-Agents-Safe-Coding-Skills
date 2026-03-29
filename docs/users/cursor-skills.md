@@ -2,9 +2,9 @@
 
 If you searched for **Cursor skills** on GitHub, this repository is built to be a practical starting point: installable skills, clear usage docs, and a large library that works well with Cursor chat workflows.
 
-Antigravity Awesome Skills supports Cursor through the `.cursor/skills/` path and keeps the entry point simple: install once, then invoke the skills you need in chat.
+AI-Agents-Safe-Coding-Skills supports Cursor through the `.cursor/skills/` path and keeps the entry point simple: install once, then invoke the skills you need in chat.
 
-## How to use Antigravity Awesome Skills with Cursor
+## How to use AI-Agents-Safe-Coding-Skills with Cursor
 
 Install the library into Cursor's skills directory, then call skills directly in chat with `@skill-name`. Cursor works especially well when you combine planning, implementation, and validation skills inside one conversation.
 
@@ -18,7 +18,7 @@ Install the library into Cursor's skills directory, then call skills directly in
 ## Install Cursor Skills
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills --cursor
+npx ai-agents-safe-coding-skills --cursor
 ```
 
 ### Verify the install

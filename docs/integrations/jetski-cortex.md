@@ -1,86 +1,55 @@
 ---
 title: Jetski/Cortex + Gemini Integration Guide
-description: "Come usare AI-Agents-Safe-Coding-Skills con Jetski/Cortex evitando l’overflow di contesto con 1.331+ skill."
+description: "How to use AI-Agents-Safe-Coding-Skills with Jetski/Cortex without overflowing the context window across 1,275+ skills."
 ---
 
-# Jetski/Cortex + Gemini: integrazione sicura con 1.331+ skill
+# Jetski/Cortex + Gemini integration for 1,275+ skills
 
-Questa guida mostra come integrare il repository `AI-Agents-Safe-Coding-Skills` con un agente basato su **Jetski/Cortex + Gemini** (o framework simili) **senza superare il context window** del modello.
+This guide shows how to use `AI-Agents-Safe-Coding-Skills` with a Jetski/Cortex + Gemini style agent without overloading the model context window.
 
-L’errore tipico visto in Jetski/Cortex è:
+The common failure mode looks like this:
 
 > `TrajectoryChatConverter: could not convert a single message before hitting truncation`
 
-Il problema non è nelle skill, ma **nel modo in cui vengono caricate**.
+That usually means the host is loading too many skills too early, not that the repository itself is too large to use safely.
 
----
+## Core rule
 
-## 1. Antipattern da evitare
+Do not preload every `skills/*/SKILL.md` file.
 
-Non bisogna mai:
+Avoid these patterns:
 
-- leggere **tutte** le directory `skills/*/SKILL.md` all’avvio;
-- concatenare il contenuto di tutte le `SKILL.md` in un singolo system prompt;
-- reiniettare l’intera libreria per **ogni** richiesta.
+- Loading every skill during agent startup.
+- Concatenating the full library into one system prompt.
+- Re-injecting the entire library on every turn.
 
-Con oltre 1.331 skill, questo approccio riempie il context window prima ancora di aggiungere i messaggi dell’utente, causando l’errore di truncation.
+With 1,275+ skills available, that approach fills the context window before the actual user request can be processed.
 
----
+## Recommended loading pattern
 
-## 2. Pattern raccomandato
+Use a two-step model:
 
-Principi chiave:
+1. Load `skills_index.json` as a lightweight manifest at startup.
+2. Load full `SKILL.md` files only when a skill is actually referenced.
 
-- **Manifest leggero**: usare `data/skills_index.json` per sapere *quali* skill esistono, senza caricare i testi completi.
-- **Lazy loading**: leggere `SKILL.md` **solo** per le skill effettivamente invocate in una conversazione (es. quando compare `@skill-id`).
-- **Limiti espliciti**: imporre un massimo di skill/tokens caricati per turno, con fallback chiari.
-- **Path safety**: verificare che i path del manifest restino dentro `SKILLS_ROOT` prima di leggere `SKILL.md`.
+Recommended flow:
 
-Il flusso consigliato è:
+1. Build an `id -> metadata` map from `skills_index.json`.
+2. Parse the current messages for skill references such as `@skill-id`.
+3. Resolve only those requested skills.
+4. Enforce a strict per-turn skill cap.
+5. Inject only the selected `SKILL.md` contents into the model prompt.
 
-1. **Bootstrap**: all’avvio dell’agente leggere `data/skills_index.json` e costruire una mappa `id -> meta`.
-2. **Parsing dei messaggi**: prima di chiamare il modello, estrarre tutti i riferimenti `@skill-id` dai messaggi utente/sistema.
-3. **Risoluzione**: mappare gli id trovati in oggetti `SkillMeta` usando la mappa di bootstrap.
-4. **Lazy load**: leggere i file `SKILL.md` solo per questi id (fino a un massimo configurabile).
-5. **Prompt building**: costruire i system messages del modello includendo solo le definizioni delle skill selezionate.
+## Why this works
 
----
+- The manifest stays small enough to keep startup cheap.
+- Lazy loading prevents wasteful prompt expansion.
+- Explicit limits stop silent truncation failures.
+- Path validation keeps reads inside the expected skills directory.
 
-## 3. Struttura di `skills_index.json`
+## Reference loader shape
 
-Il file `data/skills_index.json` è un array di oggetti, ad esempio:
-
-```json
-{
-  "id": "brainstorming",
-  "path": "skills/brainstorming",
-  "category": "planning",
-  "name": "brainstorming",
-  "description": "Use before any creative or constructive work.",
-  "risk": "safe",
-  "source": "official",
-  "date_added": "2026-02-27"
-}
-```
-
-Campi chiave:
-
-- **`id`**: identificatore usato nelle menzioni `@id` (es. `@brainstorming`).
-- **`path`**: directory che contiene la `SKILL.md` (es. `skills/brainstorming/`).
-
-Per ottenere il percorso alla definizione della skill:
-
-- `fullPath = path.join(SKILLS_ROOT, meta.path, "SKILL.md")`.
-
-> Nota: `SKILLS_ROOT` è la directory radice dove avete installato il repository (es. `~/.agent/skills`).
-
----
-
-## 4. Pseudo‑codice di integrazione (TypeScript)
-
-> Esempio completo in: [`docs/integrations/jetski-gemini-loader/`](../../docs/integrations/jetski-gemini-loader/).
-
-### 4.1. Tipi di base
+Minimal TypeScript-style sketch:
 
 ```ts
 type SkillMeta = {
@@ -88,185 +57,72 @@ type SkillMeta = {
   path: string;
   name: string;
   description?: string;
-  category?: string;
-  risk?: string;
 };
-```
 
-### 4.2. Bootstrap: caricare il manifest
-
-```ts
 function loadSkillIndex(indexPath: string): Map<string, SkillMeta> {
   const raw = fs.readFileSync(indexPath, "utf8");
-  const arr = JSON.parse(raw) as SkillMeta[];
-  const map = new Map<string, SkillMeta>();
-  for (const meta of arr) {
-    map.set(meta.id, meta);
-  }
-  return map;
+  const items = JSON.parse(raw) as SkillMeta[];
+  return new Map(items.map((item) => [item.id, item]));
 }
-```
 
-### 4.3. Parsing dei messaggi per trovare `@skill-id`
-
-```ts
-const SKILL_ID_REGEX = /@([a-zA-Z0-9-_./]+)/g;
-
-function resolveSkillsFromMessages(
-  messages: { role: string; content: string }[],
+function resolveReferencedSkills(
+  messages: { content: string }[],
   index: Map<string, SkillMeta>,
-  maxSkills: number
+  maxSkills: number,
 ): SkillMeta[] {
-  const found = new Set<string>();
+  const ids = new Set<string>();
+  const skillIdPattern = /@([a-zA-Z0-9-_./]+)/g;
 
-  for (const msg of messages) {
+  for (const message of messages) {
     let match: RegExpExecArray | null;
-    while ((match = SKILL_ID_REGEX.exec(msg.content)) !== null) {
-      const id = match[1];
-      if (index.has(id)) {
-        found.add(id);
-      }
+    while ((match = skillIdPattern.exec(message.content)) !== null) {
+      if (index.has(match[1])) ids.add(match[1]);
+      if (ids.size >= maxSkills) break;
     }
   }
 
-  const metas: SkillMeta[] = [];
-  for (const id of found) {
-    const meta = index.get(id);
-    if (meta) metas.push(meta);
-    if (metas.length >= maxSkills) break;
-  }
-
-  return metas;
+  return [...ids].map((id) => index.get(id)!).filter(Boolean);
 }
-```
 
-### 4.4. Lazy loading dei file `SKILL.md`
-
-```ts
-async function loadSkillBodies(
-  skillsRoot: string,
-  metas: SkillMeta[]
-): Promise<string[]> {
-  const bodies: string[] = [];
-
-  for (const meta of metas) {
-    const fullPath = path.join(skillsRoot, meta.path, "SKILL.md");
-    const text = await fs.promises.readFile(fullPath, "utf8");
-    bodies.push(text);
-  }
-
-  return bodies;
-}
-```
-
-### 4.5. Costruzione del prompt Jetski/Cortex
-
-Pseudocodice per la fase di pre‑processing, prima del `TrajectoryChatConverter`:
-
-```ts
-async function buildModelMessages(
-  baseSystemMessages: { role: "system"; content: string }[],
-  trajectory: { role: "user" | "assistant" | "system"; content: string }[],
-  skillIndex: Map<string, SkillMeta>,
-  skillsRoot: string,
-  maxSkillsPerTurn: number,
-  overflowBehavior: "truncate" | "error" = "truncate"
-): Promise<{ role: string; content: string }[]> {
-  const referencedSkills = resolveSkillsFromMessages(
-    trajectory,
-    skillIndex,
-    Number.MAX_SAFE_INTEGER
+async function loadSkillBodies(skillsRoot: string, metas: SkillMeta[]) {
+  return Promise.all(
+    metas.map((meta) =>
+      fs.promises.readFile(path.join(skillsRoot, meta.path, "SKILL.md"), "utf8"),
+    ),
   );
-  if (
-    overflowBehavior === "error" &&
-    referencedSkills.length > maxSkillsPerTurn
-  ) {
-    throw new Error(
-      `Too many skills requested in a single turn. Reduce @skill-id usage to ${maxSkillsPerTurn} or fewer.`
-    );
-  }
-
-  const selectedMetas = resolveSkillsFromMessages(
-    trajectory,
-    skillIndex,
-    maxSkillsPerTurn
-  );
-
-  const skillBodies = await loadSkillBodies(skillsRoot, selectedMetas);
-
-  const skillMessages = skillBodies.map((body) => ({
-    role: "system" as const,
-    content: body,
-  }));
-
-  return [...baseSystemMessages, ...skillMessages, ...trajectory];
 }
 ```
 
-> Suggerimento: aggiungete una stima dei token per troncare o riassumere i `SKILL.md` se il context window si avvicina al limite.
-> Il reference loader di questo repo supporta anche un fallback esplicito: `overflowBehavior: "error"`.
+## Operational safeguards
 
----
+Use all of these:
 
-## 5. Gestione degli overflow di contesto
+- A max-skills-per-turn limit.
+- A token budget threshold before model invocation.
+- Clear user-facing errors when too many skills are requested.
+- Path normalization and boundary checks before reading `SKILL.md`.
 
-Per evitare errori difficili da capire per l’utente, impostate:
+Example error:
 
-- una **soglia di sicurezza** (es. 70–80% del context window);
-- un **limite massimo di skill per turno** (es. 5–10).
+> Too many skills were requested in one turn. Reduce the number of `@skill-id` references or split the task into smaller steps.
 
-Strategie quando si supera la soglia:
+## Windows crash-loop recovery
 
-- ridurre il numero di skill incluse (es. in base a recenza o priorità); oppure
-- restituire un errore chiaro all’utente, ad esempio:
+If your Jetski/Cortex host keeps reopening a broken trajectory after a truncation error:
 
-> "Sono state richieste troppe skill in un singolo turno. Riduci il numero di `@skill-id` nel messaggio o dividili in più passaggi."
+1. Remove the problematic cached conversation state.
+2. Clear Local Storage, Session Storage, or IndexedDB used by the host.
+3. Clear `%TEMP%` if the host persists prompt state there.
+4. Restart with lazy loading enabled and an explicit per-turn skill cap.
 
----
+See [the Jetski Gemini loader README](./jetski-gemini-loader/README.md) for a fuller loader example.
 
-## 6. Scenari di test raccomandati
+## Summary
 
-- **Scenario 1 – Messaggio semplice ("hi")**
-  - Nessun `@skill-id` → nessuna `SKILL.md` caricata → il prompt rimane piccolo → nessun errore.
-- **Scenario 2 – Poche skill**
-  - Messaggio con 1–2 `@skill-id` → solo le relative `SKILL.md` vengono caricate → nessun overflow.
-- **Scenario 3 – Molte skill**
-  - Messaggio con molte `@skill-id` → si attiva il limite `maxSkillsPerTurn` o il controllo di token → nessun overflow silenzioso.
+- Do not inject the full library into the prompt.
+- Use `skills_index.json` as the manifest.
+- Load `SKILL.md` files on demand.
+- Cap per-turn skill usage.
+- Fail explicitly before truncation instead of silently degrading behavior.
 
----
-
-## 7. Sottoinsiemi di skill e bundle
-
-Per ulteriore controllo:
-
-- spostate le skill non necessarie in `skills/.disabled/` per escluderle in certi ambienti;
-- usate i **bundle** descritti in [`docs/users/bundles.md`](../users/bundles.md) per caricare solo gruppi tematici.
-
-## 8. Recovery su Windows se siete gia in crash loop
-
-Se l’host continua a riaprire la stessa trajectory corrotta dopo un errore di truncation:
-
-- rimuovete la skill o il pacchetto problematico;
-- cancellate Local Storage / Session Storage / IndexedDB usati da Antigravity;
-- svuotate `%TEMP%`;
-- riavviate con un loader lazy e limiti espliciti.
-
-Guida completa:
-
-- [`docs/users/windows-truncation-recovery.md`](../users/windows-truncation-recovery.md)
-
-Per evitare che il problema si ripresenti:
-
-- mantenete `overflowBehavior: "error"` quando preferite un fallimento esplicito;
-- continuate a validare che i path risolti restino dentro `skillsRoot`.
-
----
-
-## 9. Riepilogo
-
-- Non concatenate mai tutte le `SKILL.md` in un singolo prompt.
-- Usate `data/skills_index.json` come manifest leggero.
-- Caricate le skill **on‑demand** in base a `@skill-id`.
-- Impostate limiti chiari (max skill per turno, soglia di token).
-
-Seguendo questo pattern, Jetski/Cortex + Gemini può usare l’intera libreria di `AI-Agents-Safe-Coding-Skills` in modo sicuro, scalabile e compatibile con il context window dei modelli moderni.
+That pattern lets Jetski/Cortex + Gemini use the full `AI-Agents-Safe-Coding-Skills` library safely, even with 1,275+ skills available.

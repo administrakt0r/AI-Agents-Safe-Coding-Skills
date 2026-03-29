@@ -337,7 +337,7 @@ Preflight verification → Changelog → `npm run release:prepare -- X.Y.Z` → 
 
     _Or create the release manually via GitHub UI > Releases > Draft a new release, then publish._
 
-5.  **Publish to npm** (so `npx AI-Agents-Safe-Coding-Skills` works):
+5.  **Publish to npm** (so `npx ai-agents-safe-coding-skills` works):
     - **Option A (manual):** From repo root, with npm logged in and 2FA/token set up:
       ```bash
       npm publish
@@ -381,7 +381,7 @@ Use this structure for the published GitHub Release object:
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -437,12 +437,12 @@ Canonical onboarding discussion:
 When refreshing or recreating the pinned onboarding discussion, keep this structure:
 
 ~~~markdown
-If you are new to **Antigravity Awesome Skills**, start here instead of browsing all skills at random.
+If you are new to **AI-Agents-Safe-Coding-Skills**, start here instead of browsing all skills at random.
 
 ## Install in 1 minute
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills
+npx ai-agents-safe-coding-skills
 ```
 
 ## Best starting pages by tool

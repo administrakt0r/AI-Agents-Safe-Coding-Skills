@@ -1,93 +1,5 @@
 [
   {
-    "id": "00-andruia-consultant",
-    "path": "skills/00-andruia-consultant",
-    "category": "andruia",
-    "name": "00-andruia-consultant",
-    "description": "Arquitecto de Soluciones Principal y Consultor Tecnol\u00f3gico de Andru.ia. Diagnostica y traza la hoja de ruta \u00f3ptima para proyectos de IA en espa\u00f1ol.",
-    "risk": "safe",
-    "source": "personal",
-    "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "007",
-    "path": "skills/007",
-    "category": "security",
-    "name": "007",
-    "description": "Security audit, hardening, threat modeling (STRIDE/PASTA), Red/Blue Team, OWASP checks, code review, incident response, and infrastructure security for any project.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "10-andruia-skill-smith",
-    "path": "skills/10-andruia-skill-smith",
-    "category": "andruia",
-    "name": "10-andruia-skill-smith",
-    "description": "Ingeniero de Sistemas de Andru.ia. Dise\u00f1a, redacta y despliega nuevas habilidades (skills) dentro del repositorio siguiendo el Est\u00e1ndar de Diamante.",
-    "risk": "safe",
-    "source": "personal",
-    "date_added": "2026-02-25",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "20-andruia-niche-intelligence",
-    "path": "skills/20-andruia-niche-intelligence",
-    "category": "andruia",
-    "name": "20-andruia-niche-intelligence",
-    "description": "Estratega de Inteligencia de Dominio de Andru.ia. Analiza el nicho espec\u00edfico de un proyecto para inyectar conocimientos, regulaciones y est\u00e1ndares \u00fanicos del sector. Act\u00edvalo tras definir el nicho.",
-    "risk": "safe",
-    "source": "personal",
-    "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "2d-games",
     "path": "skills/game-development/2d-games",
     "category": "game-development",
@@ -354,50 +266,6 @@
     }
   },
   {
-    "id": "advogado-criminal",
-    "path": "skills/advogado-criminal",
-    "category": "legal",
-    "name": "advogado-criminal",
-    "description": "Advogado criminalista especializado em Maria da Penha, violencia domestica, feminicidio, direito penal brasileiro, medidas protetivas, inquerito policial e acao penal.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "advogado-especialista",
-    "path": "skills/advogado-especialista",
-    "category": "legal",
-    "name": "advogado-especialista",
-    "description": "Advogado especialista em todas as areas do Direito brasileiro: familia, criminal, trabalhista, tributario, consumidor, imobiliario, empresarial, civil e constitucional.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "aegisops-ai",
     "path": "skills/aegisops-ai",
     "category": "devops",
@@ -560,28 +428,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "agent-orchestrator",
-    "path": "skills/agent-orchestrator",
-    "category": "ai-ml",
-    "name": "agent-orchestrator",
-    "description": "Meta-skill que orquestra todos os agentes do ecossistema. Scan automatico de skills, match por capacidades, coordenacao de workflows multi-skill e registry management.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -952,28 +798,6 @@
     }
   },
   {
-    "id": "ai-studio-image",
-    "path": "skills/ai-studio-image",
-    "category": "ai-ml",
-    "name": "ai-studio-image",
-    "description": "Geracao de imagens humanizadas via Google AI Studio (Gemini). Fotos realistas estilo influencer ou educacional com iluminacao natural e imperfeicoes sutis.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "ai-wrapper-product",
     "path": "skills/ai-wrapper-product",
     "category": "ai-ml",
@@ -1128,28 +952,6 @@
     }
   },
   {
-    "id": "amazon-alexa",
-    "path": "skills/amazon-alexa",
-    "category": "cloud",
-    "name": "amazon-alexa",
-    "description": "Integracao completa com Amazon Alexa para criar skills de voz inteligentes, transformar Alexa em assistente com Claude como cerebro (projeto Auri) e integrar com AWS ecosystem (Lambda, DynamoDB, Polly, Transcribe, Lex, Smart Home).",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "amplitude-automation",
     "path": "skills/amplitude-automation",
     "category": "data",
@@ -1158,28 +960,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "analytics-product",
-    "path": "skills/analytics-product",
-    "category": "data",
-    "name": "analytics-product",
-    "description": "Analytics de produto \u2014 PostHog, Mixpanel, eventos, funnels, cohorts, retencao, north star metric, OKRs e dashboards de produto.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -1237,28 +1017,6 @@
       "reasons": [
         "target_specific_home_path"
       ]
-    }
-  },
-  {
-    "id": "andrej-karpathy",
-    "path": "skills/andrej-karpathy",
-    "category": "ai-ml",
-    "name": "andrej-karpathy",
-    "description": "Agente que simula Andrej Karpathy \u2014 ex-Director of AI da Tesla, co-fundador da OpenAI, fundador da Eureka Labs, e o maior educador de deep learning do mundo.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
     }
   },
   {
@@ -2416,30 +2174,6 @@
     "risk": "safe",
     "source": "community",
     "date_added": "2026-03-07",
-    "plugin": {
-      "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [
-        "absolute_host_path"
-      ]
-    }
-  },
-  {
-    "id": "auri-core",
-    "path": "skills/auri-core",
-    "category": "voice-agents",
-    "name": "auri-core",
-    "description": "Auri: assistente de voz inteligente (Alexa + Claude claude-opus-4-20250805). Visao do produto, persona Vitoria Neural, stack AWS, modelo Free/Pro/Business/Enterprise, roadmap 4 fases, GTM, north star WAC e analise competitiva.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "blocked",
@@ -5866,28 +5600,6 @@
     }
   },
   {
-    "id": "bill-gates",
-    "path": "skills/bill-gates",
-    "category": "uncategorized",
-    "name": "bill-gates",
-    "description": "Agente que simula Bill Gates \u2014 cofundador da Microsoft, arquiteto da industria de software comercial, estrategista tecnologico global, investidor sistemico e filantropo baseado em dados.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "billing-automation",
     "path": "skills/billing-automation",
     "category": "uncategorized",
@@ -7212,31 +6924,6 @@
     }
   },
   {
-    "id": "claude-code-expert",
-    "path": "skills/claude-code-expert",
-    "category": "ai-ml",
-    "name": "claude-code-expert",
-    "description": "Especialista profundo em Claude Code - CLI da Anthropic. Maximiza produtividade com atalhos, hooks, MCPs, configuracoes avancadas, workflows, CLAUDE.md, memoria, sub-agentes, permissoes e integracao com ecossistemas.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "blocked",
-        "claude": "blocked"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [
-        "absolute_host_path",
-        "target_specific_home_path"
-      ]
-    }
-  },
-  {
     "id": "claude-code-guide",
     "path": "skills/claude-code-guide",
     "category": "ai-ml",
@@ -7303,28 +6990,6 @@
         "absolute_host_path",
         "target_specific_home_path"
       ]
-    }
-  },
-  {
-    "id": "claude-monitor",
-    "path": "skills/claude-monitor",
-    "category": "ai-ml",
-    "name": "claude-monitor",
-    "description": "Monitor de performance do Claude Code e sistema local. Diagnostica lentidao, mede CPU/RAM/disco, verifica API latency e gera relatorios de saude do sistema.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
     }
   },
   {
@@ -8474,28 +8139,6 @@
     }
   },
   {
-    "id": "context-agent",
-    "path": "skills/context-agent",
-    "category": "ai-ml",
-    "name": "context-agent",
-    "description": "Agente de contexto para continuidade entre sessoes. Salva resumos, decisoes, tarefas pendentes e carrega briefing automatico na sessao seguinte.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "context-compression",
     "path": "skills/context-compression",
     "category": "ai-ml",
@@ -8570,28 +8213,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": null,
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "context-guardian",
-    "path": "skills/context-guardian",
-    "category": "ai-ml",
-    "name": "context-guardian",
-    "description": "Guardiao de contexto que preserva dados criticos antes da compactacao automatica. Snapshots, verificacao de integridade e zero perda de informacao.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -9010,28 +8631,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": null,
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "cred-omega",
-    "path": "skills/cred-omega",
-    "category": "security",
-    "name": "cred-omega",
-    "description": "CISO operacional enterprise para gestao total de credenciais e segredos.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -10124,28 +9723,6 @@
     }
   },
   {
-    "id": "devops-deploy",
-    "path": "skills/devops-deploy",
-    "category": "devops",
-    "name": "devops-deploy",
-    "description": "DevOps e deploy de aplicacoes \u2014 Docker, CI/CD com GitHub Actions, AWS Lambda, SAM, Terraform, infraestrutura como codigo e monitoramento.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "devops-troubleshooter",
     "path": "skills/devops-troubleshooter",
     "category": "devops",
@@ -10860,28 +10437,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "elon-musk",
-    "path": "skills/elon-musk",
-    "category": "uncategorized",
-    "name": "elon-musk",
-    "description": "Agente que simula Elon Musk com profundidade psicologica e comunicacional de alta fidelidade. Ativado para: \"fale como Elon\", \"simule Elon Musk\", \"o que Elon diria sobre X\", \"first principles thinking\", \"think like Elon\", roleplay/simulacao do personagem.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -13206,28 +12761,6 @@
     }
   },
   {
-    "id": "geoffrey-hinton",
-    "path": "skills/geoffrey-hinton",
-    "category": "uncategorized",
-    "name": "geoffrey-hinton",
-    "description": "Agente que simula Geoffrey Hinton \u2014 Godfather of Deep Learning, Pr\u00eamio Turing 2018, criador do backpropagation e das Deep Belief Networks.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "gh-review-requests",
     "path": "skills/gh-review-requests",
     "category": "workflow",
@@ -13962,28 +13495,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "growth-engine",
-    "path": "skills/growth-engine",
-    "category": "marketing",
-    "name": "growth-engine",
-    "description": "Motor de crescimento para produtos digitais -- growth hacking, SEO, ASO, viral loops, email marketing, CRM, referral programs e aquisicao organica.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -14902,50 +14413,6 @@
     }
   },
   {
-    "id": "ilya-sutskever",
-    "path": "skills/ilya-sutskever",
-    "category": "ai-ml",
-    "name": "ilya-sutskever",
-    "description": "Agente que simula Ilya Sutskever \u2014 co-fundador da OpenAI, ex-Chief Scientist, fundador da SSI. Use quando quiser perspectivas sobre: AGI safety-first, consci\u00eancia de IA, scaling laws, deep learning profundo, o epis\u00f3dio de novembro 2023 na OpenAI, superintelig\u00eancia segura.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "image-studio",
-    "path": "skills/image-studio",
-    "category": "graphics-processing",
-    "name": "image-studio",
-    "description": "Studio de geracao de imagens inteligente \u2014 roteamento automatico entre ai-studio-image (fotos humanizadas/influencer) e stability-ai (arte/ ilustracao/edicao). Detecta o tipo de imagem solicitada e escolhe o modelo ideal automaticamente.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "imagen",
     "path": "skills/imagen",
     "category": "graphics-processing",
@@ -15108,28 +14575,6 @@
     "risk": "unknown",
     "source": "vibeship-spawner-skills (Apache 2.0)",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "instagram",
-    "path": "skills/instagram",
-    "category": "marketing",
-    "name": "instagram",
-    "description": "Integracao completa com Instagram via Graph API. Publicacao, analytics, comentarios, DMs, hashtags, agendamento, templates e gestao de contas Business/Creator.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -15614,28 +15059,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "junta-leiloeiros",
-    "path": "skills/junta-leiloeiros",
-    "category": "backend",
-    "name": "junta-leiloeiros",
-    "description": "Coleta e consulta dados de leiloeiros oficiais de todas as 27 Juntas Comerciais do Brasil. Scraper multi-UF, banco SQLite, API FastAPI e exportacao CSV/JSON.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -16136,138 +15559,6 @@
     }
   },
   {
-    "id": "leiloeiro-avaliacao",
-    "path": "skills/leiloeiro-avaliacao",
-    "category": "leiloeiro",
-    "name": "leiloeiro-avaliacao",
-    "description": "Avaliacao pericial de imoveis em leilao. Valor de mercado, liquidacao forcada, ABNT NBR 14653, metodos comparativo/renda/custo, CUB e margem de seguranca.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "leiloeiro-edital",
-    "path": "skills/leiloeiro-edital",
-    "category": "leiloeiro",
-    "name": "leiloeiro-edital",
-    "description": "Analise e auditoria de editais de leilao judicial e extrajudicial. Riscos ocultos, clausulas perigosas, debitos, ocupante e classificacao da oportunidade.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "leiloeiro-ia",
-    "path": "skills/leiloeiro-ia",
-    "category": "leiloeiro",
-    "name": "leiloeiro-ia",
-    "description": "Especialista em leiloes judiciais e extrajudiciais de imoveis. Analise juridica, pericial e de mercado integrada. Orquestra os 5 modulos especializados.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "leiloeiro-juridico",
-    "path": "skills/leiloeiro-juridico",
-    "category": "leiloeiro",
-    "name": "leiloeiro-juridico",
-    "description": "Analise juridica de leiloes: nulidades, bem de familia, alienacao fiduciaria, CPC arts 829-903, Lei 9514/97, onus reais, embargos e jurisprudencia.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "leiloeiro-mercado",
-    "path": "skills/leiloeiro-mercado",
-    "category": "leiloeiro",
-    "name": "leiloeiro-mercado",
-    "description": "Analise de mercado imobiliario para leiloes. Liquidez, desagio tipico, ROI, estrategias de saida (flip/reforma/renda), Selic 2025 e benchmark CDI/FII.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "leiloeiro-risco",
-    "path": "skills/leiloeiro-risco",
-    "category": "leiloeiro",
-    "name": "leiloeiro-risco",
-    "description": "Analise de risco em leiloes de imoveis. Score 36 pontos, riscos juridicos/financeiros/operacionais, stress test 4 cenarios e ROI ponderado por risco.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "lex",
     "path": "skills/lex",
     "category": "legal",
@@ -16652,28 +15943,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "llm-ops",
-    "path": "skills/llm-ops",
-    "category": "ai-ml",
-    "name": "llm-ops",
-    "description": "LLM Operations -- RAG, embeddings, vector databases, fine-tuning, prompt engineering avancado, custos de LLM, evals de qualidade e arquiteturas de IA para producao.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -17440,28 +16709,6 @@
     }
   },
   {
-    "id": "matematico-tao",
-    "path": "skills/matematico-tao",
-    "category": "uncategorized",
-    "name": "matematico-tao",
-    "description": "Matem\u00e1tico ultra-avan\u00e7ado inspirado em Terence Tao. An\u00e1lise rigorosa de c\u00f3digo e arquitetura com teoria matem\u00e1tica profunda: teoria da informa\u00e7\u00e3o, teoria dos grafos, complexidade computacional, \u00e1lgebra linear, an\u00e1lise estoc\u00e1stica, teoria das categorias, probabilidade bayesiana e l\u00f3gica formal.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "matplotlib",
     "path": "skills/matplotlib",
     "category": "science",
@@ -18058,28 +17305,6 @@
     }
   },
   {
-    "id": "monetization",
-    "path": "skills/monetization",
-    "category": "business",
-    "name": "monetization",
-    "description": "Estrategia e implementacao de monetizacao para produtos digitais - Stripe, subscriptions, pricing experiments, freemium, upgrade flows, churn prevention, revenue optimization e modelos de negocio SaaS.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "monorepo-architect",
     "path": "skills/monorepo-architect",
     "category": "development",
@@ -18176,28 +17401,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "multi-advisor",
-    "path": "skills/multi-advisor",
-    "category": "ai-agents",
-    "name": "multi-advisor",
-    "description": "Conselho de especialistas \u2014 consulta multiplos agentes do ecossistema em paralelo para analise multi-perspectiva de qualquer topico. Ativa personas, especialistas e agentes tecnicos simultaneamente, cada um pela sua otica unica, e consolida em sintese decisoria final.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -18527,50 +17730,6 @@
     "description": "Configure Prisma for Neon with connection pooling.",
     "risk": "unknown",
     "source": "vibeship-spawner-skills (Apache 2.0)",
-    "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "nerdzao-elite",
-    "path": "skills/nerdzao-elite",
-    "category": "uncategorized",
-    "name": "nerdzao-elite",
-    "description": "Senior Elite Software Engineer (15+) and Senior Product Designer. Full workflow with planning, architecture, TDD, clean code, and pixel-perfect UX validation.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "nerdzao-elite-gemini-high",
-    "path": "skills/nerdzao-elite-gemini-high",
-    "category": "uncategorized",
-    "name": "nerdzao-elite-gemini-high",
-    "description": "Modo Elite Coder + UX Pixel-Perfect otimizado especificamente para Gemini 3.1 Pro High. Workflow completo com foco em qualidade m\u00e1xima e efici\u00eancia de tokens.",
-    "risk": "safe",
-    "source": "community",
     "date_added": "2026-02-27",
     "plugin": {
       "targets": {
@@ -20943,50 +20102,6 @@
     }
   },
   {
-    "id": "product-design",
-    "path": "skills/product-design",
-    "category": "business",
-    "name": "product-design",
-    "description": "Design de produto nivel Apple \u2014 sistemas visuais, UX flows, acessibilidade, linguagem visual proprietaria, design tokens, prototipagem e handoff. Cobre Figma, design systems, tipografia, cor, espacamento, motion design e principios de design cognitivo.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "product-inventor",
-    "path": "skills/product-inventor",
-    "category": "business",
-    "name": "product-inventor",
-    "description": "Product Inventor e Design Alchemist de nivel maximo \u2014 combina Product Thinking, Design Systems, UI Engineering, Psicologia Cognitiva, Storytelling e execucao impecavel nivel Jobs/Apple.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "product-manager",
     "path": "skills/product-manager",
     "category": "business",
@@ -21217,7 +20332,7 @@
     "date_added": "2026-03-25",
     "plugin": {
       "targets": {
-        "codex": "blocked",
+        "codex": "supported",
         "claude": "blocked"
       },
       "setup": {
@@ -21226,7 +20341,6 @@
         "docs": null
       },
       "reasons": [
-        "absolute_host_path",
         "target_specific_home_path"
       ]
     }
@@ -22714,50 +21828,6 @@
     "risk": "unknown",
     "source": "vibeship-spawner-skills (Apache 2.0)",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "sam-altman",
-    "path": "skills/sam-altman",
-    "category": "ai-ml",
-    "name": "sam-altman",
-    "description": "Agente que simula Sam Altman \u2014 CEO da OpenAI, ex-presidente da Y Combinator, arquiteto da era AGI.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "sankhya-dashboard-html-jsp-custom-best-pratices",
-    "path": "skills/sankhya-dashboard-html-jsp-custom-best-pratices",
-    "category": "code",
-    "name": "sankhya-dashboard-html-jsp-custom-best-pratices",
-    "description": "This skill should be used when the user asks for patterns, best practices, creation, or fixing of Sankhya dashboards using HTML, JSP, Java, and SQL.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-10",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -24516,28 +23586,6 @@
     }
   },
   {
-    "id": "skill-installer",
-    "path": "skills/skill-installer",
-    "category": "meta",
-    "name": "skill-installer",
-    "description": "Instala, valida, registra e verifica novas skills no ecossistema. 10 checks de seguranca, copia, registro no orchestrator e verificacao pos-instalacao.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "skill-rails-upgrade",
     "path": "skills/skill-rails-upgrade",
     "category": "meta",
@@ -24614,28 +23662,6 @@
     "risk": "safe",
     "source": "https://github.com/yusufkaraaslan/Skill_Seekers",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "skill-sentinel",
-    "path": "skills/skill-sentinel",
-    "category": "meta",
-    "name": "skill-sentinel",
-    "description": "Auditoria e evolucao do ecossistema de skills. Qualidade de codigo, seguranca, custos, gaps, duplicacoes, dependencias e relatorios de saude.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -24858,28 +23884,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "social-orchestrator",
-    "path": "skills/social-orchestrator",
-    "category": "marketing",
-    "name": "social-orchestrator",
-    "description": "Orquestrador unificado de canais sociais \u2014 coordena Instagram, Telegram e WhatsApp em um unico fluxo de trabalho. Publicacao cross-channel, metricas unificadas, reutilizacao de conteudo por formato, agendamento sincronizado e gestao centralizada de campanhas em todos os canais simultaneamente.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -25226,28 +24230,6 @@
     }
   },
   {
-    "id": "stability-ai",
-    "path": "skills/stability-ai",
-    "category": "media",
-    "name": "stability-ai",
-    "description": "Geracao de imagens via Stability AI (SD3.5, Ultra, Core). Text-to-image, img2img, inpainting, upscale, remove-bg, search-replace. 15 estilos artisticos.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "startup-analyst",
     "path": "skills/startup-analyst",
     "category": "business",
@@ -25388,28 +24370,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": null,
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "steve-jobs",
-    "path": "skills/steve-jobs",
-    "category": "uncategorized",
-    "name": "steve-jobs",
-    "description": "Agente que simula Steve Jobs \u2014 cofundador da Apple, CEO da Pixar, fundador da NeXT, o maior designer de produtos tecnologicos da historia e o mais influente apresentador de produtos do mundo.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -25908,28 +24868,6 @@
     }
   },
   {
-    "id": "task-intelligence",
-    "path": "skills/task-intelligence",
-    "category": "workflow",
-    "name": "task-intelligence",
-    "description": "Protocolo de Intelig\u00eancia Pr\u00e9-Tarefa \u2014 ativa TODOS os agentes relevantes do ecossistema ANTES de executar qualquer tarefa solicitada pelo usu\u00e1rio.",
-    "risk": "none",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "tavily-web",
     "path": "skills/tavily-web",
     "category": "data-ai",
@@ -26158,28 +25096,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "telegram",
-    "path": "skills/telegram",
-    "category": "backend",
-    "name": "telegram",
-    "description": "Integracao completa com Telegram Bot API. Setup com BotFather, mensagens, webhooks, inline keyboards, grupos, canais. Boilerplates Node.js e Python.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -28112,28 +27028,6 @@
     }
   },
   {
-    "id": "warren-buffett",
-    "path": "skills/warren-buffett",
-    "category": "uncategorized",
-    "name": "warren-buffett",
-    "description": "Agente que simula Warren Buffett \u2014 o maior investidor do seculo XX e XXI, CEO da Berkshire Hathaway, discipulo de Benjamin Graham e socio intelectual de Charlie Munger.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
     "id": "wcag-audit-patterns",
     "path": "skills/wcag-audit-patterns",
     "category": "design",
@@ -28230,28 +27124,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "web-scraper",
-    "path": "skills/web-scraper",
-    "category": "data",
-    "name": "web-scraper",
-    "description": "Web scraping inteligente multi-estrategia. Extrai dados estruturados de paginas web (tabelas, listas, precos). Paginacao, monitoramento e export CSV/JSON.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -28406,28 +27278,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "whatsapp-cloud-api",
-    "path": "skills/whatsapp-cloud-api",
-    "category": "backend",
-    "name": "whatsapp-cloud-api",
-    "description": "Integracao com WhatsApp Business Cloud API (Meta). Mensagens, templates, webhooks HMAC-SHA256, automacao de atendimento. Boilerplates Node.js e Python.",
-    "risk": "critical",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -29022,94 +27872,6 @@
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-03-23",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "yann-lecun",
-    "path": "skills/yann-lecun",
-    "category": "ai-ml",
-    "name": "yann-lecun",
-    "description": "Agente que simula Yann LeCun \u2014 inventor das Convolutional Neural Networks, Chief AI Scientist da Meta, Pr\u00eamio Turing 2018.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "yann-lecun-debate",
-    "path": "skills/yann-lecun-debate",
-    "category": "ai-ml",
-    "name": "yann-lecun-debate",
-    "description": "Sub-skill de debates e posi\u00e7\u00f5es de Yann LeCun. Cobre cr\u00edticas t\u00e9cnicas detalhadas aos LLMs, rivalidades intelectuais (LeCun vs Hinton, Sutskever, Russell, Yudkowsky, Bostrom), lista completa de rejei\u00e7\u00f5es a afirma\u00e7\u00f5es mainstream, posi\u00e7\u00e3o sobre risco existencial de IA, e t\u00e9cnicas de debate ao vivo.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "yann-lecun-filosofia",
-    "path": "skills/yann-lecun-filosofia",
-    "category": "ai-ml",
-    "name": "yann-lecun-filosofia",
-    "description": "Sub-skill filos\u00f3fica e pedag\u00f3gica de Yann LeCun.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
-    "plugin": {
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": []
-    }
-  },
-  {
-    "id": "yann-lecun-tecnico",
-    "path": "skills/yann-lecun-tecnico",
-    "category": "ai-ml",
-    "name": "yann-lecun-tecnico",
-    "description": "Sub-skill t\u00e9cnica de Yann LeCun. Cobre CNNs, LeNet, backpropagation, JEPA (I-JEPA, V-JEPA, MC-JEPA), AMI (Advanced Machinery of Intelligence), Self-Supervised Learning (SimCLR, MAE, BYOL), Energy-Based Models (EBMs) e c\u00f3digo PyTorch completo.",
-    "risk": "safe",
-    "source": "community",
-    "date_added": "2026-03-06",
     "plugin": {
       "targets": {
         "codex": "supported",

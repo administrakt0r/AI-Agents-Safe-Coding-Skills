@@ -37,7 +37,7 @@ RECOMMENDED_TOPICS = [
     "mcp",
 ]
 README_TAGLINE_RE = re.compile(
-    r"^> \*\*Installable GitHub library of \d[\d,]*\+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants\.\*\*$",
+    r"^> \*\*English-first GitHub library of \d[\d,]*\+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants\.\*\*$",
     re.MULTILINE,
 )
 README_RELEASE_RE = re.compile(r"^\*\*Current release: V[\d.]+\.\*\* .*?$", re.MULTILINE)
@@ -46,7 +46,7 @@ README_BROAD_COVERAGE_RE = re.compile(
     re.MULTILINE,
 )
 README_NEW_HERE_RE = re.compile(
-    r"^\*\*Antigravity Awesome Skills\*\* \(Release [\d.]+\) is a large, installable skill library.*$",
+    r"^\*\*AI-Agents-Safe-Coding-Skills\*\* \(Release [\d.]+\) is a large, installable skill library.*$",
     re.MULTILINE,
 )
 README_BROWSE_RE = re.compile(
@@ -54,7 +54,7 @@ README_BROWSE_RE = re.compile(
     re.MULTILINE,
 )
 GETTING_STARTED_TITLE_RE = re.compile(
-    r"^# Getting Started with Antigravity Awesome Skills \(V[\d.]+\)$", re.MULTILINE
+    r"^# Getting Started with AI-Agents-Safe-Coding-Skills \(V[\d.]+\)$", re.MULTILINE
 )
 BUNDLES_FOOTER_RE = re.compile(
     r"^_Last updated: .*? \| Total Skills: \d[\d,]*\+ \| Total Bundles: \d+_$",
@@ -64,9 +64,9 @@ BUNDLES_FOOTER_RE = re.compile(
 
 def build_about_description(metadata: dict) -> str:
     return (
-        f"Installable GitHub library of {metadata['total_skills_label']} agentic skills for "
+        f"English-first GitHub library of {metadata['total_skills_label']} agentic skills for "
         "Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and more. "
-        "Includes installer CLI, bundles, workflows, and official/community skill collections."
+        "Includes a safe-coding installer CLI, curated bundles, user workflows, marketing imports, and maintained official/community skill collections."
     )
 
 
@@ -116,7 +116,7 @@ def sync_github_about(
     runner(topic_command, dry_run=dry_run)
 
     if not dry_run:
-        print(f"✅ Synced GitHub About settings for {repo}")
+        print(f"[ok] Synced GitHub About settings for {repo}")
 
 
 def replace_if_present(content: str, pattern: re.Pattern[str], replacement: str) -> tuple[str, bool]:
@@ -134,7 +134,7 @@ def sync_readme_copy(content: str, metadata: dict) -> str:
         (
             README_TAGLINE_RE,
             (
-                f"> **Installable GitHub library of {metadata['total_skills_label']} agentic skills "
+                f"> **English-first GitHub library of {metadata['total_skills_label']} agentic skills "
                 "for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**"
             ),
         ),
@@ -142,8 +142,8 @@ def sync_readme_copy(content: str, metadata: dict) -> str:
             README_RELEASE_RE,
             (
                 f"**Current release: V{metadata['version']}.** Trusted by {star_celebration}+ GitHub stargazers, "
-                "this repository combines official and community skill collections with bundles, "
-                "workflows, installation paths, and docs that help you go from first install to daily use quickly."
+                "this actively maintained fork combines official and community skill collections with bundles, "
+                "workflows, installation paths, and review processes that keep the library current and safer to use."
             ),
         ),
         (
@@ -156,10 +156,10 @@ def sync_readme_copy(content: str, metadata: dict) -> str:
         (
             README_NEW_HERE_RE,
             (
-                f"**Antigravity Awesome Skills** (Release {metadata['version']}) is a large, installable "
-                "skill library for AI coding assistants. It includes onboarding docs, bundles, workflows, "
-                "generated catalogs, and a CLI installer so you can move from discovery to actual usage "
-                "without manually stitching together dozens of repos."
+                f"**AI-Agents-Safe-Coding-Skills** (Release {metadata['version']}) is a large, installable "
+                "skill library for AI coding assistants. It is a maintained fork of Antigravity Awesome Skills "
+                "with English-first curation, marketing skills, onboarding docs, bundles, workflows, "
+                "generated catalogs, and a CLI installer."
             ),
         ),
         (
@@ -178,7 +178,7 @@ def sync_getting_started(content: str, metadata: dict) -> str:
     content, _ = replace_if_present(
         content,
         GETTING_STARTED_TITLE_RE,
-        f"# Getting Started with Antigravity Awesome Skills (V{metadata['version']})",
+        f"# Getting Started with AI-Agents-Safe-Coding-Skills (V{metadata['version']})",
     )
     return content
 
@@ -204,15 +204,12 @@ def sync_bundles_doc(content: str, metadata: dict, base_dir: str | Path | None =
 
 
 def sync_jetski_cortex(content: str, metadata: dict) -> str:
-    italian_skill_label = f"{metadata['total_skills']:,}".replace(",", ".")
+    count_label = metadata["total_skills_label"]
     replacements = [
-        (r"\d[\d\.]*\+ skill", f"{italian_skill_label}+ skill"),
-        (r"\d[\d\.]* skill", f"{italian_skill_label} skill"),
+        (r"\d[\d,]*\+ skill", f"{count_label} skill"),
+        (r"\d[\d,]* skill", f"{count_label} skill"),
     ]
-    return sync_regex_text(
-        content,
-        replacements,
-    )
+    return sync_regex_text(content, replacements)
 
 
 def sync_simple_text(content: str, replacements: list[tuple[str, str]]) -> str:
@@ -241,7 +238,7 @@ def update_text_file(path: Path, transform, metadata: dict, dry_run: bool) -> bo
         return True
 
     path.write_text(updated, encoding="utf-8", newline="\n")
-    print(f"✅ Updated {path}")
+    print(f"[ok] Updated {path}")
     return True
 
 
@@ -353,7 +350,7 @@ def update_package_description(base_dir: str, metadata: dict, dry_run: bool) -> 
 
     with open(package_path, "w", encoding="utf-8", newline="\n") as file:
         file.write(updated_content)
-    print(f"✅ Updated package description in {package_path}")
+    print(f"[ok] Updated package description in {package_path}")
     return True
 
 

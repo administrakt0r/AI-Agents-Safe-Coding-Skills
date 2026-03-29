@@ -20,7 +20,7 @@ def collect_skill_ids(skills_dir):
         dirs[:] = [d for d in dirs if not d.startswith(".")]
         if "SKILL.md" in files:
             rel = os.path.relpath(root, skills_dir)
-            ids.add(rel)
+            ids.add(rel.replace(os.sep, "/"))
     return ids
 
 
@@ -53,7 +53,8 @@ def main():
         w_id = w.get("id", "?")
         for step in w.get("steps", []):
             for slug in step.get("recommendedSkills", []):
-                if slug not in skill_ids:
+                normalized_slug = slug.replace("\\", "/")
+                if normalized_slug not in skill_ids:
                     errors.append(f"workflows.json workflow '{w_id}' recommends missing skill: {slug}")
         for bid in w.get("relatedBundles", []):
             if bid not in bundle_ids:
@@ -62,7 +63,8 @@ def main():
     # Bundles: every skill in each bundle
     for bid, bundle in bundles_data.get("bundles", {}).items():
         for slug in bundle.get("skills", []):
-            if slug not in skill_ids:
+            normalized_slug = slug.replace("\\", "/")
+            if normalized_slug not in skill_ids:
                 errors.append(f"bundles.json bundle '{bid}' lists missing skill: {slug}")
 
     # Canonical bundles doc: skill links must point to existing skill dirs

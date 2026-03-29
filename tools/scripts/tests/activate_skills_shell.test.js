@@ -12,6 +12,24 @@ const baseDir = path.join(root, "antigravity");
 const repoSkills = path.join(root, "repo-skills");
 const outsideDir = path.join(root, "outside-skill-root");
 
+function bashAvailable() {
+  const probe = spawnSync("bash", ["-lc", "true"], { encoding: "utf8" });
+  if (probe.status === 0) {
+    return true;
+  }
+
+  const combined = `${probe.stderr || ""}\n${probe.stdout || ""}`;
+  if (process.platform === "win32" && /Windows Subsystem for Linux has no installed distributions/i.test(combined)) {
+    return false;
+  }
+
+  if (probe.error && probe.error.code === "ENOENT") {
+    return false;
+  }
+
+  return false;
+}
+
 function makeSkill(skillId) {
   const skillDir = path.join(repoSkills, skillId);
   fs.mkdirSync(skillDir, { recursive: true });
@@ -23,6 +41,11 @@ function makeSkill(skillId) {
 }
 
 try {
+  if (!bashAvailable()) {
+    console.log("skipped: bash/WSL not available on this machine");
+    process.exit(0);
+  }
+
   makeSkill("brainstorming");
   makeSkill("systematic-debugging");
   makeSkill("custom-skill");

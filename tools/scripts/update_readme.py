@@ -1,4 +1,4 @@
-#!/usr/bin/env python3
+﻿#!/usr/bin/env python3
 import argparse
 import io
 import json
@@ -84,7 +84,7 @@ def fetch_star_count(repo: str) -> int | None:
         url,
         headers={
             "Accept": "application/vnd.github+json",
-            "User-Agent": "AI-Agents-Safe-Coding-Skills-readme-sync",
+            "User-Agent": "ai-agents-safe-coding-skills-readme-sync",
         },
     )
     try:
@@ -126,7 +126,7 @@ def load_metadata(
         current_readme = file.read()
 
     existing_sync_metadata = parse_existing_sync_metadata(current_readme)
-    current_star_match = re.search(r"⭐%20([\d%2C\+]+)%20Stars", current_readme)
+    current_star_match = re.search(r"â­%20([\d%2C\+]+)%20Stars", current_readme)
     current_stars = None
     if current_star_match:
         compact = current_star_match.group(1).replace("%2C", "").replace("%2B", "")
@@ -186,9 +186,9 @@ def apply_metadata(content: str, metadata: dict) -> str:
     )
 
     content = re.sub(
-        r"^# 🌌 Antigravity Awesome Skills: .*?$",
+        r"^# ðŸŒŒ (?:Antigravity Awesome Skills|AI-Agents-Safe-Coding-Skills): .*?$",
         (
-            f"# 🌌 Antigravity Awesome Skills: {total_skills_label} "
+            f"# ðŸŒŒ AI-Agents-Safe-Coding-Skills: {total_skills_label} "
             "Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More"
         ),
         content,
@@ -196,19 +196,18 @@ def apply_metadata(content: str, metadata: dict) -> str:
         flags=re.MULTILINE,
     )
     content = re.sub(
-        r"^> \*\*The Ultimate Collection of .*?\*\*$",
+        r"^> \*\*(?:The Ultimate Collection of .*?|English-first GitHub library of .*?)\*\*$",
         (
-            f"> **The Ultimate Collection of {total_skills_label} Universal Agentic "
-            "Skills for AI Coding Assistants — Claude Code, Gemini CLI, Codex CLI, "
-            "Antigravity IDE, GitHub Copilot, Cursor, OpenCode, AdaL**"
+            f"> **English-first GitHub library of {total_skills_label} agentic skills "
+            "for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**"
         ),
         content,
         count=1,
         flags=re.MULTILINE,
     )
     content = re.sub(
-        r"https://img\.shields\.io/badge/⭐%20[\dA-Fa-f%,\+]+%20Stars-gold\?style=for-the-badge",
-        f"https://img.shields.io/badge/⭐%20{star_badge_count}%20Stars-gold?style=for-the-badge",
+        r"https://img\.shields\.io/badge/â­%20[\dA-Fa-f%,\+]+%20Stars-gold\?style=for-the-badge",
+        f"https://img.shields.io/badge/â­%20{star_badge_count}%20Stars-gold?style=for-the-badge",
         content,
         count=1,
     )
@@ -216,16 +215,16 @@ def apply_metadata(content: str, metadata: dict) -> str:
         CURRENT_RELEASE_LINE_RE,
         (
             f"**Current release: V{version}.** Trusted by {star_celebration}+ GitHub stargazers, "
-            "this repository combines official and community skill collections with bundles, "
-            "workflows, installation paths, and docs that help you go from first install to daily use quickly."
+            "this actively maintained fork combines official and community skill collections with bundles, "
+            "workflows, installation paths, and review processes that keep the library current and safer to use."
         ),
         content,
         count=1,
     )
     content = re.sub(
-        r"^\*\*Antigravity Awesome Skills\*\* is a curated, battle-tested library of \*\*.*?\*\* designed",
+        r"^\*\*(?:Antigravity Awesome Skills|AI-Agents-Safe-Coding-Skills)\*\* is a curated, battle-tested library of \*\*.*?\*\* designed",
         (
-            f"**Antigravity Awesome Skills** is a curated, battle-tested library of "
+            f"**AI-Agents-Safe-Coding-Skills** is a curated, battle-tested library of "
             f"**{total_skills_label} high-performance agentic skills** designed"
         ),
         content,
@@ -233,8 +232,8 @@ def apply_metadata(content: str, metadata: dict) -> str:
         flags=re.MULTILINE,
     )
     content = re.sub(
-        r"\[📚 Browse \d[\d,]*\+ Skills\]\(#browse-[^)]+\)",
-        f"[📚 Browse {total_skills_label} Skills](#browse-{total_skills}-skills)",
+        r"\[ðŸ“š Browse \d[\d,]*\+ Skills\]\(#browse-[^)]+\)",
+        f"[ðŸ“š Browse {total_skills_label} Skills](#browse-{total_skills}-skills)",
         content,
         count=1,
     )
@@ -245,15 +244,15 @@ def apply_metadata(content: str, metadata: dict) -> str:
         count=1,
     )
     content = re.sub(
-        r"> \*\*🌟 .*? GitHub Stars Milestone!\*\*",
-        f"> **🌟 {star_milestone} GitHub Stars Milestone!**",
+        r"> \*\*ðŸŒŸ .*? GitHub Stars Milestone!\*\*",
+        f"> **ðŸŒŸ {star_milestone} GitHub Stars Milestone!**",
         content,
         count=1,
     )
     content = re.sub(
-        r"\*\*Antigravity Awesome Skills\*\* \(Release [\d.]+\) is a massive upgrade to your AI's capabilities, now featuring \*\*.*?\*\* skills",
+        r"\*\*(?:Antigravity Awesome Skills|AI-Agents-Safe-Coding-Skills)\*\* \(Release [\d.]+\) is a massive upgrade to your AI's capabilities, now featuring \*\*.*?\*\* skills",
         (
-            f"**Antigravity Awesome Skills** (Release {version}) is a massive upgrade "
+            f"**AI-Agents-Safe-Coding-Skills** (Release {version}) is a massive upgrade "
             f"to your AI's capabilities, now featuring **{total_skills_label} skills**"
         ),
         content,
@@ -279,26 +278,26 @@ def update_readme(dry_run: bool = False, refresh_volatile: bool = False) -> dict
     readme_path = os.path.join(base_dir, "README.md")
     metadata = load_metadata(base_dir, refresh_volatile=refresh_volatile)
 
-    print(f"📖 Reading README from: {readme_path}")
-    print(f"🔢 Total skills found: {metadata['total_skills']}")
-    print(f"🏷️ Version found: {metadata['version']}")
+    print(f"ðŸ“– Reading README from: {readme_path}")
+    print(f"ðŸ”¢ Total skills found: {metadata['total_skills']}")
+    print(f"ðŸ·ï¸ Version found: {metadata['version']}")
     if metadata["used_live_star_count"]:
-        print(f"⭐ Live GitHub stars found: {metadata['stars']}")
+        print(f"â­ Live GitHub stars found: {metadata['stars']}")
     else:
-        print(f"⭐ Using existing README star count: {metadata['stars']}")
+        print(f"â­ Using existing README star count: {metadata['stars']}")
 
     with open(readme_path, "r", encoding="utf-8") as file:
         content = file.read()
 
     updated_content = apply_metadata(content, metadata)
     if dry_run:
-        print("🧪 Dry run enabled; README.md not written.")
+        print("ðŸ§ª Dry run enabled; README.md not written.")
         return metadata
 
     with open(readme_path, "w", encoding="utf-8", newline="\n") as file:
         file.write(updated_content)
 
-    print("✅ README.md updated successfully.")
+    print("âœ… README.md updated successfully.")
     return metadata
 
 
@@ -317,3 +316,4 @@ if __name__ == "__main__":
     configure_utf8_output()
     args = parse_args()
     update_readme(dry_run=args.dry_run, refresh_volatile=args.refresh_volatile)
+

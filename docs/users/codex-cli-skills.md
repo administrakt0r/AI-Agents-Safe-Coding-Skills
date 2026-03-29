@@ -2,15 +2,15 @@
 
 If you want **Codex CLI skills** that are easy to install and practical in a local coding loop, this repository is designed for that exact use case.
 
-Antigravity Awesome Skills supports Codex CLI through the `.codex/skills/` path and gives you a wide set of reusable task playbooks for planning, implementation, debugging, testing, security review, and delivery.
+AI-Agents-Safe-Coding-Skills supports Codex CLI through the `.codex/skills/` path and gives you a wide set of reusable task playbooks for planning, implementation, debugging, testing, security review, and delivery.
 
 Release `9.0.0` also adds a first-class Codex plugin distribution plus bundle plugins. If you want the full explanation of root plugin vs bundle plugin vs full install, read [plugins.md](plugins.md).
 
-## How to use Antigravity Awesome Skills with Codex CLI
+## How to use AI-Agents-Safe-Coding-Skills with Codex CLI
 
 Install the library into your Codex path, then invoke focused skills directly in your prompt. The most common pattern is:
 
-1. install with `npx AI-Agents-Safe-Coding-Skills --codex`
+1. install with `npx ai-agents-safe-coding-skills --codex`
 2. choose one workflow-oriented skill such as `@brainstorming`, `@concise-planning`, or `@test-driven-development`
 3. ask Codex to apply that skill to a concrete file, feature, test, or bugfix
 
@@ -24,7 +24,7 @@ Install the library into your Codex path, then invoke focused skills directly in
 ## Install Codex CLI Skills
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills --codex
+npx ai-agents-safe-coding-skills --codex
 ```
 
 If you prefer a plugin-style Codex integration, this repository also ships repo-local plugin metadata in `.agents/plugins/marketplace.json` and `plugins/AI-Agents-Safe-Coding-Skills/.codex-plugin/plugin.json`.

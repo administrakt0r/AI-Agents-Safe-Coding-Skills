@@ -10,7 +10,7 @@ import shutil
 import subprocess
 import tempfile
 import json
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 
 MS_REPO = "https://github.com/microsoft/skills.git"
 REPO_ROOT = Path(__file__).parent.parent
@@ -187,7 +187,7 @@ def find_skills_in_directory(source_dir: Path):
             continue
 
         results.append({
-            "relative_path": relative_path,
+            "relative_path": PurePosixPath(relative_path.as_posix()),
             "skill_md": skill_md,
             "source_dir": actual_dir,
         })
@@ -209,7 +209,7 @@ def find_plugin_skills(source_dir: Path, already_synced_names: set):
 
         if skill_name not in already_synced_names:
             results.append({
-                "relative_path": Path("plugins") / skill_name,
+                "relative_path": PurePosixPath(f"plugins/{skill_name}"),
                 "skill_md": skill_file,
                 "source_dir": skill_dir,
             })
@@ -235,7 +235,7 @@ def find_github_skills(source_dir: Path, already_synced_names: set):
 
         if skill_dir.name not in already_synced_names:
             results.append({
-                "relative_path": Path(".github/skills") / skill_dir.name,
+                "relative_path": PurePosixPath(f".github/skills/{skill_dir.name}"),
                 "skill_md": skill_md,
                 "source_dir": skill_dir,
             })

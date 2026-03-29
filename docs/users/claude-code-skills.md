@@ -2,17 +2,17 @@
 
 If you are looking for **Claude Code skills** you can install from GitHub, this repository is designed to get you from first clone to first useful prompt quickly.
 
-Antigravity Awesome Skills gives Claude Code users an installable library of `SKILL.md` playbooks, role-based bundles, and execution workflows. The goal is not just to collect prompts, but to make repeatable engineering tasks easier to invoke, review, and reuse.
+AI-Agents-Safe-Coding-Skills gives Claude Code users an installable library of `SKILL.md` playbooks, role-based bundles, and execution workflows. The goal is not just to collect prompts, but to make repeatable engineering tasks easier to invoke, review, and reuse.
 
 Release `9.0.0` also adds a first-class Claude Code plugin distribution plus bundle plugins. If you want the full explanation of root plugin vs bundle plugin vs full install, read [plugins.md](plugins.md).
 
-## How to use Antigravity Awesome Skills with Claude Code
+## How to use AI-Agents-Safe-Coding-Skills with Claude Code
 
 Install the library into Claude Code, then invoke focused skills directly in the conversation or through the plugin marketplace path. Claude Code benefits most when you keep the prompt specific about the skill, the scope, and the intended output.
 
 ## Why use this repo for Claude Code
 
-- It includes 1,331+ skills instead of a narrow single-domain starter pack.
+- It includes 1,275+ skills instead of a narrow single-domain starter pack.
 - It supports the standard `.claude/skills/` path and the Claude Code plugin marketplace flow.
 - It also ships generated bundle plugins so teams can install focused packs like `Essentials` or `Security Developer` from the marketplace metadata.
 - It includes onboarding docs, bundles, and workflows so new users do not need to guess where to begin.
@@ -23,7 +23,7 @@ Install the library into Claude Code, then invoke focused skills directly in the
 ### Option A: installer CLI
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills --claude
+npx ai-agents-safe-coding-skills --claude
 ```
 
 ### Option B: Claude Code plugin marketplace

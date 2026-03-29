@@ -1,7 +1,7 @@
 {
-  "name": "AI-Agents-Safe-Coding-Skills",
+  "name": "ai-agents-safe-coding-skills",
   "version": "9.1.0",
-  "description": "1,331+ agentic skills for Claude Code, Gemini CLI, Cursor, Antigravity & more. Installer CLI.",
+  "description": "1,275+ agentic skills for Claude Code, Gemini CLI, Cursor, Antigravity & more. Installer CLI.",
   "license": "MIT",
   "scripts": {
     "validate": "node tools/scripts/run-python.js tools/scripts/validate_skills.py",
@@ -57,10 +57,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/sickn33/AI-Agents-Safe-Coding-Skills.git"
+    "url": "git+https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills.git"
   },
   "bin": {
-    "AI-Agents-Safe-Coding-Skills": "tools/bin/install.js"
+    "ai-agents-safe-coding-skills": "tools/bin/install.js"
   },
   "files": [
     "tools/bin",

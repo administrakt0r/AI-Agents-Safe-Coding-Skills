@@ -52,11 +52,11 @@ Choose this if you want:
 
 ## How to choose quickly
 
-- Choose **Antigravity Awesome Skills** if you want the most practical install-and-use path.
+- Choose **AI-Agents-Safe-Coding-Skills** if you want the most practical install-and-use path.
 - Choose **VoltAgent Awesome Agent Skills** if you want the strongest curated shortlist.
 - Choose **anthropics/skills** if official vendor reference matters most.
 - Choose **karanb192/awesome-claude-skills** if you want a smaller community-first Claude library.
 
 ## Recommended next step
 
-If you want to get productive quickly, install [Antigravity Awesome Skills](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills) and start with [`claude-code-skills.md`](claude-code-skills.md) plus [`bundles.md`](bundles.md).
+If you want to get productive quickly, install [AI-Agents-Safe-Coding-Skills](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills) and start with [`claude-code-skills.md`](claude-code-skills.md) plus [`bundles.md`](bundles.md).

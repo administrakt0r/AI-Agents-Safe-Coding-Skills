@@ -1,6 +1,6 @@
 # Frequently Asked Questions (FAQ)
 
-**Got questions?** You're not alone! Here are answers to the most common questions about Antigravity Awesome Skills.
+**Got questions?** You're not alone! Here are answers to the most common questions about AI-Agents-Safe-Coding-Skills.
 
 ---
 
@@ -108,7 +108,7 @@ _Always check the Risk label and review the code._
 
 It depends on how you install:
 
-- **Using the installer CLI (`npx AI-Agents-Safe-Coding-Skills`)**:
+- **Using the installer CLI (`npx ai-agents-safe-coding-skills`)**:
   The default install target is `~/.gemini/antigravity/skills/` for Antigravity's global library.
 - **Using a tool-specific flag**:
   Use `--claude`, `--cursor`, `--gemini`, `--codex`, `--kiro`, or `--antigravity` to target the matching tool path automatically.
@@ -165,10 +165,10 @@ So it is normal for the **full library** to be larger than the **plugin-safe** p
 **Yes.** Use the same standard install flow as other platforms:
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills
+npx ai-agents-safe-coding-skills
 ```
 
-If you have an older clone created around the removed symlink workaround, reinstall into a fresh directory or rerun `npx AI-Agents-Safe-Coding-Skills`.
+If you have an older clone created around the removed symlink workaround, reinstall into a fresh directory or rerun `npx ai-agents-safe-coding-skills`.
 
 ### I hit a truncation or context crash loop on Windows. How do I recover?
 

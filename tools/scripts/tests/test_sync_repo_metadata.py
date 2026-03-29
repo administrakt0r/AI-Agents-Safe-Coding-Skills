@@ -1,4 +1,4 @@
-import importlib.util
+﻿import importlib.util
 import sys
 import tempfile
 import unittest
@@ -38,15 +38,15 @@ class SyncRepoMetadataTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
             (root / "README.md").write_text(
-                """# 🌌 Antigravity Awesome Skills: 1,304+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
+                """# ðŸŒŒ AI-Agents-Safe-Coding-Skills: 1,304+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **Installable GitHub library of 1,273+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
+> **English-first GitHub library of 1,273+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
 
-**Current release: V8.3.0.** Trusted by 25k+ GitHub stargazers, this repository combines official and community skill collections with bundles, workflows, installation paths, and docs that help you go from first install to daily use quickly.
+**Current release: V8.3.0.** Trusted by 25k+ GitHub stargazers, this actively maintained fork combines official and community skill collections with bundles, workflows, installation paths, and review processes that keep the library current and safer to use.
 
 - **Broad coverage with real utility**: 1,273+ skills across development, testing, security, infrastructure, product, and marketing.
 
-**Antigravity Awesome Skills** (Release 8.3.0) is a large, installable skill library for AI coding assistants. It includes onboarding docs, bundles, workflows, generated catalogs, and a CLI installer so you can move from discovery to actual usage without manually stitching together dozens of repos.
+**AI-Agents-Safe-Coding-Skills** (Release 8.3.0) is a large, installable skill library for AI coding assistants. It is a maintained fork of Antigravity Awesome Skills with English-first curation, marketing skills, onboarding docs, bundles, workflows, generated catalogs, and a CLI installer.
 
 If you want a faster answer than "browse all 1,273+ skills", start with a tool-specific guide:
 """,
@@ -57,7 +57,7 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
             (root / "docs" / "integrations" / "jetski-gemini-loader").mkdir(parents=True)
 
             (root / "docs" / "users" / "getting-started.md").write_text(
-                "# Getting Started with Antigravity Awesome Skills (V8.3.0)\n",
+                "# Getting Started with AI-Agents-Safe-Coding-Skills (V8.3.0)\n",
                 encoding="utf-8",
             )
             (root / "docs" / "users" / "claude-code-skills.md").write_text(
@@ -69,7 +69,7 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
                 encoding="utf-8",
             )
             (root / "docs" / "users" / "usage.md").write_text(
-                "✅ **Downloaded 1,254+ skill files**\n- You installed a toolbox with 1,254+ tools\nDon't try to use all 1,254+ skills at once.\nNo. Even though you have 1,254+ skills installed locally\n",
+                "âœ… **Downloaded 1,254+ skill files**\n- You installed a toolbox with 1,254+ tools\nDon't try to use all 1,254+ skills at once.\nNo. Even though you have 1,254+ skills installed locally\n",
                 encoding="utf-8",
             )
             (root / "docs" / "users" / "visual-guide.md").write_text(
@@ -77,7 +77,7 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
                 encoding="utf-8",
             )
             (root / "docs" / "users" / "bundles.md").write_text(
-                '### 🚀 The "Essentials" Pack\n### 🌐 The "Web Wizard" Pack\n_Last updated: March 2026 | Total Skills: 1,254+ | Total Bundles: 99_\n',
+                '### ðŸš€ The "Essentials" Pack\n### ðŸŒ The "Web Wizard" Pack\n_Last updated: March 2026 | Total Skills: 1,254+ | Total Bundles: 99_\n',
                 encoding="utf-8",
             )
             (root / "docs" / "users" / "kiro-integration.md").write_text(
@@ -85,7 +85,7 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
                 encoding="utf-8",
             )
             (root / "docs" / "maintainers" / "repo-growth-seo.md").write_text(
-                "> Installable GitHub library of 1,273+ agentic skills\n- use a clean preview image that says `1,273+ Agentic Skills`;\n",
+                "> English-first GitHub library of 1,273+ agentic skills\n- use a clean preview image that says `1,273+ Agentic Skills`;\n",
                 encoding="utf-8",
             )
             (root / "docs" / "maintainers" / "skills-update-guide.md").write_text(
@@ -109,7 +109,7 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
             self.assertIn("1,304+ files", (root / "docs" / "users" / "gemini-cli-skills.md").read_text(encoding="utf-8"))
             self.assertIn("1,304+ specialized areas", (root / "docs" / "users" / "kiro-integration.md").read_text(encoding="utf-8"))
             self.assertIn("Total Bundles: 2", (root / "docs" / "users" / "bundles.md").read_text(encoding="utf-8"))
-            self.assertIn("1.304+ skill", (root / "docs" / "integrations" / "jetski-cortex.md").read_text(encoding="utf-8"))
+            self.assertIn("1,304+ skill", (root / "docs" / "integrations" / "jetski-cortex.md").read_text(encoding="utf-8"))
 
     def test_build_about_description_uses_live_skill_count(self):
         description = sync_repo_metadata.build_about_description(
@@ -174,3 +174,4 @@ If you want a faster answer than "browse all 1,273+ skills", start with a tool-s
 
 if __name__ == "__main__":
     unittest.main()
+

@@ -1,10 +1,10 @@
-# Antigravity Skill Bundles
+# AI-Agents-Safe-Coding-Skills Bundles
 
 > **Curated collections of skills organized by role and expertise level.** Don't know where to start? Pick a bundle below to get a curated set of skills for your role.
 
 > These packs are curated starter recommendations for humans. Generated bundle ids in `data/bundles.json` are broader catalog/workflow groupings and do not need to map 1:1 to the editorial packs below.
 
-> **Important:** bundles are installable plugin subsets and activation presets, not invokable mega-skills such as `@web-wizard` or `/essentials-bundle`. Use the individual skills listed in the pack, install the bundle as a dedicated marketplace plugin, or use the activation scripts if you want only that bundle's skills active in your live Antigravity directory.
+> **Important:** bundles are installable plugin subsets and activation presets, not invokable mega-skills such as `@web-wizard` or `/essentials-bundle`. Use the individual skills listed in the pack, install the bundle as a dedicated marketplace plugin, or use the activation scripts if you want only that bundle's skills active in your live AI-Agents-Safe-Coding-Skills directory.
 
 > **Plugin compatibility:** root plugins and bundle plugins only publish plugin-safe skills. If a bundle shows `pending hardening`, the skills still exist in the repository, but that bundle is not yet published for that target. `Requires manual setup` means the bundle is installable, but one or more included skills need an explicit setup step before first use.
 
@@ -13,7 +13,7 @@
 1. **Install the repository or bundle plugin:**
 
    ```bash
-   npx AI-Agents-Safe-Coding-Skills
+   npx ai-agents-safe-coding-skills
    # or clone manually
    git clone https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills.git .agent/skills
    ```
@@ -453,7 +453,7 @@ _For monetization, payments, and commerce workflows._
 - [`plaid-fintech`](../../skills/plaid-fintech/): Link bank accounts and handle ACH-related use cases.
 - [`hubspot-integration`](../../skills/hubspot-integration/): Connect CRM data into product and revenue workflows.
 - [`algolia-search`](../../skills/algolia-search/): Add search and discovery to commerce experiences.
-- [`monetization`](../../skills/monetization/): Design pricing and monetization systems deliberately.
+- [`pricing-strategy`](../../skills/pricing-strategy/): Design pricing, packaging, and revenue systems deliberately.
 
 ### 🏢 The "Odoo ERP" Pack
 
@@ -673,4 +673,4 @@ Found a skill that should be in a bundle? Or want to create a new bundle? [Open 
 
 ---
 
-_Last updated: March 2026 | Total Skills: 1,331+ | Total Bundles: 37_
+_Last updated: March 2026 | Total Skills: 1,275+ | Total Bundles: 37_

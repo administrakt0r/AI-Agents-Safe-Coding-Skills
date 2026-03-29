@@ -3,13 +3,18 @@ const { spawnSync } = require("child_process");
 const path = require("path");
 
 const repoRoot = path.resolve(__dirname, "..", "..", "..");
-const npmCommand = process.platform === "win32" ? "npm.cmd" : "npm";
 
 function runNpmPackDryRunJson() {
-  const result = spawnSync(npmCommand, ["pack", "--dry-run", "--json"], {
-    cwd: repoRoot,
-    encoding: "utf8",
-  });
+  const result =
+    process.platform === "win32"
+      ? spawnSync(process.env.ComSpec || "cmd.exe", ["/d", "/s", "/c", "npm pack --dry-run --json"], {
+          cwd: repoRoot,
+          encoding: "utf8",
+        })
+      : spawnSync("npm", ["pack", "--dry-run", "--json"], {
+          cwd: repoRoot,
+          encoding: "utf8",
+        });
 
   if (result.error) {
     throw result.error;

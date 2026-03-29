@@ -1,4 +1,4 @@
-# Getting Started with Antigravity Awesome Skills (V9.1.0)
+# Getting Started with AI-Agents-Safe-Coding-Skills (V9.1.0)
 
 **New here? This guide will help you supercharge your AI Agent in 5 minutes.**
 
@@ -29,10 +29,10 @@ If you prefer a marketplace-style install for **Claude Code** or **Codex**, use 
 **Option A — npx (easiest):**
 
 ```bash
-npx AI-Agents-Safe-Coding-Skills
+npx ai-agents-safe-coding-skills
 ```
 
-This clones to `~/.gemini/antigravity/skills` by default. Use `--cursor`, `--claude`, `--gemini`, `--codex`, or `--kiro` to install for a specific tool, or `--path <dir>` for a custom location. Run `npx AI-Agents-Safe-Coding-Skills --help` for details.
+This clones to `~/.gemini/antigravity/skills` by default. Use `--cursor`, `--claude`, `--gemini`, `--codex`, or `--kiro` to install for a specific tool, or `--path <dir>` for a custom location. Run `npx ai-agents-safe-coding-skills --help` for details.
 
 If you see a 404 error, use: `npx github:administrakt0r/AI-Agents-Safe-Coding-Skills`
 

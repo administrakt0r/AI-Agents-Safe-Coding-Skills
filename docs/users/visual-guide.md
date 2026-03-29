@@ -34,7 +34,7 @@ AI-Agents-Safe-Coding-Skills/
 ├── 📄 CONTRIBUTING.md                  ← Contributor workflow
 ├── 📄 CATALOG.md                       ← Full generated catalog
 │
-├── 📁 skills/                          ← 1,331+ skills live here
+├── 📁 skills/                          ← 1,275+ skills live here
 │   │
 │   ├── 📁 brainstorming/
 │   │   └── 📄 SKILL.md                 ← Skill definition
@@ -47,7 +47,7 @@ AI-Agents-Safe-Coding-Skills/
 │   │   └── 📁 2d-games/
 │   │       └── 📄 SKILL.md             ← Nested skills also supported
 │   │
-│   └── ... (1,331+ total)
+│   └── ... (1,275+ total)
 │
 ├── 📁 apps/
 │   └── 📁 web-app/                     ← Interactive browser
@@ -100,7 +100,7 @@ AI-Agents-Safe-Coding-Skills/
 
 ```
                     ┌─────────────────────────┐
-                    │  1,331+ SKILLS          │
+                    │  1,275+ SKILLS          │
                     └────────────┬────────────┘
                                  │
         ┌────────────────────────┼────────────────────────┐
@@ -183,7 +183,7 @@ AI-Agents-Safe-Coding-Skills/
 ┌─────────────────────────────────────────┐
 │ Terminal                                │
 ├─────────────────────────────────────────┤
-│ $ npx AI-Agents-Safe-Coding-Skills        │
+│ $ npx ai-agents-safe-coding-skills        │
 │                                         │
 │ ✓ Installing to                         │
 │   ~/.gemini/antigravity/skills/         │
@@ -201,7 +201,7 @@ If you want a workspace-style manual install instead, cloning into `.agent/skill
 │   ├── 📁 brainstorming/                 │
 │   ├── 📁 stripe-integration/            │
 │   ├── 📁 react-best-practices/          │
-│   └── ... (1,331+ total)                │
+│   └── ... (1,275+ total)                │
 └─────────────────────────────────────────┘
 ```
 
@@ -434,7 +434,7 @@ START HERE
 ├─────────────────────────────────────────────────────────────┤
 │                                                             │
 │  📥 INSTALL                                                 │
-│  npx AI-Agents-Safe-Coding-Skills                             │
+│  npx ai-agents-safe-coding-skills                             │
 │                                                             │
 │  🎯 USE                                                     │
 │  @skill-name [your request]                                 │

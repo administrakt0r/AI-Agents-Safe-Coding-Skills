@@ -1,13 +1,13 @@
 {
   "name": "antigravity-bundle-agent-architect",
   "version": "9.1.0",
-  "description": "Install the \"Agent Architect\" editorial skill bundle from Antigravity Awesome Skills.",
+  "description": "Install the \"Agent Architect\" editorial skill bundle from AI-Agents-Safe-Coding-Skills.",
   "author": {
-    "name": "sickn33 and contributors",
-    "url": "https://github.com/sickn33/AI-Agents-Safe-Coding-Skills"
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
   },
-  "homepage": "https://github.com/sickn33/AI-Agents-Safe-Coding-Skills",
-  "repository": "https://github.com/sickn33/AI-Agents-Safe-Coding-Skills",
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
   "license": "MIT",
   "keywords": [
     "codex",
@@ -21,13 +21,13 @@
     "displayName": "Agent Architect",
     "shortDescription": "AI & Agents · 6 curated skills",
     "longDescription": "For building AI systems and autonomous agents. Covers Agent Evaluation, LangGraph, and 4 more skills.",
-    "developerName": "sickn33 and contributors",
+    "developerName": "administrakt0r and contributors",
     "category": "AI & Agents",
     "capabilities": [
       "Interactive",
       "Write"
     ],
-    "websiteURL": "https://github.com/sickn33/AI-Agents-Safe-Coding-Skills",
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
     "brandColor": "#111827"
   }
 }

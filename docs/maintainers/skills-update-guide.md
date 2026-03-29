@@ -1,6 +1,6 @@
 # Skills Update Guide
 
-This guide explains how to update the skills in the Antigravity Awesome Skills web application.
+This guide explains how to update the skills in the AI-Agents-Safe-Coding-Skills web application.
 
 ## Automatic Updates (Recommended)
 
@@ -69,7 +69,7 @@ For manual updates, you need:
 The update process refreshes:
 - Skills index (`skills_index.json`)
 - Web app skills data (`apps\web-app\public\skills.json`)
-- All 1,331+ skills from the skills directory
+- All 1,275+ skills from the skills directory
 
 ## When to Update
 

@@ -15,7 +15,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -51,7 +51,7 @@ This release adds two new skills for phase-gated debugging and multi-tenant SaaS
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Plugin explainer: [docs/users/plugins.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/plugins.md)
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -89,7 +89,7 @@ This release makes the new plugin distribution model a user-facing feature. Clau
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -129,7 +129,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -183,7 +183,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -221,7 +221,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -247,7 +247,7 @@ This patch release keeps the `8.7.0` skill/library content intact and fixes the 
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -289,7 +289,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -328,7 +328,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -370,7 +370,7 @@ Upgrade now: `git pull origin main` to fetch the latest skills.
 
 Start here:
 
-- Install: `npx AI-Agents-Safe-Coding-Skills`
+- Install: `npx ai-agents-safe-coding-skills`
 - Choose your tool: [README -> Choose Your Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#choose-your-tool)
 - Best skills by tool: [README -> Best Skills By Tool](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills#best-skills-by-tool)
 - Bundles: [docs/users/bundles.md](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/blob/main/docs/users/bundles.md)
@@ -533,9 +533,9 @@ This release closes the open PR maintenance batch in one pass. It adds new skill
 
 ## [7.9.2] - 2026-03-15 - "npm CLI Packaging Fix"
 
-> **Patch release to fix the published npm CLI bundle so `npx AI-Agents-Safe-Coding-Skills` resolves its runtime helper modules correctly**
+> **Patch release to fix the published npm CLI bundle so `npx ai-agents-safe-coding-skills` resolves its runtime helper modules correctly**
 
-This release fixes a packaging regression in the published npm artifact. Version `7.9.1` shipped `tools/bin/install.js` without the required `tools/lib` runtime helpers, causing `npx AI-Agents-Safe-Coding-Skills` to fail with `MODULE_NOT_FOUND` for `../lib/symlink-safety`.
+This release fixes a packaging regression in the published npm artifact. Version `7.9.1` shipped `tools/bin/install.js` without the required `tools/lib` runtime helpers, causing `npx ai-agents-safe-coding-skills` to fail with `MODULE_NOT_FOUND` for `../lib/symlink-safety`.
 
 ## New Skills
 
@@ -1386,7 +1386,7 @@ Ingest files/URLs/live streams, build visual/spoken indexes, search with timesta
 
 ### 📦 Improvements
 
-- **Multi-Tool Install Support**: The installer now supports installing skills for multiple tools simultaneously (e.g., `npx AI-Agents-Safe-Coding-Skills --claude --codex`). Fixes #182.
+- **Multi-Tool Install Support**: The installer now supports installing skills for multiple tools simultaneously (e.g., `npx ai-agents-safe-coding-skills --claude --codex`). Fixes #182.
 - **Web-App Sync Optimization**: Hybrid sync strategy using git fetch for faster updates (5+ min → < 2 sec when no changes). Includes sort by "Most Stars" feature.
 - **Registry Update**: Now tracking 970 skills (+2 new).
 
