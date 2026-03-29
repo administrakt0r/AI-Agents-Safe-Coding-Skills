@@ -3,7 +3,7 @@
 
 > **English-first GitHub library of 1,275+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
 
-AI-Agents-Safe-Coding-Skills is a maintained fork of `antigravity-awesome-skills` for reusable `SKILL.md` playbooks. Instead of collecting random prompts, you get a searchable, installable skill library for planning, coding, debugging, testing, security review, infrastructure work, product workflows, and growth tasks across the major AI coding assistants.
+AI-Agents-Safe-Coding-Skills is an independently maintained public repository of reusable `SKILL.md` playbooks for major AI coding assistants. It builds on upstream work including `antigravity-awesome-skills`, but it is curated, reviewed, and published here as its own searchable, installable library for planning, coding, debugging, testing, security review, infrastructure work, product workflows, and growth tasks.
 
 **Start here:** [Star the repo](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills/stargazers) · [Install in 1 minute](#installation) · [Plugins for Claude Code and Codex](docs/users/plugins.md) · [Choose your tool](#choose-your-tool) · [Best skills by tool](#best-skills-by-tool) · [Bundles](docs/users/bundles.md) · [Workflows](docs/users/workflows.md)
 
@@ -20,13 +20,15 @@ AI-Agents-Safe-Coding-Skills is a maintained fork of `antigravity-awesome-skills
 [![OpenCode](https://img.shields.io/badge/OpenCode-CLI-gray?style=for-the-badge)](https://github.com/opencode-ai/opencode)
 [![Antigravity](https://img.shields.io/badge/Antigravity-AI%20IDE-red?style=for-the-badge)](https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills)
 
-**Current release: V9.1.0.** Trusted by 28k+ GitHub stargazers, this actively maintained fork combines official and community skill collections with bundles, workflows, installation paths, and review processes that keep the library current and safer to use.
+**Current release: V9.1.0.** Trusted by 28k+ GitHub stargazers, this actively maintained public repository combines official and community skill collections with bundles, workflows, installation paths, and review processes that keep the library current, safer to use, and aligned with modern agent workflows.
 
 This repository is curated for English-first usage. Skills and workflow assets that are fully non-English, or materially mixed-language in their core instructions, are removed instead of being silently carried forward.
 
 The collection also includes curated marketing and growth skills imported from [coreyhaines31/marketingskills](https://github.com/coreyhaines31/marketingskills), alongside official and community engineering sources.
 
-Autonomous AI agents continuously audit the library for stale content, suspicious prompt/tool behavior, and missing modern coverage. Human maintainers review the resulting PRs, issues, and logs before changes are treated as accepted repository state.
+Autonomous AI agents continuously audit the library for stale content, prompt-injection-style risks, suspicious prompt/tool behavior, and missing modern coverage. Human maintainers review the resulting PRs, issues, and logs before changes are treated as accepted repository state, and obsolete skills are modernized, edited, or removed when they no longer meet the repository's quality bar.
+
+New knowledge is incorporated on an ongoing basis so the collection keeps pace with current tools, workflows, and primary-source guidance instead of carrying outdated instructions forward unchanged.
 
 ## Why Developers Star This Repo
 
@@ -70,7 +72,7 @@ If you searched for **Claude Code skills**, **Cursor skills**, **Codex CLI skill
 
 ### 1. 🐣 Context: What is this?
 
-**AI-Agents-Safe-Coding-Skills** (Release 9.1.0) is a large, installable skill library for AI coding assistants. It is a maintained fork of Antigravity Awesome Skills with English-first curation, marketing skills, onboarding docs, bundles, workflows, generated catalogs, and a CLI installer.
+**AI-Agents-Safe-Coding-Skills** (Release 9.1.0) is a large, installable skill library for AI coding assistants. It is an independently maintained public repository with English-first curation, marketing skills, onboarding docs, bundles, workflows, generated catalogs, and a CLI installer. The collection builds on upstream work such as Antigravity Awesome Skills while continuing here as its own curated distribution.
 
 AI agents are smart, but they still need **task-specific operating instructions**. Skills are focused markdown playbooks that teach an agent how to perform a workflow repeatedly and with better context, whether that means deployment, API design, testing, product strategy, SEO, or documentation.
 
@@ -276,13 +278,15 @@ If you want a faster answer than "browse all 1,275+ skills", start with a tool-s
 
 ## Security Posture
 
-These skills are continuously reviewed and hardened, but the collection is not "safe by default". They are instructions and examples that can include risky operations by design.
+This repository is actively maintained and continuously reviewed, but the collection is not "safe by default". These skills are instructions and examples that can include risky operations by design.
 
 - Runtime hardening now protects the `/api/refresh-skills` mutation flow (method/host checks and optional token gate) before any repo mutation.
 - Markdown rendering in the web app avoids raw HTML passthrough (`rehype-raw`) and follows safer defaults for skill content display.
 - A repo-wide `SKILL.md` security scan checks for high-risk command patterns (for example `curl|bash`, `wget|sh`, `irm|iex`, command-line token examples) with explicit allowlisting for deliberate exceptions.
+- Autonomous and maintainer review flows look for prompt-injection-style instructions, suspicious prompt/tool chaining, unsafe command patterns, and stale guidance before content is accepted or kept in the curated set.
 - Pull requests that touch `SKILL.md` files now also run an automated `skill-review` GitHub Actions check, so contributors and maintainers get a second pass focused on skill structure and review quality.
 - Maintainer-facing tooling has additional path/symlink checks and parser robustness guards for safer sync, index, and install operations.
+- New knowledge is incorporated on an ongoing basis, and skills that become obsolete, misleading, or unsafe are revised, modernized, or removed instead of being left untouched.
 - Security test coverage for endpoint authorization, rendering safety, and doc-risk patterns is part of the normal CI/release validation flow.
 
 ---

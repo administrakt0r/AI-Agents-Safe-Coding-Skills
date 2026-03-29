@@ -4,6 +4,35 @@ __pycache__/
 .worktrees/
 .tmp/
 .DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors and local tooling
+.idea/
+.vs/
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+
+# Python caches and test output
+.pytest_cache/
+.mypy_cache/
+.nox/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+
+# JS package/build noise
+dist/
+build/
+coverage/
+*.tsbuildinfo
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
 
 # npm pack artifacts
 AI-Agents-Safe-Coding-Skills-*.tgz
@@ -16,13 +45,14 @@ AI-Agents-Safe-Coding-Skills-*.tgz
 data/node_modules
 
 # Temporary analysis and report files
-*_REPORT.md
 *_ANALYSIS*.md
 *_COUNT.md
 *_SUMMARY.md
 *_analysis.json
 *_validation.json
 *_results.json
+*_VERIFICATION_REPORT.md
+TEST_REPORT.md
 voltagent_*.json
 similar_skills_*.json
 remaining_*.json
@@ -40,6 +70,42 @@ validation-baseline.json
 # Web app generated assets (from npm run app:setup)
 apps/web-app/public/skills/
 apps/web-app/public/skills.json
+apps/web-app/node_modules/
+apps/web-app/dist/
+apps/web-app/.vite/
+apps/web-app/.cache/
+apps/web-app/.vercel/
+apps/web-app/.next/
 
 # Local duplicate/download artifacts
 skills/spline-3d-integration/*.zip
+
+# Environment and machine-local secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+!.env.example
+!.env.sample
+
+# Temp files and diagnostics
+*.log
+*.tmp
+*.temp
+tmp/
+temp/
+
+# Generated plugin skill mirrors and bundle materializations
+plugins/AI-Agents-Safe-Coding-Skills/skills/
+plugins/AI-Agents-Safe-Coding-Skills-claude/skills/
+plugins/antigravity-bundle-*/skills/
+
+# Generated catalogs and compatibility snapshots
+data/catalog.json
+data/bundles.json
+data/plugin-compatibility.json
+skills_index.json
+
+# Never hide real repo templates/docs
+!.github/ISSUE_TEMPLATE/*.md
