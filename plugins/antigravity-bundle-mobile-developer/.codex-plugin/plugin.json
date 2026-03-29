@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-bundle-mobile-developer",
+  "version": "9.1.0",
+  "description": "Install the \"Mobile Developer\" editorial skill bundle from Antigravity Awesome Skills.",
+  "author": {
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
+  },
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "bundle",
+    "mobile-developer",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Mobile Developer",
+    "shortDescription": "Specialized Packs · 5 curated skills",
+    "longDescription": "For iOS, Android, and cross-platform apps. Covers Mobile Developer, React Native Architecture, and 3 more skills.",
+    "developerName": "administrakt0r and contributors",
+    "category": "Specialized Packs",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+    "brandColor": "#111827"
+  }
+}

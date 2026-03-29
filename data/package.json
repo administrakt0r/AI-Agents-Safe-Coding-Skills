@@ -1,0 +1,7 @@
+{
+  "name": "AI-Agents-Safe-Coding-Skills",
+  "version": "4.6.0",
+  "dependencies": {
+    "yaml": "^2.8.3"
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-bundle-data-engineering",
+  "version": "9.1.0",
+  "description": "Install the \"Data Engineering\" editorial skill bundle from Antigravity Awesome Skills.",
+  "author": {
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
+  },
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "bundle",
+    "data-engineering",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Data Engineering",
+    "shortDescription": "Data & Analytics · 5 curated skills",
+    "longDescription": "For building data pipelines. Covers Data Engineer, Airflow DAG Patterns, and 3 more skills.",
+    "developerName": "administrakt0r and contributors",
+    "category": "Data & Analytics",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+    "brandColor": "#111827"
+  }
+}

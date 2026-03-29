@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-bundle-security-developer",
+  "version": "9.1.0",
+  "description": "Install the \"Security Developer\" editorial skill bundle from Antigravity Awesome Skills.",
+  "author": {
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
+  },
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "bundle",
+    "security-developer",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Security Developer",
+    "shortDescription": "Security & Compliance · 6 curated skills",
+    "longDescription": "For building secure applications. Covers API Security Best Practices, Auth Implementation Patterns, and 4 more skills.",
+    "developerName": "administrakt0r and contributors",
+    "category": "Security & Compliance",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+    "brandColor": "#111827"
+  }
+}

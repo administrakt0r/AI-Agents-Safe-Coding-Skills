@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-bundle-qa-testing",
+  "version": "9.1.0",
+  "description": "Install the \"QA & Testing\" editorial skill bundle from Antigravity Awesome Skills.",
+  "author": {
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
+  },
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "bundle",
+    "qa-testing",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "QA & Testing",
+    "shortDescription": "Quality Assurance · 7 curated skills",
+    "longDescription": "For breaking things before users do. Covers Test Driven Development, Systematic Debugging, and 5 more skills.",
+    "developerName": "administrakt0r and contributors",
+    "category": "Quality Assurance",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+    "brandColor": "#111827"
+  }
+}

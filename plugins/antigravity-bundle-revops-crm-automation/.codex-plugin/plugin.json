@@ -1,0 +1,33 @@
+{
+  "name": "antigravity-bundle-revops-crm-automation",
+  "version": "9.1.0",
+  "description": "Install the \"RevOps & CRM Automation\" editorial skill bundle from Antigravity Awesome Skills.",
+  "author": {
+    "name": "administrakt0r and contributors",
+    "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
+  },
+  "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+  "license": "MIT",
+  "keywords": [
+    "codex",
+    "skills",
+    "bundle",
+    "revops-crm-automation",
+    "productivity"
+  ],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "RevOps & CRM Automation",
+    "shortDescription": "Specialized Packs · 7 curated skills",
+    "longDescription": "For revenue operations, support handoffs, and CRM-heavy automation. Covers Hubspot Automation, Sendgrid Automation, and 5 more skills.",
+    "developerName": "administrakt0r and contributors",
+    "category": "Specialized Packs",
+    "capabilities": [
+      "Interactive",
+      "Write"
+    ],
+    "websiteURL": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
+    "brandColor": "#111827"
+  }
+}
