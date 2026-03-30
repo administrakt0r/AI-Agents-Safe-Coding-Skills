@@ -84,7 +84,7 @@ Before ANY commit that adds/modifies skills, run the chain:
     ```bash
     npm run sync:repo-state
     ```
-    This wraps `chain + catalog + sync:web-assets + sync:contributors + audit:consistency` for a full local repo-state refresh.
+    This wraps `chain + catalog + sync:contributors + audit:consistency` for a full local repo-state refresh.
     The scheduled GitHub Actions workflow `Repo Hygiene` runs this same sweep weekly to catch slow drift on `main`.
     It also enforces the frozen validation warning budget, so new warnings do not creep in silently while the legacy `135` known warnings remain accepted.
 

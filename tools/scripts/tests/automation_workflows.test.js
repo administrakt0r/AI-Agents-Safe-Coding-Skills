@@ -27,15 +27,6 @@ assert.ok(
   packageJson.scripts["audit:maintainer"],
   "package.json should expose a maintainer audit command",
 );
-assert.ok(
-  packageJson.scripts["sync:web-assets"],
-  "package.json should expose a web-asset sync command for tracked web artifacts",
-);
-assert.match(
-  packageJson.scripts["sync:release-state"],
-  /sync:web-assets/,
-  "sync:release-state should refresh tracked web assets before auditing release drift",
-);
 assert.match(
   packageJson.scripts["sync:release-state"],
   /check:warning-budget/,
@@ -43,18 +34,21 @@ assert.match(
 );
 assert.match(
   packageJson.scripts["sync:repo-state"],
-  /sync:web-assets/,
-  "sync:repo-state should refresh tracked web assets before maintainer audits",
-);
-assert.match(
-  packageJson.scripts["sync:repo-state"],
   /check:warning-budget/,
   "sync:repo-state should enforce the frozen validation warning budget",
 );
+assert.ok(
+  !packageJson.scripts["sync:web-assets"],
+  "package.json should not expose the retired web-asset sync command",
+);
+assert.ok(
+  !packageJson.scripts["app:install"],
+  "package.json should not expose the retired web-app install command",
+);
 assert.strictEqual(
-  packageJson.scripts["app:install"],
-  "cd apps/web-app && npm ci",
-  "app:install should use npm ci for deterministic web-app installs",
+  packageJson.scripts["update:skills"],
+  "node tools/scripts/run-python.js tools/scripts/generate_index.py",
+  "update:skills should only regenerate the root skill index now that the web app is removed",
 );
 
 for (const filePath of [
@@ -62,8 +56,8 @@ for (const filePath of [
   "apps/web-app/public/skills.json.backup",
 ]) {
   assert.ok(
-    generatedFiles.derivedFiles.includes(filePath),
-    `generated-files derivedFiles should include ${filePath}`,
+    !generatedFiles.derivedFiles.includes(filePath),
+    `generated-files derivedFiles should not include retired web artifact ${filePath}`,
   );
 }
 
@@ -137,11 +131,6 @@ assert.match(
 assert.match(publishWorkflow, /run: npm ci/, "npm publish workflow should install dependencies");
 assert.match(
   publishWorkflow,
-  /run: npm run app:install/,
-  "npm publish workflow should install web-app dependencies before building",
-);
-assert.match(
-  publishWorkflow,
   /run: npm run sync:release-state/,
   "npm publish workflow should verify canonical release artifacts",
 );
@@ -151,11 +140,15 @@ assert.match(
   "npm publish workflow should fail if canonical sync would leave release drift",
 );
 assert.match(publishWorkflow, /run: npm run test/, "npm publish workflow should run tests before publish");
-assert.match(publishWorkflow, /run: npm run app:build/, "npm publish workflow should build the app before publish");
-assert.match(
+assert.doesNotMatch(
+  publishWorkflow,
+  /run: npm run app:(?:install|build)/,
+  "npm publish workflow should not reference retired web-app steps",
+);
+assert.doesNotMatch(
   releaseWorkflowScript,
-  /runCommand\("npm", \["run", "app:install"\], projectRoot\);[\s\S]*runCommand\("npm", \["run", "app:build"\], projectRoot\);/,
-  "release workflow should install web-app dependencies before building the app",
+  /runCommand\("npm", \["run", "app:(?:install|build)"\], projectRoot\);/,
+  "release workflow should not reference retired web-app steps",
 );
 assert.match(
   publishWorkflow,

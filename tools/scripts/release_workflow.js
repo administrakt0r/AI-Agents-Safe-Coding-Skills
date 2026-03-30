@@ -115,8 +115,6 @@ function runReleaseSuite(projectRoot) {
   runCommand("npm", ["run", "validate:references"], projectRoot);
   runCommand("npm", ["run", "sync:release-state"], projectRoot);
   runCommand("npm", ["run", "test"], projectRoot);
-  runCommand("npm", ["run", "app:install"], projectRoot);
-  runCommand("npm", ["run", "app:build"], projectRoot);
   runCommand("npm", ["pack", "--dry-run", "--json"], projectRoot);
 }
 

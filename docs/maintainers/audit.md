@@ -56,7 +56,7 @@ This document summarizes the repository coherence audit performed after the `app
 
 ### 5. Script e build
 
-- `npm run test` and `npm run app:build` complete successfully on the refactored layout.
+- `npm run test` completes successfully on the refactored layout.
 - `validate_skills_headings.test.js` acts as a lightweight regression/smoke test, not as the source of truth for full metadata compliance.
 - The maintainer docs now need to stay aligned with the root `package.json` and the refactored `tools/scripts/*` paths.
 

@@ -88,7 +88,6 @@ jobs:
       - name: Verify directory structure
         run: |
           test -d skills/
-          test -d apps/web-app/
           test -d tools/scripts/
           test -d tools/lib/
           test -f README.md
@@ -202,7 +201,6 @@ jobs:
       - name: Verify directory structure
         run: |
           test -d skills/
-          test -d apps/web-app/
           test -d tools/scripts/
           test -d tools/lib/
           test -f README.md

@@ -22,7 +22,6 @@ const LOCAL_TEST_COMMANDS = [
     [path.join(TOOL_TESTS, "installer_update_sync.test.js")],
     [path.join(TOOL_TESTS, "jetski_gemini_loader.test.cjs")],
     [path.join(TOOL_TESTS, "npm_package_contents.test.js")],
-    [path.join(TOOL_TESTS, "setup_web_sync.test.js")],
     [path.join(TOOL_TESTS, "skill_filter.test.js")],
     [path.join(TOOL_TESTS, "validate_skills_headings.test.js")],
   [path.join(TOOL_TESTS, "workflow_contracts.test.js")],

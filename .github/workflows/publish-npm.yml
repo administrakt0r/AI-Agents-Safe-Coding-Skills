@@ -48,12 +48,6 @@ jobs:
       - name: Run docs security checks
         run: npm run security:docs
 
-      - name: Install web-app dependencies
-        run: npm run app:install
-
-      - name: Build web app
-        run: npm run app:build
-
       - name: Verify canonical release state
         run: git diff --exit-code
 

@@ -5,9 +5,7 @@
     "data/skills_index.json",
     "data/catalog.json",
     "data/bundles.json",
-    "data/aliases.json",
-    "apps/web-app/public/sitemap.xml",
-    "apps/web-app/public/skills.json.backup"
+    "data/aliases.json"
   ],
   "mixedFiles": [
     "README.md",

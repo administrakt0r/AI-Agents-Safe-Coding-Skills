@@ -120,10 +120,6 @@ function collectSkillFiles(basePaths) {
 }
 
 const rootsToScan = [path.join(repoRoot, 'skills')];
-if ((process.env.DOCS_SECURITY_INCLUDE_PUBLIC || '').trim() === '1') {
-  rootsToScan.push(path.join(repoRoot, 'apps/web-app/public/skills'));
-}
-
 const skillFiles = collectSkillFiles(rootsToScan);
 
 assert.ok(skillFiles.length > 0, 'Expected SKILL.md files in configured scan roots');

@@ -205,11 +205,11 @@ This will:
 - Parse frontmatter categories
 - Fallback to folder structure
 - Generate new skills_index.json
-- Copy to apps/web-app/public/skills.json
+- Refresh the generated index for any downstream consumer
 
 ## Next Steps
 
-1. **Test in web app**: Try the improved category filter
+1. **Test in your consumer**: Confirm categories render as expected from the regenerated index
 2. **Add missing keywords**: If certain skills are still uncategorized
 3. **Organize remaining uncategorized skills**: Either auto-assign or manually review
 4. **Monitor growth**: Use reports to track new vs categorized skills

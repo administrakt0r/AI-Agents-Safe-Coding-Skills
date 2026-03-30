@@ -40,6 +40,7 @@ New knowledge is incorporated on an ongoing basis so the collection keeps pace w
 
 ## Table of Contents
 
+- [Quick Workflows For Any AI Coding Agent](#quick-workflows-for-any-ai-coding-agent)
 - [🚀 New Here? Start Here!](#new-here-start-here)
 - [📖 Complete Usage Guide](docs/users/usage.md) - **Start here if confused after installation!**
 - [🧠 Core Concepts](#core-concepts)
@@ -113,6 +114,141 @@ Once installed, just ask your agent naturally:
 👉 **[Full Getting Started Guide](docs/users/getting-started.md)**
 
 ---
+
+## Quick Workflows For Any AI Coding Agent
+
+If you want the easiest possible start, send your agent this repository link plus one of the prompts below. Ask it to load only the listed skills for the job. If the tool cannot install or import skills directly, tell it to read the matching `skills/<skill-name>/SKILL.md` files from this repository and follow them as instructions.
+
+Use whatever invocation syntax your tool prefers: `@skill-name`, `/skill-name`, or plain `Use skill-name`. For longer step-by-step playbooks, see [docs/users/workflows.md](docs/users/workflows.md).
+
+### Universal Bootstrap Prompt
+
+```text
+Use this repository as your skills library:
+https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills
+
+For this task, load only the skills I list below. If you cannot install or import skills directly, open the matching `skills/<skill-name>/SKILL.md` files from the repository and follow them as operating instructions.
+
+Work in phases: plan, implement, test, verify, and summarize. Do not load unrelated skills unless they are clearly needed.
+```
+
+### 1. Start A New Web Or Full-Stack Project
+
+**Skills to import:** `@brainstorming`, `@concise-planning`, `@writing-plans`, `@app-builder`, `@backend-dev-guidelines`, `@frontend-developer`, `@database-design`, `@test-driven-development`
+
+```text
+Use these skills for this task:
+@brainstorming
+@concise-planning
+@writing-plans
+@app-builder
+@backend-dev-guidelines
+@frontend-developer
+@database-design
+@test-driven-development
+
+I want to start a new project from scratch: [describe the app].
+
+First choose the simplest stack and architecture that fits the goal.
+Then create a short implementation plan, scaffold the project, implement the first end-to-end slice, and add tests.
+Keep the scope MVP-small, prefer reliable defaults, and ask only the highest-value clarification questions.
+```
+
+### 2. Design A New Landing Page Or Product UI
+
+**Skills to import:** `@frontend-design`, `@frontend-developer`, `@react-patterns`, `@web-design-guidelines`, `@browser-automation`
+
+```text
+Use these skills for this task:
+@frontend-design
+@frontend-developer
+@react-patterns
+@web-design-guidelines
+@browser-automation
+
+I want a new design for [product, app, landing page, or dashboard].
+
+Define the visual direction first: layout, hierarchy, typography, color, states, and mobile behavior.
+Then implement the design in code.
+Avoid generic SaaS styling, make the interface feel intentional, and verify the result in the browser before finishing.
+```
+
+### 3. Redesign An Existing Product Without Breaking It
+
+**Skills to import:** `@architect-review`, `@frontend-design`, `@frontend-developer`, `@react-patterns`, `@web-design-guidelines`, `@verification-before-completion`
+
+```text
+Use these skills for this task:
+@architect-review
+@frontend-design
+@frontend-developer
+@react-patterns
+@web-design-guidelines
+@verification-before-completion
+
+Redesign this existing product without breaking its current functionality.
+
+Start by auditing the current UI, UX, information hierarchy, inconsistencies, and technical constraints.
+Then propose a redesign direction, implement it incrementally, preserve the working flows, and verify the final result.
+Prioritize clearer hierarchy, stronger visual consistency, responsiveness, and accessible states.
+```
+
+### 4. Add A New Feature To An Existing App
+
+**Skills to import:** `@brainstorming`, `@concise-planning`, `@backend-dev-guidelines`, `@frontend-developer`, `@api-patterns`, `@database-design`, `@test-driven-development`, `@verification-before-completion`
+
+```text
+Use these skills for this task:
+@brainstorming
+@concise-planning
+@backend-dev-guidelines
+@frontend-developer
+@api-patterns
+@database-design
+@test-driven-development
+@verification-before-completion
+
+Add this feature to the current codebase: [describe the feature].
+
+First inspect the codebase and propose the smallest complete implementation plan.
+Then implement the backend, frontend, API or schema changes, and tests end to end.
+Reuse existing patterns unless they are clearly broken.
+```
+
+### 5. Debug A Broken Project Fast
+
+**Skills to import:** `@systematic-debugging`, `@test-fixing`, `@browser-automation`, `@verification-before-completion`
+
+```text
+Use these skills for this task:
+@systematic-debugging
+@test-fixing
+@browser-automation
+@verification-before-completion
+
+This project is broken: [paste symptoms, errors, and reproduction steps].
+
+Reproduce the problem, isolate the failing layer, explain the root cause, implement the smallest robust fix, and verify the fix with tests or browser automation.
+Do not refactor unrelated code while debugging.
+```
+
+### 6. Review And Harden Before Shipping
+
+**Skills to import:** `@architect-review`, `@security-auditor`, `@deployment-procedures`, `@observability-engineer`, `@verification-before-completion`
+
+```text
+Use these skills for this task:
+@architect-review
+@security-auditor
+@deployment-procedures
+@observability-engineer
+@verification-before-completion
+
+I want a pre-launch hardening pass for this repository.
+
+Review architecture, obvious security risks, deployment gaps, observability gaps, and anything that could cause a bad launch.
+Then fix the highest-value issues, verify the final state, and finish with a concise release checklist.
+```
 
 ## Core Concepts
 
@@ -296,7 +432,6 @@ This repository is actively maintained and continuously reviewed, but the collec
 - **Skills library**: `skills/` contains the reusable `SKILL.md` collection.
 - **Installer**: the npm CLI installs skills into the right directory for each tool.
 - **Catalog**: [`CATALOG.md`](CATALOG.md), `skills_index.json`, and `data/` provide generated indexes.
-- **Web app**: [`apps/web-app`](apps/web-app) gives you search, filters, rendering, and copy helpers.
 - **Bundles**: [`docs/users/bundles.md`](docs/users/bundles.md) groups starter skills by role.
 - **Workflows**: [`docs/users/workflows.md`](docs/users/workflows.md) gives step-by-step execution playbooks.
 
@@ -309,7 +444,6 @@ This repository is actively maintained and continuously reviewed, but the collec
 | `docs/contributors/` | Templates, anatomy, examples, quality bar, community docs |
 | `docs/maintainers/`  | Release, audit, CI drift, metadata maintenance docs       |
 | `docs/sources/`      | Attribution and licensing references                      |
-| `apps/web-app/`      | Interactive browser for the skill catalog                 |
 | `tools/`             | Installer, validators, generators, and support scripts    |
 | `data/`              | Generated catalog, aliases, bundles, and workflows        |
 
@@ -437,7 +571,6 @@ Counts change as new skills are added. For the current full registry, see [CATAL
 
 ## Browse 1,275+ Skills
 
-- Open the interactive browser in [`apps/web-app`](apps/web-app).
 - Read the full catalog in [`CATALOG.md`](CATALOG.md).
 - Start with tool-specific guides in [`docs/users/claude-code-skills.md`](docs/users/claude-code-skills.md), [`docs/users/cursor-skills.md`](docs/users/cursor-skills.md), [`docs/users/codex-cli-skills.md`](docs/users/codex-cli-skills.md), and [`docs/users/gemini-cli-skills.md`](docs/users/gemini-cli-skills.md).
 - Start with role-based bundles in [`docs/users/bundles.md`](docs/users/bundles.md).
@@ -517,21 +650,6 @@ Windows examples:
 :: Clear and reset (removes all skills except the Essentials bundle)
 .\scripts\activate-skills.bat --clear
 ```
-
-## Web App
-
-The web app is the fastest way to navigate a large repository like this.
-
-**Run locally:**
-
-```bash
-npm run app:install
-npm run app:dev
-```
-
-That will copy the generated skill index into `apps/web-app/public/skills.json`, mirror the current `skills/` tree into `apps/web-app/public/skills/`, and start the Vite development server.
-
-**Hosted online:** The same app is available at [https://administrakt0r.github.io/AI-Agents-Safe-Coding-Skills/](https://administrakt0r.github.io/AI-Agents-Safe-Coding-Skills/) and is deployed automatically on every push to `main`. To enable it once: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
 
 ## Contributing
 

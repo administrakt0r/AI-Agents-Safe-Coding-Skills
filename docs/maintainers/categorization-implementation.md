@@ -47,21 +47,22 @@ Modified [`tools/scripts/generate_index.py`](../../tools/scripts/generate_index.
 - **Frontmatter categories now take priority**
 - Falls back to folder structure if needed
 - Generates clean, organized skills_index.json
-- Exported to apps/web-app/public/skills.json
+- Exported to skills_index.json
 
-### 4. **Improved Web App Filter**
+### 4. **Historical UI Consumer**
 
-**Home Page Changes:**
+This categorization work originally fed a now-removed web UI. The active repo artifact today is still the generated index.
+
+**Consumer Behavior:**
 - ✅ Categories sorted by skill count (most first)
 - ✅ "Uncategorized" moved to bottom
 - ✅ Each shows count: "Backend (164)", "Web Dev (107)"
 - ✅ Much easier to navigate
 
-**Updated Code:**
-- [`apps/web-app/src/pages/Home.tsx`](../../apps/web-app/src/pages/Home.tsx) - Smart category sorting
-- Sorts categories by count using categoryStats
-- Uncategorized always last
-- Displays count in dropdown
+**Implementation Notes:**
+- The retired UI sorted categories by count using `categoryStats`
+- "Uncategorized" stayed last
+- Skill counts were surfaced alongside each category label
 
 ### 5. **Categorization Keywords** (13 Categories)
 
@@ -103,7 +104,7 @@ Created [`smart-auto-categorization.md`](smart-auto-categorization.md) with:
 
 ### Example Workflow
 User wants to find database skills:
-1. Opens web app
+1. Opens a skills consumer UI
 2. Sees filter dropdown: "Backend (164) | Database (44) | Web Dev (107)..."
 3. Clicks "Database (44)"
 4. Gets 44 relevant SQL/MongoDB/Postgres skills
@@ -122,8 +123,8 @@ python tools/scripts/auto_categorize_skills.py
 # Regenerate index
 python tools/scripts/generate_index.py
 
-# Deploy to web app
-cp skills_index.json apps/web-app/public/skills.json
+# Refresh any downstream consumer that reads the generated index
+python tools/scripts/generate_index.py
 ```
 
 ### For New Skills
@@ -145,8 +146,7 @@ date_added: "2026-03-06"
 
 ### Modified Files
 - `tools/scripts/generate_index.py` - Category priority logic
-- `apps/web-app/src/pages/Home.tsx` - Smart category sorting
-- `apps/web-app/public/skills.json` - Regenerated with categories
+- `skills_index.json` - Regenerated with categories
 
 ## 📊 Quality Metrics
 

@@ -23,11 +23,10 @@ The active validators understand `date_added`:
 - `tools/scripts/validate_skills.py` checks the `YYYY-MM-DD` format.
 - Supporting JS validation/test helpers are aware of the field where relevant.
 
-### Index and web app support
+### Index support
 
 - `tools/scripts/generate_index.py` exports `date_added` into `skills_index.json`.
-- `npm run app:setup` copies the generated index to `apps/web-app/public/skills.json`.
-- The web app can render the field anywhere the UI surfaces it.
+- Repo-native consumers should read the field from `skills_index.json`.
 
 ### Maintenance scripts
 
