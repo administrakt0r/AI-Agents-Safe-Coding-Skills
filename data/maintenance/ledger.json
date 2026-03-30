@@ -65,13 +65,13 @@
       "linkedIssueOrPr": "local-bootstrap-2026-03-29",
       "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
     },
-    "skills/code-review-ai-ai-review": {
+    "skills/wordpress-penetration-testing": {
       "status": "normalized",
-      "lastReviewedAt": "2026-03-30",
-      "reviewerAgent": "jules",
-      "outcome": "Updated obsolete Claude model claude-3-5-sonnet-20241022 to the current recommended claude-sonnet-4-6.",
-      "linkedIssueOrPr": "local-jules-2026-03-30",
-      "nextAction": "Monitor for further model deprecations."
+      "lastReviewedAt": "2026-03-29",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells, PHP system execution, and prompt injection strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
