@@ -64,6 +64,14 @@
       "outcome": "Removed because the workflow content was materially non-English.",
       "linkedIssueOrPr": "local-bootstrap-2026-03-29",
       "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
+    },
+    "skills/code-review-ai-ai-review": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-03-30",
+      "reviewerAgent": "jules",
+      "outcome": "Updated obsolete Claude model claude-3-5-sonnet-20241022 to the current recommended claude-sonnet-4-6.",
+      "linkedIssueOrPr": "local-jules-2026-03-30",
+      "nextAction": "Monitor for further model deprecations."
     }
   }
 }
