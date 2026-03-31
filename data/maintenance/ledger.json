@@ -11,11 +11,11 @@
   "entries": {
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Recorded as a trusted upstream source for curated English-language marketing and growth skills.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Use as an approved upstream source for single-skill import runs."
+      "lastReviewedAt": "2026-03-31",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the page-cro skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-page-cro",
+      "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
     },
     "skills/youtube-summarizer": {
       "status": "normalized",
@@ -80,6 +80,14 @@
       "outcome": "Modernized the skill by migrating the deprecated azure-monitor-query instructions to use the new azure-monitor-query-logs and azure-monitor-query-metrics SDKs.",
       "linkedIssueOrPr": "PR-modernize-azure-monitor-query-java",
       "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
+      },
+    "skills/file-path-traversal": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-03-30",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells and RCE payload strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-file-path-traversal-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
