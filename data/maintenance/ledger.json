@@ -72,6 +72,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, PHP system execution, and prompt injection strings with safe placeholders.",
       "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/file-path-traversal": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-03-30",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells and RCE payload strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-file-path-traversal-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
