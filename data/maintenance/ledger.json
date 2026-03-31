@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-03-29T00:00:00Z",
+  "updatedAt": "2026-03-30T00:00:00Z",
   "policies": {
     "englishOnly": true,
     "singleSkillPerRun": true,
@@ -72,6 +72,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, PHP system execution, and prompt injection strings with safe placeholders.",
       "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-monitor-query-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-03-30",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-query instructions to use the new azure-monitor-query-logs and azure-monitor-query-metrics SDKs.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-query-java",
+      "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
     }
   }
 }
