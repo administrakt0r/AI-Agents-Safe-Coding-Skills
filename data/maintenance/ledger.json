@@ -11,10 +11,10 @@
   "entries": {
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
-      "lastReviewedAt": "2026-03-31",
+      "lastReviewedAt": "2026-04-01",
       "reviewerAgent": "jules",
-      "outcome": "Imported the page-cro skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-page-cro",
+      "outcome": "Imported the ab-test-setup skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-ab-test-setup",
       "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
     },
     "skills/youtube-summarizer": {
@@ -96,6 +96,14 @@
       "outcome": "Removed obsolete skill azure-communication-callingserver-java as it is deprecated and superseded by azure-communication-callautomation.",
       "linkedIssueOrPr": "PR-remove-azure-communication-callingserver-java",
       "nextAction": "None"
+      },
+    "skills/linux-privilege-escalation": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-01",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells (Bash, NC, Perl, Python) and system execution payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-linux-privilege-escalation-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
