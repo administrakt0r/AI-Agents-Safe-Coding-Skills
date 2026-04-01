@@ -175,7 +175,7 @@ for (LogsTableRow row : result.getTable().getRows()) {
 public class ActivityLog {
     private String resourceGroup;
     private String operationName;
-    
+
     public String getResourceGroup() { return resourceGroup; }
     public String getOperationName() { return operationName; }
 }
