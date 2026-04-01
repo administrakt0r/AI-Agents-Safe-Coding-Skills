@@ -19097,7 +19097,7 @@
     "description": "Analyze and optimize individual pages for conversion performance.",
     "risk": "unknown",
     "source": "community",
-    "date_added": "2026-03-31",
+    "date_added": "2026-02-27",
     "plugin": {
       "targets": {
         "codex": "supported",
