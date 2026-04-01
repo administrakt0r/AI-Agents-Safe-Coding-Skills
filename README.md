@@ -1,7 +1,7 @@
-<!-- registry-sync: version=9.1.0; skills=1275; stars=28053; updated_at=2026-03-28T15:48:03+00:00 -->
+<!-- registry-sync: version=9.1.0; skills=1274; stars=28053; updated_at=2026-03-28T15:48:03+00:00 -->
 # 🌌 AI-Agents-Safe-Coding-Skills: 1,331+ Agentic Skills for Claude Code, Gemini CLI, Cursor, Copilot & More
 
-> **English-first GitHub library of 1,275+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
+> **English-first GitHub library of 1,274+ agentic skills for Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, and other AI coding assistants.**
 
 AI-Agents-Safe-Coding-Skills is an independently maintained public repository of reusable `SKILL.md` playbooks for major AI coding assistants. It builds on upstream work including `antigravity-awesome-skills`, but it is curated, reviewed, and published here as its own searchable, installable library for planning, coding, debugging, testing, security review, infrastructure work, product workflows, and growth tasks.
 
@@ -34,7 +34,7 @@ New knowledge is incorporated on an ongoing basis so the collection keeps pace w
 
 - **Installable, not just inspirational**: use `npx ai-agents-safe-coding-skills` to put skills where your tool expects them.
 - **Built for major agent workflows**: Claude Code, Cursor, Codex CLI, Gemini CLI, Antigravity, Kiro, OpenCode, Copilot, and more.
-- **Broad coverage with real utility**: 1,275+ skills across development, testing, security, infrastructure, product, and marketing.
+- **Broad coverage with real utility**: 1,274+ skills across development, testing, security, infrastructure, product, and marketing.
 - **Faster onboarding**: bundles and workflows reduce the time from "I found this repo" to "I used my first skill".
 - **Useful whether you want breadth or curation**: browse the full catalog, start with top bundles, or compare alternatives before installing.
 
@@ -404,7 +404,7 @@ If you want the full explanation of root plugins, bundle plugins, full-library i
 
 ## Best Skills By Tool
 
-If you want a faster answer than "browse all 1,275+ skills", start with a tool-specific guide:
+If you want a faster answer than "browse all 1,274+ skills", start with a tool-specific guide:
 
 - **[Claude Code skills](docs/users/claude-code-skills.md)**: install paths, starter skills, prompt examples, and plugin marketplace flow.
 - **[Cursor skills](docs/users/cursor-skills.md)**: best starter skills for `.cursor/skills/`, UI-heavy work, and pair-programming flows.
@@ -569,7 +569,7 @@ The repository is organized into specialized domains to transform your AI into a
 
 Counts change as new skills are added. For the current full registry, see [CATALOG.md](CATALOG.md).
 
-## Browse 1,275+ Skills
+## Browse 1,274+ Skills
 
 - Read the full catalog in [`CATALOG.md`](CATALOG.md).
 - Start with tool-specific guides in [`docs/users/claude-code-skills.md`](docs/users/claude-code-skills.md), [`docs/users/cursor-skills.md`](docs/users/cursor-skills.md), [`docs/users/codex-cli-skills.md`](docs/users/codex-cli-skills.md), and [`docs/users/gemini-cli-skills.md`](docs/users/gemini-cli-skills.md).

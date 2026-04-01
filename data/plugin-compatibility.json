@@ -2746,25 +2746,6 @@
       "runtime_files": []
     },
     {
-      "id": "azure-communication-callingserver-java",
-      "path": "skills/azure-communication-callingserver-java",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "azure-communication-chat-java",
       "path": "skills/azure-communication-chat-java",
       "targets": {
@@ -24369,10 +24350,10 @@
     }
   ],
   "summary": {
-    "total_skills": 1275,
+    "total_skills": 1274,
     "supported": {
-      "codex": 1249,
-      "claude": 1263
+      "codex": 1248,
+      "claude": 1262
     },
     "blocked": {
       "codex": 26,

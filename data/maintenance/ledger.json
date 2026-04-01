@@ -89,6 +89,14 @@
       "linkedIssueOrPr": "PR-file-path-traversal-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/azure-communication-callingserver-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-03-31",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-communication-callingserver-java as it is deprecated and superseded by azure-communication-callautomation.",
+      "linkedIssueOrPr": "PR-remove-azure-communication-callingserver-java",
+      "nextAction": "None"
+      },
     "skills/linux-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-01",

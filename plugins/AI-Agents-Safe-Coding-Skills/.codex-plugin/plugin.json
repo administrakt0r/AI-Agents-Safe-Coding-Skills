@@ -19,7 +19,7 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "AI-Agents-Safe-Coding-Skills",
-    "shortDescription": "1,249 plugin-safe skills for coding, security, product, and ops workflows.",
+    "shortDescription": "1,248 plugin-safe skills for coding, security, product, and ops workflows.",
     "longDescription": "Install a plugin-safe Codex distribution of AI-Agents-Safe-Coding-Skills. Skills that still need hardening or target-specific setup remain available in the repo but are excluded from this plugin.",
     "developerName": "administrakt0r and contributors",
     "category": "Productivity",
