@@ -31,7 +31,7 @@
     {
       "id": "ab-test-setup",
       "name": "ab-test-setup",
-      "description": "Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.",
+      "description": "Plan, design, or implement an A/B test or experiment. Includes methodology, statistical significance, and metric selection.",
       "category": "testing",
       "tags": [
         "ab",
@@ -41,15 +41,14 @@
         "ab",
         "setup",
         "test",
-        "structured",
-        "setting",
-        "up",
-        "tests",
-        "mandatory",
-        "gates",
-        "hypothesis",
-        "metrics",
-        "execution"
+        "plan",
+        "experiment",
+        "includes",
+        "methodology",
+        "statistical",
+        "significance",
+        "metric",
+        "selection"
       ],
       "path": "skills/ab-test-setup/SKILL.md"
     },
