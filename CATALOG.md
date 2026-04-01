@@ -1193,7 +1193,7 @@ Total skills: 1275
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
-| `ab-test-setup` | Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness. | ab, setup | ab, setup, test, structured, setting, up, tests, mandatory, gates, hypothesis, metrics, execution |
+| `ab-test-setup` | Plan, design, or implement an A/B test or experiment. Includes methodology, statistical significance, and metric selection. | ab, setup | ab, setup, test, plan, experiment, includes, methodology, statistical, significance, metric, selection |
 | `ad-creative` | Create, iterate, and scale paid ad creative for Google Ads, Meta, LinkedIn, TikTok, and similar platforms. Use when generating headlines, descriptions, prima... | ad, creative | ad, creative, iterate, scale, paid, google, ads, meta, linkedin, tiktok, similar, platforms |
 | `circleci-automation` | Automate CircleCI tasks via Rube MCP (Composio): trigger pipelines, monitor workflows/jobs, retrieve artifacts and test metadata. Always search tools first f... | circleci | circleci, automation, automate, tasks, via, rube, mcp, composio, trigger, pipelines, monitor, jobs |
 | `conductor-implement` | Execute tasks from a track's implementation plan following TDD workflow | conductor, implement | conductor, implement, execute, tasks, track, plan, following, tdd |
