@@ -1,9 +1,9 @@
 ---
 title: Jetski/Cortex + Gemini Integration Guide
-description: "How to use AI-Agents-Safe-Coding-Skills with Jetski/Cortex without overflowing the context window across 1,275+ skills."
+description: "How to use AI-Agents-Safe-Coding-Skills with Jetski/Cortex without overflowing the context window across 1,274+ skills."
 ---
 
-# Jetski/Cortex + Gemini integration for 1,275+ skills
+# Jetski/Cortex + Gemini integration for 1,274+ skills
 
 This guide shows how to use `AI-Agents-Safe-Coding-Skills` with a Jetski/Cortex + Gemini style agent without overloading the model context window.
 
@@ -23,7 +23,7 @@ Avoid these patterns:
 - Concatenating the full library into one system prompt.
 - Re-injecting the entire library on every turn.
 
-With 1,275+ skills available, that approach fills the context window before the actual user request can be processed.
+With 1,274+ skills available, that approach fills the context window before the actual user request can be processed.
 
 ## Recommended loading pattern
 
@@ -125,4 +125,4 @@ See [the Jetski Gemini loader README](./jetski-gemini-loader/README.md) for a fu
 - Cap per-turn skill usage.
 - Fail explicitly before truncation instead of silently degrading behavior.
 
-That pattern lets Jetski/Cortex + Gemini use the full `AI-Agents-Safe-Coding-Skills` library safely, even with 1,275+ skills available.
+That pattern lets Jetski/Cortex + Gemini use the full `AI-Agents-Safe-Coding-Skills` library safely, even with 1,274+ skills available.

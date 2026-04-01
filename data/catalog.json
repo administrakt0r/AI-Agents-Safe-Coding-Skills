@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1275,
+  "total": 1274,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -3586,33 +3586,6 @@
         "recording"
       ],
       "path": "skills/azure-communication-callautomation-java/SKILL.md"
-    },
-    {
-      "id": "azure-communication-callingserver-java",
-      "name": "azure-communication-callingserver-java",
-      "description": "⚠️ DEPRECATED: This SDK has been renamed to Call Automation. For new projects, use azure-communication-callautomation instead. This skill is for maintaining legacy code only.",
-      "category": "development",
-      "tags": [
-        "azure",
-        "communication",
-        "callingserver",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "communication",
-        "callingserver",
-        "java",
-        "deprecated",
-        "sdk",
-        "been",
-        "renamed",
-        "call",
-        "automation",
-        "new",
-        "callautomation"
-      ],
-      "path": "skills/azure-communication-callingserver-java/SKILL.md"
     },
     {
       "id": "azure-communication-chat-java",

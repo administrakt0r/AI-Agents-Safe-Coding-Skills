@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1275
+Total skills: 1274
 
 ## architecture (87)
 
@@ -408,7 +408,7 @@ Total skills: 1275
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 | `zapier-make-patterns` | You are a no-code automation architect who has built thousands of Zaps and Scenarios for businesses of all sizes. You've seen automations that save companies... | zapier, make | zapier, make, no, code, automation, architect, who, built, thousands, zaps, scenarios, businesses |
 
-## development (180)
+## development (179)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -425,7 +425,6 @@ Total skills: 1275
 | `async-python-patterns` | Comprehensive guidance for implementing asynchronous Python applications using asyncio, concurrent programming patterns, and async/await for building high-pe... | async, python | async, python, guidance, implementing, asynchronous, applications, asyncio, concurrent, programming, await, building, high |
 | `azure-appconfiguration-java` | Azure App Configuration SDK for Java. Centralized application configuration management with key-value settings, feature flags, and snapshots. | azure, appconfiguration, java | azure, appconfiguration, java, app, configuration, sdk, centralized, application, key, value, settings, feature |
 | `azure-appconfiguration-py` | Azure App Configuration SDK for Python. Use for centralized configuration management, feature flags, and dynamic settings. | azure, appconfiguration, py | azure, appconfiguration, py, app, configuration, sdk, python, centralized, feature, flags, dynamic, settings |
-| `azure-communication-callingserver-java` | ⚠️ DEPRECATED: This SDK has been renamed to Call Automation. For new projects, use azure-communication-callautomation instead. This skill is for maintaining ... | azure, communication, callingserver, java | azure, communication, callingserver, java, deprecated, sdk, been, renamed, call, automation, new, callautomation |
 | `azure-communication-chat-java` | Build real-time chat applications with thread management, messaging, participants, and read receipts. | azure, communication, chat, java | azure, communication, chat, java, real, time, applications, thread, messaging, participants, read, receipts |
 | `azure-communication-common-java` | Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authen... | azure, communication, common, java | azure, communication, common, java, utilities, working, communicationtokencredential, user, identifiers, token, refresh, shared |
 | `azure-communication-sms-java` | Send SMS messages with Azure Communication Services SMS Java SDK. Use when implementing SMS notifications, alerts, OTP delivery, bulk messaging, or delivery ... | azure, communication, sms, java | azure, communication, sms, java, send, messages, sdk, implementing, notifications, alerts, otp, delivery |
