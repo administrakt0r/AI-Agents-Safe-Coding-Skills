@@ -8,25 +8,33 @@ date_added: '2026-02-27'
 
 # Azure Monitor Query SDK for Java
 
-> **DEPRECATION NOTICE**: This package is deprecated in favor of:
-> - `azure-monitor-query-logs` — For Log Analytics queries
-> - `azure-monitor-query-metrics` — For metrics queries
->
-> See migration guides: [Logs Migration](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/monitor/azure-monitor-query-logs/migration-guide.md) | [Metrics Migration](https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/monitor/azure-monitor-query-metrics/migration-guide.md)
-
-Client library for querying Azure Monitor Logs and Metrics.
+Client libraries for querying Azure Monitor Logs and Metrics using the new, modular `azure-monitor-query-logs` and `azure-monitor-query-metrics` SDKs.
 
 ## Installation
+
+Add the corresponding packages to your `pom.xml` depending on your needs.
+
+**For Logs:**
 
 ```xml
 <dependency>
     <groupId>com.azure</groupId>
-    <artifactId>azure-monitor-query</artifactId>
-    <version>1.5.9</version>
+    <artifactId>azure-monitor-query-logs</artifactId>
+    <version>1.x.x</version> <!-- Use the latest version -->
 </dependency>
 ```
 
-Or use Azure SDK BOM:
+**For Metrics:**
+
+```xml
+<dependency>
+    <groupId>com.azure</groupId>
+    <artifactId>azure-monitor-query-metrics</artifactId>
+    <version>1.x.x</version> <!-- Use the latest version -->
+</dependency>
+```
+
+Or use the Azure SDK BOM for version management:
 
 ```xml
 <dependencyManagement>
@@ -44,7 +52,11 @@ Or use Azure SDK BOM:
 <dependencies>
     <dependency>
         <groupId>com.azure</groupId>
-        <artifactId>azure-monitor-query</artifactId>
+        <artifactId>azure-monitor-query-logs</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.azure</groupId>
+        <artifactId>azure-monitor-query-metrics</artifactId>
     </dependency>
 </dependencies>
 ```
@@ -68,59 +80,46 @@ AZURE_RESOURCE_ID=/subscriptions/{sub}/resourceGroups/{rg}/providers/{provider}/
 
 ```java
 import com.azure.identity.DefaultAzureCredentialBuilder;
-import com.azure.monitor.query.LogsQueryClient;
-import com.azure.monitor.query.LogsQueryClientBuilder;
+import com.azure.monitor.query.logs.LogsQueryClient;
+import com.azure.monitor.query.logs.LogsQueryClientBuilder;
+import com.azure.core.credential.TokenCredential;
+
+TokenCredential credential = new DefaultAzureCredentialBuilder().build();
 
 LogsQueryClient logsClient = new LogsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
+    .credential(credential)
     .buildClient();
 ```
 
 ### LogsQueryAsyncClient
 
 ```java
-import com.azure.monitor.query.LogsQueryAsyncClient;
+import com.azure.monitor.query.logs.LogsQueryAsyncClient;
 
 LogsQueryAsyncClient logsAsyncClient = new LogsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
+    .credential(credential)
     .buildAsyncClient();
 ```
 
 ### MetricsQueryClient (Sync)
 
 ```java
-import com.azure.monitor.query.MetricsQueryClient;
-import com.azure.monitor.query.MetricsQueryClientBuilder;
+import com.azure.monitor.query.metrics.MetricsQueryClient;
+import com.azure.monitor.query.metrics.MetricsQueryClientBuilder;
 
 MetricsQueryClient metricsClient = new MetricsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
+    .credential(credential)
     .buildClient();
 ```
 
 ### MetricsQueryAsyncClient
 
 ```java
-import com.azure.monitor.query.MetricsQueryAsyncClient;
+import com.azure.monitor.query.metrics.MetricsQueryAsyncClient;
 
 MetricsQueryAsyncClient metricsAsyncClient = new MetricsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
+    .credential(credential)
     .buildAsyncClient();
-```
-
-### Sovereign Cloud Configuration
-
-```java
-// Azure China Cloud - Logs
-LogsQueryClient logsClient = new LogsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
-    .endpoint("https://api.loganalytics.azure.cn/v1")
-    .buildClient();
-
-// Azure China Cloud - Metrics
-MetricsQueryClient metricsClient = new MetricsQueryClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
-    .endpoint("https://management.chinacloudapi.cn")
-    .buildClient();
 ```
 
 ## Key Concepts
@@ -131,26 +130,26 @@ MetricsQueryClient metricsClient = new MetricsQueryClientBuilder()
 | Metrics | Numeric time-series data collected at regular intervals |
 | Workspace ID | Log Analytics workspace identifier |
 | Resource ID | Azure resource URI for metrics queries |
-| QueryTimeInterval | Time range for the query |
+| LogsQueryTimeInterval | Time range for the log query |
 
 ## Logs Query Operations
 
 ### Basic Query
 
 ```java
-import com.azure.monitor.query.models.LogsQueryResult;
-import com.azure.monitor.query.models.LogsTableRow;
-import com.azure.monitor.query.models.QueryTimeInterval;
+import com.azure.monitor.query.logs.models.LogsQueryResult;
+import com.azure.monitor.query.logs.models.LogsTableRow;
+import com.azure.monitor.query.logs.models.LogsQueryTimeInterval;
 import java.time.Duration;
 
 LogsQueryResult result = logsClient.queryWorkspace(
     "{workspace-id}",
     "AzureActivity | summarize count() by ResourceGroup | top 10 by count_",
-    new QueryTimeInterval(Duration.ofDays(7))
+    new LogsQueryTimeInterval(Duration.ofDays(7))
 );
 
 for (LogsTableRow row : result.getTable().getRows()) {
-    System.out.println(row.getColumnValue("ResourceGroup") + ": " + row.getColumnValue("count_"));
+    System.out.println(row.getColumnValue("ResourceGroup").get().getValueAsString() + ": " + row.getColumnValue("count_").get().getValueAsString());
 }
 ```
 
@@ -160,51 +159,27 @@ for (LogsTableRow row : result.getTable().getRows()) {
 LogsQueryResult result = logsClient.queryResource(
     "{resource-id}",
     "AzureMetrics | where TimeGenerated > ago(1h)",
-    new QueryTimeInterval(Duration.ofDays(1))
+    new LogsQueryTimeInterval(Duration.ofDays(1))
 );
 
 for (LogsTableRow row : result.getTable().getRows()) {
-    System.out.println(row.getColumnValue("MetricName") + " " + row.getColumnValue("Average"));
-}
-```
-
-### Map Results to Custom Model
-
-```java
-// Define model class
-public class ActivityLog {
-    private String resourceGroup;
-    private String operationName;
-    
-    public String getResourceGroup() { return resourceGroup; }
-    public String getOperationName() { return operationName; }
-}
-
-// Query with model mapping
-List<ActivityLog> logs = logsClient.queryWorkspace(
-    "{workspace-id}",
-    "AzureActivity | project ResourceGroup, OperationName | take 100",
-    new QueryTimeInterval(Duration.ofDays(2)),
-    ActivityLog.class
-);
-
-for (ActivityLog log : logs) {
-    System.out.println(log.getOperationName() + " - " + log.getResourceGroup());
+    System.out.println(row.getColumnValue("MetricName").get().getValueAsString() + " " + row.getColumnValue("Average").get().getValueAsString());
 }
 ```
 
 ### Batch Query
 
 ```java
-import com.azure.monitor.query.models.LogsBatchQuery;
-import com.azure.monitor.query.models.LogsBatchQueryResult;
-import com.azure.monitor.query.models.LogsBatchQueryResultCollection;
+import com.azure.monitor.query.logs.models.LogsBatchQuery;
+import com.azure.monitor.query.logs.models.LogsBatchQueryResult;
+import com.azure.monitor.query.logs.models.LogsBatchQueryResultCollection;
+import com.azure.monitor.query.logs.models.LogsQueryResultStatus;
 import com.azure.core.util.Context;
 
 LogsBatchQuery batchQuery = new LogsBatchQuery();
-String q1 = batchQuery.addWorkspaceQuery("{workspace-id}", "AzureActivity | count", new QueryTimeInterval(Duration.ofDays(1)));
-String q2 = batchQuery.addWorkspaceQuery("{workspace-id}", "Heartbeat | count", new QueryTimeInterval(Duration.ofDays(1)));
-String q3 = batchQuery.addWorkspaceQuery("{workspace-id}", "Perf | count", new QueryTimeInterval(Duration.ofDays(1)));
+String q1 = batchQuery.addWorkspaceQuery("{workspace-id}", "AzureActivity | count", new LogsQueryTimeInterval(Duration.ofDays(1)));
+String q2 = batchQuery.addWorkspaceQuery("{workspace-id}", "Heartbeat | count", new LogsQueryTimeInterval(Duration.ofDays(1)));
+String q3 = batchQuery.addWorkspaceQuery("{workspace-id}", "Perf | count", new LogsQueryTimeInterval(Duration.ofDays(1)));
 
 LogsBatchQueryResultCollection results = logsClient
     .queryBatchWithResponse(batchQuery, Context.NONE)
@@ -220,59 +195,15 @@ if (result3.getQueryResultStatus() == LogsQueryResultStatus.FAILURE) {
 }
 ```
 
-### Query with Options
-
-```java
-import com.azure.monitor.query.models.LogsQueryOptions;
-import com.azure.core.http.rest.Response;
-
-LogsQueryOptions options = new LogsQueryOptions()
-    .setServerTimeout(Duration.ofMinutes(10))
-    .setIncludeStatistics(true)
-    .setIncludeVisualization(true);
-
-Response<LogsQueryResult> response = logsClient.queryWorkspaceWithResponse(
-    "{workspace-id}",
-    "AzureActivity | summarize count() by bin(TimeGenerated, 1h)",
-    new QueryTimeInterval(Duration.ofDays(7)),
-    options,
-    Context.NONE
-);
-
-LogsQueryResult result = response.getValue();
-
-// Access statistics
-BinaryData statistics = result.getStatistics();
-// Access visualization data
-BinaryData visualization = result.getVisualization();
-```
-
-### Query Multiple Workspaces
-
-```java
-import java.util.Arrays;
-
-LogsQueryOptions options = new LogsQueryOptions()
-    .setAdditionalWorkspaces(Arrays.asList("{workspace-id-2}", "{workspace-id-3}"));
-
-Response<LogsQueryResult> response = logsClient.queryWorkspaceWithResponse(
-    "{workspace-id-1}",
-    "AzureActivity | summarize count() by TenantId",
-    new QueryTimeInterval(Duration.ofDays(1)),
-    options,
-    Context.NONE
-);
-```
-
 ## Metrics Query Operations
 
 ### Basic Metrics Query
 
 ```java
-import com.azure.monitor.query.models.MetricsQueryResult;
-import com.azure.monitor.query.models.MetricResult;
-import com.azure.monitor.query.models.TimeSeriesElement;
-import com.azure.monitor.query.models.MetricValue;
+import com.azure.monitor.query.metrics.models.MetricsQueryResult;
+import com.azure.monitor.query.metrics.models.MetricResult;
+import com.azure.monitor.query.metrics.models.TimeSeriesElement;
+import com.azure.monitor.query.metrics.models.MetricValue;
 import java.util.Arrays;
 
 MetricsQueryResult result = metricsClient.queryResource(
@@ -294,8 +225,10 @@ for (MetricResult metric : result.getMetrics()) {
 ### Metrics with Aggregations
 
 ```java
-import com.azure.monitor.query.models.MetricsQueryOptions;
-import com.azure.monitor.query.models.AggregationType;
+import com.azure.monitor.query.metrics.models.MetricsQueryOptions;
+import com.azure.monitor.query.metrics.models.AggregationType;
+import com.azure.core.http.rest.Response;
+import com.azure.core.util.Context;
 
 Response<MetricsQueryResult> response = metricsClient.queryResourceWithResponse(
     "{resource-id}",
@@ -309,83 +242,26 @@ Response<MetricsQueryResult> response = metricsClient.queryResourceWithResponse(
 MetricsQueryResult result = response.getValue();
 ```
 
-### Query Multiple Resources (MetricsClient)
+## Migration Notes from azure-monitor-query
 
-```java
-import com.azure.monitor.query.MetricsClient;
-import com.azure.monitor.query.MetricsClientBuilder;
-import com.azure.monitor.query.models.MetricsQueryResourcesResult;
+The legacy combined package `azure-monitor-query` is deprecated. Code must be updated to use the modular packages `azure-monitor-query-logs` and `azure-monitor-query-metrics`.
 
-MetricsClient metricsClient = new MetricsClientBuilder()
-    .credential(new DefaultAzureCredentialBuilder().build())
-    .endpoint("{endpoint}")
-    .buildClient();
-
-MetricsQueryResourcesResult result = metricsClient.queryResources(
-    Arrays.asList("{resourceId1}", "{resourceId2}"),
-    Arrays.asList("{metric1}", "{metric2}"),
-    "{metricNamespace}"
-);
-
-for (MetricsQueryResult queryResult : result.getMetricsQueryResults()) {
-    for (MetricResult metric : queryResult.getMetrics()) {
-        System.out.println(metric.getMetricName());
-        metric.getTimeSeries().stream()
-            .flatMap(ts -> ts.getValues().stream())
-            .forEach(mv -> System.out.println(
-                mv.getTimeStamp() + " Count=" + mv.getCount() + " Avg=" + mv.getAverage()));
-    }
-}
-```
-
-## Response Structure
-
-### Logs Response Hierarchy
-
-```
-LogsQueryResult
-├── statistics (BinaryData)
-├── visualization (BinaryData)
-├── error
-└── tables (List<LogsTable>)
-    ├── name
-    ├── columns (List<LogsTableColumn>)
-    │   ├── name
-    │   └── type
-    └── rows (List<LogsTableRow>)
-        ├── rowIndex
-        └── rowCells (List<LogsTableCell>)
-```
-
-### Metrics Response Hierarchy
-
-```
-MetricsQueryResult
-├── granularity
-├── timeInterval
-├── namespace
-├── resourceRegion
-└── metrics (List<MetricResult>)
-    ├── id, name, type, unit
-    └── timeSeries (List<TimeSeriesElement>)
-        ├── metadata (dimensions)
-        └── values (List<MetricValue>)
-            ├── timeStamp
-            ├── count, average, total
-            ├── maximum, minimum
-```
+Key changes:
+1. Package imports changed: `com.azure.monitor.query` -> `com.azure.monitor.query.logs` and `com.azure.monitor.query.metrics`
+2. `QueryTimeInterval` has been renamed to `LogsQueryTimeInterval` for the logs package, and similarly separated for the metrics package if applicable.
+3. Replace the `azure-monitor-query` Maven dependency with `azure-monitor-query-logs` and/or `azure-monitor-query-metrics`.
 
 ## Error Handling
 
 ```java
 import com.azure.core.exception.HttpResponseException;
-import com.azure.monitor.query.models.LogsQueryResultStatus;
+import com.azure.monitor.query.logs.models.LogsQueryResultStatus;
 
 try {
     LogsQueryResult result = logsClient.queryWorkspace(workspaceId, query, timeInterval);
     
     // Check partial failure
-    if (result.getStatus() == LogsQueryResultStatus.PARTIAL_FAILURE) {
+    if (result.getQueryResultStatus() == LogsQueryResultStatus.PARTIAL_FAILURE) {
         System.err.println("Partial failure: " + result.getError().getMessage());
     }
 } catch (HttpResponseException e) {
@@ -402,18 +278,15 @@ try {
 4. **Use projections** — Select only needed columns with `project`
 5. **Check query status** — Handle PARTIAL_FAILURE results gracefully
 6. **Cache results** — Metrics don't change frequently; cache when appropriate
-7. **Migrate to new packages** — Plan migration to `azure-monitor-query-logs` and `azure-monitor-query-metrics`
 
 ## Reference Links
 
 | Resource | URL |
 |----------|-----|
-| Maven Package | https://central.sonatype.com/artifact/com.azure/azure-monitor-query |
-| GitHub | https://github.com/Azure/azure-sdk-for-java/tree/main/sdk/monitor/azure-monitor-query |
-| API Reference | https://learn.microsoft.com/java/api/com.azure.monitor.query |
+| Logs Package | https://central.sonatype.com/artifact/com.azure/azure-monitor-query-logs |
+| Metrics Package | https://central.sonatype.com/artifact/com.azure/azure-monitor-query-metrics |
+| Migration Guide | https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/monitor/azure-monitor-query-logs/migration-guide.md |
 | Kusto Query Language | https://learn.microsoft.com/azure/data-explorer/kusto/query/ |
-| Log Analytics Limits | https://learn.microsoft.com/azure/azure-monitor/service-limits#la-query-api |
-| Troubleshooting | https://github.com/Azure/azure-sdk-for-java/blob/main/sdk/monitor/azure-monitor-query/TROUBLESHOOTING.md |
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.

