@@ -104,6 +104,14 @@
       "outcome": "Hardened skill by replacing active reverse shells (Bash, NC, Perl, Python) and system execution payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-linux-privilege-escalation-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/windows-privilege-escalation": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-02",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
