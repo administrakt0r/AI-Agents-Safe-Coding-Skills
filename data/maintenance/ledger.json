@@ -96,7 +96,7 @@
       "outcome": "Removed obsolete skill azure-communication-callingserver-java as it is deprecated and superseded by azure-communication-callautomation.",
       "linkedIssueOrPr": "PR-remove-azure-communication-callingserver-java",
       "nextAction": "None"
-      },
+    },
     "skills/linux-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-01",
@@ -105,6 +105,14 @@
       "linkedIssueOrPr": "PR-linux-privilege-escalation-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/azure-monitor-query-py": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-02",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
+      "nextAction": "Review the updated SKILL.md for accuracy."
+      },
     "skills/windows-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-02",
