@@ -131,9 +131,16 @@ from datetime import timedelta
 
 metrics_client = MetricsClient(credential)
 
-response = metrics_client.query_resources(
+responses = metrics_client.query_resources(
     resource_ids=[os.environ["AZURE_METRICS_RESOURCE_URI"]],
     metric_namespace="Microsoft.Storage/storageAccounts", # Example namespace
+    metric_names=["Percentage CPU", "Network In Total"],
+    timespan=timedelta(hours=1),
+    granularity=timedelta(minutes=5)
+)
+
+for response in responses:
+    for metric in response.metrics:
     metric_names=["Percentage CPU", "Network In Total"],
     timespan=timedelta(hours=1),
     granularity=timedelta(minutes=5)
