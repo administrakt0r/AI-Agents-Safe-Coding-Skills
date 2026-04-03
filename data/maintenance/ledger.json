@@ -112,7 +112,23 @@
       "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
       "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
       "nextAction": "Review the updated SKILL.md for accuracy."
-      },
+    },
+    "skills/azure-ai-formrecognizer-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Skill superseded by azure-ai-document-intelligence-java due to Microsoft renaming and deprecating the old SDK.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-java",
+      "nextAction": "None"
+    },
+    "skills/azure-ai-document-intelligence-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated azure-ai-formrecognizer SDK instructions to use the new azure-ai-documentintelligence SDK.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-java",
+      "nextAction": "Review the updated SKILL.md for accuracy and test code samples."
+    },
     "skills/windows-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-02",
