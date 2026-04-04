@@ -112,13 +112,21 @@
       "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
       "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
       "nextAction": "Review the updated SKILL.md for accuracy."
-      },
+    },
     "skills/windows-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-02",
       "reviewerAgent": "malicious-skill-safety-auditor",
       "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/pentest-commands": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-04",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active msfconsole exploitation commands and msfvenom reverse shell payload generation strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-pentest-commands-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
