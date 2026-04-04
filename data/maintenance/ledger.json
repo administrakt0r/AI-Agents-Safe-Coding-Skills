@@ -112,7 +112,7 @@
       "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
       "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
       "nextAction": "Review the updated SKILL.md for accuracy."
-      },
+    },
     "skills/windows-privilege-escalation": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-02",
@@ -120,6 +120,14 @@
       "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-monitor-opentelemetry-exporter-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-opentelemetry-exporter-java to the new azure-monitor-opentelemetry-autoconfigure-java package.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-opentelemetry-autoconfigure-java",
+      "nextAction": "Review the updated SKILL.md for accuracy."
     }
   }
 }
