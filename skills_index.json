@@ -70,10 +70,10 @@
     "path": "skills/ab-test-setup",
     "category": "marketing",
     "name": "ab-test-setup",
-    "description": "Structured guide for setting up A/B tests with mandatory gates for hypothesis, metrics, and execution readiness.",
+    "description": "Plan, design, or implement an A/B test or experiment. Includes methodology, statistical significance, and metric selection.",
     "risk": "unknown",
-    "source": "community",
-    "date_added": "2026-02-27",
+    "source": "unknown",
+    "date_added": null,
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -181,9 +181,9 @@
     "category": "uncategorized",
     "name": "ad-creative",
     "description": "Create, iterate, and scale paid ad creative for Google Ads, Meta, LinkedIn, TikTok, and similar platforms. Use when generating headlines, descriptions, primary text, or large sets of ad variations for testing and performance optimization.",
-    "risk": "unknown",
-    "source": "https://github.com/coreyhaines31/marketingskills",
-    "date_added": "2026-03-21",
+    "risk": "safe",
+    "source": "coreyhaines31/marketingskills",
+    "date_added": "2026-04-03",
     "plugin": {
       "targets": {
         "codex": "supported",
@@ -4368,11 +4368,11 @@
     }
   },
   {
-    "id": "azure-monitor-opentelemetry-exporter-java",
-    "path": "skills/azure-monitor-opentelemetry-exporter-java",
+    "id": "azure-monitor-opentelemetry-autoconfigure-java",
+    "path": "skills/azure-monitor-opentelemetry-autoconfigure-java",
     "category": "cloud",
-    "name": "azure-monitor-opentelemetry-exporter-java",
-    "description": "Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
+    "name": "azure-monitor-opentelemetry-autoconfigure-java",
+    "description": "Azure Monitor OpenTelemetry Autoconfigure for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
     "risk": "unknown",
     "source": "community",
     "date_added": "2026-02-27",

@@ -3696,8 +3696,8 @@
       "runtime_files": []
     },
     {
-      "id": "azure-monitor-opentelemetry-exporter-java",
-      "path": "skills/azure-monitor-opentelemetry-exporter-java",
+      "id": "azure-monitor-opentelemetry-autoconfigure-java",
+      "path": "skills/azure-monitor-opentelemetry-autoconfigure-java",
       "targets": {
         "codex": "supported",
         "claude": "supported"

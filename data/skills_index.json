@@ -1910,10 +1910,10 @@
     "date_added": "2026-02-27"
   },
   {
-    "id": "azure-monitor-opentelemetry-exporter-java",
-    "path": "skills/azure-monitor-opentelemetry-exporter-java",
+    "id": "azure-monitor-opentelemetry-autoconfigure-java",
+    "path": "skills/azure-monitor-opentelemetry-autoconfigure-java",
     "category": "uncategorized",
-    "name": "azure-monitor-opentelemetry-exporter-java",
+    "name": "azure-monitor-opentelemetry-autoconfigure-java",
     "description": "Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
     "risk": "unknown",
     "source": "community",
