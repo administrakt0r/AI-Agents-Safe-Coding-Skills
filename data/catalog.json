@@ -4880,22 +4880,22 @@
       "path": "skills/azure-monitor-ingestion-py/SKILL.md"
     },
     {
-      "id": "azure-monitor-opentelemetry-exporter-java",
-      "name": "azure-monitor-opentelemetry-exporter-java",
-      "description": "Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
+      "id": "azure-monitor-opentelemetry-autoconfigure-java",
+      "name": "azure-monitor-opentelemetry-autoconfigure-java",
+      "description": "Azure Monitor OpenTelemetry Autoconfigure for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
       "category": "development",
       "tags": [
         "azure",
         "monitor",
         "opentelemetry",
-        "exporter",
+        "autoconfigure",
         "java"
       ],
       "triggers": [
         "azure",
         "monitor",
         "opentelemetry",
-        "exporter",
+        "autoconfigure",
         "java",
         "export",
         "traces",
@@ -4904,7 +4904,7 @@
         "application",
         "insights"
       ],
-      "path": "skills/azure-monitor-opentelemetry-exporter-java/SKILL.md"
+      "path": "skills/azure-monitor-opentelemetry-autoconfigure-java/SKILL.md"
     },
     {
       "id": "azure-monitor-opentelemetry-exporter-py",
