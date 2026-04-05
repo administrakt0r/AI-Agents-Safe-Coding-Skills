@@ -103,7 +103,7 @@ try (Scope scope = span.makeCurrent()) {
     // Add attributes during execution
     span.setAttribute("items.count", 3);
     span.setAttribute("total.amount", 99.99);
-    
+
     processOrder();
 } finally {
     span.end();
@@ -148,7 +148,7 @@ AutoConfiguredOpenTelemetrySdkBuilder sdkBuilder = AutoConfiguredOpenTelemetrySd
 AzureMonitorExporter.customize(sdkBuilder);
 
 sdkBuilder.addTracerProviderCustomizer(
-    (sdkTracerProviderBuilder, configProperties) -> 
+    (sdkTracerProviderBuilder, configProperties) ->
         sdkTracerProviderBuilder.addSpanProcessor(customProcessor)
 );
 
@@ -251,7 +251,7 @@ The `azure-monitor-opentelemetry-autoconfigure` package provides:
        <groupId>com.azure</groupId>
        <artifactId>azure-monitor-opentelemetry-exporter</artifactId>
    </dependency>
-   
+
    <!-- Add -->
    <dependency>
        <groupId>com.azure</groupId>
