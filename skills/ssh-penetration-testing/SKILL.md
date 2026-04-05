@@ -1,7 +1,7 @@
 ---
 name: ssh-penetration-testing
 description: "Conduct comprehensive SSH security assessments including enumeration, credential attacks, vulnerability exploitation, tunneling techniques, and post-exploitation activities. This skill covers the complete methodology for testing SSH service security."
-risk: unknown
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -255,7 +255,7 @@ ssh -R 8080:localhost:80 user@192.168.1.100
 # Remote can access via localhost:8080
 
 # Reverse shell callback
-ssh -R 4444:localhost:4444 user@192.168.1.100
+[REDACTED_BASH_REVERSE_SHELL_PAYLOAD]
 ```
 
 #### Dynamic Port Forwarding (SOCKS Proxy)
