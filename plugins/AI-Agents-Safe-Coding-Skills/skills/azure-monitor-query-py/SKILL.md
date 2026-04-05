@@ -14,7 +14,6 @@ Query logs and metrics from Azure Monitor and Log Analytics workspaces.
 
 ```bash
 pip install azure-monitor-query
-pip install azure-monitor-querymetrics
 ```
 
 ## Environment Variables
@@ -121,26 +120,18 @@ elif response.status == LogsQueryStatus.FAILURE:
     print(f"Query failed: {response.partial_error}")
 ```
 
-## Metrics Client
+## Metrics Query Client
 
 ### Query Resource Metrics
 
 ```python
-from azure.monitor.querymetrics import MetricsClient
+from azure.monitor.query import MetricsQueryClient
 from datetime import timedelta
 
-metrics_client = MetricsClient(credential)
+metrics_client = MetricsQueryClient(credential)
 
-responses = metrics_client.query_resources(
-    resource_ids=[os.environ["AZURE_METRICS_RESOURCE_URI"]],
-    metric_namespace="Microsoft.Storage/storageAccounts", # Example namespace
-    metric_names=["Percentage CPU", "Network In Total"],
-    timespan=timedelta(hours=1),
-    granularity=timedelta(minutes=5)
-)
-
-for response in responses:
-    for metric in response.metrics:
+response = metrics_client.query_resource(
+    resource_uri=os.environ["AZURE_METRICS_RESOURCE_URI"],
     metric_names=["Percentage CPU", "Network In Total"],
     timespan=timedelta(hours=1),
     granularity=timedelta(minutes=5)
@@ -156,11 +147,10 @@ for metric in response.metrics:
 ### Aggregations
 
 ```python
-from azure.monitor.querymetrics import MetricAggregationType
+from azure.monitor.query import MetricAggregationType
 
-response = metrics_client.query_resources(
-    resource_ids=[resource_uri],
-    metric_namespace="Microsoft.Storage/storageAccounts", # Example namespace
+response = metrics_client.query_resource(
+    resource_uri=resource_uri,
     metric_names=["Requests"],
     timespan=timedelta(hours=1),
     aggregations=[
@@ -175,20 +165,34 @@ response = metrics_client.query_resources(
 ### Filter by Dimension
 
 ```python
-response = metrics_client.query_resources(
-    resource_ids=[resource_uri],
-    metric_namespace="Microsoft.Storage/storageAccounts", # Example namespace
+response = metrics_client.query_resource(
+    resource_uri=resource_uri,
     metric_names=["Requests"],
     timespan=timedelta(hours=1),
     filter="ApiName eq 'GetBlob'"
 )
 ```
 
+### List Metric Definitions
+
+```python
+definitions = metrics_client.list_metric_definitions(resource_uri)
+for definition in definitions:
+    print(f"{definition.name}: {definition.unit}")
+```
+
+### List Metric Namespaces
+
+```python
+namespaces = metrics_client.list_metric_namespaces(resource_uri)
+for ns in namespaces:
+    print(ns.fully_qualified_namespace)
+```
+
 ## Async Clients
 
 ```python
-from azure.monitor.query.aio import LogsQueryClient
-from azure.monitor.querymetrics.aio import MetricsClient
+from azure.monitor.query.aio import LogsQueryClient, MetricsQueryClient
 from azure.identity.aio import DefaultAzureCredential
 
 async def query_logs():
@@ -234,8 +238,8 @@ AppExceptions
 
 | Client | Purpose |
 |--------|---------|
-| `LogsQueryClient` | Query Log Analytics workspaces (`azure-monitor-query`) |
-| `MetricsClient` | Query Azure Monitor metrics (`azure-monitor-querymetrics`) |
+| `LogsQueryClient` | Query Log Analytics workspaces |
+| `MetricsQueryClient` | Query Azure Monitor metrics |
 
 ## Best Practices
 
