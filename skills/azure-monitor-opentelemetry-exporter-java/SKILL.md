@@ -1,5 +1,5 @@
 ---
-name: azure-monitor-opentelemetry-autoconfigure-java
+name: azure-monitor-opentelemetry-exporter-java
 description: Azure Monitor OpenTelemetry Autoconfigure for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.
 risk: unknown
 source: community

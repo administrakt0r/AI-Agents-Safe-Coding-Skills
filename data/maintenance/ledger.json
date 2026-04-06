@@ -133,8 +133,8 @@
       "status": "resolved",
       "lastReviewedAt": "2026-04-06",
       "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-opentelemetry-exporter-java instructions to use the new azure-monitor-opentelemetry-autoconfigure package, and renamed the skill folder.",
-      "linkedIssueOrPr": "PR-modernize-azure-monitor-opentelemetry-autoconfigure-java",
+      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-opentelemetry-exporter-java instructions to use the new azure-monitor-opentelemetry-autoconfigure package while preserving the folder and frontmatter name.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "Review the updated SKILL.md for accuracy."
     }
   }
