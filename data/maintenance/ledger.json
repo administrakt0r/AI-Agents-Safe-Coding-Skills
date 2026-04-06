@@ -128,6 +128,14 @@
       "outcome": "Hardened skill by replacing active msfconsole exploitation commands and msfvenom reverse shell payload generation strings with safe placeholders.",
       "linkedIssueOrPr": "PR-pentest-commands-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-monitor-opentelemetry-exporter-java": {
+      "status": "resolved",
+      "lastReviewedAt": "2026-04-06",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-opentelemetry-exporter-java instructions to use the new azure-monitor-opentelemetry-autoconfigure package while preserving the folder and frontmatter name.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-opentelemetry-exporter-java",
+      "nextAction": "Review the updated SKILL.md for accuracy."
     }
   }
 }
