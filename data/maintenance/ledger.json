@@ -9,6 +9,14 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/active-directory-attacks": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-05",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads and system execution strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-active-directory-attacks-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
       "lastReviewedAt": "2026-04-03",

