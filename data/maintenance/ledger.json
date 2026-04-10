@@ -128,6 +128,14 @@
       "outcome": "Hardened skill by replacing active msfconsole exploitation commands and msfvenom reverse shell payload generation strings with safe placeholders.",
       "linkedIssueOrPr": "PR-pentest-commands-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/active-directory-attacks": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-10",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads and scripts (e.g., CVE-2020-1472, CVE-2021-1675, samAccountName spoofing) with safe placeholders.",
+      "linkedIssueOrPr": "PR-active-directory-attacks-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }

