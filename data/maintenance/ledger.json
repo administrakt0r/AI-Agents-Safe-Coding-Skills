@@ -121,6 +121,14 @@
       "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/metasploit-framework": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-05",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells, msfvenom commands, and attacker/target IPs with safe placeholders.",
+      "linkedIssueOrPr": "PR-metasploit-framework-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "skills/pentest-commands": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-04",
