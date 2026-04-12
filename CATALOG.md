@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1273
+Total skills: 1274
 
 ## architecture (87)
 
@@ -408,7 +408,7 @@ Total skills: 1273
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 | `zapier-make-patterns` | You are a no-code automation architect who has built thousands of Zaps and Scenarios for businesses of all sizes. You've seen automations that save companies... | zapier, make | zapier, make, no, code, automation, architect, who, built, thousands, zaps, scenarios, businesses |
 
-## development (178)
+## development (179)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -448,6 +448,7 @@ Total skills: 1273
 | `azure-mgmt-fabric-dotnet` | Azure Resource Manager SDK for Fabric in .NET. | azure, mgmt, fabric, dotnet | azure, mgmt, fabric, dotnet, resource, manager, sdk, net |
 | `azure-mgmt-fabric-py` | Azure Fabric Management SDK for Python. Use for managing Microsoft Fabric capacities and resources. | azure, mgmt, fabric, py | azure, mgmt, fabric, py, sdk, python, managing, microsoft, capacities, resources |
 | `azure-mgmt-mongodbatlas-dotnet` | Manage MongoDB Atlas Organizations as Azure ARM resources with unified billing through Azure Marketplace. | azure, mgmt, mongodbatlas, dotnet | azure, mgmt, mongodbatlas, dotnet, mongodb, atlas, organizations, arm, resources, unified, billing, through |
+| `azure-monitor-opentelemetry-exporter-java` | Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights. | azure, monitor, opentelemetry, exporter, java | azure, monitor, opentelemetry, exporter, java, export, traces, metrics, logs, application, insights |
 | `azure-monitor-opentelemetry-exporter-py` | Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights. | azure, monitor, opentelemetry, exporter, py | azure, monitor, opentelemetry, exporter, py, python, low, level, export, application, insights |
 | `azure-monitor-opentelemetry-py` | Azure Monitor OpenTelemetry Distro for Python. Use for one-line Application Insights setup with auto-instrumentation. | azure, monitor, opentelemetry, py | azure, monitor, opentelemetry, py, distro, python, one, line, application, insights, setup, auto |
 | `azure-resource-manager-durabletask-dotnet` | Azure Resource Manager SDK for Durable Task Scheduler in .NET. | azure, resource, manager, durabletask, dotnet | azure, resource, manager, durabletask, dotnet, sdk, durable, task, scheduler, net |

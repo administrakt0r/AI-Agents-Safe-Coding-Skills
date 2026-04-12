@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1273,
+  "total": 1274,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -4878,6 +4878,33 @@
         "workspace"
       ],
       "path": "skills/azure-monitor-ingestion-py/SKILL.md"
+    },
+    {
+      "id": "azure-monitor-opentelemetry-exporter-java",
+      "name": "azure-monitor-opentelemetry-exporter-java",
+      "description": "Azure Monitor OpenTelemetry Exporter for Java. Export OpenTelemetry traces, metrics, and logs to Azure Monitor/Application Insights.",
+      "category": "development",
+      "tags": [
+        "azure",
+        "monitor",
+        "opentelemetry",
+        "exporter",
+        "java"
+      ],
+      "triggers": [
+        "azure",
+        "monitor",
+        "opentelemetry",
+        "exporter",
+        "java",
+        "export",
+        "traces",
+        "metrics",
+        "logs",
+        "application",
+        "insights"
+      ],
+      "path": "skills/azure-monitor-opentelemetry-exporter-java/SKILL.md"
     },
     {
       "id": "azure-monitor-opentelemetry-exporter-py",
