@@ -136,6 +136,14 @@
       "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
+    },
+    "skills/azure-ai-anomalydetector-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-14",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-ai-anomalydetector-java as the underlying Azure service is being retired on 1 October 2026.",
+      "linkedIssueOrPr": "PR-remove-azure-ai-anomalydetector-java",
+      "nextAction": "None"
     }
   }
 }
