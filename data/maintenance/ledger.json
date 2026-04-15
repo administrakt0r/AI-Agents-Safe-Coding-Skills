@@ -136,6 +136,14 @@
       "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
+    },
+    "skills/xss-html-injection": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-15",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active XSS and HTML injection payloads targeting attacker.com with safe placeholders.",
+      "linkedIssueOrPr": "PR-xss-html-injection-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
