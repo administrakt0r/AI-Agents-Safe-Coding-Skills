@@ -129,6 +129,14 @@
       "linkedIssueOrPr": "PR-pentest-commands-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/azure-ai-anomalydetector-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-16",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-ai-anomalydetector-java as the Anomaly Detector service is being retired and no new resources can be created.",
+      "linkedIssueOrPr": "PR-remove-azure-ai-anomalydetector-java",
+      "nextAction": "None"
+    },
     "skills/azure-monitor-opentelemetry-exporter-java": {
       "status": "removed",
       "lastReviewedAt": "2026-04-12",
