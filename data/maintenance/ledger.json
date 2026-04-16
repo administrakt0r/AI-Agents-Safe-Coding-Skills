@@ -136,6 +136,14 @@
       "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
+    },
+    "skills/metasploit-framework": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-16",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-metasploit-framework-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
