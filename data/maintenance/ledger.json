@@ -136,6 +136,14 @@
       "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
+    },
+    "skills/ssh-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-17",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
