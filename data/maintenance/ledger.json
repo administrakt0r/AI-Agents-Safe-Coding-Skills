@@ -136,6 +136,14 @@
       "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
+    },
+    "skills/azure-ai-document-intelligence-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-13",
+      "reviewerAgent": "jules",
+      "outcome": "Modernized the skill by renaming from azure-ai-formrecognizer-java to azure-ai-document-intelligence-java and migrating SDK usages.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-java",
+      "nextAction": "Review the updated SKILL.md for accuracy."
     }
   }
 }
