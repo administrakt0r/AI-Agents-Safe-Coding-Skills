@@ -2984,6 +2984,30 @@
       "path": "skills/azure-ai-document-intelligence-dotnet/SKILL.md"
     },
     {
+      "id": "azure-ai-document-intelligence-java",
+      "name": "azure-ai-document-intelligence-java",
+      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
+      "category": "data-ai",
+      "tags": [
+        "azure",
+        "ai",
+        "document",
+        "intelligence",
+        "java"
+      ],
+      "triggers": [
+        "azure",
+        "ai",
+        "document",
+        "intelligence",
+        "java",
+        "analysis",
+        "applications",
+        "sdk"
+      ],
+      "path": "skills/azure-ai-document-intelligence-java/SKILL.md"
+    },
+    {
       "id": "azure-ai-document-intelligence-ts",
       "name": "azure-ai-document-intelligence-ts",
       "description": "Extract text, tables, and structured data from documents using prebuilt and custom models.",
@@ -3010,30 +3034,6 @@
         "prebuilt"
       ],
       "path": "skills/azure-ai-document-intelligence-ts/SKILL.md"
-    },
-    {
-      "id": "azure-ai-formrecognizer-java",
-      "name": "azure-ai-formrecognizer-java",
-      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
-      "category": "data-ai",
-      "tags": [
-        "azure",
-        "ai",
-        "formrecognizer",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "ai",
-        "formrecognizer",
-        "java",
-        "document",
-        "analysis",
-        "applications",
-        "intelligence",
-        "sdk"
-      ],
-      "path": "skills/azure-ai-formrecognizer-java/SKILL.md"
     },
     {
       "id": "azure-ai-ml-py",
