@@ -9,6 +9,14 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/azure-ai-formrecognizer-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-20",
+      "reviewerAgent": "jules",
+      "outcome": "Removed obsolete skill azure-ai-formrecognizer-java as it is deprecated and superseded by azure-ai-documentintelligence-java.",
+      "linkedIssueOrPr": "PR-remove-azure-ai-formrecognizer-java",
+      "nextAction": "None"
+    },
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
       "lastReviewedAt": "2026-04-21",
