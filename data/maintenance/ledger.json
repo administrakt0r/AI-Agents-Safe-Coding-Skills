@@ -152,6 +152,14 @@
       "outcome": "Removed obsolete skill azure-ai-anomalydetector-java because the Anomaly Detector service is being retired 1 October 2026 and new resources cannot be created since 20 September 2023.",
       "linkedIssueOrPr": "PR-remove-azure-ai-anomalydetector-java",
       "nextAction": "None"
+    },
+    "skills/azure-monitor-opentelemetry-exporter-py": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-21",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-py as it is deprecated and superseded by azure-monitor-opentelemetry.",
+      "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-py",
+      "nextAction": "None"
     }
   }
 }
