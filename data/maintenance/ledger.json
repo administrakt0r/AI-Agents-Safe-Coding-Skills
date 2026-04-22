@@ -9,12 +9,20 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/azure-ai-formrecognizer-java": {
+      "status": "removed",
+      "lastReviewedAt": "2026-04-20",
+      "reviewerAgent": "jules",
+      "outcome": "Removed obsolete skill azure-ai-formrecognizer-java as it is deprecated and superseded by azure-ai-documentintelligence-java.",
+      "linkedIssueOrPr": "PR-remove-azure-ai-formrecognizer-java",
+      "nextAction": "None"
+    },
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
-      "lastReviewedAt": "2026-04-03",
+      "lastReviewedAt": "2026-04-21",
       "reviewerAgent": "jules",
-      "outcome": "Imported the ad-creative skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-ad-creative",
+      "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-customer-research",
       "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
     },
     "skills/youtube-summarizer": {
