@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1273
+Total skills: 1274
 
 ## architecture (87)
 
@@ -591,7 +591,7 @@ Total skills: 1273
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (304)
+## general (305)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -614,6 +614,7 @@ Total skills: 1273
 | `app-store-changelog` | Generate user-facing App Store release notes from git history since the last tag. | app, store, changelog | app, store, changelog, generate, user, facing, release, notes, git, history, since, last |
 | `arm-cortex-expert` | Senior embedded software engineer specializing in firmware and driver development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD). | arm, cortex | arm, cortex, senior, embedded, software, engineer, specializing, firmware, driver, development, microcontrollers, teensy |
 | `ask-questions-if-underspecified` | Clarify requirements before implementing. Use when serious doubts arise. | ask, questions, if, underspecified | ask, questions, if, underspecified, clarify, requirements, before, implementing, serious, doubts, arise |
+| `aso-audit` | Audit App Store or Google Play listings against ASO best practices. | aso, audit | aso, audit, app, store, google, play, listings, against |
 | `avalonia-layout-zafiro` | Guidelines for modern Avalonia UI layout using Zafiro.Avalonia, emphasizing shared styles, generic components, and avoiding XAML redundancy. | avalonia, layout, zafiro | avalonia, layout, zafiro, guidelines, ui, emphasizing, shared, styles, generic, components, avoiding, xaml |
 | `avalonia-zafiro-development` | Mandatory skills, conventions, and behavioral rules for Avalonia UI development using the Zafiro toolkit. | avalonia, zafiro | avalonia, zafiro, development, mandatory, skills, conventions, behavioral, rules, ui, toolkit |
 | `aws-cost-cleanup` | Automated cleanup of unused AWS resources to reduce costs | aws, cost, cleanup | aws, cost, cleanup, automated, unused, resources, reduce, costs |
@@ -900,7 +901,7 @@ Total skills: 1273
 | `xlsx-official` | Unless otherwise stated by the user or existing template | xlsx, official | xlsx, official, unless, otherwise, stated, user, existing |
 | `youtube-summarizer` | Extract transcripts from YouTube videos and generate comprehensive, detailed summaries using intelligent analysis frameworks | [video, summarization, transcription, youtube, content-analysis] | [video, summarization, transcription, youtube, content-analysis], summarizer, extract, transcripts, videos, generate, detailed, summaries |
 
-## infrastructure (115)
+## infrastructure (114)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -912,7 +913,6 @@ Total skills: 1273
 | `aws-penetration-testing` | Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 ... | aws, penetration | aws, penetration, testing, provide, techniques, cloud, environments, covers, iam, enumeration, privilege, escalation |
 | `aws-skills` | AWS development with infrastructure automation and cloud architecture patterns | aws, skills | aws, skills, development, infrastructure, automation, cloud, architecture |
 | `azd-deployment` | Deploy containerized frontend + backend applications to Azure Container Apps with remote builds, managed identity, and idempotent infrastructure. | azd, deployment | azd, deployment, deploy, containerized, frontend, backend, applications, azure, container, apps, remote, managed |
-| `azure-ai-anomalydetector-java` | Build anomaly detection applications with Azure AI Anomaly Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection, time-serie... | azure, ai, anomalydetector, java | azure, ai, anomalydetector, java, anomaly, detection, applications, detector, sdk, implementing, univariate, multivariate |
 | `azure-identity-dotnet` | Azure Identity SDK for .NET. Authentication library for Azure SDK clients using Microsoft Entra ID. Use for DefaultAzureCredential, managed identity, service... | azure, identity, dotnet | azure, identity, dotnet, sdk, net, authentication, library, clients, microsoft, entra, id, defaultazurecredential |
 | `azure-identity-py` | Azure Identity SDK for Python authentication. Use for DefaultAzureCredential, managed identity, service principals, and token caching. | azure, identity, py | azure, identity, py, sdk, python, authentication, defaultazurecredential, managed, principals, token, caching |
 | `azure-messaging-webpubsubservice-py` | Azure Web PubSub Service SDK for Python. Use for real-time messaging, WebSocket connections, and pub/sub patterns. | azure, messaging, webpubsubservice, py | azure, messaging, webpubsubservice, py, web, pubsub, sdk, python, real, time, websocket, connections |

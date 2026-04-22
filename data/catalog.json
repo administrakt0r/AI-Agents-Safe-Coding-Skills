@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1273,
+  "total": 1274,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -2256,6 +2256,27 @@
       "path": "skills/ask-questions-if-underspecified/SKILL.md"
     },
     {
+      "id": "aso-audit",
+      "name": "aso-audit",
+      "description": "Audit App Store or Google Play listings against ASO best practices.",
+      "category": "general",
+      "tags": [
+        "aso",
+        "audit"
+      ],
+      "triggers": [
+        "aso",
+        "audit",
+        "app",
+        "store",
+        "google",
+        "play",
+        "listings",
+        "against"
+      ],
+      "path": "skills/aso-audit/SKILL.md"
+    },
+    {
       "id": "astro",
       "name": "astro",
       "description": "Build content-focused websites with Astro — zero JS by default, islands architecture, multi-framework components, and Markdown/MDX support.",
@@ -2823,33 +2844,6 @@
         "messages"
       ],
       "path": "skills/azure-ai-agents-persistent-java/SKILL.md"
-    },
-    {
-      "id": "azure-ai-anomalydetector-java",
-      "name": "azure-ai-anomalydetector-java",
-      "description": "Build anomaly detection applications with Azure AI Anomaly Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection, time-series analysis, or AI-powered monitoring.",
-      "category": "infrastructure",
-      "tags": [
-        "azure",
-        "ai",
-        "anomalydetector",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "ai",
-        "anomalydetector",
-        "java",
-        "anomaly",
-        "detection",
-        "applications",
-        "detector",
-        "sdk",
-        "implementing",
-        "univariate",
-        "multivariate"
-      ],
-      "path": "skills/azure-ai-anomalydetector-java/SKILL.md"
     },
     {
       "id": "azure-ai-contentsafety-java",
