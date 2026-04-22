@@ -4,10 +4,10 @@
     "skills_index.json",
     "data/skills_index.json",
     "data/catalog.json",
-    "data/bundles.json",
     "data/aliases.json"
   ],
   "mixedFiles": [
+    "data/bundles.json",
     "README.md",
     "package.json",
     "docs/users/getting-started.md",
