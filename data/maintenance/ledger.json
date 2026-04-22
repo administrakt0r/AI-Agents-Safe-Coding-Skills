@@ -19,6 +19,11 @@
     },
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
+      "lastReviewedAt": "2026-04-14",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the aso-audit skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-aso-audit",
+      },
       "lastReviewedAt": "2026-04-21",
       "reviewerAgent": "jules",
       "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",

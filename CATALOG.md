@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1272
+Total skills: 1274
 
 ## architecture (87)
 
@@ -591,7 +591,7 @@ Total skills: 1272
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (304)
+## general (305)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -614,6 +614,7 @@ Total skills: 1272
 | `app-store-changelog` | Generate user-facing App Store release notes from git history since the last tag. | app, store, changelog | app, store, changelog, generate, user, facing, release, notes, git, history, since, last |
 | `arm-cortex-expert` | Senior embedded software engineer specializing in firmware and driver development for ARM Cortex-M microcontrollers (Teensy, STM32, nRF52, SAMD). | arm, cortex | arm, cortex, senior, embedded, software, engineer, specializing, firmware, driver, development, microcontrollers, teensy |
 | `ask-questions-if-underspecified` | Clarify requirements before implementing. Use when serious doubts arise. | ask, questions, if, underspecified | ask, questions, if, underspecified, clarify, requirements, before, implementing, serious, doubts, arise |
+| `aso-audit` | Audit App Store or Google Play listings against ASO best practices. | aso, audit | aso, audit, app, store, google, play, listings, against |
 | `avalonia-layout-zafiro` | Guidelines for modern Avalonia UI layout using Zafiro.Avalonia, emphasizing shared styles, generic components, and avoiding XAML redundancy. | avalonia, layout, zafiro | avalonia, layout, zafiro, guidelines, ui, emphasizing, shared, styles, generic, components, avoiding, xaml |
 | `avalonia-zafiro-development` | Mandatory skills, conventions, and behavioral rules for Avalonia UI development using the Zafiro toolkit. | avalonia, zafiro | avalonia, zafiro, development, mandatory, skills, conventions, behavioral, rules, ui, toolkit |
 | `aws-cost-cleanup` | Automated cleanup of unused AWS resources to reduce costs | aws, cost, cleanup | aws, cost, cleanup, automated, unused, resources, reduce, costs |
