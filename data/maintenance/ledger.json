@@ -150,6 +150,13 @@
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
     },
+    "skills/xss-html-injection": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-15",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active XSS and HTML injection payloads targeting attacker.com with safe placeholders.",
+      "linkedIssueOrPr": "PR-xss-html-injection-hardening",
+      },
     "skills/metasploit-framework": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-16",
