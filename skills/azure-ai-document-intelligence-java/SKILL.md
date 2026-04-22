@@ -1,12 +1,12 @@
 ---
-name: azure-ai-formrecognizer-java
+name: azure-ai-document-intelligence-java
 description: "Build document analysis applications using the Azure AI Document Intelligence SDK for Java."
 risk: unknown
 source: community
 date_added: "2026-02-27"
 ---
 
-# Azure Document Intelligence (Form Recognizer) SDK for Java
+# Azure Document Intelligence SDK for Java
 
 Build document analysis applications using the Azure AI Document Intelligence SDK for Java.
 
@@ -15,33 +15,33 @@ Build document analysis applications using the Azure AI Document Intelligence SD
 ```xml
 <dependency>
     <groupId>com.azure</groupId>
-    <artifactId>azure-ai-formrecognizer</artifactId>
-    <version>4.2.0-beta.1</version>
+    <artifactId>azure-ai-documentintelligence</artifactId>
+    <version>1.0.1</version>
 </dependency>
 ```
 
 ## Client Creation
 
-### DocumentAnalysisClient
+### DocumentIntelligenceClient
 
 ```java
-import com.azure.ai.formrecognizer.documentanalysis.DocumentAnalysisClient;
-import com.azure.ai.formrecognizer.documentanalysis.DocumentAnalysisClientBuilder;
+import com.azure.ai.documentintelligence.DocumentIntelligenceClient;
+import com.azure.ai.documentintelligence.DocumentIntelligenceClientBuilder;
 import com.azure.core.credential.AzureKeyCredential;
 
-DocumentAnalysisClient client = new DocumentAnalysisClientBuilder()
+DocumentIntelligenceClient client = new DocumentIntelligenceClientBuilder()
     .credential(new AzureKeyCredential("{key}"))
     .endpoint("{endpoint}")
     .buildClient();
 ```
 
-### DocumentModelAdministrationClient
+### DocumentIntelligenceAdministrationClient
 
 ```java
-import com.azure.ai.formrecognizer.documentanalysis.administration.DocumentModelAdministrationClient;
-import com.azure.ai.formrecognizer.documentanalysis.administration.DocumentModelAdministrationClientBuilder;
+import com.azure.ai.documentintelligence.DocumentIntelligenceAdministrationClient;
+import com.azure.ai.documentintelligence.DocumentIntelligenceAdministrationClientBuilder;
 
-DocumentModelAdministrationClient adminClient = new DocumentModelAdministrationClientBuilder()
+DocumentIntelligenceAdministrationClient adminClient = new DocumentIntelligenceAdministrationClientBuilder()
     .credential(new AzureKeyCredential("{key}"))
     .endpoint("{endpoint}")
     .buildClient();
@@ -52,7 +52,7 @@ DocumentModelAdministrationClient adminClient = new DocumentModelAdministrationC
 ```java
 import com.azure.identity.DefaultAzureCredentialBuilder;
 
-DocumentAnalysisClient client = new DocumentAnalysisClientBuilder()
+DocumentIntelligenceClient client = new DocumentIntelligenceClientBuilder()
     .endpoint("{endpoint}")
     .credential(new DefaultAzureCredentialBuilder().build())
     .buildClient();
@@ -75,7 +75,7 @@ DocumentAnalysisClient client = new DocumentAnalysisClientBuilder()
 ### Extract Layout
 
 ```java
-import com.azure.ai.formrecognizer.documentanalysis.models.*;
+import com.azure.ai.documentintelligence.models.*;
 import com.azure.core.util.BinaryData;
 import com.azure.core.util.polling.SyncPoller;
 import java.io.File;
@@ -191,7 +191,7 @@ for (DocumentKeyValuePair kvp : result.getKeyValuePairs()) {
 ### Build Custom Model
 
 ```java
-import com.azure.ai.formrecognizer.documentanalysis.administration.models.*;
+import com.azure.ai.documentintelligence.models.*;
 
 String blobContainerUrl = "{SAS_URL_of_training_data}";
 String prefix = "training-docs/";
@@ -328,14 +328,14 @@ try {
 ## Environment Variables
 
 ```bash
-FORM_RECOGNIZER_ENDPOINT=https://<resource>.cognitiveservices.azure.com/
-FORM_RECOGNIZER_KEY=<your-api-key>
+DOCUMENT_INTELLIGENCE_ENDPOINT=https://<resource>.cognitiveservices.azure.com/
+DOCUMENT_INTELLIGENCE_KEY=<your-api-key>
 ```
 
 ## Trigger Phrases
 
 - "document intelligence Java"
-- "form recognizer SDK"
+- "document intelligence SDK"
 - "extract text from PDF"
 - "OCR document Java"
 - "analyze invoice receipt"

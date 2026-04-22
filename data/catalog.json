@@ -2846,33 +2846,6 @@
       "path": "skills/azure-ai-agents-persistent-java/SKILL.md"
     },
     {
-      "id": "azure-ai-anomalydetector-java",
-      "name": "azure-ai-anomalydetector-java",
-      "description": "Build anomaly detection applications with Azure AI Anomaly Detector SDK for Java. Use when implementing univariate/multivariate anomaly detection, time-series analysis, or AI-powered monitoring.",
-      "category": "infrastructure",
-      "tags": [
-        "azure",
-        "ai",
-        "anomalydetector",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "ai",
-        "anomalydetector",
-        "java",
-        "anomaly",
-        "detection",
-        "applications",
-        "detector",
-        "sdk",
-        "implementing",
-        "univariate",
-        "multivariate"
-      ],
-      "path": "skills/azure-ai-anomalydetector-java/SKILL.md"
-    },
-    {
       "id": "azure-ai-contentsafety-java",
       "name": "azure-ai-contentsafety-java",
       "description": "Build content moderation applications using the Azure AI Content Safety SDK for Java.",
