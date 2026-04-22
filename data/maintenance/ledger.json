@@ -145,37 +145,13 @@
       "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
       "nextAction": "None"
     },
-    "skills/azure-ai-formrecognizer-java": {
+    "skills/metasploit-framework": {
       "status": "normalized",
-      "lastReviewedAt": "2026-04-12",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by migrating from the deprecated formrecognizer SDK to the documentintelligence SDK.",
-      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-java",
-      "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
-      },
-    "skills/privilege-escalation-methods": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-12",
+      "lastReviewedAt": "2026-04-16",
       "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-privilege-escalation-methods-hardening",
+      "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-metasploit-framework-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
-      },
-    "skills/azure-ai-anomalydetector-java": {
-      "status": "removed",
-      "lastReviewedAt": "2026-04-19",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Removed obsolete skill azure-ai-anomalydetector-java because the Anomaly Detector service is being retired 1 October 2026 and new resources cannot be created since 20 September 2023.",
-      "linkedIssueOrPr": "PR-remove-azure-ai-anomalydetector-java",
-      "nextAction": "None"
-    },
-    "skills/azure-monitor-opentelemetry-exporter-py": {
-      "status": "removed",
-      "lastReviewedAt": "2026-04-21",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-py as it is deprecated and superseded by azure-monitor-opentelemetry.",
-      "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-py",
-      "nextAction": "None"
     }
   }
 }
