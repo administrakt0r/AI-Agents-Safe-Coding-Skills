@@ -9,6 +9,14 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/ssh-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-24",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shell payload with safe placeholder.",
+      "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "skills/azure-ai-formrecognizer-java": {
       "status": "removed",
       "lastReviewedAt": "2026-04-20",
