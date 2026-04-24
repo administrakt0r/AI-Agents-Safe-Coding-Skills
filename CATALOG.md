@@ -96,7 +96,7 @@ Total skills: 1274
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (60)
+## business (61)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -111,6 +111,7 @@ Total skills: 1274
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
 | `copy-editing` | You are an expert copy editor specializing in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing pas... | copy, editing | copy, editing, editor, specializing, marketing, conversion, goal, systematically, improve, existing, through, passes |
 | `copywriting` | Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules. | copywriting | copywriting, write, rigorous, conversion, marketing, copy, landing, pages, emails, enforces, brief, confirmation |
+| `customer-research` | Conduct, analyze, and synthesize customer research including surveys, interviews, and community mining to build personas and uncover jobs-to-be-done. | customer, research | customer, research, conduct, analyze, synthesize, including, surveys, interviews, community, mining, personas, uncover |
 | `defi-protocol-templates` | Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applicat... | defi, protocol | defi, protocol, protocols, staking, amms, governance, lending, building, decentralized, finance, applications, smart |
 | `email-sequence` | You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward ... | email, sequence | email, sequence, marketing, automation, goal, sequences, nurture, relationships, drive, action, move, people |
 | `framework-migration-legacy-modernize` | Orchestrate a comprehensive legacy system modernization using the strangler fig pattern, enabling gradual replacement of outdated components while maintainin... | framework, migration, legacy, modernize | framework, migration, legacy, modernize, orchestrate, modernization, strangler, fig, enabling, gradual, replacement, outdated |
@@ -204,8 +205,8 @@ Total skills: 1274
 | `azure-ai-contentsafety-ts` | Analyze text and images for harmful content with customizable blocklists. | azure, ai, contentsafety, ts | azure, ai, contentsafety, ts, analyze, text, images, harmful, content, customizable, blocklists |
 | `azure-ai-contentunderstanding-py` | Azure AI Content Understanding SDK for Python. Use for multimodal content extraction from documents, images, audio, and video. | azure, ai, contentunderstanding, py | azure, ai, contentunderstanding, py, content, understanding, sdk, python, multimodal, extraction, documents, images |
 | `azure-ai-document-intelligence-dotnet` | Azure AI Document Intelligence SDK for .NET. Extract text, tables, and structured data from documents using prebuilt and custom models. | azure, ai, document, intelligence, dotnet | azure, ai, document, intelligence, dotnet, sdk, net, extract, text, tables, structured, data |
+| `azure-ai-document-intelligence-java` | Build document analysis applications using the Azure AI Document Intelligence SDK for Java. | azure, ai, document, intelligence, java | azure, ai, document, intelligence, java, analysis, applications, sdk |
 | `azure-ai-document-intelligence-ts` | Extract text, tables, and structured data from documents using prebuilt and custom models. | azure, ai, document, intelligence, ts | azure, ai, document, intelligence, ts, extract, text, tables, structured, data, documents, prebuilt |
-| `azure-ai-formrecognizer-java` | Build document analysis applications using the Azure AI Document Intelligence SDK for Java. | azure, ai, formrecognizer, java | azure, ai, formrecognizer, java, document, analysis, applications, intelligence, sdk |
 | `azure-ai-ml-py` | Azure Machine Learning SDK v2 for Python. Use for ML workspaces, jobs, models, datasets, compute, and pipelines. | azure, ai, ml, py | azure, ai, ml, py, machine, learning, sdk, v2, python, workspaces, jobs, models |
 | `azure-ai-openai-dotnet` | Azure OpenAI SDK for .NET. Client library for Azure OpenAI and OpenAI services. Use for chat completions, embeddings, image generation, audio transcription, ... | azure, ai, openai, dotnet | azure, ai, openai, dotnet, sdk, net, client, library, chat, completions, embeddings, image |
 | `azure-ai-projects-dotnet` | Azure AI Projects SDK for .NET. High-level client for Azure AI Foundry projects including agents, connections, datasets, deployments, evaluations, and indexes. | azure, ai, dotnet | azure, ai, dotnet, sdk, net, high, level, client, foundry, including, agents, connections |
@@ -408,7 +409,7 @@ Total skills: 1274
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 | `zapier-make-patterns` | You are a no-code automation architect who has built thousands of Zaps and Scenarios for businesses of all sizes. You've seen automations that save companies... | zapier, make | zapier, make, no, code, automation, architect, who, built, thousands, zaps, scenarios, businesses |
 
-## development (178)
+## development (177)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -448,7 +449,6 @@ Total skills: 1274
 | `azure-mgmt-fabric-dotnet` | Azure Resource Manager SDK for Fabric in .NET. | azure, mgmt, fabric, dotnet | azure, mgmt, fabric, dotnet, resource, manager, sdk, net |
 | `azure-mgmt-fabric-py` | Azure Fabric Management SDK for Python. Use for managing Microsoft Fabric capacities and resources. | azure, mgmt, fabric, py | azure, mgmt, fabric, py, sdk, python, managing, microsoft, capacities, resources |
 | `azure-mgmt-mongodbatlas-dotnet` | Manage MongoDB Atlas Organizations as Azure ARM resources with unified billing through Azure Marketplace. | azure, mgmt, mongodbatlas, dotnet | azure, mgmt, mongodbatlas, dotnet, mongodb, atlas, organizations, arm, resources, unified, billing, through |
-| `azure-monitor-opentelemetry-exporter-py` | Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights. | azure, monitor, opentelemetry, exporter, py | azure, monitor, opentelemetry, exporter, py, python, low, level, export, application, insights |
 | `azure-monitor-opentelemetry-py` | Azure Monitor OpenTelemetry Distro for Python. Use for one-line Application Insights setup with auto-instrumentation. | azure, monitor, opentelemetry, py | azure, monitor, opentelemetry, py, distro, python, one, line, application, insights, setup, auto |
 | `azure-resource-manager-durabletask-dotnet` | Azure Resource Manager SDK for Durable Task Scheduler in .NET. | azure, resource, manager, durabletask, dotnet | azure, resource, manager, durabletask, dotnet, sdk, durable, task, scheduler, net |
 | `azure-resource-manager-playwright-dotnet` | Azure Resource Manager SDK for Microsoft Playwright Testing in .NET. | azure, resource, manager, playwright, dotnet | azure, resource, manager, playwright, dotnet, sdk, microsoft, testing, net |
@@ -591,7 +591,7 @@ Total skills: 1274
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (305)
+## general (306)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -656,6 +656,7 @@ Total skills: 1274
 | `codebase-cleanup-tech-debt` | You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncov... | codebase, cleanup, tech, debt | codebase, cleanup, tech, debt, technical, specializing, identifying, quantifying, prioritizing, software, analyze, uncover |
 | `cold-email` | Write B2B cold emails and follow-up sequences that earn replies. Use when creating outbound prospecting emails, SDR outreach, personalized opening lines, sub... | cold, email | cold, email, write, b2b, emails, follow, up, sequences, earn, replies, creating, outbound |
 | `commit` | ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional ... | commit | commit, always, skill, committing, code, changes, never, directly, without, creates, commits, following |
+| `competitor-profiling` | When the user wants to research, profile, or analyze competitors from their URLs. | competitor, profiling | competitor, profiling, user, wants, research, profile, analyze, competitors, urls |
 | `comprehensive-review-full-review` | Use when working with comprehensive review full review | comprehensive, full | comprehensive, full, review, working |
 | `computer-vision-expert` | SOTA Computer Vision Expert (2026). Specialized in YOLO26, Segment Anything 3 (SAM 3), Vision Language Models, and real-time spatial analysis. | computer, vision | computer, vision, sota, 2026, specialized, yolo26, segment, anything, sam, language, models, real |
 | `concise-planning` | Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist. | concise, planning | concise, planning, user, asks, plan, coding, task, generate, clear, actionable, atomic, checklist |
