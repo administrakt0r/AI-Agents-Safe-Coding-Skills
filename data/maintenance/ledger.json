@@ -19,16 +19,11 @@
     },
     "sources/coreyhaines31/marketingskills": {
       "status": "monitoring",
-      "lastReviewedAt": "2026-04-14",
+      "lastReviewedAt": "2026-04-25",
       "reviewerAgent": "jules",
-      "outcome": "Imported the aso-audit skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-aso-audit",
-      },
-      "lastReviewedAt": "2026-04-21",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-customer-research",
-      "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
+      "outcome": "Imported the competitor-alternatives skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-competitor-alternatives",
+      "nextAction": "Monitor the imported competitor-alternatives skill for any future upstream updates. Use sources/coreyhaines31/marketingskills as a source for future single-skill import runs."
     },
     "skills/youtube-summarizer": {
       "status": "normalized",
