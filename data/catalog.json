@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1273,
+  "total": 1274,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -2978,30 +2978,6 @@
       "path": "skills/azure-ai-document-intelligence-dotnet/SKILL.md"
     },
     {
-      "id": "azure-ai-document-intelligence-java",
-      "name": "azure-ai-document-intelligence-java",
-      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
-      "category": "data-ai",
-      "tags": [
-        "azure",
-        "ai",
-        "document",
-        "intelligence",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "ai",
-        "document",
-        "intelligence",
-        "java",
-        "analysis",
-        "applications",
-        "sdk"
-      ],
-      "path": "skills/azure-ai-document-intelligence-java/SKILL.md"
-    },
-    {
       "id": "azure-ai-document-intelligence-ts",
       "name": "azure-ai-document-intelligence-ts",
       "description": "Extract text, tables, and structured data from documents using prebuilt and custom models.",
@@ -3028,6 +3004,30 @@
         "prebuilt"
       ],
       "path": "skills/azure-ai-document-intelligence-ts/SKILL.md"
+    },
+    {
+      "id": "azure-ai-formrecognizer-java",
+      "name": "azure-ai-formrecognizer-java",
+      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
+      "category": "data-ai",
+      "tags": [
+        "azure",
+        "ai",
+        "formrecognizer",
+        "java"
+      ],
+      "triggers": [
+        "azure",
+        "ai",
+        "formrecognizer",
+        "java",
+        "document",
+        "analysis",
+        "applications",
+        "intelligence",
+        "sdk"
+      ],
+      "path": "skills/azure-ai-formrecognizer-java/SKILL.md"
     },
     {
       "id": "azure-ai-ml-py",
@@ -4872,6 +4872,33 @@
         "workspace"
       ],
       "path": "skills/azure-monitor-ingestion-py/SKILL.md"
+    },
+    {
+      "id": "azure-monitor-opentelemetry-exporter-py",
+      "name": "azure-monitor-opentelemetry-exporter-py",
+      "description": "Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights.",
+      "category": "development",
+      "tags": [
+        "azure",
+        "monitor",
+        "opentelemetry",
+        "exporter",
+        "py"
+      ],
+      "triggers": [
+        "azure",
+        "monitor",
+        "opentelemetry",
+        "exporter",
+        "py",
+        "python",
+        "low",
+        "level",
+        "export",
+        "application",
+        "insights"
+      ],
+      "path": "skills/azure-monitor-opentelemetry-exporter-py/SKILL.md"
     },
     {
       "id": "azure-monitor-opentelemetry-py",
@@ -8538,7 +8565,7 @@
     {
       "id": "competitor-alternatives",
       "name": "competitor-alternatives",
-      "description": "Create competitor comparison or alternative pages for SEO and sales enablement.",
+      "description": "You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuine value to evaluators, and position your product effectively.",
       "category": "business",
       "tags": [
         "competitor",
@@ -8547,12 +8574,16 @@
       "triggers": [
         "competitor",
         "alternatives",
+        "creating",
         "comparison",
         "alternative",
         "pages",
-        "seo",
-        "sales",
-        "enablement"
+        "goal",
+        "rank",
+        "competitive",
+        "search",
+        "terms",
+        "provide"
       ],
       "path": "skills/competitor-alternatives/SKILL.md"
     },
@@ -9561,31 +9592,6 @@
         "net"
       ],
       "path": "skills/csharp-pro/SKILL.md"
-    },
-    {
-      "id": "customer-research",
-      "name": "customer-research",
-      "description": "Conduct, analyze, and synthesize customer research including surveys, interviews, and community mining to build personas and uncover jobs-to-be-done.",
-      "category": "business",
-      "tags": [
-        "customer",
-        "research"
-      ],
-      "triggers": [
-        "customer",
-        "research",
-        "conduct",
-        "analyze",
-        "synthesize",
-        "including",
-        "surveys",
-        "interviews",
-        "community",
-        "mining",
-        "personas",
-        "uncover"
-      ],
-      "path": "skills/customer-research/SKILL.md"
     },
     {
       "id": "customer-support",
