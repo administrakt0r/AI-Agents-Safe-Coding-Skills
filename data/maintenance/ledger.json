@@ -164,6 +164,14 @@
       "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
       "linkedIssueOrPr": "PR-metasploit-framework-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/aws-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-25",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active privilege escalation, lambda backdoors, and credential dumping payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-aws-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
