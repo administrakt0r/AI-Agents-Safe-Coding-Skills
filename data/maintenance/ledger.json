@@ -164,6 +164,14 @@
       "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
       "linkedIssueOrPr": "PR-metasploit-framework-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/ssh-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-26",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
