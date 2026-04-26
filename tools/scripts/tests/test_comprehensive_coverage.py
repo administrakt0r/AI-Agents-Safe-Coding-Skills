@@ -156,13 +156,6 @@ def analyze_skill_locations():
         # Report results
         collisions = {n: paths for n, paths in name_map.items()
                       if len(paths) > 1}
-
-        # Ignore known upstream collisions
-        known_collisions = {"applicationinsights-web-ts"}
-        for known in known_collisions:
-            if known in collisions:
-                collisions.pop(known)
-
         unique_names = {n: paths for n,
                         paths in name_map.items() if len(paths) == 1}
 

@@ -132,13 +132,6 @@ def inspect_repo():
         # Collision check
         collisions = {n: paths for n, paths in names_seen.items()
                       if len(paths) > 1}
-
-        # Ignore known upstream collisions
-        known_collisions = {"applicationinsights-web-ts"}
-        for known in known_collisions:
-            if known in collisions:
-                collisions.pop(known)
-
         if collisions:
             print(f"\n4️⃣ ⚠️  Name Collisions Detected ({len(collisions)}):")
             for name, paths in collisions.items():
