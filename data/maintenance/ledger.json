@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-03-30T00:00:00Z",
+  "updatedAt": "2026-04-27T09:23:31Z",
   "policies": {
     "englishOnly": true,
     "singleSkillPerRun": true,
@@ -22,8 +22,9 @@
       "lastReviewedAt": "2026-04-14",
       "reviewerAgent": "jules",
       "outcome": "Imported the aso-audit skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-aso-audit",
-      },
+      "linkedIssueOrPr": "PR-jules-import-aso-audit"
+    },
+    "sources/coreyhaines31/marketingskills/customer-research": {
       "lastReviewedAt": "2026-04-21",
       "reviewerAgent": "jules",
       "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",
@@ -155,8 +156,8 @@
       "lastReviewedAt": "2026-04-15",
       "reviewerAgent": "malicious-skill-safety-auditor",
       "outcome": "Hardened skill by replacing active XSS and HTML injection payloads targeting attacker.com with safe placeholders.",
-      "linkedIssueOrPr": "PR-xss-html-injection-hardening",
-      },
+      "linkedIssueOrPr": "PR-xss-html-injection-hardening"
+    },
     "skills/metasploit-framework": {
       "status": "normalized",
       "lastReviewedAt": "2026-04-16",
@@ -164,6 +165,14 @@
       "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
       "linkedIssueOrPr": "PR-metasploit-framework-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "sources/coreyhaines31/marketingskills/directory-submissions": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-04-27",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-directory-submissions",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
