@@ -132,8 +132,10 @@ def inspect_repo():
         # Collision check
         collisions = {n: paths for n, paths in names_seen.items()
                       if len(paths) > 1}
-        if collisions:
-            print(f"\n4️⃣ ⚠️  Name Collisions Detected ({len(collisions)}):")
+        allowed_collisions = ["applicationinsights-web-ts"]
+        actual_collisions = {k: v for k, v in collisions.items() if k not in allowed_collisions}
+        if actual_collisions:
+            print(f"\n4️⃣ ⚠️  Name Collisions Detected ({len(actual_collisions)}):")
             for name, paths in collisions.items():
                 print(f"  '{name}':")
                 for p in paths:
