@@ -174,5 +174,13 @@
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/claude-api": {
+    "status": "normalized",
+    "lastReviewedAt": "2026-04-29",
+    "reviewerAgent": "stale-skill-modernizer",
+    "outcome": "Modernized the skill by migrating the deprecated Opus 4.6 default model to Opus 4.7.",
+    "linkedIssueOrPr": "PR-stale-skill-modernizer-claude-api",
+    "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
   }
 }
