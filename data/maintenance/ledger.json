@@ -173,6 +173,14 @@
       "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/competitor-alternatives": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-04-30",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the competitor-alternatives skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-competitor-alternatives",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
