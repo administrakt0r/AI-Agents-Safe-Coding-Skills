@@ -9,6 +9,14 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/ethical-hacking-methodology": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-02",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shell payload strings with safe placeholders.",
+      "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "skills/azure-ai-formrecognizer-java": {
       "status": "removed",
       "lastReviewedAt": "2026-04-20",
