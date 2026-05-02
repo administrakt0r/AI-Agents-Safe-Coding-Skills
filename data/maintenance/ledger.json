@@ -174,5 +174,13 @@
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "sources/coreyhaines31/marketingskills/community-marketing": {
+    "status": "monitoring",
+    "lastReviewedAt": "2026-05-02",
+    "reviewerAgent": "jules",
+    "outcome": "Imported the community-marketing skill after verifying it complies with the English-first policy and quality standards.",
+    "linkedIssueOrPr": "PR-jules-import-community-marketing",
+    "nextAction": "Monitor the imported skill for upstream updates."
   }
 }
