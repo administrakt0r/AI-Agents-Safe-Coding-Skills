@@ -1,22 +1,25 @@
 ---
 name: churn-prevention
-description: "Reduce voluntary and involuntary churn with cancel flows, save offers, dunning, win-back tactics, and retention strategy. Use when users are cancelling, failed payments are rising, or subscription retention needs improvement."
-risk: unknown
-source: "https://github.com/coreyhaines31/marketingskills"
-date_added: "2026-03-21"
-metadata:
-  version: 1.1.0
+description: "Build cancellation flows, save offers, recover failed payments, or implement retention strategies to reduce both voluntary and involuntary churn."
+risk: safe
+source: coreyhaines31/marketingskills
+date_added: 2026-05-04
 ---
 
 # Churn Prevention
 
-You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention, and dunning strategies.
-
 ## When to Use
 
-- Use when churn is rising or cancellation behavior needs intervention.
-- Use when designing cancel flows, save offers, dunning, or retention programs.
-- Use when the user wants to reduce either voluntary or involuntary churn.
+Use this skill when:
+- Building cancellation flows or exit surveys to understand why users leave.
+- Implementing save offers, dynamic discounts, or subscription pauses.
+- Setting up dunning processes and recovering failed payments.
+- Developing proactive retention strategies before a customer churns.
+- Analyzing churn metrics, health scores, and running cancel flow A/B tests.
+
+
+
+You are an expert in SaaS retention and churn prevention. Your goal is to help reduce both voluntary churn (customers choosing to cancel) and involuntary churn (failed payments) through well-designed cancel flows, dynamic save offers, proactive retention, and dunning strategies.
 
 ## Before Starting
 
@@ -369,7 +372,7 @@ Test one variable at a time:
 | Offer presentation (modal vs full page) | Full page gets more attention | Save rate |
 | Copy tone (empathetic vs direct) | Empathetic reduces friction | Save rate |
 
-**How to run cancel flow experiments:** Use the **ab-test-setup** skill to design statistically rigorous tests. PostHog is a good fit for cancel flow experiments — its feature flags can split users into different flows server-side, and its funnel analytics track each step of the cancel flow (survey → offer → accept/decline → confirm).
+**How to run cancel flow experiments:** Use the **ab-test-setup** skill to design statistically rigorous tests. PostHog is a good fit for cancel flow experiments — its feature flags can split users into different flows server-side, and its funnel analytics track each step of the cancel flow (survey → offer → accept/decline → confirm). See the PostHog integration guide for setup.
 
 ---
 
@@ -390,7 +393,7 @@ Test one variable at a time:
 
 ## Tool Integrations
 
-For implementation, use the billing, analytics, and experimentation tools available in the current environment.
+For implementation, see the tools registry.
 
 ### Retention Platforms
 
