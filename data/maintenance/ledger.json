@@ -173,6 +173,14 @@
       "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/co-marketing": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-09",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the co-marketing skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-co-marketing",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
