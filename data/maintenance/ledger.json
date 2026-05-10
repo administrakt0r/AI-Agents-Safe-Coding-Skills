@@ -9,6 +9,14 @@
     "promptPackDirectory": "docs/maintainers/agent-prompts"
   },
   "entries": {
+    "skills/gemini-api-dev": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-10",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill to refer to real and current gemini-2.0 and gemini-2.5 models and removed fake future gemini-3 models. Fixed incorrect statement that gemini-2.0 and gemini-2.5 were legacy.",
+      "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
+      "nextAction": "Review the updated SKILL.md for accuracy."
+    },
     "skills/azure-ai-formrecognizer-java": {
       "status": "removed",
       "lastReviewedAt": "2026-04-20",
