@@ -31,6 +31,14 @@
       "linkedIssueOrPr": "PR-jules-import-customer-research",
       "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
     },
+    "sources/coreyhaines31/marketingskills/video": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-10",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the video skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-video",
+      "nextAction": "Monitor the imported skill for upstream updates."
+    },
     "skills/youtube-summarizer": {
       "status": "normalized",
       "lastReviewedAt": "2026-03-29",
