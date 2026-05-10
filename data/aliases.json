@@ -21,7 +21,7 @@
     "azure-mgmt-dotnet": "azure-mgmt-apimanagement-dotnet",
     "azure-microsoft-ts": "azure-microsoft-playwright-testing-ts",
     "azure-monitor-java": "azure-monitor-ingestion-java",
-    "azure-monitor-py": "azure-monitor-opentelemetry-py",
+    "azure-monitor-py": "azure-monitor-opentelemetry-exporter-py",
     "azure-monitor-ts": "azure-monitor-opentelemetry-ts",
     "azure-resource-dotnet": "azure-resource-manager-cosmosdb-dotnet",
     "azure-search-dotnet": "azure-search-documents-dotnet",
