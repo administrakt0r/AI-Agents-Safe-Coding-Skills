@@ -96,7 +96,7 @@ Total skills: 1274
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (61)
+## business (60)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -111,7 +111,6 @@ Total skills: 1274
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
 | `copy-editing` | You are an expert copy editor specializing in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing pas... | copy, editing | copy, editing, editor, specializing, marketing, conversion, goal, systematically, improve, existing, through, passes |
 | `copywriting` | Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules. | copywriting | copywriting, write, rigorous, conversion, marketing, copy, landing, pages, emails, enforces, brief, confirmation |
-| `customer-research` | Conduct, analyze, and synthesize customer research including surveys, interviews, and community mining to build personas and uncover jobs-to-be-done. | customer, research | customer, research, conduct, analyze, synthesize, including, surveys, interviews, community, mining, personas, uncover |
 | `defi-protocol-templates` | Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applicat... | defi, protocol | defi, protocol, protocols, staking, amms, governance, lending, building, decentralized, finance, applications, smart |
 | `email-sequence` | You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward ... | email, sequence | email, sequence, marketing, automation, goal, sequences, nurture, relationships, drive, action, move, people |
 | `framework-migration-legacy-modernize` | Orchestrate a comprehensive legacy system modernization using the strangler fig pattern, enabling gradual replacement of outdated components while maintainin... | framework, migration, legacy, modernize | framework, migration, legacy, modernize, orchestrate, modernization, strangler, fig, enabling, gradual, replacement, outdated |
@@ -205,8 +204,8 @@ Total skills: 1274
 | `azure-ai-contentsafety-ts` | Analyze text and images for harmful content with customizable blocklists. | azure, ai, contentsafety, ts | azure, ai, contentsafety, ts, analyze, text, images, harmful, content, customizable, blocklists |
 | `azure-ai-contentunderstanding-py` | Azure AI Content Understanding SDK for Python. Use for multimodal content extraction from documents, images, audio, and video. | azure, ai, contentunderstanding, py | azure, ai, contentunderstanding, py, content, understanding, sdk, python, multimodal, extraction, documents, images |
 | `azure-ai-document-intelligence-dotnet` | Azure AI Document Intelligence SDK for .NET. Extract text, tables, and structured data from documents using prebuilt and custom models. | azure, ai, document, intelligence, dotnet | azure, ai, document, intelligence, dotnet, sdk, net, extract, text, tables, structured, data |
-| `azure-ai-document-intelligence-java` | Build document analysis applications using the Azure AI Document Intelligence SDK for Java. | azure, ai, document, intelligence, java | azure, ai, document, intelligence, java, analysis, applications, sdk |
 | `azure-ai-document-intelligence-ts` | Extract text, tables, and structured data from documents using prebuilt and custom models. | azure, ai, document, intelligence, ts | azure, ai, document, intelligence, ts, extract, text, tables, structured, data, documents, prebuilt |
+| `azure-ai-formrecognizer-java` | Build document analysis applications using the Azure AI Document Intelligence SDK for Java. | azure, ai, formrecognizer, java | azure, ai, formrecognizer, java, document, analysis, applications, intelligence, sdk |
 | `azure-ai-ml-py` | Azure Machine Learning SDK v2 for Python. Use for ML workspaces, jobs, models, datasets, compute, and pipelines. | azure, ai, ml, py | azure, ai, ml, py, machine, learning, sdk, v2, python, workspaces, jobs, models |
 | `azure-ai-openai-dotnet` | Azure OpenAI SDK for .NET. Client library for Azure OpenAI and OpenAI services. Use for chat completions, embeddings, image generation, audio transcription, ... | azure, ai, openai, dotnet | azure, ai, openai, dotnet, sdk, net, client, library, chat, completions, embeddings, image |
 | `azure-ai-projects-dotnet` | Azure AI Projects SDK for .NET. High-level client for Azure AI Foundry projects including agents, connections, datasets, deployments, evaluations, and indexes. | azure, ai, dotnet | azure, ai, dotnet, sdk, net, high, level, client, foundry, including, agents, connections |
@@ -284,7 +283,6 @@ Total skills: 1274
 | `database-design` | Database design principles and decision-making. Schema design, indexing strategy, ORM selection, serverless databases. | database | database, principles, decision, making, schema, indexing, orm, selection, serverless, databases |
 | `database-optimizer` | Expert database optimizer specializing in modern performance tuning, query optimization, and scalable architectures. | database, optimizer | database, optimizer, specializing, performance, tuning, query, optimization, scalable, architectures |
 | `dbt-transformation-patterns` | Production-ready patterns for dbt (data build tool) including model organization, testing strategies, documentation, and incremental processing. | dbt, transformation | dbt, transformation, data, including, model, organization, testing, documentation, incremental, processing |
-| `directory-submissions` | When the user wants to submit their product to startup, SaaS, AI, or review directories for backlinks, domain rating, and discovery. | directory, submissions | directory, submissions, user, wants, submit, product, startup, saas, ai, review, directories, backlinks |
 | `django-perf-review` | Django performance code review. Use when asked to "review Django performance", "find N+1 queries", "optimize Django", "check queryset performance", "database... | django, perf | django, perf, review, performance, code, asked, find, queries, optimize, check, queryset, database |
 | `documentation-generation-doc-generate` | You are a documentation expert specializing in creating comprehensive, maintainable documentation from code. Generate API docs, architecture diagrams, user g... | documentation, generation, doc, generate | documentation, generation, doc, generate, specializing, creating, maintainable, code, api, docs, architecture, diagrams |
 | `documentation-templates` | Documentation templates and structure guidelines. README, API docs, code comments, and AI-friendly documentation. | documentation | documentation, structure, guidelines, readme, api, docs, code, comments, ai, friendly |
@@ -360,6 +358,7 @@ Total skills: 1274
 | `react-best-practices` | Comprehensive performance optimization guide for React and Next.js applications, maintained by Vercel. Use when writing new React components or Next.js pages... | react, best, practices | react, best, practices, performance, optimization, next, js, applications, maintained, vercel, writing, new |
 | `react-ui-patterns` | Modern React UI patterns for loading states, error handling, and data fetching. Use when building UI components, handling async data, or managing UI states. | react, ui | react, ui, loading, states, error, handling, data, fetching, building, components, async, managing |
 | `recallmax` | FREE — God-tier long-context memory for AI agents. Injects 500K-1M clean tokens, auto-summarizes with tone/intent preservation, compresses 14-turn history in... | memory, context, rag, summarization, compression, long-context, agent-infrastructure | memory, context, rag, summarization, compression, long-context, agent-infrastructure, recallmax, free, god, tier, long |
+| `referral-program` | You are an expert in viral growth and referral marketing with access to referral program data and third-party tools. Your goal is to help design and optimize... | referral, program | referral, program, viral, growth, marketing, access, data, third, party, goal, optimize, programs |
 | `robius-state-management` | CRITICAL: Use for Robius state management patterns. Triggers on: AppState, persistence, theme switch, 状态管理, Scope::with_data, save state, load state, serde, ... | robius, state | robius, state, critical, triggers, appstate, persistence, theme, switch, scope, data, save, load |
 | `scala-pro` | Master enterprise-grade Scala development with functional programming, distributed systems, and big data processing. Expert in Apache Pekko, Akka, Spark, ZIO... | scala | scala, pro, enterprise, grade, development, functional, programming, distributed, big, data, processing, apache |
 | `scanpy` | Scanpy is a scalable Python toolkit for analyzing single-cell RNA-seq data, built on AnnData. Apply this skill for complete single-cell workflows including q... | scanpy | scanpy, scalable, python, toolkit, analyzing, single, cell, rna, seq, data, built, anndata |
@@ -409,7 +408,7 @@ Total skills: 1274
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 | `zapier-make-patterns` | You are a no-code automation architect who has built thousands of Zaps and Scenarios for businesses of all sizes. You've seen automations that save companies... | zapier, make | zapier, make, no, code, automation, architect, who, built, thousands, zaps, scenarios, businesses |
 
-## development (177)
+## development (178)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -449,6 +448,7 @@ Total skills: 1274
 | `azure-mgmt-fabric-dotnet` | Azure Resource Manager SDK for Fabric in .NET. | azure, mgmt, fabric, dotnet | azure, mgmt, fabric, dotnet, resource, manager, sdk, net |
 | `azure-mgmt-fabric-py` | Azure Fabric Management SDK for Python. Use for managing Microsoft Fabric capacities and resources. | azure, mgmt, fabric, py | azure, mgmt, fabric, py, sdk, python, managing, microsoft, capacities, resources |
 | `azure-mgmt-mongodbatlas-dotnet` | Manage MongoDB Atlas Organizations as Azure ARM resources with unified billing through Azure Marketplace. | azure, mgmt, mongodbatlas, dotnet | azure, mgmt, mongodbatlas, dotnet, mongodb, atlas, organizations, arm, resources, unified, billing, through |
+| `azure-monitor-opentelemetry-exporter-py` | Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights. | azure, monitor, opentelemetry, exporter, py | azure, monitor, opentelemetry, exporter, py, python, low, level, export, application, insights |
 | `azure-monitor-opentelemetry-py` | Azure Monitor OpenTelemetry Distro for Python. Use for one-line Application Insights setup with auto-instrumentation. | azure, monitor, opentelemetry, py | azure, monitor, opentelemetry, py, distro, python, one, line, application, insights, setup, auto |
 | `azure-resource-manager-durabletask-dotnet` | Azure Resource Manager SDK for Durable Task Scheduler in .NET. | azure, resource, manager, durabletask, dotnet | azure, resource, manager, durabletask, dotnet, sdk, durable, task, scheduler, net |
 | `azure-resource-manager-playwright-dotnet` | Azure Resource Manager SDK for Microsoft Playwright Testing in .NET. | azure, resource, manager, playwright, dotnet | azure, resource, manager, playwright, dotnet, sdk, microsoft, testing, net |
@@ -591,7 +591,7 @@ Total skills: 1274
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (306)
+## general (305)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -824,7 +824,6 @@ Total skills: 1274
 | `quality-nonconformance` | Codified expertise for quality control, non-conformance investigation, root cause analysis, corrective action, and supplier quality management in regulated m... | quality, nonconformance | quality, nonconformance, codified, expertise, control, non, conformance, investigation, root, cause, analysis, corrective |
 | `readme` | You are an expert technical writer creating comprehensive project documentation. Your goal is to write a README.md that is absurdly thorough—the kind of docu... | readme | readme, technical, writer, creating, documentation, goal, write, md, absurdly, thorough, kind, wish |
 | `receiving-code-review` | Code review requires technical evaluation, not emotional performance. | receiving, code | receiving, code, review, requires, technical, evaluation, emotional, performance |
-| `referral-program` | Use when creating, optimizing, or analyzing referral and affiliate programs. Ideal for designing viral loops and word-of-mouth strategies. | referral, program | referral, program, creating, optimizing, analyzing, affiliate, programs, ideal, designing, viral, loops, word |
 | `rehabilitation-analyzer` | 分析康复训练数据、识别康复模式、评估康复进展，并提供个性化康复建议 | rehabilitation, analyzer | rehabilitation, analyzer |
 | `remotion` | Generate walkthrough videos from Stitch projects using Remotion with smooth transitions, zooming, and text overlays | remotion | remotion, generate, walkthrough, videos, stitch, smooth, transitions, zooming, text, overlays |
 | `requesting-code-review` | Use when completing tasks, implementing major features, or before merging to verify work meets requirements | requesting, code | requesting, code, review, completing, tasks, implementing, major, features, before, merging, verify, work |
