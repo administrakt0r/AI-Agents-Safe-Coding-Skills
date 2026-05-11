@@ -173,6 +173,14 @@
       "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/ethical-hacking-methodology": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-28",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shell payload and persistence commands with safe placeholders.",
+      "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
