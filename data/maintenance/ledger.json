@@ -173,6 +173,14 @@
       "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/referral-program": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-11",
+      "reviewerAgent": "jules",
+      "outcome": "Modernized the referral-program skill with reference files after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-modernize-referral-program",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
