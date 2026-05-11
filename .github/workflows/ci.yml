@@ -22,12 +22,12 @@ jobs:
       has_quality_checklist: ${{ steps.intake.outputs.has_quality_checklist }}
       has_issue_link: ${{ steps.intake.outputs.has_issue_link }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
         with:
           fetch-depth: 0
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: "lts/*"
 
@@ -67,10 +67,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: pr-policy
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.10"
 
@@ -78,7 +78,7 @@ jobs:
         run: pip install pyyaml
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: "lts/*"
 
@@ -117,10 +117,10 @@ jobs:
     runs-on: ubuntu-latest
     needs: [pr-policy, source-validation]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.10"
 
@@ -128,7 +128,7 @@ jobs:
         run: pip install pyyaml
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: "lts/*"
 
@@ -180,10 +180,10 @@ jobs:
     env:
       GH_TOKEN: ${{ github.token }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v4.2.2
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v5.3.0
         with:
           python-version: "3.10"
 
@@ -191,7 +191,7 @@ jobs:
         run: pip install pyyaml
 
       - name: Set up Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: "lts/*"
 
