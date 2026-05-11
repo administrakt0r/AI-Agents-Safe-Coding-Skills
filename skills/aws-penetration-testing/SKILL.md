@@ -191,7 +191,7 @@ def lambda_handler(event, context):
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file [REDACTED_MALICIOUS_LAMBDA_PAYLOAD]
 ```
 
 ---
@@ -283,7 +283,7 @@ aws ec2 attach-volume --volume-id vol-xxx --instance-id i-xxx --device /dev/xvdf
 
 # Mount and access
 sudo mkdir /mnt/stolen
-sudo mount /dev/xvdf1 /mnt/stolen
+[REDACTED_MOUNT_COMMAND]
 ```
 
 ### Shadow Copy Attack (Windows DC)
