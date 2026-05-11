@@ -87,6 +87,14 @@
       "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/ssh-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-28",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shell payload with safe placeholder.",
+      "linkedIssueOrPr": "PR-ssh-pentest-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "skills/azure-monitor-query-java": {
       "status": "normalized",
       "lastReviewedAt": "2026-03-30",
