@@ -2978,6 +2978,30 @@
       "path": "skills/azure-ai-document-intelligence-dotnet/SKILL.md"
     },
     {
+      "id": "azure-ai-document-intelligence-java",
+      "name": "azure-ai-document-intelligence-java",
+      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
+      "category": "data-ai",
+      "tags": [
+        "azure",
+        "ai",
+        "document",
+        "intelligence",
+        "java"
+      ],
+      "triggers": [
+        "azure",
+        "ai",
+        "document",
+        "intelligence",
+        "java",
+        "analysis",
+        "applications",
+        "sdk"
+      ],
+      "path": "skills/azure-ai-document-intelligence-java/SKILL.md"
+    },
+    {
       "id": "azure-ai-document-intelligence-ts",
       "name": "azure-ai-document-intelligence-ts",
       "description": "Extract text, tables, and structured data from documents using prebuilt and custom models.",
@@ -3004,30 +3028,6 @@
         "prebuilt"
       ],
       "path": "skills/azure-ai-document-intelligence-ts/SKILL.md"
-    },
-    {
-      "id": "azure-ai-formrecognizer-java",
-      "name": "azure-ai-formrecognizer-java",
-      "description": "Build document analysis applications using the Azure AI Document Intelligence SDK for Java.",
-      "category": "data-ai",
-      "tags": [
-        "azure",
-        "ai",
-        "formrecognizer",
-        "java"
-      ],
-      "triggers": [
-        "azure",
-        "ai",
-        "formrecognizer",
-        "java",
-        "document",
-        "analysis",
-        "applications",
-        "intelligence",
-        "sdk"
-      ],
-      "path": "skills/azure-ai-formrecognizer-java/SKILL.md"
     },
     {
       "id": "azure-ai-ml-py",
@@ -4872,33 +4872,6 @@
         "workspace"
       ],
       "path": "skills/azure-monitor-ingestion-py/SKILL.md"
-    },
-    {
-      "id": "azure-monitor-opentelemetry-exporter-py",
-      "name": "azure-monitor-opentelemetry-exporter-py",
-      "description": "Azure Monitor OpenTelemetry Exporter for Python. Use for low-level OpenTelemetry export to Application Insights.",
-      "category": "development",
-      "tags": [
-        "azure",
-        "monitor",
-        "opentelemetry",
-        "exporter",
-        "py"
-      ],
-      "triggers": [
-        "azure",
-        "monitor",
-        "opentelemetry",
-        "exporter",
-        "py",
-        "python",
-        "low",
-        "level",
-        "export",
-        "application",
-        "insights"
-      ],
-      "path": "skills/azure-monitor-opentelemetry-exporter-py/SKILL.md"
     },
     {
       "id": "azure-monitor-opentelemetry-py",
@@ -9594,6 +9567,31 @@
       "path": "skills/csharp-pro/SKILL.md"
     },
     {
+      "id": "customer-research",
+      "name": "customer-research",
+      "description": "Conduct, analyze, and synthesize customer research including surveys, interviews, and community mining to build personas and uncover jobs-to-be-done.",
+      "category": "business",
+      "tags": [
+        "customer",
+        "research"
+      ],
+      "triggers": [
+        "customer",
+        "research",
+        "conduct",
+        "analyze",
+        "synthesize",
+        "including",
+        "surveys",
+        "interviews",
+        "community",
+        "mining",
+        "personas",
+        "uncover"
+      ],
+      "path": "skills/customer-research/SKILL.md"
+    },
+    {
       "id": "customer-support",
       "name": "customer-support",
       "description": "Elite AI-powered customer support specialist mastering conversational AI, automated ticketing, sentiment analysis, and omnichannel support experiences.",
@@ -10760,6 +10758,31 @@
         "diffs"
       ],
       "path": "skills/differential-review/SKILL.md"
+    },
+    {
+      "id": "directory-submissions",
+      "name": "directory-submissions",
+      "description": "When the user wants to submit their product to startup, SaaS, AI, or review directories for backlinks, domain rating, and discovery.",
+      "category": "data-ai",
+      "tags": [
+        "directory",
+        "submissions"
+      ],
+      "triggers": [
+        "directory",
+        "submissions",
+        "user",
+        "wants",
+        "submit",
+        "product",
+        "startup",
+        "saas",
+        "ai",
+        "review",
+        "directories",
+        "backlinks"
+      ],
+      "path": "skills/directory-submissions/SKILL.md"
     },
     {
       "id": "discord-automation",
