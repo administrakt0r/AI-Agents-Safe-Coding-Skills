@@ -166,6 +166,14 @@
       "linkedIssueOrPr": "PR-metasploit-framework-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     },
+    "skills/ethical-hacking-methodology": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-04-28",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shell and exploitation commands with safe placeholders.",
+      "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "sources/coreyhaines31/marketingskills/directory-submissions": {
       "status": "monitoring",
       "lastReviewedAt": "2026-04-27",
