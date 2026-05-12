@@ -39,6 +39,14 @@
       "linkedIssueOrPr": "local-bootstrap-2026-03-29",
       "nextAction": "Verify future upstream refreshes keep English-first output examples."
     },
+    "skills/aws-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-12",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads and RCE commands with safe placeholders.",
+      "linkedIssueOrPr": "PR-aws-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
     "skills/audio-transcriber": {
       "status": "normalized",
       "lastReviewedAt": "2026-03-29",
