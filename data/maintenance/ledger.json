@@ -173,6 +173,14 @@
       "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-jules-import-directory-submissions",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-ai-transcription-py": {
+      "status": "removed",
+      "lastReviewedAt": "2026-05-12",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-ai-transcription-py as the package azure-ai-transcription does not exist. The official SDK is azure-cognitiveservices-speech.",
+      "linkedIssueOrPr": "PR-remove-azure-ai-transcription-py",
+      "nextAction": "None"
     }
   }
 }
