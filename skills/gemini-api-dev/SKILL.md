@@ -21,9 +21,9 @@ The Gemini API provides access to Google's most advanced AI models. Key capabili
 
 ## Current Gemini Models
 
-- `gemini-3-pro-preview`: 1M tokens, complex reasoning, coding, research
-- `gemini-3-flash-preview`: 1M tokens, fast, balanced performance, multimodal
-- `gemini-3-pro-image-preview`: 65k / 32k tokens, image generation and editing
+- `gemini-3.1-pro-preview`: 1M tokens, complex reasoning, coding, research
+- `gemini-3.1-flash-lite`: 1M tokens, fast, balanced performance, multimodal
+- `gemini-3.1-flash-image-preview`: 65k / 32k tokens, image generation and editing
 
 
 > [!IMPORTANT]
@@ -46,7 +46,7 @@ from google import genai
 
 client = genai.Client()
 response = client.models.generate_content(
-    model="gemini-3-flash-preview",
+    model="gemini-3.1-flash-lite",
     contents="Explain quantum computing"
 )
 print(response.text)
@@ -58,7 +58,7 @@ import { GoogleGenAI } from "@google/genai";
 
 const ai = new GoogleGenAI({});
 const response = await ai.models.generateContent({
-  model: "gemini-3-flash-preview",
+  model: "gemini-3.1-flash-lite",
   contents: "Explain quantum computing"
 });
 console.log(response.text);
@@ -82,7 +82,7 @@ func main() {
 		log.Fatal(err)
 	}
 
-	resp, err := client.Models.GenerateContent(ctx, "gemini-3-flash-preview", genai.Text("Explain quantum computing"), nil)
+	resp, err := client.Models.GenerateContent(ctx, "gemini-3.1-flash-lite", genai.Text("Explain quantum computing"), nil)
 	if err != nil {
 		log.Fatal(err)
 	}
