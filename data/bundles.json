@@ -1135,7 +1135,6 @@
     "seo-core": {
       "description": "SEO, search visibility, and structured content optimization.",
       "skills": [
-        "ab-testing",
         "ad-creative",
         "ai-seo",
         "analyze-project",
@@ -1148,7 +1147,6 @@
         "database-architect",
         "database-design",
         "database-migration",
-        "directory-submissions",
         "drizzle-orm-expert",
         "fixing-metadata",
         "hybrid-search-implementation",
