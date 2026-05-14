@@ -1135,6 +1135,7 @@
     "seo-core": {
       "description": "SEO, search visibility, and structured content optimization.",
       "skills": [
+        "ab-testing",
         "ad-creative",
         "ai-seo",
         "analyze-project",
