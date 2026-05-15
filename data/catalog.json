@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1275,
+  "total": 1276,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -8055,6 +8055,28 @@
         "cf"
       ],
       "path": "skills/cloudformation-best-practices/SKILL.md"
+    },
+    {
+      "id": "co-marketing",
+      "name": "co-marketing",
+      "description": "Find co-marketing partners, plan joint campaigns, or brainstorm partnerships.",
+      "category": "business",
+      "tags": [
+        "co",
+        "marketing"
+      ],
+      "triggers": [
+        "co",
+        "marketing",
+        "find",
+        "partners",
+        "plan",
+        "joint",
+        "campaigns",
+        "brainstorm",
+        "partnerships"
+      ],
+      "path": "skills/co-marketing/SKILL.md"
     },
     {
       "id": "coda-automation",
