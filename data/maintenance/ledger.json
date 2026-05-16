@@ -197,6 +197,14 @@
       "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-cosmos-db-py": {
+      "status": "removed",
+      "lastReviewedAt": "2026-05-16",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-cosmos-db-py as it is a duplicate and overlaps with azure-cosmos-py.",
+      "linkedIssueOrPr": "PR-remove-azure-cosmos-db-py",
+      "nextAction": "None"
     }
   }
 }

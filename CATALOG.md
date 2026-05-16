@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1275
+Total skills: 1274
 
 ## architecture (87)
 
@@ -1021,7 +1021,7 @@ Total skills: 1275
 | `vercel-deployment` | Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production. | vercel, deployment | vercel, deployment, knowledge, deploying, next, js, deploy, hosting |
 | `x-twitter-scraper` | X (Twitter) data platform skill — tweet search, user lookup, follower extraction, engagement metrics, giveaway draws, monitoring, webhooks, 19 extraction too... | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks] | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks], twitter, scraper, data |
 
-## security (162)
+## security (161)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -1041,7 +1041,6 @@ Total skills: 1275
 | `audit-context-building` | Enables ultra-granular, line-by-line code analysis to build deep architectural context before vulnerability or bug finding. | audit, building | audit, building, context, enables, ultra, granular, line, code, analysis, deep, architectural, before |
 | `audit-skills` | Expert security auditor for AI Skills and Bundles. Performs non-intrusive static analysis to identify malicious patterns, data leaks, system stability risks,... | security, audit, skills, bundles, cross-platform | security, audit, skills, bundles, cross-platform, auditor, ai, performs, non, intrusive, static, analysis |
 | `auth-implementation-patterns` | Build secure, scalable authentication and authorization systems using industry-standard patterns and modern best practices. | auth | auth, secure, scalable, authentication, authorization, industry, standard |
-| `azure-cosmos-db-py` | Build production-grade Azure Cosmos DB NoSQL services following clean code, security best practices, and TDD principles. | azure, cosmos, db, py | azure, cosmos, db, py, grade, nosql, following, clean, code, security, tdd, principles |
 | `azure-keyvault-py` | Azure Key Vault SDK for Python. Use for secrets, keys, and certificates management with secure storage. | azure, keyvault, py | azure, keyvault, py, key, vault, sdk, python, secrets, keys, certificates, secure, storage |
 | `azure-keyvault-secrets-rust` | Azure Key Vault Secrets SDK for Rust. Use for storing and retrieving secrets, passwords, and API keys. Triggers: "keyvault secrets rust", "SecretClient rust"... | azure, keyvault, secrets, rust | azure, keyvault, secrets, rust, key, vault, sdk, storing, retrieving, passwords, api, keys |
 | `azure-keyvault-secrets-ts` | Manage secrets using Azure Key Vault Secrets SDK for JavaScript (@azure/keyvault-secrets). Use when storing and retrieving application secrets or configurati... | azure, keyvault, secrets, ts | azure, keyvault, secrets, ts, key, vault, sdk, javascript, storing, retrieving, application, configuration |
