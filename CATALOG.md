@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1275
+Total skills: 1276
 
 ## architecture (87)
 
@@ -96,7 +96,7 @@ Total skills: 1275
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (61)
+## business (62)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -106,6 +106,7 @@ Total skills: 1275
 | `brand-guidelines` | Write copy following Sentry brand guidelines. Use when writing UI text, error messages, empty states, onboarding flows, 404 pages, documentation, marketing c... | brand, guidelines | brand, guidelines, write, copy, following, sentry, writing, ui, text, error, messages, empty |
 | `brevo-automation` | Automate Brevo (formerly Sendinblue) email marketing operations through Composio's Brevo toolkit via Rube MCP. | brevo | brevo, automation, automate, formerly, sendinblue, email, marketing, operations, through, composio, toolkit, via |
 | `chat-widget` | Build a real-time support chat system with a floating widget for users and an admin dashboard for support staff. Use when the user wants live chat, customer ... | chat, widget | chat, widget, real, time, floating, users, admin, dashboard, staff, user, wants, live |
+| `co-marketing` | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Helps SaaS companies identify ideal partner... | co, marketing | co, marketing, user, wants, find, partners, plan, joint, campaigns, brainstorm, partnership, opportunities |
 | `competitive-landscape` | Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies. | competitive, landscape | competitive, landscape, frameworks, analyzing, competition, identifying, differentiation, opportunities, developing, winning, market, positioning |
 | `competitor-alternatives` | You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuin... | competitor, alternatives | competitor, alternatives, creating, comparison, alternative, pages, goal, rank, competitive, search, terms, provide |
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
