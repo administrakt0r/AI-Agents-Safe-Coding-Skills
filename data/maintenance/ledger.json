@@ -197,6 +197,14 @@
       "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/sqlmap-database-pentesting": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-16",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-sqlmap-database-pentesting-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
