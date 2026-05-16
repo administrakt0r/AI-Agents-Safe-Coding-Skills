@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1274,
+  "total": 1275,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -3734,6 +3734,33 @@
         "repositories"
       ],
       "path": "skills/azure-containerregistry-py/SKILL.md"
+    },
+    {
+      "id": "azure-cosmos-db-py",
+      "name": "azure-cosmos-db-py",
+      "description": "Build production-grade Azure Cosmos DB NoSQL services following clean code, security best practices, and TDD principles.",
+      "category": "security",
+      "tags": [
+        "azure",
+        "cosmos",
+        "db",
+        "py"
+      ],
+      "triggers": [
+        "azure",
+        "cosmos",
+        "db",
+        "py",
+        "grade",
+        "nosql",
+        "following",
+        "clean",
+        "code",
+        "security",
+        "tdd",
+        "principles"
+      ],
+      "path": "skills/azure-cosmos-db-py/SKILL.md"
     },
     {
       "id": "azure-cosmos-java",
