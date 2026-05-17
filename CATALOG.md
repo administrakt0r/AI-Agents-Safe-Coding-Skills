@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1276
+Total skills: 1277
 
 ## architecture (87)
 
@@ -593,7 +593,7 @@ Total skills: 1276
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (305)
+## general (306)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -658,6 +658,7 @@ Total skills: 1276
 | `codebase-cleanup-tech-debt` | You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncov... | codebase, cleanup, tech, debt | codebase, cleanup, tech, debt, technical, specializing, identifying, quantifying, prioritizing, software, analyze, uncover |
 | `cold-email` | Write B2B cold emails and follow-up sequences that earn replies. Use when creating outbound prospecting emails, SDR outreach, personalized opening lines, sub... | cold, email | cold, email, write, b2b, emails, follow, up, sequences, earn, replies, creating, outbound |
 | `commit` | ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional ... | commit | commit, always, skill, committing, code, changes, never, directly, without, creates, commits, following |
+| `competitor-profiling` | Research, profile, or analyze competitors from their URLs. | competitor, profiling | competitor, profiling, research, profile, analyze, competitors, urls |
 | `comprehensive-review-full-review` | Use when working with comprehensive review full review | comprehensive, full | comprehensive, full, review, working |
 | `computer-vision-expert` | SOTA Computer Vision Expert (2026). Specialized in YOLO26, Segment Anything 3 (SAM 3), Vision Language Models, and real-time spatial analysis. | computer, vision | computer, vision, sota, 2026, specialized, yolo26, segment, anything, sam, language, models, real |
 | `concise-planning` | Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist. | concise, planning | concise, planning, user, asks, plan, coding, task, generate, clear, actionable, atomic, checklist |
