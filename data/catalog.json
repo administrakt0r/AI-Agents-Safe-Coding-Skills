@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1277,
+  "total": 1276,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -8606,26 +8606,6 @@
         "provide"
       ],
       "path": "skills/competitor-alternatives/SKILL.md"
-    },
-    {
-      "id": "competitor-profiling",
-      "name": "competitor-profiling",
-      "description": "Research, profile, or analyze competitors from their URLs.",
-      "category": "general",
-      "tags": [
-        "competitor",
-        "profiling"
-      ],
-      "triggers": [
-        "competitor",
-        "profiling",
-        "research",
-        "profile",
-        "analyze",
-        "competitors",
-        "urls"
-      ],
-      "path": "skills/competitor-profiling/SKILL.md"
     },
     {
       "id": "comprehensive-review-full-review",
