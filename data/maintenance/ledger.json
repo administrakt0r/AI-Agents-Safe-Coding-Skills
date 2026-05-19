@@ -213,6 +213,14 @@
       "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-sqlmap-database-pentesting-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/vibers-code-review": {
+      "status": "removed",
+      "lastReviewedAt": "2026-05-19",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Removed because the skill instructs users to add an untrusted third-party collaborator to their repository and sends webhooks to an external service, which is unsafe.",
+      "linkedIssueOrPr": "PR-remove-vibers-code-review",
+      "nextAction": "None"
     }
   }
 }
