@@ -427,7 +427,6 @@
         "ui-visual-validator",
         "variant-analysis",
         "varlock-claude-skill",
-        "vibers-code-review",
         "vulnerability-scanner",
         "web-design-guidelines",
         "web-security-testing",
@@ -473,8 +472,7 @@
         "service-mesh-expert",
         "service-mesh-observability",
         "slo-implementation",
-        "ssh-penetration-testing",
-        "vibers-code-review"
+        "ssh-penetration-testing"
       ]
     },
     "data-core": {
@@ -883,7 +881,6 @@
         "trello-automation",
         "twitter-automation",
         "vercel-automation",
-        "vibers-code-review",
         "web-security-testing",
         "webflow-automation",
         "whatsapp-automation",
