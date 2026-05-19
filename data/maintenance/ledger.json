@@ -213,6 +213,14 @@
       "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
       "linkedIssueOrPr": "PR-sqlmap-database-pentesting-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/gemini-api-integration": {
+      "status": "removed",
+      "lastReviewedAt": "2026-05-19",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill gemini-api-integration as it uses deprecated SDKs and models, and is superseded by gemini-api-dev.",
+      "linkedIssueOrPr": "PR-remove-gemini-api-integration",
+      "nextAction": "None"
     }
   }
 }

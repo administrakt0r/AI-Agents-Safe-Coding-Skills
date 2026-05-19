@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1276,
+  "total": 1275,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -14193,32 +14193,6 @@
         "include"
       ],
       "path": "skills/gemini-api-dev/SKILL.md"
-    },
-    {
-      "id": "gemini-api-integration",
-      "name": "gemini-api-integration",
-      "description": "Use when integrating Google Gemini API into projects. Covers model selection, multimodal inputs, streaming, function calling, and production best practices.",
-      "category": "development",
-      "tags": [
-        "gemini",
-        "api",
-        "integration"
-      ],
-      "triggers": [
-        "gemini",
-        "api",
-        "integration",
-        "integrating",
-        "google",
-        "covers",
-        "model",
-        "selection",
-        "multimodal",
-        "inputs",
-        "streaming",
-        "function"
-      ],
-      "path": "skills/gemini-api-integration/SKILL.md"
     },
     {
       "id": "geo-fundamentals",

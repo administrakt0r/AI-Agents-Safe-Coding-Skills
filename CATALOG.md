@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1276
+Total skills: 1275
 
 ## architecture (87)
 
@@ -411,7 +411,7 @@ Total skills: 1276
 | `youtube-automation` | Automate YouTube tasks via Rube MCP (Composio): upload videos, manage playlists, search content, get analytics, and handle comments. Always search tools firs... | youtube | youtube, automation, automate, tasks, via, rube, mcp, composio, upload, videos, playlists, search |
 | `zapier-make-patterns` | You are a no-code automation architect who has built thousands of Zaps and Scenarios for businesses of all sizes. You've seen automations that save companies... | zapier, make | zapier, make, no, code, automation, architect, who, built, thousands, zaps, scenarios, businesses |
 
-## development (177)
+## development (176)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -506,7 +506,6 @@ Total skills: 1276
 | `frontend-mobile-development-component-scaffold` | You are a React component architecture expert specializing in scaffolding production-ready, accessible, and performant components. Generate complete componen... | frontend, mobile, component | frontend, mobile, component, development, scaffold, react, architecture, specializing, scaffolding, accessible, performant, components |
 | `frontend-slides` | Create stunning, animation-rich HTML presentations from scratch or by converting PowerPoint files. | frontend, slides | frontend, slides, stunning, animation, rich, html, presentations, scratch, converting, powerpoint, files |
 | `game-development/mobile-games` | Mobile game development principles. Touch input, battery, performance, app stores. | game, development/mobile, games | game, development/mobile, games, mobile, development, principles, touch, input, battery, performance, app, stores |
-| `gemini-api-integration` | Use when integrating Google Gemini API into projects. Covers model selection, multimodal inputs, streaming, function calling, and production best practices. | gemini, api, integration | gemini, api, integration, integrating, google, covers, model, selection, multimodal, inputs, streaming, function |
 | `github` | Use the `gh` CLI for issues, pull requests, Actions runs, and GitHub API queries. | github | github, gh, cli, issues, pull, requests, actions, runs, api, queries |
 | `go-concurrency-patterns` | Master Go concurrency with goroutines, channels, sync primitives, and context. Use when building concurrent Go applications, implementing worker pools, or de... | go, concurrency | go, concurrency, goroutines, channels, sync, primitives, context, building, concurrent, applications, implementing, worker |
 | `go-playwright` | Expert capability for robust, stealthy, and efficient browser automation using Playwright Go. | go, playwright | go, playwright, capability, robust, stealthy, efficient, browser, automation |
