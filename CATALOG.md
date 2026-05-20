@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1276
+Total skills: 1275
 
 ## architecture (87)
 
@@ -111,7 +111,7 @@ Total skills: 1276
 | `competitor-alternatives` | You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuin... | competitor, alternatives | competitor, alternatives, creating, comparison, alternative, pages, goal, rank, competitive, search, terms, provide |
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
 | `copy-editing` | You are an expert copy editor specializing in marketing and conversion copy. Your goal is to systematically improve existing copy through focused editing pas... | copy, editing | copy, editing, editor, specializing, marketing, conversion, goal, systematically, improve, existing, through, passes |
-| `copywriting` | Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules. | copywriting | copywriting, write, rigorous, conversion, marketing, copy, landing, pages, emails, enforces, brief, confirmation |
+| `copywriting` | Marketing copy skills for any page, focusing on writing and improving homepage, landing page, and product copy. | copywriting | copywriting, marketing, copy, skills, any, page, focusing, writing, improving, homepage, landing, product |
 | `customer-research` | Conduct, analyze, and synthesize customer research including surveys, interviews, and community mining to build personas and uncover jobs-to-be-done. | customer, research | customer, research, conduct, analyze, synthesize, including, surveys, interviews, community, mining, personas, uncover |
 | `defi-protocol-templates` | Implement DeFi protocols with production-ready templates for staking, AMMs, governance, and lending systems. Use when building decentralized finance applicat... | defi, protocol | defi, protocol, protocols, staking, amms, governance, lending, building, decentralized, finance, applications, smart |
 | `email-sequence` | You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward ... | email, sequence | email, sequence, marketing, automation, goal, sequences, nurture, relationships, drive, action, move, people |
@@ -1022,7 +1022,7 @@ Total skills: 1276
 | `vercel-deployment` | Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production. | vercel, deployment | vercel, deployment, knowledge, deploying, next, js, deploy, hosting |
 | `x-twitter-scraper` | X (Twitter) data platform skill — tweet search, user lookup, follower extraction, engagement metrics, giveaway draws, monitoring, webhooks, 19 extraction too... | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks] | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks], twitter, scraper, data |
 
-## security (162)
+## security (161)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -1178,7 +1178,6 @@ Total skills: 1276
 | `using-neon` | Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully com... | using, neon | using, neon, serverless, postgres, platform, separates, compute, storage, offer, autoscaling, branching, instant |
 | `variant-analysis` | Find similar vulnerabilities and bugs across codebases using pattern-based analysis. Use when hunting bug variants, building CodeQL/Semgrep queries, analyzin... | variant | variant, analysis, find, similar, vulnerabilities, bugs, codebases, hunting, bug, variants, building, codeql |
 | `varlock-claude-skill` | Secure environment variable management ensuring secrets are never exposed in Claude sessions, terminals, logs, or git commits | varlock, claude, skill | varlock, claude, skill, secure, environment, variable, ensuring, secrets, never, exposed, sessions, terminals |
-| `vibers-code-review` | Human review workflow for AI-generated GitHub projects with spec-based feedback, security review, and follow-up PRs from the Vibers service. | vibers, code | vibers, code, review, human, ai, generated, github, spec, feedback, security, follow, up |
 | `vulnerability-scanner` | Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, attack surface mapping, risk prioritization. | vulnerability, scanner | vulnerability, scanner, analysis, principles, owasp, 2025, supply, chain, security, attack, surface, mapping |
 | `web-design-guidelines` | Review files for compliance with Web Interface Guidelines. | web, guidelines | web, guidelines, review, files, compliance, interface |
 | `web-security-testing` | Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication flaws, and access control issues. | web, security | web, security, testing, application, owasp, top, 10, vulnerabilities, including, injection, xss, authentication |
