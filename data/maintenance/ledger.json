@@ -221,6 +221,14 @@
       "outcome": "Removed because the skill instructs users to add an untrusted third-party collaborator to their repository and sends webhooks to an external service, which is unsafe.",
       "linkedIssueOrPr": "PR-remove-vibers-code-review",
       "nextAction": "None"
+    },
+    "skills/gemini-api-dev": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-20",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
+      "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }
