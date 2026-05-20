@@ -221,6 +221,14 @@
       "outcome": "Removed because the skill instructs users to add an untrusted third-party collaborator to their repository and sends webhooks to an external service, which is unsafe.",
       "linkedIssueOrPr": "PR-remove-vibers-code-review",
       "nextAction": "None"
+    },
+    "sources/coreyhaines31/marketingskills/copywriting": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-20",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the copywriting skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-jules-import-copywriting",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
