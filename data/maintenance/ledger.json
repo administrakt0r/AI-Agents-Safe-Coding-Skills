@@ -229,6 +229,14 @@
       "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
       "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+    },
+    "skills/azure-data-tables-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-23",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating the Azure Tables SDK for Java dependency version from 12.6.0-beta.1 to the latest stable version 12.5.10 based on maven-metadata.xml.",
+      "linkedIssueOrPr": "PR-modernize-azure-data-tables-java",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }

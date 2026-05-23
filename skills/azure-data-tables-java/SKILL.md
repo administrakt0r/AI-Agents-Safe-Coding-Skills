@@ -16,7 +16,7 @@ Build table storage applications using the Azure Tables SDK for Java. Works with
 <dependency>
   <groupId>com.azure</groupId>
   <artifactId>azure-data-tables</artifactId>
-  <version>12.6.0-beta.1</version>
+  <version>12.5.10</version>
 </dependency>
 ```
 
