@@ -229,6 +229,14 @@
       "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
       "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+    },
+    "skills/html-injection-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-23",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads (attacker.com, evil.com, alert(1)) with safe placeholders.",
+      "linkedIssueOrPr": "PR-html-injection-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
