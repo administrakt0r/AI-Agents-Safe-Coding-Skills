@@ -229,6 +229,14 @@
       "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
       "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+    },
+    "sources/coreyhaines31/marketingskills/product-marketing": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-23",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the product-marketing skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-import-product-marketing",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
