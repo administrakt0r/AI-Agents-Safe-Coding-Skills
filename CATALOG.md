@@ -96,7 +96,7 @@ Total skills: 1276
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (62)
+## business (63)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -132,6 +132,7 @@ Total skills: 1276
 | `personal-tool-builder` | You believe the best tools come from real problems. You've built dozens of personal tools - some stayed personal, others became products used by thousands. Y... | personal, builder | personal, builder, believe, come, real, problems, ve, built, dozens, some, stayed, others |
 | `pricing-strategy` | Design pricing, packaging, and monetization strategies based on value, customer willingness to pay, and growth objectives. | pricing | pricing, packaging, monetization, value, customer, willingness, pay, growth, objectives |
 | `product-manager-toolkit` | Essential tools and frameworks for modern product management, from discovery to delivery. | product, manager | product, manager, toolkit, essential, frameworks, discovery, delivery |
+| `product-marketing` | Creates or updates the product marketing context document at `.agents/product-marketing.md`. Use when defining target audience, positioning, ICP, or foundati... | product, marketing | product, marketing, creates, updates, context, document, agents, md, defining, target, audience, positioning |
 | `product-marketing-context` | Create or update a reusable product marketing context document with positioning, audience, ICP, use cases, and messaging. Use at the start of a project to av... | product, marketing | product, marketing, context, update, reusable, document, positioning, audience, icp, cases, messaging, start |
 | `revops` | Design and improve revenue operations, lead lifecycle rules, scoring, routing, handoffs, and CRM process automation. Use when marketing, sales, and customer ... | revops | revops, improve, revenue, operations, lead, lifecycle, rules, scoring, routing, handoffs, crm, process |
 | `sales-automator` | Draft cold emails, follow-ups, and proposal templates. Creates pricing pages, case studies, and sales scripts. Use PROACTIVELY for sales outreach or lead nur... | sales, automator | sales, automator, draft, cold, emails, follow, ups, proposal, creates, pricing, pages, case |
@@ -1022,7 +1023,7 @@ Total skills: 1276
 | `vercel-deployment` | Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production. | vercel, deployment | vercel, deployment, knowledge, deploying, next, js, deploy, hosting |
 | `x-twitter-scraper` | X (Twitter) data platform skill — tweet search, user lookup, follower extraction, engagement metrics, giveaway draws, monitoring, webhooks, 19 extraction too... | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks] | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks], twitter, scraper, data |
 
-## security (162)
+## security (161)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -1178,7 +1179,6 @@ Total skills: 1276
 | `using-neon` | Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully com... | using, neon | using, neon, serverless, postgres, platform, separates, compute, storage, offer, autoscaling, branching, instant |
 | `variant-analysis` | Find similar vulnerabilities and bugs across codebases using pattern-based analysis. Use when hunting bug variants, building CodeQL/Semgrep queries, analyzin... | variant | variant, analysis, find, similar, vulnerabilities, bugs, codebases, hunting, bug, variants, building, codeql |
 | `varlock-claude-skill` | Secure environment variable management ensuring secrets are never exposed in Claude sessions, terminals, logs, or git commits | varlock, claude, skill | varlock, claude, skill, secure, environment, variable, ensuring, secrets, never, exposed, sessions, terminals |
-| `vibers-code-review` | Human review workflow for AI-generated GitHub projects with spec-based feedback, security review, and follow-up PRs from the Vibers service. | vibers, code | vibers, code, review, human, ai, generated, github, spec, feedback, security, follow, up |
 | `vulnerability-scanner` | Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, attack surface mapping, risk prioritization. | vulnerability, scanner | vulnerability, scanner, analysis, principles, owasp, 2025, supply, chain, security, attack, surface, mapping |
 | `web-design-guidelines` | Review files for compliance with Web Interface Guidelines. | web, guidelines | web, guidelines, review, files, compliance, interface |
 | `web-security-testing` | Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication flaws, and access control issues. | web, security | web, security, testing, application, owasp, top, 10, vulnerabilities, including, injection, xss, authentication |

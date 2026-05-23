@@ -22374,6 +22374,31 @@
       "path": "skills/product-manager-toolkit/SKILL.md"
     },
     {
+      "id": "product-marketing",
+      "name": "product-marketing",
+      "description": "Creates or updates the product marketing context document at `.agents/product-marketing.md`. Use when defining target audience, positioning, ICP, or foundational marketing context.",
+      "category": "business",
+      "tags": [
+        "product",
+        "marketing"
+      ],
+      "triggers": [
+        "product",
+        "marketing",
+        "creates",
+        "updates",
+        "context",
+        "document",
+        "agents",
+        "md",
+        "defining",
+        "target",
+        "audience",
+        "positioning"
+      ],
+      "path": "skills/product-marketing/SKILL.md"
+    },
+    {
       "id": "product-marketing-context",
       "name": "product-marketing-context",
       "description": "Create or update a reusable product marketing context document with positioning, audience, ICP, use cases, and messaging. Use at the start of a project to avoid repeating core marketing context across tasks.",
@@ -29754,31 +29779,6 @@
         "risks"
       ],
       "path": "skills/vibe-code-auditor/SKILL.md"
-    },
-    {
-      "id": "vibers-code-review",
-      "name": "vibers-code-review",
-      "description": "Human review workflow for AI-generated GitHub projects with spec-based feedback, security review, and follow-up PRs from the Vibers service.",
-      "category": "security",
-      "tags": [
-        "vibers",
-        "code"
-      ],
-      "triggers": [
-        "vibers",
-        "code",
-        "review",
-        "human",
-        "ai",
-        "generated",
-        "github",
-        "spec",
-        "feedback",
-        "security",
-        "follow",
-        "up"
-      ],
-      "path": "skills/vibers-code-review/SKILL.md"
     },
     {
       "id": "videodb",
