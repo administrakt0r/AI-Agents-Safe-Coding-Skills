@@ -229,6 +229,14 @@
       "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
       "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+    },
+    "skills/azure-ai-document-intelligence-dotnet": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-24",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
+      "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
     }
   }
 }
