@@ -229,6 +229,14 @@
       "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
       "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+    },
+    "sources/coreyhaines31/marketingskills/ai-seo": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-05-21",
+      "reviewerAgent": "jules",
+      "outcome": "Imported the ai-seo skill after fixing metadata and dangling link validation errors.",
+      "linkedIssueOrPr": "PR-jules-import-ai-seo",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
