@@ -231,7 +231,7 @@
       "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     },
     "skills/azure-ai-document-intelligence-dotnet": {
-      "status": "normalized",
+      "status": "reviewed",
       "lastReviewedAt": "2026-05-24",
       "reviewerAgent": "stale-skill-modernizer",
       "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",

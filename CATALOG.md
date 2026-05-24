@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1276
+Total skills: 1275
 
 ## architecture (87)
 
@@ -1022,7 +1022,7 @@ Total skills: 1276
 | `vercel-deployment` | Expert knowledge for deploying to Vercel with Next.js Use when: vercel, deploy, deployment, hosting, production. | vercel, deployment | vercel, deployment, knowledge, deploying, next, js, deploy, hosting |
 | `x-twitter-scraper` | X (Twitter) data platform skill — tweet search, user lookup, follower extraction, engagement metrics, giveaway draws, monitoring, webhooks, 19 extraction too... | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks] | [twitter, x-api, scraping, mcp, social-media, data-extraction, giveaway, monitoring, webhooks], twitter, scraper, data |
 
-## security (162)
+## security (161)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -1178,7 +1178,6 @@ Total skills: 1276
 | `using-neon` | Neon is a serverless Postgres platform that separates compute and storage to offer autoscaling, branching, instant restore, and scale-to-zero. It's fully com... | using, neon | using, neon, serverless, postgres, platform, separates, compute, storage, offer, autoscaling, branching, instant |
 | `variant-analysis` | Find similar vulnerabilities and bugs across codebases using pattern-based analysis. Use when hunting bug variants, building CodeQL/Semgrep queries, analyzin... | variant | variant, analysis, find, similar, vulnerabilities, bugs, codebases, hunting, bug, variants, building, codeql |
 | `varlock-claude-skill` | Secure environment variable management ensuring secrets are never exposed in Claude sessions, terminals, logs, or git commits | varlock, claude, skill | varlock, claude, skill, secure, environment, variable, ensuring, secrets, never, exposed, sessions, terminals |
-| `vibers-code-review` | Human review workflow for AI-generated GitHub projects with spec-based feedback, security review, and follow-up PRs from the Vibers service. | vibers, code | vibers, code, review, human, ai, generated, github, spec, feedback, security, follow, up |
 | `vulnerability-scanner` | Advanced vulnerability analysis principles. OWASP 2025, Supply Chain Security, attack surface mapping, risk prioritization. | vulnerability, scanner | vulnerability, scanner, analysis, principles, owasp, 2025, supply, chain, security, attack, surface, mapping |
 | `web-design-guidelines` | Review files for compliance with Web Interface Guidelines. | web, guidelines | web, guidelines, review, files, compliance, interface |
 | `web-security-testing` | Web application security testing workflow for OWASP Top 10 vulnerabilities including injection, XSS, authentication flaws, and access control issues. | web, security | web, security, testing, application, owasp, top, 10, vulnerabilities, including, injection, xss, authentication |

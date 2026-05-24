@@ -320,6 +320,12 @@ catch (RequestFailedException ex)
 }
 ```
 
+## Related SDKs
+
+| SDK | Purpose | Install |
+|-----|---------|---------|
+| `Azure.AI.DocumentIntelligence` | Document analysis (this SDK) | `dotnet add package Azure.AI.DocumentIntelligence` |
+
 ## Reference Links
 
 | Resource | URL |
