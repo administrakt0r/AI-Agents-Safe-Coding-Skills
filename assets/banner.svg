@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0d1117"/>
+      <stop offset="50%" style="stop-color:#161b22"/>
+      <stop offset="100%" style="stop-color:#0d1117"/>
+    </linearGradient>
+    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#58a6ff"/>
+      <stop offset="25%" style="stop-color:#8b5cf6"/>
+      <stop offset="50%" style="stop-color:#ec4899"/>
+      <stop offset="75%" style="stop-color:#f59e0b"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <linearGradient id="subtitle" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#8b949e"/>
+      <stop offset="100%" style="stop-color:#c9d1d9"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="softGlow">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="400" fill="url(#bg)"/>
+
+  <!-- Grid pattern -->
+  <g opacity="0.04">
+    <line x1="0" y1="0" x2="1200" y2="0" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="50" x2="1200" y2="50" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="100" x2="1200" y2="100" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="150" x2="1200" y2="150" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="200" x2="1200" y2="200" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="250" x2="1200" y2="250" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="300" x2="1200" y2="300" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="350" x2="1200" y2="350" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="0" y1="400" x2="1200" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="200" y1="0" x2="200" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="400" y1="0" x2="400" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="600" y1="0" x2="600" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="800" y1="0" x2="800" y2="400" stroke="#58a6ff" stroke-width="1"/>
+    <line x1="1000" y1="0" x2="1000" y2="400" stroke="#58a6ff" stroke-width="1"/>
+  </g>
+
+  <!-- Decorative dots -->
+  <g opacity="0.15">
+    <circle cx="150" cy="80" r="2" fill="#58a6ff"/>
+    <circle cx="350" cy="320" r="2" fill="#8b5cf6"/>
+    <circle cx="600" cy="60" r="2" fill="#ec4899"/>
+    <circle cx="850" cy="340" r="2" fill="#f59e0b"/>
+    <circle cx="1050" cy="120" r="2" fill="#22c55e"/>
+    <circle cx="80" cy="250" r="1.5" fill="#58a6ff"/>
+    <circle cx="500" cy="150" r="1.5" fill="#8b5cf6"/>
+    <circle cx="750" cy="280" r="1.5" fill="#ec4899"/>
+    <circle cx="950" cy="90" r="1.5" fill="#f59e0b"/>
+    <circle cx="250" cy="370" r="1.5" fill="#22c55e"/>
+  </g>
+
+  <!-- Agent icons (simplified, geometric) -->
+  <g transform="translate(100, 260)" filter="url(#glow)">
+    <!-- Agent 1 -->
+    <rect x="0" y="0" width="48" height="48" rx="8" fill="none" stroke="#58a6ff" stroke-width="2" opacity="0.6"/>
+    <circle cx="24" cy="18" r="8" fill="#58a6ff" opacity="0.4"/>
+    <rect x="12" y="30" width="24" height="4" rx="2" fill="#58a6ff" opacity="0.4"/>
+    <!-- Agent 2 -->
+    <rect x="60" y="0" width="48" height="48" rx="8" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
+    <circle cx="84" cy="18" r="8" fill="#8b5cf6" opacity="0.4"/>
+    <rect x="72" y="30" width="24" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
+    <!-- Agent 3 -->
+    <rect x="120" y="0" width="48" height="48" rx="8" fill="none" stroke="#ec4899" stroke-width="2" opacity="0.6"/>
+    <circle cx="144" cy="18" r="8" fill="#ec4899" opacity="0.4"/>
+    <rect x="132" y="30" width="24" height="4" rx="2" fill="#ec4899" opacity="0.4"/>
+  </g>
+
+  <!-- Code brackets decorative -->
+  <g transform="translate(950, 230)" filter="url(#softGlow)" opacity="0.08">
+    <text font-family="monospace" font-size="120" fill="#58a6ff">&lt;/&gt;</text>
+  </g>
+
+  <!-- Title -->
+  <text x="600" y="110" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="42" font-weight="800" fill="url(#title)" filter="url(#glow)">
+    AI Agents Safe Coding Skills
+  </text>
+
+  <!-- Subtitle -->
+  <text x="600" y="155" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="20" fill="url(#subtitle)">
+    1,300+ Agentic Skills for Every AI Coding Assistant
+  </text>
+
+  <!-- Bottom line of tools -->
+  <g transform="translate(600, 200)" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="14" fill="#484f58">
+    <text>Claude Code</text>
+    <text x="110" fill="#8b949e">·</text>
+    <text x="125" fill="#484f58">Cursor</text>
+    <text x="195" fill="#8b949e">·</text>
+    <text x="210" fill="#484f58">Gemini CLI</text>
+    <text x="305" fill="#8b949e">·</text>
+    <text x="320" fill="#484f58">Codex CLI</text>
+    <text x="410" fill="#8b949e">·</text>
+    <text x="425" fill="#484f58">OpenCode</text>
+    <text x="515" fill="#8b949e">·</text>
+    <text x="530" fill="#484f58">Copilot</text>
+    <text x="610" fill="#8b949e">·</text>
+    <text x="625" fill="#484f58">Antigravity</text>
+    <text x="730" fill="#8b949e">·</text>
+    <text x="745" fill="#484f58">Kiro</text>
+  </g>
+
+  <!-- Single-line install at bottom -->
+  <g transform="translate(600, 335)">
+    <rect x="-350" y="-22" width="700" height="44" rx="22" fill="#21262d" stroke="#30363d" stroke-width="1"/>
+    <text y="6" text-anchor="middle" font-family="monospace" font-size="15" fill="#c9d1d9" opacity="0.6">$ </text>
+    <text x="20" y="6" text-anchor="middle" font-family="monospace" font-size="15" fill="#7ee787" font-weight="600">npx ai-agents-safe-coding-skills</text>
+    <text x="250" y="6" text-anchor="middle" font-family="monospace" font-size="13" fill="#8b949e" opacity="0.5">← install in 1 minute</text>
+  </g>
+</svg>
