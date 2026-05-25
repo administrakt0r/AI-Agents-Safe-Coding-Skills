@@ -1,126 +1,124 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 400" width="1200" height="400">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" width="1200" height="360">
   <defs>
     <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" style="stop-color:#0d1117"/>
-      <stop offset="50%" style="stop-color:#161b22"/>
-      <stop offset="100%" style="stop-color:#0d1117"/>
+      <stop offset="0%" style="stop-color:#0b0f19"/>
+      <stop offset="50%" style="stop-color:#111827"/>
+      <stop offset="100%" style="stop-color:#0b0f19"/>
     </linearGradient>
-    <linearGradient id="title" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#58a6ff"/>
-      <stop offset="25%" style="stop-color:#8b5cf6"/>
-      <stop offset="50%" style="stop-color:#ec4899"/>
-      <stop offset="75%" style="stop-color:#f59e0b"/>
-      <stop offset="100%" style="stop-color:#22c55e"/>
+    <linearGradient id="accent1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#6366f1"/>
+      <stop offset="100%" style="stop-color:#a855f7"/>
     </linearGradient>
-    <linearGradient id="subtitle" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" style="stop-color:#8b949e"/>
-      <stop offset="100%" style="stop-color:#c9d1d9"/>
+    <linearGradient id="accent2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#06b6d4"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="titleText" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e2e8f0"/>
+      <stop offset="50%" style="stop-color:#f1f5f9"/>
+      <stop offset="100%" style="stop-color:#e2e8f0"/>
     </linearGradient>
     <filter id="glow">
-      <feGaussianBlur stdDeviation="3" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
-    </filter>
-    <filter id="softGlow">
-      <feGaussianBlur stdDeviation="8" result="blur"/>
-      <feMerge>
-        <feMergeNode in="blur"/>
-        <feMergeNode in="SourceGraphic"/>
-      </feMerge>
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
     </filter>
   </defs>
 
-  <rect width="1200" height="400" fill="url(#bg)"/>
+  <rect width="1200" height="360" fill="url(#bg)"/>
 
-  <!-- Grid pattern -->
-  <g opacity="0.04">
-    <line x1="0" y1="0" x2="1200" y2="0" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="50" x2="1200" y2="50" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="100" x2="1200" y2="100" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="150" x2="1200" y2="150" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="200" x2="1200" y2="200" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="250" x2="1200" y2="250" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="300" x2="1200" y2="300" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="350" x2="1200" y2="350" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="0" y1="400" x2="1200" y2="400" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="200" y1="0" x2="200" y2="400" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="400" y1="0" x2="400" y2="400" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="600" y1="0" x2="600" y2="400" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="800" y1="0" x2="800" y2="400" stroke="#58a6ff" stroke-width="1"/>
-    <line x1="1000" y1="0" x2="1000" y2="400" stroke="#58a6ff" stroke-width="1"/>
+  <!-- Subtle grid dots -->
+  <g opacity="0.06">
+    <circle cx="60" cy="60" r="1.5" fill="#6366f1"/>
+    <circle cx="180" cy="120" r="1" fill="#6366f1"/>
+    <circle cx="300" cy="60" r="1.5" fill="#a855f7"/>
+    <circle cx="420" cy="180" r="1" fill="#a855f7"/>
+    <circle cx="540" cy="90" r="1.5" fill="#6366f1"/>
+    <circle cx="660" cy="240" r="1" fill="#6366f1"/>
+    <circle cx="780" cy="60" r="1.5" fill="#a855f7"/>
+    <circle cx="900" cy="160" r="1" fill="#a855f7"/>
+    <circle cx="1020" cy="80" r="1.5" fill="#6366f1"/>
+    <circle cx="1140" cy="200" r="1" fill="#a855f7"/>
+    <circle cx="120" cy="280" r="1" fill="#6366f1"/>
+    <circle cx="360" cy="300" r="1.5" fill="#a855f7"/>
+    <circle cx="600" cy="320" r="1" fill="#6366f1"/>
+    <circle cx="840" cy="280" r="1.5" fill="#a855f7"/>
+    <circle cx="1080" cy="300" r="1" fill="#6366f1"/>
   </g>
 
-  <!-- Decorative dots -->
-  <g opacity="0.15">
-    <circle cx="150" cy="80" r="2" fill="#58a6ff"/>
-    <circle cx="350" cy="320" r="2" fill="#8b5cf6"/>
-    <circle cx="600" cy="60" r="2" fill="#ec4899"/>
-    <circle cx="850" cy="340" r="2" fill="#f59e0b"/>
-    <circle cx="1050" cy="120" r="2" fill="#22c55e"/>
-    <circle cx="80" cy="250" r="1.5" fill="#58a6ff"/>
-    <circle cx="500" cy="150" r="1.5" fill="#8b5cf6"/>
-    <circle cx="750" cy="280" r="1.5" fill="#ec4899"/>
-    <circle cx="950" cy="90" r="1.5" fill="#f59e0b"/>
-    <circle cx="250" cy="370" r="1.5" fill="#22c55e"/>
+  <!-- Terminal window art -->
+  <g transform="translate(60, 40)">
+    <rect x="0" y="0" width="300" height="200" rx="8" fill="#1e293b" stroke="#334155" stroke-width="1" opacity="0.5"/>
+    <circle cx="16" cy="16" r="5" fill="#ef4444" opacity="0.6"/>
+    <circle cx="32" cy="16" r="5" fill="#f59e0b" opacity="0.6"/>
+    <circle cx="48" cy="16" r="5" fill="#22c55e" opacity="0.6"/>
+    <text x="16" y="48" font-family="monospace" font-size="11" fill="#64748b">$ prompt --load skills</text>
+    <text x="16" y="68" font-family="monospace" font-size="11" fill="#22c55e">✓ Loading from GitHub repository...</text>
+    <text x="16" y="88" font-family="monospace" font-size="11" fill="#22c55e">✓ 1,300+ skills indexed</text>
+    <text x="16" y="108" font-family="monospace" font-size="11" fill="#a855f7">→ Agent ready. Skills active.</text>
+    <text x="16" y="136" font-family="monospace" font-size="11" fill="#64748b">$ </text>
+    <text x="28" y="136" font-family="monospace" font-size="11" fill="#e2e8f0" opacity="0.7">Use @brainstorming</text>
+    <text x="28" y="156" font-family="monospace" font-size="11" fill="#64748b">to plan my SaaS MVP</text>
+    <text x="16" y="184" font-family="monospace" font-size="9" fill="#475569" font-style="italic">// Just copy-paste. That's it.</text>
   </g>
 
-  <!-- Agent icons (simplified, geometric) -->
-  <g transform="translate(100, 260)" filter="url(#glow)">
-    <!-- Agent 1 -->
-    <rect x="0" y="0" width="48" height="48" rx="8" fill="none" stroke="#58a6ff" stroke-width="2" opacity="0.6"/>
-    <circle cx="24" cy="18" r="8" fill="#58a6ff" opacity="0.4"/>
-    <rect x="12" y="30" width="24" height="4" rx="2" fill="#58a6ff" opacity="0.4"/>
-    <!-- Agent 2 -->
-    <rect x="60" y="0" width="48" height="48" rx="8" fill="none" stroke="#8b5cf6" stroke-width="2" opacity="0.6"/>
-    <circle cx="84" cy="18" r="8" fill="#8b5cf6" opacity="0.4"/>
-    <rect x="72" y="30" width="24" height="4" rx="2" fill="#8b5cf6" opacity="0.4"/>
-    <!-- Agent 3 -->
-    <rect x="120" y="0" width="48" height="48" rx="8" fill="none" stroke="#ec4899" stroke-width="2" opacity="0.6"/>
-    <circle cx="144" cy="18" r="8" fill="#ec4899" opacity="0.4"/>
-    <rect x="132" y="30" width="24" height="4" rx="2" fill="#ec4899" opacity="0.4"/>
-  </g>
+  <!-- Right side: prompt syntax cards -->
+  <g transform="translate(420, 45)">
+    <rect x="0" y="0" width="340" height="52" rx="6" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.7"/>
+    <text x="16" y="22" font-family="monospace" font-size="10" fill="#6366f1" font-weight="bold">CLAUDE CODE</text>
+    <text x="16" y="40" font-family="monospace" font-size="13" fill="#e2e8f0">Use @brainstorming to plan...</text>
 
-  <!-- Code brackets decorative -->
-  <g transform="translate(950, 230)" filter="url(#softGlow)" opacity="0.08">
-    <text font-family="monospace" font-size="120" fill="#58a6ff">&lt;/&gt;</text>
+    <rect x="0" y="64" width="340" height="52" rx="6" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.7"/>
+    <text x="16" y="86" font-family="monospace" font-size="10" fill="#f97316" font-weight="bold">CURSOR</text>
+    <text x="16" y="104" font-family="monospace" font-size="13" fill="#e2e8f0">@brainstorming plan my SaaS MVP</text>
+
+    <rect x="0" y="128" width="340" height="52" rx="6" fill="#1e293b" stroke="#334155" stroke-width="0.5" opacity="0.7"/>
+    <text x="16" y="150" font-family="monospace" font-size="10" fill="#22c55e" font-weight="bold">ANY AGENT</text>
+    <text x="16" y="168" font-family="monospace" font-size="13" fill="#e2e8f0">Use the skill "brainstorming" to...</text>
   </g>
 
   <!-- Title -->
-  <text x="600" y="110" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="42" font-weight="800" fill="url(#title)" filter="url(#glow)">
-    AI Agents Safe Coding Skills
-  </text>
-
-  <!-- Subtitle -->
-  <text x="600" y="155" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="20" fill="url(#subtitle)">
-    1,300+ Agentic Skills for Every AI Coding Assistant
-  </text>
-
-  <!-- Bottom line of tools -->
-  <g transform="translate(600, 200)" text-anchor="middle" font-family="system-ui,-apple-system,sans-serif" font-size="14" fill="#484f58">
-    <text>Claude Code</text>
-    <text x="110" fill="#8b949e">·</text>
-    <text x="125" fill="#484f58">Cursor</text>
-    <text x="195" fill="#8b949e">·</text>
-    <text x="210" fill="#484f58">Gemini CLI</text>
-    <text x="305" fill="#8b949e">·</text>
-    <text x="320" fill="#484f58">Codex CLI</text>
-    <text x="410" fill="#8b949e">·</text>
-    <text x="425" fill="#484f58">OpenCode</text>
-    <text x="515" fill="#8b949e">·</text>
-    <text x="530" fill="#484f58">Copilot</text>
-    <text x="610" fill="#8b949e">·</text>
-    <text x="625" fill="#484f58">Antigravity</text>
-    <text x="730" fill="#8b949e">·</text>
-    <text x="745" fill="#484f58">Kiro</text>
+  <g transform="translate(820, 50)">
+    <text font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="700" fill="url(#titleText)">
+      AI Agents Safe
+    </text>
+    <text y="36" font-family="system-ui,-apple-system,sans-serif" font-size="28" font-weight="700" fill="url(#titleText)">
+      Coding Skills
+    </text>
+    <text y="70" font-family="system-ui,-apple-system,sans-serif" font-size="13" fill="#64748b">
+      1,300+ agentic playbooks
+    </text>
   </g>
 
-  <!-- Single-line install at bottom -->
-  <g transform="translate(600, 335)">
-    <rect x="-350" y="-22" width="700" height="44" rx="22" fill="#21262d" stroke="#30363d" stroke-width="1"/>
-    <text y="6" text-anchor="middle" font-family="monospace" font-size="15" fill="#c9d1d9" opacity="0.6">$ </text>
-    <text x="20" y="6" text-anchor="middle" font-family="monospace" font-size="15" fill="#7ee787" font-weight="600">npx ai-agents-safe-coding-skills</text>
-    <text x="250" y="6" text-anchor="middle" font-family="monospace" font-size="13" fill="#8b949e" opacity="0.5">← install in 1 minute</text>
+  <!-- URL bar -->
+  <g transform="translate(820, 120)">
+    <rect x="0" y="-14" width="320" height="28" rx="14" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="0" y="5" font-family="monospace" font-size="11" fill="#6366f1">github.com/</text>
+    <text x="82" y="5" font-family="monospace" font-size="11" fill="#a855f7" font-weight="bold">administrakt0r</text>
+    <text x="194" y="5" font-family="monospace" font-size="11" fill="#64748b">/AI-Agents-Safe-Coding-Skills</text>
   </g>
+
+  <!-- Bottom tagline -->
+  <g transform="translate(820, 190)">
+    <text font-family="system-ui,-apple-system,sans-serif" font-size="22" font-weight="700" fill="url(#accent1)">
+      Agent Prompt Ready
+    </text>
+  </g>
+
+  <!-- Feature badges row -->
+  <g transform="translate(820, 235)">
+    <rect x="0" y="0" width="100" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="17" font-family="system-ui,sans-serif" font-size="10" fill="#a855f7">🚀 Plan</text>
+
+    <rect x="110" y="0" width="100" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="17" font-family="system-ui,sans-serif" font-size="10" fill="#6366f1">🛡️ Security</text>
+
+    <rect x="220" y="0" width="100" height="26" rx="13" fill="#1e293b" stroke="#334155" stroke-width="0.5"/>
+    <text x="16" y="17" font-family="system-ui,sans-serif" font-size="10" fill="#06b6d4">🧪 Test</text>
+  </g>
+
+  <!-- Side decorative line -->
+  <line x1="790" y1="30" x2="790" y2="330" stroke="#334155" stroke-width="1" opacity="0.3"/>
+  <circle cx="790" cy="30" r="3" fill="#6366f1" opacity="0.5"/>
+  <circle cx="790" cy="180" r="3" fill="#a855f7" opacity="0.5"/>
+  <circle cx="790" cy="330" r="3" fill="#6366f1" opacity="0.5"/>
 </svg>
