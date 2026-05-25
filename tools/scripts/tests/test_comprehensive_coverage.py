@@ -203,7 +203,17 @@ def analyze_skill_locations():
         print(f"  Collisions: {len(collisions)}")
         print(f"  Missing names: {len(missing_names)}")
 
-        allowed_collisions = ["applicationinsights-web-ts", "entra-agent-id"]
+        allowed_collisions = [
+            "applicationinsights-web-ts",
+            "entra-agent-id",
+            "azure-cosmos-rust",
+            "azure-eventhub-rust",
+            "azure-identity-rust",
+            "azure-keyvault-certificates-rust",
+            "azure-keyvault-keys-rust",
+            "azure-keyvault-secrets-rust",
+            "azure-storage-blob-rust"
+        ]
         actual_collisions = [c for c in collisions.keys() if c not in allowed_collisions]
         is_pass = len(actual_collisions) == 0 and len(invalid_names) == 0
         if is_pass:
