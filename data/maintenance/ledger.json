@@ -237,7 +237,7 @@
       "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
       "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
       "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
-      },
+    },
     "sources/coreyhaines31/marketingskills/community-marketing": {
       "status": "monitoring",
       "lastReviewedAt": "2026-05-24",
@@ -253,6 +253,14 @@
       "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders, and added offensive disclaimer.",
       "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-resource-manager-mysql-dotnet": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-05-28",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating obsolete references to the deprecated Single Server, which is retired.",
+      "linkedIssueOrPr": "PR-modernize-azure-resource-manager-mysql-dotnet",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
