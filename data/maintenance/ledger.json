@@ -253,6 +253,14 @@
       "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders, and added offensive disclaimer.",
       "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/privilege-escalation-methods": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-28",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by adding offensive disclaimer and user confirmation requirements.",
+      "linkedIssueOrPr": "PR-privilege-escalation-methods-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
