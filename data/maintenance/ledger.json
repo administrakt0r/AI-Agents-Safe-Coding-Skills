@@ -237,7 +237,7 @@
       "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
       "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
       "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
-      },
+    },
     "sources/coreyhaines31/marketingskills/community-marketing": {
       "status": "monitoring",
       "lastReviewedAt": "2026-05-24",
@@ -252,6 +252,14 @@
       "reviewerAgent": "malicious-skill-safety-auditor",
       "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders, and added offensive disclaimer.",
       "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/cloud-penetration-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-29",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active reverse shells, backdoors, and persistence payloads with safe placeholders, and added offensive disclaimer.",
+      "linkedIssueOrPr": "PR-cloud-penetration-testing-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
