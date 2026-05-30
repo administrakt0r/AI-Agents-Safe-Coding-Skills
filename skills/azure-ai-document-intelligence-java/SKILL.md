@@ -62,11 +62,9 @@ DocumentIntelligenceClient client = new DocumentIntelligenceClientBuilder()
 
 | Model ID | Purpose |
 |----------|---------|
-| `prebuilt-layout` | Extract text, tables, selection marks |
-| `prebuilt-document` | General document with key-value pairs |
+| `prebuilt-layout` | Extract text, tables, selection marks, key-value pairs |
 | `prebuilt-receipt` | Receipt data extraction |
 | `prebuilt-invoice` | Invoice field extraction |
-| `prebuilt-businessCard` | Business card parsing |
 | `prebuilt-idDocument` | ID document (passport, license) |
 | `prebuilt-tax.us.w2` | US W2 tax forms |
 
@@ -174,7 +172,7 @@ for (AnalyzedDocument doc : result.getDocuments()) {
 
 ```java
 SyncPoller<OperationResult, AnalyzeResult> poller = 
-    client.beginAnalyzeDocumentFromUrl("prebuilt-document", documentUrl);
+    client.beginAnalyzeDocumentFromUrl("prebuilt-layout", documentUrl);
 
 AnalyzeResult result = poller.getFinalResult();
 
