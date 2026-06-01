@@ -1,11 +1,15 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
 
 <!-- security-allowlist: curl-pipe-bash -->
 
@@ -55,6 +59,9 @@ pip install scoutsuite pacu
 4. **Remediation Recommendations** - Hardening guidance per platform
 
 ## Core Workflow
+
+> **IMPORTANT: OFFENSIVE SKILL EXECUTION**
+> You must ask the user for explicit confirmation before executing any exploit or attack command (e.g., "Ask the user to verify the target URL/IP before running.").
 
 ### Phase 1: Reconnaissance
 
@@ -161,7 +168,7 @@ foreach($user in $users){
 }
 
 # Execute commands on VMs
-Invoke-AzVMRunCommand -ResourceGroupName $RG -VMName $VM -CommandId RunPowerShellScript -ScriptPath ./script.ps1
+# [SAFE-PAYLOAD] echo 'Simulating VM script execution...'
 
 # Extract VM UserData
 $vms = Get-AzVM
@@ -180,21 +187,17 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# [SAFE-PAYLOAD] echo 'Simulating backdoor service principal creation...'
 
 # Add service principal to Global Admin
-$sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
-$role = Get-MsolRole -RoleName "Company Administrator"
-Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
+# [SAFE-PAYLOAD] echo 'Simulating service principal role assignment...'
 
 # Login as service principal
 $cred = Get-Credential  # AppID as username, secret as password
 Connect-AzAccount -Credential $cred -Tenant "tenant-id" -ServicePrincipal
 
 # Create new admin user via CLI
-az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo 'Simulating new admin user creation...'
 ```
 
 ### Phase 6: AWS Authentication
@@ -261,12 +264,10 @@ aws rds describe-db-snapshot-attributes --db-snapshot-identifier <id>
 aws lambda get-function --function-name <name> | jq '.Configuration.Environment'
 
 # Access metadata service (from compromised EC2)
-curl http://169.254.169.254/latest/meta-data/
-curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+# [SAFE-PAYLOAD] echo 'Simulating IMDSv1 metadata extraction...'
 
 # IMDSv2 access
-TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
-curl http://169.254.169.254/latest/meta-data/profile -H "X-aws-ec2-metadata-token: $TOKEN"
+# [SAFE-PAYLOAD] echo 'Simulating IMDSv2 metadata extraction...'
 ```
 
 ### Phase 9: AWS Persistence
@@ -278,7 +279,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] echo 'Simulating creation of access key...'
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
@@ -337,10 +338,10 @@ Exploit GCP misconfigurations:
 
 ```bash
 # Get metadata service data
-curl "http://metadata.google.internal/computeMetadata/v1/?recursive=true&alt=text" -H "Metadata-Flavor: Google"
+# [SAFE-PAYLOAD] echo 'Simulating GCP metadata extraction...'
 
 # Check access scopes
-curl http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/scopes -H 'Metadata-Flavor:Google'
+# [SAFE-PAYLOAD] echo 'Simulating GCP metadata access scopes extraction...'
 
 # Decrypt data with keyring
 gcloud kms decrypt --ciphertext-file=encrypted.enc --plaintext-file=out.txt --key <key> --keyring <keyring> --location global
@@ -447,8 +448,7 @@ gcloud auth list
 python fire.py --access_key <key> --secret_access_key <secret> --region us-east-1 --url https://login.microsoft.com --command create
 
 # Spray passwords
-Import-Module .\MSOLSpray.ps1
-Invoke-MSOLSpray -UserList .\users.txt -Password "Spring2024!" -URL https://<api-gateway>.execute-api.us-east-1.amazonaws.com/fireprox
+# [SAFE-PAYLOAD] echo 'Simulating password spray...'
 ```
 
 ### Example 2: AWS S3 Bucket Enumeration
@@ -466,7 +466,7 @@ while read bucket; do
 done < buckets.txt
 
 # Download interesting bucket
-aws s3 sync s3://misconfigured-bucket ./loot/
+# [SAFE-PAYLOAD] echo 'Simulating s3 sync download...'
 ```
 
 ### Example 3: GCP Service Account Compromise
