@@ -90,6 +90,7 @@ Result: 65 tests executed. 3 critical failures found: Base64-encoded instruction
 - All skills are read-only analysis and advisory workflows. No skills modify files or make network requests.
 - The agent-safety-guard skill constructs adversarial test prompts for evaluation purposes only — these are contained within the evaluation context and do not interact with external systems.
 - **agent-safety-guard is classified as an offensive skill**: it generates attack payloads (prompt injection, SQL injection, command injection) for authorized security testing. The skill requires explicit user confirmation before executing each test phase. Run in a sandboxed environment when possible.
+- **Requirement**: Ask the user to verify the target URL/IP before running.
 - No weaponized payloads are included. All adversarial prompts are educational in nature.
 
 ## Installation
