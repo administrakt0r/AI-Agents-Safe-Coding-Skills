@@ -237,7 +237,7 @@
       "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
       "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
       "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
-      },
+    },
     "sources/coreyhaines31/marketingskills/community-marketing": {
       "status": "monitoring",
       "lastReviewedAt": "2026-05-24",
@@ -261,6 +261,14 @@
       "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/ai-engineering-toolkit": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-06-02",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill ai-engineering-toolkit by adding the required explicit confirmation prompt for offensive skills.",
+      "linkedIssueOrPr": "PR-ai-engineering-toolkit-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
