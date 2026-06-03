@@ -261,6 +261,14 @@
       "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-resource-manager-postgresql-dotnet": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-06-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating the Current Version to v2.0.0 based on NuGet registry.",
+      "linkedIssueOrPr": "PR-modernize-azure-resource-manager-postgresql-dotnet",
+      "nextAction": "Review updated SKILL.md for API changes."
     }
   }
 }
