@@ -261,6 +261,14 @@
       "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/marketing-plan": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-06-03",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the marketing-plan skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-new-skill-import-curator-marketing-plan",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
