@@ -1,11 +1,18 @@
 ---
 name: red-team-tools
 description: "Implement proven methodologies and tool workflows from top security researchers for effective reconnaissance, vulnerability discovery, and bug bounty hunting. Automate common tasks while maintaining thorough coverage of attack surfaces."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+**⚠️ AUTHORIZED USE ONLY**
+This skill is for educational purposes or authorized security assessments only.
+You must have explicit, written permission from the system owner before using this tool.
+Misuse of this tool is illegal and strictly prohibited.
+
+Ask the user to verify the target URL/IP before running.
 
 # Red Team Tools and Methodology
 
@@ -163,7 +170,7 @@ cat params.txt | Gxss -p test
 cat params.txt | dalfox pipe --mining-dict params.txt -o xss_results.txt
 
 # Alternative workflow
-waybackurls target.com | grep "=" | qsreplace '"><script>alert(1)</script>' | while read url; do
+waybackurls target.com | grep "=" | qsreplace '# [SAFE-PAYLOAD] Simulate XSS' | while read url; do
     curl -s "$url" | grep -q 'alert(1)' && echo "$url"
 done > potential_xss.txt
 ```
