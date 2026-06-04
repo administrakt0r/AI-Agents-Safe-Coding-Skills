@@ -237,7 +237,7 @@
       "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
       "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
       "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
-      },
+    },
     "sources/coreyhaines31/marketingskills/community-marketing": {
       "status": "monitoring",
       "lastReviewedAt": "2026-05-24",
@@ -261,6 +261,14 @@
       "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-ai-document-intelligence-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-05-30",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by migrating the deprecated prebuilt-document and prebuilt-businessCard models to prebuilt-layout and removing unsupported models based on primary documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-java",
+      "nextAction": "Review updated SKILL.md to ensure the new model references are correct."
     }
   }
 }
