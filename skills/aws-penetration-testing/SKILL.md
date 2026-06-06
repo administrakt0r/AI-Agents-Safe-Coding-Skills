@@ -1,11 +1,14 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> [!WARNING]
+> **AUTHORIZED USE ONLY:** This skill contains offensive security techniques. You must have explicit, written permission from the system owner before executing any of these commands. Do not use this skill against targets you do not own or are not authorized to test. Ask the user to verify the target URL/IP before running.
 
 # AWS Penetration Testing
 
@@ -190,8 +193,7 @@ def lambda_handler(event, context):
 
 ```bash
 # Update Lambda code
-aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+# [SAFE-PAYLOAD] echo 'Simulating lambda function update with backdoor...'
 ```
 
 ---
