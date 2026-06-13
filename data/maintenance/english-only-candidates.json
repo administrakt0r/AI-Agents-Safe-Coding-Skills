@@ -93,5 +93,11 @@
       "reason": "Locale tables list language codes and language names as reference data."
     }
   ],
-  "reviewQueue": []
+  "reviewQueue": [],
+  "normalizedOn2026-06-13": [
+    {
+      "path": "skills/ads",
+      "action": "Removed Brazilian Portuguese medical compliance rules to adhere to English-first policy."
+    }
+  ]
 }

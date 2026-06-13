@@ -325,7 +325,6 @@ catch (RequestFailedException ex)
 | SDK | Purpose | Install |
 |-----|---------|---------|
 | `Azure.AI.DocumentIntelligence` | Document analysis (this SDK) | `dotnet add package Azure.AI.DocumentIntelligence` |
-| `Azure.AI.FormRecognizer` | Legacy SDK (deprecated) | Use DocumentIntelligence instead |
 
 ## Reference Links
 

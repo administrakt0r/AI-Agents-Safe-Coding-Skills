@@ -163,32 +163,7 @@ LogsQueryResult result = logsClient.queryResource(
 );
 
 for (LogsTableRow row : result.getTable().getRows()) {
-    System.out.println(row.getColumnValue("MetricName") + " " + row.getColumnValue("Average"));
-}
-```
-
-### Map Results to Custom Model
-
-```java
-// Define model class
-public class ActivityLog {
-    private String resourceGroup;
-    private String operationName;
-
-    public String getResourceGroup() { return resourceGroup; }
-    public String getOperationName() { return operationName; }
-}
-
-// Query with model mapping
-List<ActivityLog> logs = logsClient.queryWorkspace(
-    "{workspace-id}",
-    "AzureActivity | project ResourceGroup, OperationName | take 100",
-    new QueryTimeInterval(Duration.ofDays(2)),
-    ActivityLog.class
-);
-
-for (ActivityLog log : logs) {
-    System.out.println(log.getOperationName() + " - " + log.getResourceGroup());
+    System.out.println(row.getColumnValue("MetricName").get().getValueAsString() + " " + row.getColumnValue("Average").get().getValueAsString());
 }
 ```
 

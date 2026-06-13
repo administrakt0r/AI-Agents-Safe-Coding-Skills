@@ -231,7 +231,6 @@ _For building products, not just code._
 - [`competitive-landscape`](../../skills/competitive-landscape/): Competitor analysis.
 - [`competitor-alternatives`](../../skills/competitor-alternatives/): Create comparison pages.
 - [`launch-strategy`](../../skills/launch-strategy/): Product launch planning.
-- [`copywriting`](../../skills/copywriting/): Marketing copy that converts.
 - [`stripe-integration`](../../skills/stripe-integration/): Get paid from day one.
 
 ### 📊 The "Business Analyst" Pack
