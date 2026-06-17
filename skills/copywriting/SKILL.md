@@ -1,8 +1,10 @@
 ---
 name: copywriting
 description: Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules.
-risk: unknown
-source: community
+metadata:
+  version: 2.0.1
+  risk: unknown
+  source: coreyhaines31/marketingskills
 date_added: "2026-02-27"
 ---
 
