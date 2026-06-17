@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/cloud-penetration-testing": {
+      "status": "normalized",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "lastReviewedAt": "2026-06-17",
+      "outcome": "Hardened skill by replacing active payloads and backdoor creations with safe placeholders, and added offensive disclaimer.",
+      "linkedIssueOrPr": "PR-cloud-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
