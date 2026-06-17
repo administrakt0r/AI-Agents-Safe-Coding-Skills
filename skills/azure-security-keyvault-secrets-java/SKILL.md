@@ -1,8 +1,9 @@
 ---
 name: azure-security-keyvault-secrets-java
+metadata:
+  risk: unknown
+  source: community
 description: "Azure Key Vault Secrets Java SDK for secret management. Use when storing, retrieving, or managing passwords, API keys, connection strings, or other sensitive configuration data."
-risk: unknown
-source: community
 date_added: "2026-02-27"
 ---
 
@@ -16,7 +17,7 @@ Securely store and manage secrets like passwords, API keys, and connection strin
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-security-keyvault-secrets</artifactId>
-    <version>4.9.0</version>
+    <version>4.11.0</version>
 </dependency>
 ```
 
