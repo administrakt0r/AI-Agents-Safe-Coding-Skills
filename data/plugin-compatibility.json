@@ -39,6 +39,25 @@
       "runtime_files": []
     },
     {
+      "id": "ab-testing",
+      "path": "skills/ab-testing",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "acceptance-orchestrator",
       "path": "skills/acceptance-orchestrator",
       "targets": {
@@ -172,6 +191,31 @@
           "target_specific_home_path"
         ],
         "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "ads",
+      "path": "skills/ads",
+      "targets": {
+        "codex": "blocked",
+        "claude": "blocked"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [
+        "broken_local_reference"
+      ],
+      "blocked_reasons": {
+        "codex": [
+          "broken_local_reference"
+        ],
+        "claude": [
+          "broken_local_reference"
+        ]
       },
       "runtime_files": []
     },
@@ -1752,6 +1796,25 @@
       "runtime_files": []
     },
     {
+      "id": "aso-audit",
+      "path": "skills/aso-audit",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "astro",
       "path": "skills/astro",
       "targets": {
@@ -2195,25 +2258,6 @@
       "runtime_files": []
     },
     {
-      "id": "azure-ai-anomalydetector-java",
-      "path": "skills/azure-ai-anomalydetector-java",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "azure-ai-contentsafety-java",
       "path": "skills/azure-ai-contentsafety-java",
       "targets": {
@@ -2309,8 +2353,8 @@
       "runtime_files": []
     },
     {
-      "id": "azure-ai-document-intelligence-ts",
-      "path": "skills/azure-ai-document-intelligence-ts",
+      "id": "azure-ai-document-intelligence-java",
+      "path": "skills/azure-ai-document-intelligence-java",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -2328,8 +2372,8 @@
       "runtime_files": []
     },
     {
-      "id": "azure-ai-formrecognizer-java",
-      "path": "skills/azure-ai-formrecognizer-java",
+      "id": "azure-ai-document-intelligence-ts",
+      "path": "skills/azure-ai-document-intelligence-ts",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -3679,44 +3723,6 @@
     {
       "id": "azure-monitor-ingestion-py",
       "path": "skills/azure-monitor-ingestion-py",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "azure-monitor-opentelemetry-exporter-java",
-      "path": "skills/azure-monitor-opentelemetry-exporter-java",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
-      "id": "azure-monitor-opentelemetry-exporter-py",
-      "path": "skills/azure-monitor-opentelemetry-exporter-py",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -6190,6 +6196,25 @@
       "runtime_files": []
     },
     {
+      "id": "co-marketing",
+      "path": "skills/co-marketing",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "coda-automation",
       "path": "skills/coda-automation",
       "targets": {
@@ -6551,6 +6576,25 @@
       "runtime_files": []
     },
     {
+      "id": "community-marketing",
+      "path": "skills/community-marketing",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "competitive-landscape",
       "path": "skills/competitive-landscape",
       "targets": {
@@ -6572,6 +6616,25 @@
     {
       "id": "competitor-alternatives",
       "path": "skills/competitor-alternatives",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "competitor-profiling",
+      "path": "skills/competitor-profiling",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -7197,25 +7260,6 @@
       "runtime_files": []
     },
     {
-      "id": "copywriting",
-      "path": "skills/copywriting",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "core-components",
       "path": "skills/core-components",
       "targets": {
@@ -7389,6 +7433,25 @@
     {
       "id": "csharp-pro",
       "path": "skills/csharp-pro",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "customer-research",
+      "path": "skills/customer-research",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -8328,6 +8391,25 @@
     {
       "id": "differential-review",
       "path": "skills/differential-review",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "directory-submissions",
+      "path": "skills/directory-submissions",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -23285,25 +23367,6 @@
       "runtime_files": []
     },
     {
-      "id": "vibers-code-review",
-      "path": "skills/vibers-code-review",
-      "targets": {
-        "codex": "supported",
-        "claude": "supported"
-      },
-      "setup": {
-        "type": "none",
-        "summary": "",
-        "docs": null
-      },
-      "reasons": [],
-      "blocked_reasons": {
-        "codex": [],
-        "claude": []
-      },
-      "runtime_files": []
-    },
-    {
       "id": "videodb",
       "path": "skills/videodb",
       "targets": {
@@ -24350,14 +24413,14 @@
     }
   ],
   "summary": {
-    "total_skills": 1274,
+    "total_skills": 1277,
     "supported": {
-      "codex": 1248,
-      "claude": 1262
+      "codex": 1250,
+      "claude": 1264
     },
     "blocked": {
-      "codex": 26,
-      "claude": 12
+      "codex": 27,
+      "claude": 13
     },
     "manual_setup": 1
   }
