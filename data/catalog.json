@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1275,
+  "total": 1278,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -8558,6 +8558,29 @@
       "path": "skills/commit/SKILL.md"
     },
     {
+      "id": "community-marketing",
+      "name": "community-marketing",
+      "description": "Build and leverage online communities to drive product growth and brand loyalty.",
+      "category": "business",
+      "tags": [
+        "community",
+        "marketing"
+      ],
+      "triggers": [
+        "community",
+        "marketing",
+        "leverage",
+        "online",
+        "communities",
+        "drive",
+        "product",
+        "growth",
+        "brand",
+        "loyalty"
+      ],
+      "path": "skills/community-marketing/SKILL.md"
+    },
+    {
       "id": "competitive-landscape",
       "name": "competitive-landscape",
       "description": "Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies.",
@@ -8606,6 +8629,31 @@
         "provide"
       ],
       "path": "skills/competitor-alternatives/SKILL.md"
+    },
+    {
+      "id": "competitor-profiling",
+      "name": "competitor-profiling",
+      "description": "Research and analyze competitors from their URLs to build structured competitor profile documents, dossiers, and competitive intelligence overviews.",
+      "category": "general",
+      "tags": [
+        "competitor",
+        "profiling"
+      ],
+      "triggers": [
+        "competitor",
+        "profiling",
+        "research",
+        "analyze",
+        "competitors",
+        "urls",
+        "structured",
+        "profile",
+        "documents",
+        "dossiers",
+        "competitive",
+        "intelligence"
+      ],
+      "path": "skills/competitor-profiling/SKILL.md"
     },
     {
       "id": "comprehensive-review-full-review",
@@ -8981,24 +9029,24 @@
     {
       "id": "content-strategy",
       "name": "content-strategy",
-      "description": "Plan a content strategy, topic clusters, editorial roadmap, and content mix for traffic, authority, and lead generation. Use when deciding what to publish, what topics to prioritize, or how to structure a content program.",
+      "description": "Use when the user wants to plan a content strategy, decide what content to create, figure out topics, or mentions content strategy, content planning, or editorial calendars.",
       "category": "general",
       "tags": [
         "content"
       ],
       "triggers": [
         "content",
+        "user",
+        "wants",
         "plan",
-        "topic",
-        "clusters",
+        "decide",
+        "what",
+        "figure",
+        "topics",
+        "mentions",
+        "planning",
         "editorial",
-        "roadmap",
-        "mix",
-        "traffic",
-        "authority",
-        "lead",
-        "generation",
-        "deciding"
+        "calendars"
       ],
       "path": "skills/content-strategy/SKILL.md"
     },
@@ -13567,6 +13615,30 @@
         "brand"
       ],
       "path": "skills/free-tool-strategy/SKILL.md"
+    },
+    {
+      "id": "free-tools",
+      "name": "free-tools",
+      "description": "When the user wants to plan, evaluate, or build a free tool for marketing purposes, like a calculator, generator, or lead gen tool.",
+      "category": "business",
+      "tags": [
+        "free"
+      ],
+      "triggers": [
+        "free",
+        "user",
+        "wants",
+        "plan",
+        "evaluate",
+        "marketing",
+        "purposes",
+        "like",
+        "calculator",
+        "generator",
+        "lead",
+        "gen"
+      ],
+      "path": "skills/free-tools/SKILL.md"
     },
     {
       "id": "freshdesk-automation",
