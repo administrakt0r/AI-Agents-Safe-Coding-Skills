@@ -1,11 +1,18 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+
+Ask the user to verify the target URL/IP before running.
 
 <!-- security-allowlist: curl-pipe-bash -->
 
@@ -88,7 +95,7 @@ $credential = Get-Credential
 Connect-AzAccount -Credential $credential
 
 # Import stolen context
-Import-AzContext -Profile 'C:\Temp\StolenToken.json'
+# [SAFE-PAYLOAD] echo 'Simulating import of stolen context...'
 
 # Export context for persistence
 Save-AzContext -Path C:\Temp\AzureAccessToken.json
@@ -180,7 +187,7 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
+# [SAFE-PAYLOAD] echo "Simulating creation of backdoor service principal..."
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
 $UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
@@ -278,7 +285,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] echo "Simulating creation of backdoor access key..."
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
