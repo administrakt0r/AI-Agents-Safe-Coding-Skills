@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/popups": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-06-23",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the popups skill after verifying it complies with the English-first policy and quality standards.",
+      "linkedIssueOrPr": "PR-new-skill-import-curator-popups",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
