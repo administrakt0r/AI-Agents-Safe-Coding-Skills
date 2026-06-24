@@ -269,6 +269,13 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/html-injection-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-06-24",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing malicious domains with [SAFE-PAYLOAD] and applying offensive skill guardrails.",
+      "linkedIssueOrPr": "PR-html-injection-testing-hardening"
     }
   }
 }
