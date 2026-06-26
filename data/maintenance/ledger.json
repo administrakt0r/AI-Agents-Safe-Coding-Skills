@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-messaging-webpubsub-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-06-26",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by bumping azure-messaging-webpubsub version from 1.5.0 to 1.5.5 based on primary documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-messaging-webpubsub-java",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }
