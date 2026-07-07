@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/aws-penetration-testing": {
+      "status": "normalized",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "lastReviewedAt": "2026-06-27",
+      "outcome": "Hardened skill by replacing lambda privilege escalation, lambda backdoors, and container backdooring payloads with safe placeholders.",
+      "linkedIssueOrPr": "PR-aws-penetration-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
