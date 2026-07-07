@@ -16,7 +16,7 @@ Build document analysis applications using the Azure AI Document Intelligence SD
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-ai-documentintelligence</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.9</version>
 </dependency>
 ```
 
