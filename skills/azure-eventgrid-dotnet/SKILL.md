@@ -23,7 +23,7 @@ dotnet add package Azure.Messaging.EventGrid.Namespaces
 dotnet add package Microsoft.Azure.Messaging.EventGrid.CloudNativeCloudEvents
 ```
 
-**Current Version**: 4.28.0 (stable)
+**Current Version**: 5.0.0 (stable)
 
 ## Environment Variables
 
