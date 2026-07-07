@@ -1,11 +1,16 @@
 ---
 name: broken-authentication
 description: "Identify and exploit authentication and session management vulnerabilities in web applications. Broken authentication consistently ranks in the OWASP Top 10 and can lead to account takeover, identity theft, and unauthorized access to sensitive systems."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
 
 # Broken Authentication Testing
 
@@ -104,13 +109,16 @@ Test for username enumeration vulnerabilities:
 
 ### Phase 4: Brute Force Testing
 
+**Requirement:** Ask the user to verify the target URL/IP before running.
+
 Test account lockout and rate limiting:
 
 ```bash
 # Using Hydra for form-based auth
-hydra -l admin -P /usr/share/wordlists/rockyou.txt \
-  target.com http-post-form \
-  "/login:username=^USER^&password=^PASS^:Invalid credentials"
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
+# hydra -l admin -P /usr/share/wordlists/rockyou.txt \
+#   target.com http-post-form \
+#   "/login:username=^USER^&password=^PASS^:Invalid credentials"
 
 # Using Burp Intruder
 1. Capture login request
@@ -140,6 +148,8 @@ Check for protections:
 ```
 
 ### Phase 5: Credential Stuffing
+
+**Requirement:** Ask the user to verify the target URL/IP before running.
 
 Test with known breached credentials:
 
@@ -197,6 +207,8 @@ for i in range(100):
 
 ### Phase 7: Session Fixation Testing
 
+**Requirement:** Ask the user to verify the target URL/IP before running.
+
 Test if session is regenerated after authentication:
 
 ```bash
@@ -249,6 +261,8 @@ Verify session expiration policies:
 
 ### Phase 9: Multi-Factor Authentication Testing
 
+**Requirement:** Ask the user to verify the target URL/IP before running.
+
 Assess MFA implementation security:
 
 ```bash
@@ -290,6 +304,8 @@ Test MFA enrollment:
 ```
 
 ### Phase 10: Password Reset Testing
+
+**Requirement:** Ask the user to verify the target URL/IP before running.
 
 Analyze password reset security:
 
@@ -401,6 +417,8 @@ True-Client-IP: 127.0.0.1
 
 ### Example 1: Account Lockout Bypass
 
+**Requirement:** Ask the user to verify the target URL/IP before running.
+
 **Scenario:** Test if account lockout can be bypassed
 
 ```bash
@@ -426,6 +444,8 @@ username=ADMIN
 
 ### Example 2: JWT Token Attack
 
+**Requirement:** Ask the user to verify the target URL/IP before running.
+
 **Scenario:** Exploit weak JWT implementation
 
 ```bash
@@ -446,6 +466,8 @@ Authorization: Bearer eyJhbGciOiJub25lIiwidHlwIjoiSldUIn0.eyJ1c2VyIjoiYWRtaW4ifQ
 ```
 
 ### Example 3: Password Reset Token Exploitation
+
+**Requirement:** Ask the user to verify the target URL/IP before running.
 
 **Scenario:** Test password reset functionality
 
