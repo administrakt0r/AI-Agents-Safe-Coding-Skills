@@ -13,7 +13,7 @@ Build production-grade Azure Cosmos DB NoSQL services following clean code, secu
 ## Installation
 
 ```bash
-pip install azure-cosmos azure-identity
+pip install "azure-cosmos[aio]" azure-identity
 ```
 
 ## Environment Variables
@@ -70,7 +70,7 @@ client = CosmosClient(
 │                     Cosmos DB Client Module                     │
 │  - Singleton container initialization                           │
 │  - Dual auth: DefaultAzureCredential (Azure) / Key (emulator)   │
-│  - Async wrapper via run_in_threadpool                          │
+│  - Native async via azure.cosmos.aio                            │
 └─────────────────────────────────────────────────────────────────┘
 ```
 
@@ -82,9 +82,8 @@ Create a singleton Cosmos client with dual authentication:
 
 ```python
 # db/cosmos.py
-from azure.cosmos import CosmosClient
-from azure.identity import DefaultAzureCredential
-from starlette.concurrency import run_in_threadpool
+from azure.cosmos.aio import CosmosClient
+from azure.identity.aio import DefaultAzureCredential
 
 _cosmos_container = None
 
@@ -237,7 +236,7 @@ async def test_get_project_by_id_returns_project(mock_cosmos_container):
 
 ### Performance
 - Partition key queries avoid cross-partition scans
-- Async wrapping prevents blocking FastAPI event loop
+- Native async client prevents blocking FastAPI event loop
 - Minimal document conversion overhead
 
 ## When to Use
