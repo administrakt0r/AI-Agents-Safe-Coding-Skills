@@ -2,7 +2,7 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1275
+Total skills: 1278
 
 ## architecture (87)
 
@@ -96,7 +96,7 @@ Total skills: 1275
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (62)
+## business (64)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -107,6 +107,7 @@ Total skills: 1275
 | `brevo-automation` | Automate Brevo (formerly Sendinblue) email marketing operations through Composio's Brevo toolkit via Rube MCP. | brevo | brevo, automation, automate, formerly, sendinblue, email, marketing, operations, through, composio, toolkit, via |
 | `chat-widget` | Build a real-time support chat system with a floating widget for users and an admin dashboard for support staff. Use when the user wants live chat, customer ... | chat, widget | chat, widget, real, time, floating, users, admin, dashboard, staff, user, wants, live |
 | `co-marketing` | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Helps SaaS companies identify ideal partner... | co, marketing | co, marketing, user, wants, find, partners, plan, joint, campaigns, brainstorm, partnership, opportunities |
+| `community-marketing` | Build and leverage online communities to drive product growth and brand loyalty. | community, marketing | community, marketing, leverage, online, communities, drive, product, growth, brand, loyalty |
 | `competitive-landscape` | Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies. | competitive, landscape | competitive, landscape, frameworks, analyzing, competition, identifying, differentiation, opportunities, developing, winning, market, positioning |
 | `competitor-alternatives` | You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuin... | competitor, alternatives | competitor, alternatives, creating, comparison, alternative, pages, goal, rank, competitive, search, terms, provide |
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
@@ -117,6 +118,7 @@ Total skills: 1275
 | `email-sequence` | You are an expert in email marketing and automation. Your goal is to create email sequences that nurture relationships, drive action, and move people toward ... | email, sequence | email, sequence, marketing, automation, goal, sequences, nurture, relationships, drive, action, move, people |
 | `framework-migration-legacy-modernize` | Orchestrate a comprehensive legacy system modernization using the strangler fig pattern, enabling gradual replacement of outdated components while maintainin... | framework, migration, legacy, modernize | framework, migration, legacy, modernize, orchestrate, modernization, strangler, fig, enabling, gradual, replacement, outdated |
 | `free-tool-strategy` | You are an expert in engineering-as-marketing strategy. Your goal is to help plan and evaluate free tools that generate leads, attract organic traffic, and b... | free | free, engineering, marketing, goal, plan, evaluate, generate, leads, attract, organic, traffic, brand |
+| `free-tools` | When the user wants to plan, evaluate, or build a free tool for marketing purposes, like a calculator, generator, or lead gen tool. | free | free, user, wants, plan, evaluate, marketing, purposes, like, calculator, generator, lead, gen |
 | `hr-pro` | Professional, ethical HR partner for hiring, onboarding/offboarding, PTO and leave, performance, compliant policies, and employee relations. | hr | hr, pro, professional, ethical, partner, hiring, onboarding, offboarding, pto, leave, performance, compliant |
 | `keyword-extractor` | Extracts up to 50 highly relevant SEO keywords from text. Use when user wants to generate or extract keywords for given text. | keyword, extractor | keyword, extractor, extracts, up, 50, highly, relevant, seo, keywords, text, user, wants |
 | `launch-strategy` | You are an expert in SaaS product launches and feature announcements. Your goal is to help users plan launches that build momentum, capture attention, and co... | launch | launch, saas, product, launches, feature, announcements, goal, users, plan, momentum, capture, attention |
@@ -593,7 +595,7 @@ Total skills: 1275
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (305)
+## general (306)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -658,10 +660,11 @@ Total skills: 1275
 | `codebase-cleanup-tech-debt` | You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncov... | codebase, cleanup, tech, debt | codebase, cleanup, tech, debt, technical, specializing, identifying, quantifying, prioritizing, software, analyze, uncover |
 | `cold-email` | Write B2B cold emails and follow-up sequences that earn replies. Use when creating outbound prospecting emails, SDR outreach, personalized opening lines, sub... | cold, email | cold, email, write, b2b, emails, follow, up, sequences, earn, replies, creating, outbound |
 | `commit` | ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional ... | commit | commit, always, skill, committing, code, changes, never, directly, without, creates, commits, following |
+| `competitor-profiling` | Research and analyze competitors from their URLs to build structured competitor profile documents, dossiers, and competitive intelligence overviews. | competitor, profiling | competitor, profiling, research, analyze, competitors, urls, structured, profile, documents, dossiers, competitive, intelligence |
 | `comprehensive-review-full-review` | Use when working with comprehensive review full review | comprehensive, full | comprehensive, full, review, working |
 | `computer-vision-expert` | SOTA Computer Vision Expert (2026). Specialized in YOLO26, Segment Anything 3 (SAM 3), Vision Language Models, and real-time spatial analysis. | computer, vision | computer, vision, sota, 2026, specialized, yolo26, segment, anything, sam, language, models, real |
 | `concise-planning` | Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist. | concise, planning | concise, planning, user, asks, plan, coding, task, generate, clear, actionable, atomic, checklist |
-| `content-strategy` | Plan a content strategy, topic clusters, editorial roadmap, and content mix for traffic, authority, and lead generation. Use when deciding what to publish, w... | content | content, plan, topic, clusters, editorial, roadmap, mix, traffic, authority, lead, generation, deciding |
+| `content-strategy` | Use when the user wants to plan a content strategy, decide what content to create, figure out topics, or mentions content strategy, content planning, or edit... | content | content, user, wants, plan, decide, what, figure, topics, mentions, planning, editorial, calendars |
 | `context-compression` | When agent sessions generate millions of tokens of conversation history, compression becomes mandatory. The naive approach is aggressive compression to minim... | compression | compression, context, agent, sessions, generate, millions, tokens, conversation, history, becomes, mandatory, naive |
 | `context-fundamentals` | Context is the complete state available to a language model at inference time. It includes everything the model can attend to when generating responses: syst... | fundamentals | fundamentals, context, complete, state, available, language, model, inference, time, includes, everything, attend |
 | `context-management-context-restore` | Use when working with context management context restore | restore | restore, context, working |
