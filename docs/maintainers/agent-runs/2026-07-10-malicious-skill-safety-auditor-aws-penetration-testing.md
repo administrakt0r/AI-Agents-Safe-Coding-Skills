@@ -1,0 +1,6 @@
+- target: skills/aws-penetration-testing
+- why it was selected: Claimed an unclaimed high-risk skill for safety audit.
+- evidence reviewed: Found active malicious zip deployment instructions, attacker instances, and backdoor references in SKILL.md and references/advanced-aws-pentesting.md. Also missing offensive disclaimer.
+- files changed or removal decision: Hardened SKILL.md and references/advanced-aws-pentesting.md by replacing malicious payloads with [SAFE-PAYLOAD] placeholders. Added AUTHORIZED USE ONLY disclaimer and changed risk to offensive.
+- linked PR or issue: PR-aws-penetration-testing-hardening
+- next action: Monitor for re-introduction of active payloads.
