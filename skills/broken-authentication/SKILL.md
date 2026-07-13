@@ -309,7 +309,7 @@ https://target.com/reset?token=abc123&user=victim
 
 # Host header injection
 POST /forgot-password HTTP/1.1
-Host: attacker.com
+Host: [SAFE-PAYLOAD]
 email=victim@email.com
 # Reset email may contain attacker's domain
 ```
