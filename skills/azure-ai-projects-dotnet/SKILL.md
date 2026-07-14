@@ -23,7 +23,7 @@ dotnet add package Azure.AI.Projects.OpenAI --prerelease
 dotnet add package Azure.AI.Agents.Persistent --prerelease
 ```
 
-**Current Versions**: GA v1.1.0, Preview v1.2.0-beta.5
+**Current Version**: 2.0.1
 
 ## Environment Variables
 
