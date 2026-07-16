@@ -17,7 +17,7 @@ dotnet add package Azure.ResourceManager.PostgreSql
 dotnet add package Azure.Identity
 ```
 
-**Current Version**: v1.2.0 (GA)  
+**Current Version**: v2.0.0 (GA)
 **API Version**: 2023-12-01-preview
 
 > **Note**: This skill focuses on PostgreSQL Flexible Server. Single Server is deprecated and scheduled for retirement.
