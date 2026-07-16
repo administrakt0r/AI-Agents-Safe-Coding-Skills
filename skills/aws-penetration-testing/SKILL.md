@@ -1,13 +1,17 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # AWS Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill involves offensive security techniques and must only be used against systems you have explicit, written permission to test.
 
 ## Purpose
 
@@ -162,7 +166,7 @@ aws iam create-access-key --user-name target_user
 
 ```bash
 aws iam attach-user-policy --user-name my_username \
-  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+  --policy-arn [SAFE-PAYLOAD]
 ```
 
 ### Add Inline Admin Policy
@@ -183,7 +187,7 @@ def lambda_handler(event, context):
     client = boto3.client('iam')
     response = client.attach_user_policy(
         UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
+        PolicyArn="[SAFE-PAYLOAD]"
     )
     return response
 ```
@@ -191,7 +195,7 @@ def lambda_handler(event, context):
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file fileb://[SAFE-PAYLOAD]
 ```
 
 ---
@@ -202,8 +206,8 @@ aws lambda update-function-code --function-name target_function \
 
 ```bash
 # Using bucket_finder
-./bucket_finder.rb wordlist.txt
-./bucket_finder.rb --download --region us-east-1 wordlist.txt
+# [SAFE-PAYLOAD] bucket_finder.rb simulation... wordlist.txt
+# [SAFE-PAYLOAD] bucket_finder.rb simulation... --download --region us-east-1 wordlist.txt
 
 # Common bucket URL patterns
 https://{bucket-name}.s3.amazonaws.com
@@ -294,7 +298,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+# [SAFE-PAYLOAD] secretsdump.py simulation...
 ```
 
 ---
