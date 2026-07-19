@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/html-injection-testing": {
+    "status": "normalized",
+    "lastReviewedAt": "2026-07-19",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Hardened skill by replacing active payloads targeting attacker.com with safe placeholders, and updated risk tag to offensive.",
+    "linkedIssueOrPr": "PR-html-injection-testing-hardening",
+    "nextAction": "Monitor for re-introduction of active payloads."
   }
 }
