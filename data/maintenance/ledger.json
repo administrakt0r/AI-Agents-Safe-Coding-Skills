@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/aws-penetration-testing": {
+    "status": "normalized",
+    "lastReviewedAt": "2026-07-20",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Hardened skill by replacing active Lambda privilege escalation strings and container backdooring commands with safe placeholders, and modernized frontmatter.",
+    "linkedIssueOrPr": "PR-aws-penetration-testing-hardening",
+    "nextAction": "Monitor for re-introduction of active payloads."
   }
 }
