@@ -17,7 +17,7 @@ dotnet add package Azure.Search.Documents
 dotnet add package Azure.Identity
 ```
 
-**Current Versions**: Stable v11.7.0, Preview v11.8.0-beta.1
+**Current Versions**: Stable v12.0.0, Preview v12.1.0-beta.1
 
 ## Environment Variables
 
