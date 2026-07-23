@@ -1,7 +1,7 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -10,6 +10,10 @@ date_added: "2026-02-27"
 <!-- security-allowlist: curl-pipe-bash -->
 
 # Cloud Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill is strictly for authorized penetration testing and security auditing. Do not use these techniques against systems you do not own or have explicit written permission to test.
 
 ## Purpose
 
@@ -180,9 +184,9 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# [SAFE-PAYLOAD] Simulate creation of backdoor service principal
+# [SAFE-PAYLOAD] Simulate secret generation
+# [SAFE-PAYLOAD] Simulate secret retrieval
 
 # Add service principal to Global Admin
 $sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
@@ -278,7 +282,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] Simulate backdoor access key creation
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
