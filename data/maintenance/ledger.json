@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-security-keyvault-secrets-java": {
+      "status": "modernized",
+      "lastReviewedAt": "2026-07-25",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized skill by replacing obsolete com.azure:azure-security-keyvault-secrets 4.9.0 with stable version 4.11.1 based on Maven Central.",
+      "linkedIssueOrPr": "PR-modernize-azure-security-keyvault-secrets-java",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }
