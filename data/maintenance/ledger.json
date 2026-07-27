@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-resource-manager-postgresql-dotnet": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-06-30",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating the obsolete version v1.2.0 and API version 2023-12-01-preview to the latest versions v2.0.0 and 2024-08-01 based on current Azure documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-resource-manager-postgresql-dotnet",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }
