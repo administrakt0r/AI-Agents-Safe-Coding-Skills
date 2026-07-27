@@ -1,11 +1,10 @@
 ---
 name: ad-creative
-description: "Create, iterate, and scale paid ad creative for Google Ads, Meta, LinkedIn, TikTok, and similar platforms. Use when generating headlines, descriptions, primary text, or large sets of ad variations for testing and performance optimization."
-risk: safe
-source: "coreyhaines31/marketingskills"
-date_added: "2026-04-03"
+description: "When the user wants to generate, iterate, or scale ad creative for any paid advertising platform. Also use when the user mentions ad copy variations, ad creative, generate headlines, RSA headlines, bulk ad copy, ad iterations, creative testing, ad performance optimization, write ads."
 metadata:
-  version: 1.1.0
+  version: 2.8.0
+  risk: unknown
+  source: https://github.com/coreyhaines31/marketingskills/tree/main/skills/ad-creative
 ---
 
 # Ad Creative
@@ -13,15 +12,12 @@ metadata:
 You are an expert performance creative strategist. Your goal is to generate high-performing ad creative at scale — headlines, descriptions, and primary text that drive clicks and conversions — and iterate based on real performance data.
 
 ## When to Use
-
-- Use when generating or iterating paid ad copy at scale.
-- Use for headlines, descriptions, primary text, and structured ad variation sets.
-- Use when performance data should inform the next round of creative.
+Use this skill when the user wants to generate, iterate, or scale ad creative (headlines, descriptions, primary text, or full ad variations) for any paid advertising platform.
 
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -55,7 +51,7 @@ Gather this context (ask if not provided):
 
 ## How This Skill Works
 
-This skill supports two modes:
+This skill supports four modes:
 
 ### Mode 1: Generate from Scratch
 When starting fresh, you generate a full set of ad creative based on product context, audience insights, and platform best practices.
@@ -68,6 +64,38 @@ The core loop:
 ```
 Pull performance data → Identify winning patterns → Generate new variations → Validate specs → Deliver
 ```
+
+### Mode 3: Scaled Static Batches (Grounded)
+For recurring static ad production at volume (e.g., 50 concepts per batch), work from a **grounded inputs corpus** and the the static ad template library reference (not included). Every concept must trace to real source material — see "Grounded Inputs" below. To run this on a daily or weekly cadence, see the daily-creative-drop loop in **marketing-loops**. To present a batch for client or stakeholder approval, produce a the creative review page reference (not included).
+
+### Mode 4: Creative Strategy Loop
+For deciding **which ads are worth making before making them**: synthesize three signal sources (account performance, customer language, external organic) into evidence-ranked concepts, branch the creative mix on account state (exploration vs. scaling), maintain a capacity-checked roadmap with production tiers, and run a monthly retro that feeds the next slate. The full system lives in the references/creative-roadmap.md reference (not included); for hook generation and funnel-stage diagnosis inside any mode, load the references/hook-system.md reference (not included).
+
+---
+
+## Grounded Inputs
+
+Most AI ad generation fails on input grounding, not output quality: ungrounded generation produces plausible-sounding ads based on training data, not on what converts for this brand. For scaled production (Mode 3), maintain a durable inputs corpus:
+
+```
+inputs/
+  winning-ads/   10-20 screenshots of the highest-performing ads from the last 90 days
+  reviews/       50-100 customer reviews (Trustpilot, G2, Amazon, App Store) as .md/.txt
+  comments/      Top comments from existing ad campaigns — objections, unprompted praise, customer-raised angles
+brand/           Brand voice doc, hex codes, logo, product/screenshot assets
+outputs/         Dated batch folders (outputs/YYYY-MM-DD/)
+```
+
+**Why each input matters:**
+- **Winning ads** carry the hooks, structures, and angles already proven for this brand
+- **Reviews** carry the exact language buyers use for pain, transformation, and unexpected benefits — pull copy from them verbatim rather than paraphrasing
+- **Ad comments** are the most-skipped and highest-value input: objections ("but does it work for X?") become FAQ Card ads, and unprompted praise surfaces angles you didn't write
+
+**Grounding rules:**
+- Every concept cites its source (which review, winning ad, or comment it traces to)
+- No invented claims, stats, or testimonials — ever
+- If `inputs/winning-ads/` or `inputs/reviews/` is empty, stop and ask the user to populate it before generating. Do not generate ungrounded concepts as a fallback.
+- Inputs decay: refresh `inputs/winning-ads/` as new ads scale; refresh `inputs/reviews/` and `inputs/comments/` monthly
 
 ---
 
@@ -122,13 +150,19 @@ Platforms reject or truncate creative that exceeds these limits, so verify every
 | Headline | 70 characters | Card headline |
 | Description | 200 characters | Card description |
 
-For detailed specs and format variations, see [references/platform-specs.md](references/platform-specs.md).
+For detailed specs and format variations, see the references/platform-specs.md reference (not included).
 
 ---
 
 ## Generating Ad Visuals
 
-For image and video ad creative, use generative AI tools and code-based video rendering. See [references/generative-tools.md](references/generative-tools.md) for the complete guide covering:
+**For static ad structure**, use the 15-template library in the references/static-ad-templates.md reference (not included) — layout frameworks (Us vs. Them, Stat Callout, Review Card, Before/After, Founder Message, FAQ Card, and more) with copy slots, DTC and SaaS examples, and per-concept output format. Cycle through all 15 rather than clustering on favorites: template diversity is angle diversity.
+
+**For iOS-native reveal video ads** — iMessage chat reveals (scripted thread unfolds bubble-by-bubble: screenshot hook → friend asks "what app is that?" → brand + promo code reveal → end card), ChatGPT reveals (typed question → streaming answer), Apple Notes reveals (a confessional note typed live), and AirDrop reveals (an incoming share where the accept-tap is the reveal) — see the references/imessage-video-ads.md reference (not included) for surface selection, the six concept angles, script and pacing rules, production routes (off-the-shelf, Playwright + ffmpeg pipeline, Remotion), craft details that sell the illusion, and the grounding/compliance rules for dramatized conversations (strictest for fabricated AI answers).
+
+**For faceless motion-style video ads** — fully generated 15–45s concept/explainer videos (styled poster stills → image-to-video "living" motion → TTS narration → word-timed captions; roughly $3–6 and ~15 minutes per finished video) — see the references/motion-video-ads.md reference (not included) for the provider-agnostic pipeline, a nine-style visual library with fill-in prompt formulas — five characterful looks (screen-print collage, flat vector explainer, papercraft diorama, pop-art comic, claymation) plus four brand-flexible token-driven styles (monoline editorial, Swiss typographic, wireglow, duotone screenprint) driven by a brand-slots contract (FIELD / INK / ACCENT / TYPE FEEL) — the motion prompt formula, and hard-earned QC gotchas (maker-hands intrusion, final-two-seconds drift, caption/label collision, TTS/whisper sound-alikes).
+
+For image and video generation tools, see the references/generative-tools.md reference (not included) for the complete guide covering:
 
 - **Image generation** — Nano Banana Pro (Gemini), Flux, Ideogram for static ad images
 - **Video generation** — Veo, Kling, Runway, Sora, Seedance, Higgsfield for video ads
@@ -282,6 +316,23 @@ headline_1,headline_2,headline_3,description_1,description_2,platform
 "Stop Manual Reporting","Automate in 5 Minutes","Join 10K+ Teams","Save 10+ hrs/week on reports. Start free.","Connect data sources once. Reports forever.","google_ads"
 ```
 
+### Static Batch Output (Mode 3)
+
+For scaled static batches, save to a dated folder with an index:
+
+```
+outputs/YYYY-MM-DD/
+  INDEX.md        # every concept: template type + grounding source, scannable in 2 min
+  concepts/       # one .md per concept: headline, body, visual description, image prompt, grounding
+  images/         # generated images, if an image tool is configured
+```
+
+Per-concept format is defined in the references/static-ad-templates.md reference (not included). The human workflow this supports: open the folder, scan INDEX.md, pick the best 5-10 for testing — picking 5 winners from 50 concepts yields better creative than picking 5 from 10.
+
+### Creative Review Page (client / stakeholder approval)
+
+When a person who isn't you needs to review and pick — a client, a partner, a stakeholder — produce a **creative review page**: a self-contained HTML artifact that presents each concept as an in-feed platform mockup (Instagram/Facebook, with a whitelist-handle toggle), breaks carousels into a labeled frame-by-frame storyboard, lets them toggle headline/copy variations, and discloses what's grounded in real assets. It's the visual upgrade to INDEX.md — a decision made off one link instead of by reading markdown. The template ships at the assets/creative-review-template.html reference (not included) (one file, no build, hostable anywhere); populate its `DATA` object from your generated concepts. Full data model, grounding rules (the disclosure block is required), and delivery in the references/creative-review-page.md reference (not included).
+
 ### Iteration Report
 
 When iterating, include a summary:
@@ -332,6 +383,8 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 - **No CTA headlines** — RSAs need action-oriented headlines to drive clicks; include at least 2-3
 - **Generic descriptions** — "Learn more about our solution" wastes the slot
 - **Iterating without data** — Gut feelings are less reliable than metrics
+- **Generating without grounding** — Ungrounded concepts read like every other ad in the feed; feed the skill winning ads, reviews, and comments first
+- **Skipping the comments input** — Ad comments hold the objections and angles customers raise themselves; those usually convert best
 - **Testing too many things at once** — Change one variable per test cycle
 - **Retiring creative too early** — Allow 1,000+ impressions before judging
 
@@ -339,14 +392,14 @@ For large-scale creative production (Anthropic's growth team generates 100+ vari
 
 ## Tool Integrations
 
-For pulling performance data and managing campaigns, use the relevant ads platform tools available in this environment.
+For pulling performance data and managing campaigns, see the the tools registry reference (not included).
 
 | Platform | Pull Performance Data | Manage Campaigns | Guide |
 |----------|:---------------------:|:----------------:|-------|
-| **Google Ads** | `google-ads campaigns list`, `google-ads reports get` | `google-ads campaigns create` | Use available Google Ads integrations |
-| **Meta Ads** | `meta-ads insights get` | `meta-ads campaigns list` | Use available Meta Ads integrations |
-| **LinkedIn Ads** | `linkedin-ads analytics get` | `linkedin-ads campaigns list` | Use available LinkedIn Ads integrations |
-| **TikTok Ads** | `tiktok-ads reports get` | `tiktok-ads campaigns list` | Use available TikTok Ads integrations |
+| **Google Ads** | `google-ads campaigns list`, `google-ads reports get` | `google-ads campaigns create` | the google-ads.md reference (not included) |
+| **Meta Ads** | `meta-ads insights get` | `meta-ads campaigns list` | the meta-ads.md reference (not included) |
+| **LinkedIn Ads** | `linkedin-ads analytics get` | `linkedin-ads campaigns list` | the linkedin-ads.md reference (not included) |
+| **TikTok Ads** | `tiktok-ads reports get` | `tiktok-ads campaigns list` | the tiktok-ads.md reference (not included) |
 
 ### Workflow: Pull Data, Analyze, Generate
 
@@ -364,8 +417,10 @@ node tools/clis/google-ads.js reports get --type ad_performance --date-range las
 
 ## Related Skills
 
-- **paid-ads**: For campaign strategy, targeting, budgets, and optimization
+- **ads**: For campaign strategy, targeting, budgets, and optimization
+- **marketing-loops**: For running static batch generation on a recurring cadence (the daily-creative-drop loop)
+- **customer-research**: For mining reviews and comments when building the grounded inputs corpus
 - **copywriting**: For landing page copy (where ad traffic lands)
-- **ab-test-setup**: For structuring creative tests with statistical rigor
+- **ab-testing**: For structuring creative tests with statistical rigor
 - **marketing-psychology**: For psychological principles behind high-performing creative
 - **copy-editing**: For polishing ad copy before launch
