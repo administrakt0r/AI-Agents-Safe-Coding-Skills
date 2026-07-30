@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/aws-penetration-testing": {
+    "status": "removed",
+    "lastReviewedAt": "2026-07-30",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Removed obsolete and unsafe skill aws-penetration-testing as it contained extensive active payloads and unmitigated functional exploit instructions.",
+    "linkedIssueOrPr": "PR-remove-aws-penetration-testing",
+    "nextAction": "None"
   }
 }
