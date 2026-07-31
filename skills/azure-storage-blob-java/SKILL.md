@@ -16,7 +16,7 @@ Build blob storage applications using the Azure Storage Blob SDK for Java.
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-storage-blob</artifactId>
-    <version>12.33.0</version>
+    <version>12.35.0</version>
 </dependency>
 ```
 
