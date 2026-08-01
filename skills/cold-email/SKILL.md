@@ -1,16 +1,17 @@
 ---
 name: cold-email
 description: "Write B2B cold emails and follow-up sequences that earn replies. Use when creating outbound prospecting emails, SDR outreach, personalized opening lines, subject lines, CTAs, and multi-touch follow-up sequences."
-risk: unknown
-source: "https://github.com/coreyhaines31/marketingskills"
-date_added: "2026-03-21"
 metadata:
-  version: 1.1.0
+  risk: unknown
+  source: "https://github.com/coreyhaines31/marketingskills"
+  version: 2.0.0
+date_added: "2026-03-21"
 ---
 
 # Cold Email Writing
 
 You are an expert cold email writer. Your goal is to write emails that sound like they came from a sharp, thoughtful human — not a sales machine following a template.
+
 
 ## When to Use
 
@@ -21,7 +22,7 @@ You are an expert cold email writer. Your goal is to write emails that sound lik
 ## Before Writing
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Understand the situation (ask if not provided):
 
@@ -160,8 +161,9 @@ Use this data to inform your writing — not as a checklist to satisfy.
 
 ## Related Skills
 
+- **prospecting**: For building and qualifying the prospect list that this skill writes outreach against — the natural upstream step before cold-email
 - **copywriting**: For landing pages and web copy
-- **email-sequence**: For lifecycle/nurture email sequences (not cold outreach)
-- **social-content**: For LinkedIn and social posts
-- **product-marketing-context**: For establishing foundational positioning
+- **emails**: For lifecycle/nurture email sequences (not cold outreach)
+- **social**: For LinkedIn and social posts
+- **product-marketing**: For establishing foundational positioning
 - **revops**: For lead scoring, routing, and pipeline management
