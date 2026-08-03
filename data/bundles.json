@@ -983,7 +983,7 @@
         "azure-mgmt-fabric-py",
         "azure-mgmt-mongodbatlas-dotnet",
         "azure-mgmt-weightsandbiases-dotnet",
-        "azure-microsoft-playwright-testing-ts",
+        "azure-playwright-ts",
         "azure-monitor-ingestion-java",
         "azure-monitor-ingestion-py",
         "azure-monitor-opentelemetry-py",
