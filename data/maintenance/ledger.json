@@ -269,6 +269,22 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-microsoft-playwright-testing-ts": {
+      "status": "removed",
+      "lastReviewedAt": "2026-08-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Removed obsolete skill azure-microsoft-playwright-testing-ts. It has been renamed to azure-playwright-ts and the obsolete migration notice removed as the old package is retired.",
+      "linkedIssueOrPr": "PR-modernize-azure-playwright-ts",
+      "nextAction": "Review updated SKILL.md for accuracy."
+    },
+    "skills/azure-playwright-ts": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by renaming from azure-microsoft-playwright-testing-ts to azure-playwright-ts and removing the obsolete migration notice as the package is fully retired.",
+      "linkedIssueOrPr": "PR-modernize-azure-playwright-ts",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
