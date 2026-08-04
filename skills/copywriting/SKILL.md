@@ -1,9 +1,11 @@
 ---
 name: copywriting
-description: Write rigorous, conversion-focused marketing copy for landing pages and emails. Enforces brief confirmation and strict no-fabrication rules.
-risk: unknown
-source: community
-date_added: "2026-02-27"
+description: Write, rewrite, or improve marketing copy for any page (homepage, landing, pricing). Use when creating text that needs to persuade or convert.
+metadata:
+  version: 2.0.1
+  risk: safe
+  category: marketing
+  source: coreyhaines31/marketingskills
 ---
 
 # Copywriting
