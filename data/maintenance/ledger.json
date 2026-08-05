@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/sql-injection-testing": {
+    "status": "normalized",
+    "lastReviewedAt": "2026-08-05",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+    "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
+    "nextAction": "Monitor for re-introduction of active payloads."
   }
 }
