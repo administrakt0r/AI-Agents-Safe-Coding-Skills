@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/azure-resource-manager-postgresql-dotnet": {
+    "status": "reviewed",
+    "lastReviewedAt": "2026-08-07",
+    "reviewerAgent": "stale-skill-modernizer",
+    "outcome": "Modernized skill azure-resource-manager-postgresql-dotnet by updating the SDK version to v1.4.2 and removing obsolete Single Server deprecation notices.",
+    "linkedIssueOrPr": "PR-modernize-azure-resource-manager-postgresql-dotnet",
+    "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
   }
 }
