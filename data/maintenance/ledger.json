@@ -270,5 +270,13 @@
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/sql-injection-testing": {
+    "status": "normalized",
+    "lastReviewedAt": "2026-08-08",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Hardened skill by replacing active OOB exfiltration payloads with safe placeholders, changing risk to offensive, and adding an Authorized Use Only warning.",
+    "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
+    "nextAction": "Monitor for re-introduction of active payloads."
   }
 }
