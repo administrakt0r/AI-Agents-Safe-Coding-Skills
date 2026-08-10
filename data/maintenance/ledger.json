@@ -269,6 +269,14 @@
       "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-cosmos-java": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-08-10",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating SDK version to 4.81.0, BOM version to 1.3.8, and applying modernized frontmatter schema.",
+      "linkedIssueOrPr": "PR-modernize-azure-cosmos-java",
+      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
     }
   }
 }
