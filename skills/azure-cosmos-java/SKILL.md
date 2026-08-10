@@ -1,8 +1,11 @@
 ---
 name: azure-cosmos-java
 description: Azure Cosmos DB SDK for Java. NoSQL database operations with global distribution, multi-model support, and reactive patterns.
-risk: unknown
-source: community
+metadata:
+  version: 2.0.0
+  risk: unknown
+  source: community
+  category: backend
 date_added: '2026-02-27'
 ---
 
@@ -16,7 +19,7 @@ Client library for Azure Cosmos DB NoSQL API with global distribution and reacti
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-cosmos</artifactId>
-    <version>LATEST</version>
+    <version>4.81.0</version>
 </dependency>
 ```
 
@@ -28,7 +31,7 @@ Or use Azure SDK BOM:
         <dependency>
             <groupId>com.azure</groupId>
             <artifactId>azure-sdk-bom</artifactId>
-            <version>{bom_version}</version>
+            <version>1.3.8</version>
             <type>pom</type>
             <scope>import</scope>
         </dependency>
