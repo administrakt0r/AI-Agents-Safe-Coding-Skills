@@ -1,13 +1,18 @@
 ---
 name: smtp-penetration-testing
 description: "Conduct comprehensive security assessments of SMTP (Simple Mail Transfer Protocol) servers to identify vulnerabilities including open relays, user enumeration, weak authentication, and misconfiguration."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 # SMTP Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill is intended for authorized security testing only.
+
 
 ## Purpose
 
@@ -30,7 +35,7 @@ sudo apt-get install hydra
 sudo apt-get install smtp-user-enum
 
 # Metasploit Framework
-msfconsole
+# [SAFE-PAYLOAD: msfconsole has been neutralized]
 ```
 
 ### Required Knowledge
@@ -163,16 +168,16 @@ Enumerate valid email addresses:
 
 ```bash
 # Using smtp-user-enum with VRFY
-smtp-user-enum -M VRFY -U /usr/share/wordlists/users.txt -t TARGET_IP
+# [SAFE-PAYLOAD: smtp-user-enum -M VRFY ... has been neutralized]
 
 # Using EXPN method
-smtp-user-enum -M EXPN -U /usr/share/wordlists/users.txt -t TARGET_IP
+# [SAFE-PAYLOAD: smtp-user-enum -M EXPN ... has been neutralized]
 
 # Using RCPT method
-smtp-user-enum -M RCPT -U /usr/share/wordlists/users.txt -t TARGET_IP
+# [SAFE-PAYLOAD: smtp-user-enum -M RCPT ... has been neutralized]
 
 # Specify port and domain
-smtp-user-enum -M VRFY -U users.txt -t TARGET_IP -p 25 -d target.com
+# [SAFE-PAYLOAD: smtp-user-enum -M VRFY ... -d target.com has been neutralized]
 ```
 
 Using Metasploit:
@@ -189,10 +194,10 @@ Using Nmap:
 
 ```bash
 # SMTP user enumeration script
-nmap --script smtp-enum-users -p 25 TARGET_IP
+# [SAFE-PAYLOAD: nmap --script smtp-enum-users ... has been neutralized]
 
 # With custom user list
-nmap --script smtp-enum-users --script-args smtp-enum-users.methods={VRFY,EXPN,RCPT} -p 25 TARGET_IP
+# [SAFE-PAYLOAD: nmap --script smtp-enum-users ... {VRFY,EXPN,RCPT} has been neutralized]
 ```
 
 ### Phase 6: Open Relay Testing
@@ -244,22 +249,22 @@ Test for weak SMTP credentials:
 
 ```bash
 # Using Hydra
-hydra -l admin -P /usr/share/wordlists/rockyou.txt smtp://TARGET_IP
+# [SAFE-PAYLOAD: hydra -l admin -P ... smtp://TARGET_IP has been neutralized]
 
 # With specific port and SSL
-hydra -l admin -P passwords.txt -s 465 -S TARGET_IP smtp
+# [SAFE-PAYLOAD: hydra -l admin -P ... -s 465 -S TARGET_IP smtp has been neutralized]
 
 # Multiple users
-hydra -L users.txt -P passwords.txt TARGET_IP smtp
+# [SAFE-PAYLOAD: hydra -L users.txt -P passwords.txt TARGET_IP smtp has been neutralized]
 
 # Verbose output
-hydra -l admin -P passwords.txt smtp://TARGET_IP -V
+# [SAFE-PAYLOAD: hydra -l admin -P ... smtp://TARGET_IP -V has been neutralized]
 ```
 
 Using Medusa:
 
 ```bash
-medusa -h TARGET_IP -u admin -P /path/to/passwords.txt -M smtp
+# [SAFE-PAYLOAD: medusa -h TARGET_IP -u admin -P /path/to/passwords.txt -M smtp has been neutralized]
 ```
 
 Using Metasploit:
@@ -415,13 +420,13 @@ EHLO test.com
 QUIT
 
 # Step 3: User enumeration
-smtp-user-enum -M VRFY -U /usr/share/seclists/Usernames/top-usernames-shortlist.txt -t mail.target.com
+# [SAFE-PAYLOAD: smtp-user-enum -M VRFY ... -t mail.target.com has been neutralized]
 
 # Step 4: Open relay test
 nmap -p 25 --script smtp-open-relay mail.target.com
 
 # Step 5: Authentication test
-hydra -l admin -P /usr/share/wordlists/fasttrack.txt smtp://mail.target.com
+# [SAFE-PAYLOAD: hydra -l admin -P ... smtp://mail.target.com has been neutralized]
 
 # Step 6: TLS check
 openssl s_client -connect mail.target.com:25 -starttls smtp
@@ -437,13 +442,13 @@ dig TXT _dmarc.target.com
 
 ```bash
 # Method 1: VRFY
-smtp-user-enum -M VRFY -U users.txt -t 192.168.1.100 -p 25
+# [SAFE-PAYLOAD: smtp-user-enum -M VRFY ... -t 192.168.1.100 has been neutralized]
 
 # Method 2: RCPT with timing analysis
-smtp-user-enum -M RCPT -U users.txt -t 192.168.1.100 -p 25 -d target.com
+# [SAFE-PAYLOAD: smtp-user-enum -M RCPT ... -t 192.168.1.100 has been neutralized]
 
 # Method 3: Metasploit
-msfconsole
+# [SAFE-PAYLOAD: msfconsole has been neutralized]
 use auxiliary/scanner/smtp/smtp_enum
 set RHOSTS 192.168.1.100
 set USER_FILE /usr/share/metasploit-framework/data/wordlists/unix_users.txt
