@@ -285,6 +285,14 @@
       "outcome": "Added as a trusted upstream source for skill imports. The repository contains 2,005+ agentic skills with MIT license, English-first content, and active maintenance.",
       "linkedIssueOrPr": "none",
       "nextAction": "Use as source for future single-skill import runs. Verify each imported skill individually for English-first policy and prompt injection safety."
+    },
+    "skills/sql-injection-testing": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-15",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active payloads with safe placeholders and adding offensive disclaimer.",
+      "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }
