@@ -6,7 +6,7 @@ __pycache__/
 .DS_Store
 Thumbs.db
 Desktop.ini
-
+/prompts-temp
 # Editors and local tooling
 .idea/
 .vs/

@@ -1,0 +1,120 @@
+name: PR Dedup Check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  dedup-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check for duplicate PRs
+        id: dedup
+        uses: actions/github-script@v7
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          script: |
+            const pr = context.payload.pull_request;
+            const prTitle = pr.title.toLowerCase();
+            const prNumber = pr.number;
+            const prBranch = pr.head.ref;
+
+            // Extract skill slug from title or branch
+            const skillPatterns = [
+              /import\s+(.+?)\s+skill/i,
+              /harden\s+(.+?)\s+skill/i,
+              /modernize\s+(.+?)(?:\s+skill|\s+to|\s+versions)/i,
+              /remove\s+(?:unsafe\s+)?(.+?)\s+skill/i,
+            ];
+
+            let detectedSkill = null;
+            for (const pattern of skillPatterns) {
+              const match = prTitle.match(pattern);
+              if (match) {
+                detectedSkill = match[1].trim().toLowerCase();
+                break;
+              }
+            }
+
+            if (!detectedSkill) {
+              // Try branch name
+              const branchMatch = prBranch.match(/^jules-(?:import|harden|modernize|remove)-(.+?)(?:-\d+)?$/);
+              if (branchMatch) {
+                detectedSkill = branchMatch[1].trim().toLowerCase();
+              }
+            }
+
+            if (!detectedSkill) {
+              core.info('Could not extract skill name from PR title or branch. Skipping dedup.');
+              core.setOutput('is_duplicate', 'false');
+              return;
+            }
+
+            core.info(`Detected skill: "${detectedSkill}"`);
+
+            // Fetch all open PRs
+            const { data: openPRs } = await github.rest.pulls.list({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'open',
+              per_page: 100,
+              sort: 'created',
+              direction: 'desc'
+            });
+
+            // Find duplicates (same skill, different PR)
+            const duplicates = openPRs.filter(other => {
+              if (other.number === prNumber) return false;
+              const otherTitle = other.title.toLowerCase();
+              const otherBranch = other.head.ref;
+              return otherTitle.includes(detectedSkill) || otherBranch.includes(detectedSkill.replace(/\s+/g, '-'));
+            });
+
+            if (duplicates.length > 0) {
+              const dupList = duplicates.map(d => `- PR #${d.number}: "${d.title}" by @${d.user.login}`).join('\n');
+              core.warning(`Found ${duplicates.length} existing PR(s) for skill "${detectedSkill}":\n${dupList}`);
+
+              const body = [
+                `> [!WARNING] **Duplicate PR Detected**`,
+                `> This PR appears to duplicate existing open PR(s) for the skill "${detectedSkill}":`,
+                ``,
+                ...duplicates.map(d => `> - PR #${d.number}: "${d.title}" by @${d.user.login}`),
+                ``,
+                `> This PR will be auto-closed. If this is intentional (e.g., superseding a stale PR), please close the older PR first and reopen this one.`,
+              ].join('\n');
+
+              await github.rest.issues.createComment({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                issue_number: prNumber,
+                body: body
+              });
+
+              await github.rest.pulls.update({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                pull_number: prNumber,
+                state: 'closed'
+              });
+
+              core.setOutput('is_duplicate', 'true');
+              core.setOutput('duplicate_count', duplicates.length.toString());
+            } else {
+              core.info(`No duplicates found for skill "${detectedSkill}".`);
+              core.setOutput('is_duplicate', 'false');
+            }
+
+      - name: Report result
+        run: |
+          if [ "${{ steps.dedup.outputs.is_duplicate }}" = "true" ]; then
+            echo "::warning::Duplicate PR detected. Auto-closed."
+          else
+            echo "No duplicate PR found."
+          fi
