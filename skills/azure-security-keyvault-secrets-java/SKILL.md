@@ -16,7 +16,7 @@ Securely store and manage secrets like passwords, API keys, and connection strin
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-security-keyvault-secrets</artifactId>
-    <version>4.9.0</version>
+    <version>4.11.1</version>
 </dependency>
 ```
 
