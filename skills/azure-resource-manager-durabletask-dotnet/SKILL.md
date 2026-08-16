@@ -21,8 +21,8 @@ dotnet add package Azure.ResourceManager.DurableTask
 dotnet add package Azure.Identity
 ```
 
-**Current Versions**: Stable v1.0.0 (2025-11-03), Preview v1.0.0-beta.1 (2025-04-24)
-**API Version**: 2025-11-01
+**Current Versions**: Stable v1.1.0 (2026-03-12), Stable v1.0.0 (2025-11-03), Preview v1.0.0-beta.1 (2025-04-24)
+**API Version**: 2026-02-01
 
 ## Environment Variables
 
@@ -60,7 +60,8 @@ ArmClient
     └── ResourceGroupResource
         └── DurableTaskSchedulerResource
             ├── DurableTaskHubResource
-            └── DurableTaskRetentionPolicyResource
+            ├── DurableTaskRetentionPolicyResource
+            └── DurableTaskPrivateEndpointConnectionResource  (v1.1.0+)
 ```
 
 ## Core Workflow
@@ -232,6 +233,52 @@ var retentionOperation = await retentionPolicies.CreateOrUpdateAsync(
     retentionData);
 ```
 
+### 9. Configure Private Endpoint Connections (v1.1.0+)
+
+```csharp
+// Disable public network access for enhanced security
+var schedulerData = new DurableTaskSchedulerData(AzureLocation.EastUS)
+{
+    Properties = new DurableTaskSchedulerProperties
+    {
+        Sku = new DurableTaskSchedulerSku(DurableTaskSchedulerSkuName.Dedicated)
+        {
+            Capacity = 1
+        },
+        PublicNetworkAccess = PublicNetworkAccess.Disabled  // Disable public access
+    }
+};
+
+var operation = await schedulerCollection.CreateOrUpdateAsync(
+    WaitUntil.Completed,
+    "my-secure-scheduler",
+    schedulerData);
+
+// List private endpoint connections
+var scheduler = operation.Value;
+await foreach (var peConnection in scheduler.GetDurableTaskPrivateEndpointConnections().GetAllAsync())
+{
+    Console.WriteLine($"PE Connection: {peConnection.Data.Name}");
+    Console.WriteLine($"  Status: {peConnection.Data.Properties.PrivateLinkServiceConnectionState.Status}");
+}
+
+// Approve a private endpoint connection
+var peConnectionName = "my-pe-connection";
+var peConnectionResource = await scheduler.GetDurableTaskPrivateEndpointConnectionAsync(peConnectionName);
+var approveData = new DurableTaskPrivateEndpointConnectionData
+{
+    Properties = new DurableTaskPrivateEndpointConnectionProperties
+    {
+        PrivateLinkServiceConnectionState = new DurableTaskPrivateLinkServiceConnectionState
+        {
+            Status = DurableTaskPrivateEndpointServiceConnectionStatus.Approved,
+            Description = "Approved by admin"
+        }
+    }
+};
+await peConnectionResource.Value.UpdateAsync(approveData);
+```
+
 ## Key Types Reference
 
 | Type | Purpose |
@@ -240,7 +287,7 @@ var retentionOperation = await retentionPolicies.CreateOrUpdateAsync(
 | `DurableTaskSchedulerResource` | Represents a Durable Task Scheduler |
 | `DurableTaskSchedulerCollection` | Collection for scheduler CRUD |
 | `DurableTaskSchedulerData` | Scheduler creation/update payload |
-| `DurableTaskSchedulerProperties` | Scheduler configuration (SKU, IPAllowlist) |
+| `DurableTaskSchedulerProperties` | Scheduler configuration (SKU, IPAllowlist, PublicNetworkAccess) |
 | `DurableTaskSchedulerSku` | SKU configuration (Name, Capacity, RedundancyState) |
 | `DurableTaskSchedulerSkuName` | SKU options: `Dedicated`, `Consumption` |
 | `DurableTaskHubResource` | Represents a Task Hub |
@@ -248,6 +295,12 @@ var retentionOperation = await retentionPolicies.CreateOrUpdateAsync(
 | `DurableTaskHubData` | Task hub creation payload |
 | `DurableTaskRetentionPolicyResource` | Retention policy management |
 | `DurableTaskRetentionPolicyData` | Retention policy configuration |
+| `DurableTaskPrivateEndpointConnectionResource` | Private endpoint connection (v1.1.0+) |
+| `DurableTaskPrivateEndpointConnectionCollection` | Collection for PE connection management (v1.1.0+) |
+| `DurableTaskPrivateEndpointConnectionData` | PE connection payload (v1.1.0+) |
+| `DurableTaskPrivateEndpointConnectionProperties` | PE connection state and configuration (v1.1.0+) |
+| `DurableTaskPrivateLinkServiceConnectionState` | PE connection approval/rejection state (v1.1.0+) |
+| `PublicNetworkAccess` | Enum: `Enabled`, `Disabled` (v1.1.0+) |
 | `DurableTaskExtensions` | Extension methods for ARM client |
 
 ## SKU Options
@@ -284,6 +337,8 @@ armClient.GetDurableTaskHubResource(id);           // Get task hub by ID
 5. **Use `CreateOrUpdateAsync`** for idempotent operations
 6. **Delete task hubs before schedulers** — schedulers with task hubs cannot be deleted
 7. **Use IP allowlists** for network security in production
+8. **Use private endpoints** for production workloads requiring network isolation (v1.1.0+)
+9. **Disable public network access** when using private endpoints for maximum security
 
 ## Error Handling
 

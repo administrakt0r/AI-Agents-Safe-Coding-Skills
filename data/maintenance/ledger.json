@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-27T09:23:31Z",
+  "updatedAt": "2026-08-16T00:00:00Z",
   "policies": {
     "englishOnly": true,
     "singleSkillPerRun": true,
@@ -293,6 +293,14 @@
       "outcome": "Hardened skill by replacing active payloads with safe placeholders and adding offensive disclaimer.",
       "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-resource-manager-durabletask-dotnet": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-16",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from v1.0.0 to v1.1.0 (2026-03-12), updating API version from 2025-11-01 to 2026-02-01, and adding documentation for new private endpoint connection features including PublicNetworkAccess configuration and DurableTaskPrivateEndpointConnectionCollection management.",
+      "linkedIssueOrPr": "PR-modernize-azure-resource-manager-durabletask-dotnet",
+      "nextAction": "Review updated SKILL.md for accuracy against real-world scenarios."
     }
   }
 }
