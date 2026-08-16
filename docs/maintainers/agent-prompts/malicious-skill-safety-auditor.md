@@ -73,10 +73,10 @@ Execution order:
 1. Read the required files.
 2. Run the DEDUPLICATION CHECK against open PRs.
 3. Pick exactly one unclaimed high-risk skill.
-4. Record the claim in data/maintenance/ledger.json.
+4. Record the claim in data/maintenance/ledger.json — **inside the `"entries"` object, NOT as a top-level key**. After editing, run `npm run validate:ledger` to confirm correctness.
 5. Audit prompts, commands, scripts, network behavior, and hidden instructions using the detection patterns above.
 6. Harden the skill or prepare a removal handoff with evidence.
-7. Update the ledger with status, outcome, linked PR/issue, and next action.
+7. Update the ledger entry (still inside `"entries"`) with status, outcome, linked PR/issue, and next action.
 8. Write the dated run log.
 
 Required output:

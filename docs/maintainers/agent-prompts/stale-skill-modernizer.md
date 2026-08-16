@@ -54,11 +54,11 @@ Execution order:
 1. Read the required files.
 2. Run the DEDUPLICATION CHECK against open PRs.
 3. Pick exactly one unclaimed stale skill.
-4. Record the claim in data/maintenance/ledger.json.
+4. Record the claim in data/maintenance/ledger.json — **inside the `"entries"` object, NOT as a top-level key**. After editing, run `npm run validate:ledger` to confirm correctness.
 5. Verify obsolescence against current primary docs.
 6. Apply modernization quality gates.
 7. Update the skill or prepare a removal/update handoff.
-8. Update the ledger with status, outcome, linked PR/issue, and next action.
+8. Update the ledger entry (still inside `"entries"`) with status, outcome, linked PR/issue, and next action.
 9. Write the dated run log.
 
 Required output:

@@ -41,7 +41,11 @@ Human maintainers remain the merge gate.
 
 ## Required Ledger Fields
 
-Each target entry in `data/maintenance/ledger.json` must include:
+Each target entry in `data/maintenance/ledger.json` MUST be placed inside the `"entries"` object — not as a top-level sibling. The valid top-level keys are: `version`, `updatedAt`, `policies`, `entries`.
+
+**CRITICAL:** When adding a new entry, place it INSIDE the `"entries": { ... }` block. Incorrect placement (as a top-level key) will be caught by `npm run validate:ledger`.
+
+Each entry inside `"entries"` must include:
 
 - `status`
 - `lastReviewedAt`

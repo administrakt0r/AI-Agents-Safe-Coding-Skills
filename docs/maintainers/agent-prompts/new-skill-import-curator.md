@@ -58,11 +58,11 @@ Execution order:
 1. Read the required files.
 2. Run the DEDUPLICATION CHECK against open PRs.
 3. Pick exactly one unclaimed skill from either trusted source (coreyhaines31/marketingskills or sickn33/agentic-awesome-skills).
-4. Record the claim in data/maintenance/ledger.json.
+4. Record the claim in data/maintenance/ledger.json — **inside the `"entries"` object, NOT as a top-level key**. After editing, run `npm run validate:ledger` to confirm correctness.
 5. Validate the source for safety, quality, and English-first compliance.
 6. Run the PROMPT INJECTION GUARD scan.
 7. Create or update the single target skill.
-8. Update the ledger with status, outcome, linked PR/issue, and next action.
+8. Update the ledger entry (still inside `"entries"`) with status, outcome, linked PR/issue, and next action.
 9. Write the dated run log.
 
 Required output:

@@ -11,6 +11,7 @@ from _project_paths import find_repo_root
 from audit_consistency import find_local_consistency_issues
 from check_validation_warning_budget import check_warning_budget
 from update_readme import configure_utf8_output, load_metadata
+from validate_ledger import validate_ledger
 
 
 def get_git_status(base_dir: str | Path) -> list[str]:
@@ -42,6 +43,7 @@ def build_audit_summary(
         "total_skills_label": metadata["total_skills_label"],
         "warning_budget": warning_budget_checker(root),
         "consistency_issues": consistency_issues,
+        "ledger_errors": validate_ledger(strict=False),
         "git": {
             "clean": len(git_status) == 0,
             "changed_files": git_status,
@@ -53,6 +55,7 @@ def print_human_summary(summary: dict) -> None:
     warning_budget = summary["warning_budget"]
     warning_status = "within budget" if warning_budget["within_budget"] else "over budget"
     consistency_status = "clean" if not summary["consistency_issues"] else f"{len(summary['consistency_issues'])} issue(s)"
+    ledger_status = "valid" if not summary["ledger_errors"] else f"{len(summary['ledger_errors'])} error(s)"
     git_status = "clean" if summary["git"]["clean"] else f"{len(summary['git']['changed_files'])} changed file(s)"
 
     print(f"Repository: {summary['repo']}")
@@ -60,12 +63,18 @@ def print_human_summary(summary: dict) -> None:
     print(f"Skills: {summary['total_skills_label']}")
     print(f"Warning budget: {warning_status} ({warning_budget['actual']}/{warning_budget['max']})")
     print(f"Consistency: {consistency_status}")
+    print(f"Ledger: {ledger_status}")
     print(f"Git working tree: {git_status}")
 
     if summary["consistency_issues"]:
         print("\nConsistency issues:")
         for issue in summary["consistency_issues"]:
             print(f"- {issue}")
+
+    if summary["ledger_errors"]:
+        print("\nLedger errors:")
+        for err in summary["ledger_errors"]:
+            print(f"- {err}")
 
     if summary["git"]["changed_files"]:
         print("\nChanged files:")
@@ -92,6 +101,8 @@ def main() -> int:
     if not summary["warning_budget"]["within_budget"]:
         return 1
     if summary["consistency_issues"]:
+        return 1
+    if summary["ledger_errors"]:
         return 1
     if not summary["git"]["clean"]:
         return 1
