@@ -342,6 +342,14 @@
       "outcome": "Imported the seo-audit skill after verifying it complies with the English-first policy and quality standards.",
       "linkedIssueOrPr": "PR-new-skill-import-curator-seo-audit",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-monitor-ingestion-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-17",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from 1.2.11 to 1.2.17 based on current Maven documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-monitor-ingestion-java",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }

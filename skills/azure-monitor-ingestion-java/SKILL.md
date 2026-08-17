@@ -16,7 +16,7 @@ Client library for sending custom logs to Azure Monitor using the Logs Ingestion
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-monitor-ingestion</artifactId>
-    <version>1.2.11</version>
+    <version>1.2.17</version>
 </dependency>
 ```
 
