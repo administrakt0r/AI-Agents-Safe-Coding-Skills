@@ -50,46 +50,6 @@
       "source": "./plugins/antigravity-bundle-essentials"
     },
     {
-      "name": "antigravity-bundle-security-engineer",
-      "version": "9.1.0",
-      "description": "Install the \"Security Engineer\" editorial skill bundle for Claude Code.",
-      "author": {
-        "name": "administrakt0r and contributors",
-        "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
-      },
-      "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
-      "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
-      "license": "MIT",
-      "keywords": [
-        "claude-code",
-        "skills",
-        "bundle",
-        "security-engineer",
-        "marketplace"
-      ],
-      "source": "./plugins/antigravity-bundle-security-engineer"
-    },
-    {
-      "name": "antigravity-bundle-security-developer",
-      "version": "9.1.0",
-      "description": "Install the \"Security Developer\" editorial skill bundle for Claude Code.",
-      "author": {
-        "name": "administrakt0r and contributors",
-        "url": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills"
-      },
-      "homepage": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
-      "repository": "https://github.com/administrakt0r/AI-Agents-Safe-Coding-Skills",
-      "license": "MIT",
-      "keywords": [
-        "claude-code",
-        "skills",
-        "bundle",
-        "security-developer",
-        "marketplace"
-      ],
-      "source": "./plugins/antigravity-bundle-security-developer"
-    },
-    {
       "name": "antigravity-bundle-web-wizard",
       "version": "9.1.0",
       "description": "Install the \"Web Wizard\" editorial skill bundle for Claude Code.",

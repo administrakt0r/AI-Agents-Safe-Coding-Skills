@@ -1,0 +1,15 @@
+{
+  "description": "Security-related skills are intentionally excluded from this repository.",
+  "blocked_risk_levels": ["offensive"],
+  "blocked_categories": ["security"],
+  "blocked_name_patterns": [
+    "security", "pentest", "penetration", "hack", "attack", "exploit",
+    "vulnerab", "malware", "phish", "credential", "privilege", "injection",
+    "xss", "sqlmap", "metasploit", "ffuf", "payload", "red-team", "scanning",
+    "threat", "forensic", "sast", "semgrep", "burp", "shodan", "wireshark",
+    "reverse-engineering", "zeroize", "authentication", "authorization",
+    "secrets-management", "cryptograph", "crypto-wallet", "firewall", "siem", "pci-compliance",
+    "skill-scanner", "audit-skills", "security-auditor", "supply-chain-risk-auditor",
+    "deps-audit", "differential-review"
+  ]
+}

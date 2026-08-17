@@ -32,80 +32,6 @@
       ]
     },
     {
-      "id": "security-engineer",
-      "name": "Security Engineer",
-      "group": "Security & Compliance",
-      "emoji": "🛡️",
-      "tagline": "The \"Security Engineer\" Pack",
-      "audience": "For pentesting, auditing, and hardening.",
-      "description": "For pentesting, auditing, and hardening.",
-      "skills": [
-        {
-          "id": "ethical-hacking-methodology",
-          "summary": "The Bible of ethical hacking."
-        },
-        {
-          "id": "burp-suite-testing",
-          "summary": "Web vulnerability scanning."
-        },
-        {
-          "id": "top-web-vulnerabilities",
-          "summary": "OWASP-aligned vulnerability taxonomy."
-        },
-        {
-          "id": "linux-privilege-escalation",
-          "summary": "Advanced Linux security assessment."
-        },
-        {
-          "id": "cloud-penetration-testing",
-          "summary": "AWS/Azure/GCP security."
-        },
-        {
-          "id": "security-auditor",
-          "summary": "Comprehensive security audits."
-        },
-        {
-          "id": "vulnerability-scanner",
-          "summary": "Advanced vulnerability analysis."
-        }
-      ]
-    },
-    {
-      "id": "security-developer",
-      "name": "Security Developer",
-      "group": "Security & Compliance",
-      "emoji": "🔐",
-      "tagline": "The \"Security Developer\" Pack",
-      "audience": "For building secure applications.",
-      "description": "For building secure applications.",
-      "skills": [
-        {
-          "id": "api-security-best-practices",
-          "summary": "Secure API design patterns."
-        },
-        {
-          "id": "auth-implementation-patterns",
-          "summary": "JWT, OAuth2, session management."
-        },
-        {
-          "id": "backend-security-coder",
-          "summary": "Secure backend coding practices."
-        },
-        {
-          "id": "frontend-security-coder",
-          "summary": "XSS prevention and client-side security."
-        },
-        {
-          "id": "cc-skill-security-review",
-          "summary": "Security checklist for features."
-        },
-        {
-          "id": "pci-compliance",
-          "summary": "Payment card security standards."
-        }
-      ]
-    },
-    {
       "id": "web-wizard",
       "name": "Web Wizard",
       "group": "🌐 Web Development",
@@ -1008,10 +934,6 @@
         {
           "id": "odoo-performance-tuner",
           "summary": "Diagnose and improve slow Odoo instances."
-        },
-        {
-          "id": "odoo-security-rules",
-          "summary": "Apply secure access controls and rule design."
         },
         {
           "id": "odoo-docker-deployment",

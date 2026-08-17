@@ -29,30 +29,6 @@
       "category": "Essentials & Core"
     },
     {
-      "name": "antigravity-bundle-security-engineer",
-      "source": {
-        "source": "local",
-        "path": "./plugins/antigravity-bundle-security-engineer"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Security & Compliance"
-    },
-    {
-      "name": "antigravity-bundle-security-developer",
-      "source": {
-        "source": "local",
-        "path": "./plugins/antigravity-bundle-security-developer"
-      },
-      "policy": {
-        "installation": "AVAILABLE",
-        "authentication": "ON_INSTALL"
-      },
-      "category": "Security & Compliance"
-    },
-    {
       "name": "antigravity-bundle-web-wizard",
       "source": {
         "source": "local",

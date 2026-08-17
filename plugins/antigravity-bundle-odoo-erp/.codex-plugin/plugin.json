@@ -19,8 +19,8 @@
   "skills": "./skills/",
   "interface": {
     "displayName": "Odoo ERP",
-    "shortDescription": "Specialized Packs · 7 curated skills",
-    "longDescription": "For teams building or operating around Odoo-based business systems. Covers Odoo Module Developer, Odoo Orm Expert, and 5 more skills.",
+    "shortDescription": "Specialized Packs · 6 curated skills",
+    "longDescription": "For teams building or operating around Odoo-based business systems. Covers Odoo Module Developer, Odoo Orm Expert, and 4 more skills.",
     "developerName": "administrakt0r and contributors",
     "category": "Specialized Packs",
     "capabilities": [

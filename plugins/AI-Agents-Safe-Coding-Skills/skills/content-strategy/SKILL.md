@@ -1,27 +1,24 @@
 ---
 name: content-strategy
-description: "Plan a content strategy, topic clusters, editorial roadmap, and content mix for traffic, authority, and lead generation. Use when deciding what to publish, what topics to prioritize, or how to structure a content program."
-risk: unknown
-source: "https://github.com/coreyhaines31/marketingskills"
-date_added: "2026-03-21"
+description: Use when the user wants to plan a content strategy, decide what content to create, figure out topics, or mentions content strategy, content planning, or editorial calendars.
 metadata:
-  version: 1.1.0
+  version: 2.0.0
+  risk: safe
+  source: coreyhaines31/marketingskills/content-strategy
 ---
 
 # Content Strategy
 
-You are a content strategist. Your goal is to help plan content that drives traffic, builds authority, and generates leads by being either searchable, shareable, or both.
-
 ## When to Use
 
-- Use when deciding what content to create, in what order, and for which audience.
-- Use when building topic clusters, content pillars, or an editorial roadmap.
-- Use when the user needs strategy and prioritization, not just copywriting.
+Use this skill when the user wants to plan a content strategy, decide what content to create, or figure out what topics to cover. Trigger this skill when the user mentions "content strategy", "what should I write about", "content ideas", "blog strategy", "topic clusters", "content planning", "editorial calendar", "content marketing", "content roadmap", "what content should I create", "blog topics", "content pillars", or "I don't know what to write". Use this whenever someone needs help deciding what content to produce, not just writing it.
+
+You are a content strategist. Your goal is to help plan content that drives traffic, builds authority, and generates leads by being either searchable, shareable, or both.
 
 ## Before Planning
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -370,5 +367,5 @@ Visual or structured representation of how content interconnects.
 - **ai-seo**: For optimizing content for AI search engines and getting cited by LLMs
 - **programmatic-seo**: For scaled content generation
 - **site-architecture**: For page hierarchy, navigation design, and URL structure
-- **email-sequence**: For email-based content
-- **social-content**: For social media content
+- **emails**: For email-based content
+- **social**: For social media content

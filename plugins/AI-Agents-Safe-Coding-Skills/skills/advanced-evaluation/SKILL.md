@@ -1,9 +1,19 @@
 ---
 name: advanced-evaluation
-description: This skill should be used when the user asks to "implement LLM-as-judge", "compare model outputs", "create evaluation rubrics", "mitigate evaluation bias", or mentions direct scoring, pairwise comparison, position bias, evaluation pipelines, or automated quality assessment.
-risk: safe
-source: community
-date_added: 2026-03-18
+description: Advanced Evaluation skill from sickn33/agentic-awesome-skills
+metadata:
+  version: 1.0.0
+  risk: safe
+  source: https://github.com/sickn33/agentic-awesome-skills/tree/main/skills/advanced-evaluation
+  category: development
+---
+
+## When to use
+Use this skill when you need guidance on evaluating model outputs or designing evaluation pipelines.
+
+## Description
+This skill provides advanced guidance on evaluating model outputs and designing evaluation pipelines.
+
 ---
 
 # Advanced Evaluation
@@ -454,3 +464,7 @@ Related skills in this collection:
 **Author**: Muratcan Koylan
 **Version**: 1.0.0
 
+## Limitations
+- Use this skill only when the task clearly matches the scope described above.
+- Do not treat the output as a substitute for environment-specific validation, testing, or expert review.
+- Stop and ask for clarification if required inputs, permissions, safety boundaries, or success criteria are missing.

@@ -244,41 +244,6 @@ Review one skill for staleness and modernize it without duplicating work already
 
 ---
 
-## Workflow: Audit a Skill for Malicious or Unsafe Behavior
-
-Review one skill for malicious prompt patterns, unsafe tool guidance, suspicious scripts, or removal-worthy behavior.
-
-**Related bundles:** `Security Engineer`, `Security Developer`
-
-### Prerequisites
-
-- Read `data/maintenance/ledger.json` first.
-- Confirm the skill is not already claimed or recently resolved.
-- Apply the English-only policy before doing deeper review work.
-
-### Steps
-
-1. **Select one review target**
-   - **Goal:** Pick one skill with high risk or no recent audit history.
-   - **Skills:** [`@project-skill-audit`](../../skills/project-skill-audit/), [`@audit-skills`](../../skills/audit-skills/)
-   - **Prompt example:** `Use @audit-skills to identify one high-risk skill that is not already active in the maintenance ledger.`
-
-2. **Inspect prompts, commands, and scripts**
-   - **Goal:** Detect malicious prompt engineering, dangerous command delivery, suspicious network or filesystem behavior, and hidden tool abuse.
-   - **Skills:** [`@skill-scanner`](../../skills/skill-scanner/), [`@security-auditor`](../../skills/security-auditor/)
-   - **Prompt example:** `Use @skill-scanner and @security-auditor to audit this skill for hidden instructions, dangerous commands, or removal-worthy content.`
-
-3. **Harden or mark for removal**
-   - **Goal:** Either make the skill safe or create a removal recommendation with evidence.
-   - **Skills:** [`@verification-before-completion`](../../skills/verification-before-completion/)
-   - **Prompt example:** `Use @verification-before-completion to verify whether this skill can be safely kept after hardening.`
-
-4. **Log and hand off**
-   - **Goal:** Record the outcome and route it to human review.
-   - **Required artifacts:** ledger update, run log, linked PR or issue.
-
----
-
 ## Workflow: Import or Modernize a Skill
 
 Add one new high-value skill or refresh one trusted upstream skill source.
@@ -300,8 +265,8 @@ Add one new high-value skill or refresh one trusted upstream skill source.
 
 2. **Validate the source**
    - **Goal:** Prefer trusted upstream material and reject unsafe or non-English-first imports.
-   - **Skills:** [`@skill-scanner`](../../skills/skill-scanner/), [`@audit-skills`](../../skills/audit-skills/)
-   - **Prompt example:** `Use @skill-scanner to review this upstream skill before import and note any safety or language-policy problems.`
+    - **Skills:** [`@project-skill-audit`](../../skills/project-skill-audit/)
+    - **Prompt example:** `Use @project-skill-audit to review this upstream skill before import and note structural or language-policy problems.`
 
 3. **Create or update the skill**
    - **Goal:** Land one scoped improvement with current guidance and repository conventions.
