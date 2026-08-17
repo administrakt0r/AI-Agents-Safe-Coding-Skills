@@ -159,7 +159,12 @@ function extractChangelogSection(content, version) {
 }
 
 function hasQualityChecklist(body) {
-  return /quality bar checklist/i.test(String(body || ""));
+  const text = String(body || "");
+  const heading = text.match(/##\s+quality bar checklist\b/i);
+  if (!heading) return false;
+
+  const section = text.slice(heading.index).split(/\n##\s+/i, 2)[0];
+  return /-\s+\[[xX]\]/.test(section) && !/-\s+\[\s\]/.test(section);
 }
 
 function hasIssueLink(body) {

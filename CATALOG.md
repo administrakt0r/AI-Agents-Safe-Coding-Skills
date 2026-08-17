@@ -2,9 +2,9 @@
 
 Generated at: 2026-02-08T00:00:00.000Z
 
-Total skills: 1275
+Total skills: 1280
 
-## architecture (87)
+## architecture (88)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -59,6 +59,7 @@ Total skills: 1275
 | `kpi-dashboard-design` | Comprehensive patterns for designing effective Key Performance Indicator (KPI) dashboards that drive business decisions. | kpi, dashboard | kpi, dashboard, designing, effective, key, performance, indicator, dashboards, drive, business, decisions |
 | `makepad-event-action` | CRITICAL: Use for Makepad event and action handling. Triggers on: makepad event, makepad action, Event enum, ActionTrait, handle_event, MouseDown, KeyDown, T... | makepad, event, action | makepad, event, action, critical, handling, triggers, enum, actiontrait, handle, mousedown, keydown, touchupdate |
 | `makepad-reference` | This category provides reference materials for debugging, code quality, and advanced layout patterns. | makepad, reference | makepad, reference, category, provides, materials, debugging, code, quality, layout |
+| `marketing-psychology` | Apply psychological principles, mental models, and behavioral science to marketing, including persuasion, consumer behavior, decision-making, framing, and et... | marketing, psychology | marketing, psychology, apply, psychological, principles, mental, models, behavioral, science, including, persuasion, consumer |
 | `memory-safety-patterns` | Cross-language patterns for memory-safe programming including RAII, ownership, smart pointers, and resource management. | memory, safety | memory, safety, cross, language, safe, programming, including, raii, ownership, smart, pointers, resource |
 | `monorepo-architect` | Expert in monorepo architecture, build systems, and dependency management at scale. Masters Nx, Turborepo, Bazel, and Lerna for efficient multi-project devel... | monorepo | monorepo, architect, architecture, dependency, scale, masters, nx, turborepo, bazel, lerna, efficient, multi |
 | `multi-agent-patterns` | This skill should be used when the user asks to "design multi-agent system", "implement supervisor pattern", "create swarm architecture", "coordinate multipl... | multi, agent | multi, agent, skill, should, used, user, asks, supervisor, swarm, architecture, coordinate, multiple |
@@ -96,7 +97,7 @@ Total skills: 1275
 | `workflow-orchestration-patterns` | Master workflow orchestration architecture with Temporal, covering fundamental design decisions, resilience patterns, and best practices for building reliabl... |  | orchestration, architecture, temporal, covering, fundamental, decisions, resilience, building, reliable, distributed |
 | `workflow-patterns` | Use this skill when implementing tasks according to Conductor's TDD workflow, handling phase checkpoints, managing git commits for tasks, or understanding th... |  | skill, implementing, tasks, according, conductor, tdd, handling, phase, checkpoints, managing, git, commits |
 
-## business (62)
+## business (63)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
@@ -107,6 +108,7 @@ Total skills: 1275
 | `brevo-automation` | Automate Brevo (formerly Sendinblue) email marketing operations through Composio's Brevo toolkit via Rube MCP. | brevo | brevo, automation, automate, formerly, sendinblue, email, marketing, operations, through, composio, toolkit, via |
 | `chat-widget` | Build a real-time support chat system with a floating widget for users and an admin dashboard for support staff. Use when the user wants live chat, customer ... | chat, widget | chat, widget, real, time, floating, users, admin, dashboard, staff, user, wants, live |
 | `co-marketing` | When the user wants to find co-marketing partners, plan joint campaigns, or brainstorm partnership opportunities. Helps SaaS companies identify ideal partner... | co, marketing | co, marketing, user, wants, find, partners, plan, joint, campaigns, brainstorm, partnership, opportunities |
+| `community-marketing` | Build and leverage online communities to drive product growth and brand loyalty. | community, marketing | community, marketing, leverage, online, communities, drive, product, growth, brand, loyalty |
 | `competitive-landscape` | Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies. | competitive, landscape | competitive, landscape, frameworks, analyzing, competition, identifying, differentiation, opportunities, developing, winning, market, positioning |
 | `competitor-alternatives` | You are an expert in creating competitor comparison and alternative pages. Your goal is to build pages that rank for competitive search terms, provide genuin... | competitor, alternatives | competitor, alternatives, creating, comparison, alternative, pages, goal, rank, competitive, search, terms, provide |
 | `content-creator` | Professional-grade brand voice analysis, SEO optimization, and platform-specific content frameworks. | content, creator | content, creator, professional, grade, brand, voice, analysis, seo, optimization, platform, specific, frameworks |
@@ -124,10 +126,10 @@ Total skills: 1275
 | `local-legal-seo-audit` | Audit and improve local SEO for law firms, attorneys, forensic experts and legal/professional services sites with local presence, focusing on GBP, directorie... | local, legal, seo, audit | local, legal, seo, audit, improve, law, firms, attorneys, forensic, experts, professional, sites |
 | `market-sizing-analysis` | Comprehensive market sizing methodologies for calculating Total Addressable Market (TAM), Serviceable Available Market (SAM), and Serviceable Obtainable Mark... | market, sizing | market, sizing, analysis, methodologies, calculating, total, addressable, tam, serviceable, available, sam, obtainable |
 | `marketing-ideas` | Provide proven marketing strategies and growth ideas for SaaS and software products, prioritized using a marketing feasibility scoring system. | marketing, ideas | marketing, ideas, provide, proven, growth, saas, software, products, prioritized, feasibility, scoring |
-| `marketing-psychology` | Apply behavioral science and mental models to marketing decisions, prioritized using a psychological leverage and feasibility scoring system. | marketing, psychology | marketing, psychology, apply, behavioral, science, mental, models, decisions, prioritized, psychological, leverage, feasibility |
 | `notion-template-business` | You know templates are real businesses that can generate serious income. You've seen creators make six figures selling Notion templates. You understand it's ... | notion, business | notion, business, know, real, businesses, generate, serious, income, ve, seen, creators, six |
 | `odoo-ecommerce-configurator` | Expert guide for Odoo eCommerce and Website: product catalog, payment providers, shipping methods, SEO, and order-to-fulfillment workflow. | odoo, ecommerce, configurator | odoo, ecommerce, configurator, website, product, catalog, payment, providers, shipping, methods, seo, order |
 | `odoo-hr-payroll-setup` | Expert guide for Odoo HR and Payroll: salary structures, payslip rules, leave policies, employee contracts, and payroll journal entries. | odoo, hr, payroll, setup | odoo, hr, payroll, setup, salary, structures, payslip, rules, leave, policies, employee, contracts |
+| `onboarding` | Optimize post-signup onboarding, user activation, first-run experiences, empty states, and time-to-value. Use when users sign up but do not reach the product... | onboarding | onboarding, optimize, post, signup, user, activation, first, run, experiences, empty, states, time |
 | `paid-ads` | You are an expert performance marketer with direct access to ad platform accounts. Your goal is to help create, optimize, and scale paid advertising campaign... | paid, ads | paid, ads, performance, marketer, direct, access, ad, platform, accounts, goal, optimize, scale |
 | `personal-tool-builder` | You believe the best tools come from real problems. You've built dozens of personal tools - some stayed personal, others became products used by thousands. Y... | personal, builder | personal, builder, believe, come, real, problems, ve, built, dozens, some, stayed, others |
 | `pricing-strategy` | Design pricing, packaging, and monetization strategies based on value, customer willingness to pay, and growth objectives. | pricing | pricing, packaging, monetization, value, customer, willingness, pay, growth, objectives |
@@ -168,7 +170,6 @@ Total skills: 1275
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
 | `adhx` | Fetch any X/Twitter post as clean LLM-friendly JSON. Converts x.com, twitter.com, or adhx.com links into structured data with full article content, author in... | adhx | adhx, fetch, any, twitter, post, clean, llm, friendly, json, converts, com, links |
-| `advanced-evaluation` | This skill should be used when the user asks to "implement LLM-as-judge", "compare model outputs", "create evaluation rubrics", "mitigate evaluation bias", o... | advanced, evaluation | advanced, evaluation, skill, should, used, user, asks, llm, judge, compare, model, outputs |
 | `aegisops-ai` | Autonomous DevSecOps & FinOps Guardrails. | aegisops, ai | aegisops, ai, autonomous, devsecops, finops, guardrails |
 | `agent-evaluation` | You're a quality engineer who has seen agents that aced benchmarks fail spectacularly in production. You've learned that evaluating LLM agents is fundamental... | agent, evaluation | agent, evaluation, re, quality, engineer, who, seen, agents, aced, benchmarks, fail, spectacularly |
 | `agent-framework-azure-ai-py` | Build persistent agents on Azure AI Foundry using the Microsoft Agent Framework Python SDK. | agent, framework, azure, ai, py | agent, framework, azure, ai, py, persistent, agents, foundry, microsoft, python, sdk |
@@ -188,6 +189,7 @@ Total skills: 1275
 | `alpha-vantage` | Access 20+ years of global financial data: equities, options, forex, crypto, commodities, economic indicators, and 50+ technical indicators. | alpha, vantage | alpha, vantage, access, 20, years, global, financial, data, equities, options, forex, crypto |
 | `analytics-tracking` | Design, audit, and improve analytics tracking systems that produce reliable, decision-ready data. | analytics, tracking | analytics, tracking, audit, improve, produce, reliable, decision, data |
 | `angular-ui-patterns` | Modern Angular UI patterns for loading states, error handling, and data display. Use when building UI components, handling async data, or managing component ... | angular, ui | angular, ui, loading, states, error, handling, data, display, building, components, async, managing |
+| `anti-sycophancy` | Eliminate sycophantic agreement patterns in AI responses. Challenge user claims independently, avoid agreement bias, and state evidence before deference. | anti, sycophancy | anti, sycophancy, eliminate, sycophantic, agreement, ai, responses, challenge, user, claims, independently, avoid |
 | `api-documenter` | Master API documentation with OpenAPI 3.1, AI-powered tools, and modern developer experience practices. Create interactive docs, generate SDKs, and build com... | api, documenter | api, documenter, documentation, openapi, ai, powered, developer, experience, interactive, docs, generate, sdks |
 | `apify-actor-development` | Important: Before you begin, fill in the generatedBy property in the meta section of .actor/actor.json. Replace it with the tool and model you're currently u... | apify, actor | apify, actor, development, important, before, begin, fill, generatedby, property, meta, section, json |
 | `apify-content-analytics` | Track engagement metrics, measure campaign ROI, and analyze content performance across Instagram, Facebook, YouTube, and TikTok. | apify, content, analytics | apify, content, analytics, track, engagement, metrics, measure, campaign, roi, analyze, performance, instagram |
@@ -593,12 +595,14 @@ Total skills: 1275
 | `zod-validation-expert` | Expert in Zod — TypeScript-first schema validation. Covers parsing, custom errors, refinements, type inference, and integration with React Hook Form, Next.js... | zod, validation | zod, validation, typescript, first, schema, covers, parsing, custom, errors, refinements, type, inference |
 | `zustand-store-ts` | Create Zustand stores following established patterns with proper TypeScript types and middleware. | zustand, store, ts | zustand, store, ts, stores, following, established, proper, typescript, types, middleware |
 
-## general (305)
+## general (308)
 
 | Skill | Description | Tags | Triggers |
 | --- | --- | --- | --- |
 | `3d-web-experience` | You bring the third dimension to the web. You know when 3D enhances and when it's just showing off. You balance visual impact with performance. You make 3D a... | 3d, web, experience | 3d, web, experience, bring, third, dimension, know, enhances, just, showing, off, balance |
+| `accint-solve` | Route a goal through acc's scored-memory loop via acc_act(runtime="solve"); deliberate any returned brain_frame and submit via continue. | accint, solve | accint, solve, route, goal, through, acc, scored, memory, loop, via, act, runtime |
 | `address-github-comments` | Use when you need to address review or issue comments on an open GitHub Pull Request using the gh CLI. | address, github, comments | address, github, comments, review, issue, open, pull, request, gh, cli |
+| `advanced-evaluation` | Advanced Evaluation skill from sickn33/agentic-awesome-skills | advanced, evaluation | advanced, evaluation, skill, sickn33, agentic, awesome, skills |
 | `agent-manager-skill` | Manage multiple local CLI agents via tmux sessions (start/stop/monitor/assign) with cron-friendly scheduling. | agent, manager, skill | agent, manager, skill, multiple, local, cli, agents, via, tmux, sessions, start, stop |
 | `agent-memory-systems` | You are a cognitive architect who understands that memory makes agents intelligent. You've built memory systems for agents handling millions of interactions.... | agent, memory | agent, memory, cognitive, architect, who, understands, makes, agents, intelligent, ve, built, handling |
 | `agent-tool-builder` | You are an expert in the interface between LLMs and the outside world. You've seen tools that work beautifully and tools that cause agents to hallucinate, lo... | agent, builder | agent, builder, interface, between, llms, outside, world, ve, seen, work, beautifully, cause |
@@ -658,10 +662,11 @@ Total skills: 1275
 | `codebase-cleanup-tech-debt` | You are a technical debt expert specializing in identifying, quantifying, and prioritizing technical debt in software projects. Analyze the codebase to uncov... | codebase, cleanup, tech, debt | codebase, cleanup, tech, debt, technical, specializing, identifying, quantifying, prioritizing, software, analyze, uncover |
 | `cold-email` | Write B2B cold emails and follow-up sequences that earn replies. Use when creating outbound prospecting emails, SDR outreach, personalized opening lines, sub... | cold, email | cold, email, write, b2b, emails, follow, up, sequences, earn, replies, creating, outbound |
 | `commit` | ALWAYS use this skill when committing code changes — never commit directly without it. Creates commits following Sentry conventions with proper conventional ... | commit | commit, always, skill, committing, code, changes, never, directly, without, creates, commits, following |
+| `competitor-profiling` | Research and analyze competitors from their URLs to build structured competitor profile documents, dossiers, and competitive intelligence overviews. | competitor, profiling | competitor, profiling, research, analyze, competitors, urls, structured, profile, documents, dossiers, competitive, intelligence |
 | `comprehensive-review-full-review` | Use when working with comprehensive review full review | comprehensive, full | comprehensive, full, review, working |
 | `computer-vision-expert` | SOTA Computer Vision Expert (2026). Specialized in YOLO26, Segment Anything 3 (SAM 3), Vision Language Models, and real-time spatial analysis. | computer, vision | computer, vision, sota, 2026, specialized, yolo26, segment, anything, sam, language, models, real |
 | `concise-planning` | Use when a user asks for a plan for a coding task, to generate a clear, actionable, and atomic checklist. | concise, planning | concise, planning, user, asks, plan, coding, task, generate, clear, actionable, atomic, checklist |
-| `content-strategy` | Plan a content strategy, topic clusters, editorial roadmap, and content mix for traffic, authority, and lead generation. Use when deciding what to publish, w... | content | content, plan, topic, clusters, editorial, roadmap, mix, traffic, authority, lead, generation, deciding |
+| `content-strategy` | Use when the user wants to plan a content strategy, decide what content to create, figure out topics, or mentions content strategy, content planning, or edit... | content | content, user, wants, plan, decide, what, figure, topics, mentions, planning, editorial, calendars |
 | `context-compression` | When agent sessions generate millions of tokens of conversation history, compression becomes mandatory. The naive approach is aggressive compression to minim... | compression | compression, context, agent, sessions, generate, millions, tokens, conversation, history, becomes, mandatory, naive |
 | `context-fundamentals` | Context is the complete state available to a language model at inference time. It includes everything the model can attend to when generating responses: syst... | fundamentals | fundamentals, context, complete, state, available, language, model, inference, time, includes, everything, attend |
 | `context-management-context-restore` | Use when working with context management context restore | restore | restore, context, working |

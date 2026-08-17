@@ -1,6 +1,6 @@
 {
   "generatedAt": "2026-02-08T00:00:00.000Z",
-  "total": 1275,
+  "total": 1280,
   "skills": [
     {
       "id": "3d-web-experience",
@@ -124,6 +124,31 @@
         "identify"
       ],
       "path": "skills/accessibility-compliance-accessibility-audit/SKILL.md"
+    },
+    {
+      "id": "accint-solve",
+      "name": "accint-solve",
+      "description": "Route a goal through acc's scored-memory loop via acc_act(runtime=\"solve\"); deliberate any returned brain_frame and submit via continue.",
+      "category": "general",
+      "tags": [
+        "accint",
+        "solve"
+      ],
+      "triggers": [
+        "accint",
+        "solve",
+        "route",
+        "goal",
+        "through",
+        "acc",
+        "scored",
+        "memory",
+        "loop",
+        "via",
+        "act",
+        "runtime"
+      ],
+      "path": "skills/accint-solve/SKILL.md"
     },
     {
       "id": "active-directory-attacks",
@@ -251,8 +276,8 @@
     {
       "id": "advanced-evaluation",
       "name": "advanced-evaluation",
-      "description": "This skill should be used when the user asks to \"implement LLM-as-judge\", \"compare model outputs\", \"create evaluation rubrics\", \"mitigate evaluation bias\", or mentions direct scoring, pairwise comparison, position bias, evaluation pipelines, or automated quality assessment.",
-      "category": "data-ai",
+      "description": "Advanced Evaluation skill from sickn33/agentic-awesome-skills",
+      "category": "general",
       "tags": [
         "advanced",
         "evaluation"
@@ -261,15 +286,10 @@
         "advanced",
         "evaluation",
         "skill",
-        "should",
-        "used",
-        "user",
-        "asks",
-        "llm",
-        "judge",
-        "compare",
-        "model",
-        "outputs"
+        "sickn33",
+        "agentic",
+        "awesome",
+        "skills"
       ],
       "path": "skills/advanced-evaluation/SKILL.md"
     },
@@ -1332,6 +1352,31 @@
         "bypass"
       ],
       "path": "skills/anti-reversing-techniques/SKILL.md"
+    },
+    {
+      "id": "anti-sycophancy",
+      "name": "anti-sycophancy",
+      "description": "Eliminate sycophantic agreement patterns in AI responses. Challenge user claims independently, avoid agreement bias, and state evidence before deference.",
+      "category": "data-ai",
+      "tags": [
+        "anti",
+        "sycophancy"
+      ],
+      "triggers": [
+        "anti",
+        "sycophancy",
+        "eliminate",
+        "sycophantic",
+        "agreement",
+        "ai",
+        "responses",
+        "challenge",
+        "user",
+        "claims",
+        "independently",
+        "avoid"
+      ],
+      "path": "skills/anti-sycophancy/SKILL.md"
     },
     {
       "id": "antigravity-design-expert",
@@ -8558,6 +8603,29 @@
       "path": "skills/commit/SKILL.md"
     },
     {
+      "id": "community-marketing",
+      "name": "community-marketing",
+      "description": "Build and leverage online communities to drive product growth and brand loyalty.",
+      "category": "business",
+      "tags": [
+        "community",
+        "marketing"
+      ],
+      "triggers": [
+        "community",
+        "marketing",
+        "leverage",
+        "online",
+        "communities",
+        "drive",
+        "product",
+        "growth",
+        "brand",
+        "loyalty"
+      ],
+      "path": "skills/community-marketing/SKILL.md"
+    },
+    {
       "id": "competitive-landscape",
       "name": "competitive-landscape",
       "description": "Comprehensive frameworks for analyzing competition, identifying differentiation opportunities, and developing winning market positioning strategies.",
@@ -8606,6 +8674,31 @@
         "provide"
       ],
       "path": "skills/competitor-alternatives/SKILL.md"
+    },
+    {
+      "id": "competitor-profiling",
+      "name": "competitor-profiling",
+      "description": "Research and analyze competitors from their URLs to build structured competitor profile documents, dossiers, and competitive intelligence overviews.",
+      "category": "general",
+      "tags": [
+        "competitor",
+        "profiling"
+      ],
+      "triggers": [
+        "competitor",
+        "profiling",
+        "research",
+        "analyze",
+        "competitors",
+        "urls",
+        "structured",
+        "profile",
+        "documents",
+        "dossiers",
+        "competitive",
+        "intelligence"
+      ],
+      "path": "skills/competitor-profiling/SKILL.md"
     },
     {
       "id": "comprehensive-review-full-review",
@@ -8981,24 +9074,24 @@
     {
       "id": "content-strategy",
       "name": "content-strategy",
-      "description": "Plan a content strategy, topic clusters, editorial roadmap, and content mix for traffic, authority, and lead generation. Use when deciding what to publish, what topics to prioritize, or how to structure a content program.",
+      "description": "Use when the user wants to plan a content strategy, decide what content to create, figure out topics, or mentions content strategy, content planning, or editorial calendars.",
       "category": "general",
       "tags": [
         "content"
       ],
       "triggers": [
         "content",
+        "user",
+        "wants",
         "plan",
-        "topic",
-        "clusters",
+        "decide",
+        "what",
+        "figure",
+        "topics",
+        "mentions",
+        "planning",
         "editorial",
-        "roadmap",
-        "mix",
-        "traffic",
-        "authority",
-        "lead",
-        "generation",
-        "deciding"
+        "calendars"
       ],
       "path": "skills/content-strategy/SKILL.md"
     },
@@ -18629,8 +18722,8 @@
     {
       "id": "marketing-psychology",
       "name": "marketing-psychology",
-      "description": "Apply behavioral science and mental models to marketing decisions, prioritized using a psychological leverage and feasibility scoring system.",
-      "category": "business",
+      "description": "Apply psychological principles, mental models, and behavioral science to marketing, including persuasion, consumer behavior, decision-making, framing, and ethical nudges. Use for questions about why people buy or how people think in a marketing context.",
+      "category": "architecture",
       "tags": [
         "marketing",
         "psychology"
@@ -18639,15 +18732,15 @@
         "marketing",
         "psychology",
         "apply",
-        "behavioral",
-        "science",
+        "psychological",
+        "principles",
         "mental",
         "models",
-        "decisions",
-        "prioritized",
-        "psychological",
-        "leverage",
-        "feasibility"
+        "behavioral",
+        "science",
+        "including",
+        "persuasion",
+        "consumer"
       ],
       "path": "skills/marketing-psychology/SKILL.md"
     },
@@ -20986,6 +21079,30 @@
         "incident"
       ],
       "path": "skills/on-call-handoff-patterns/SKILL.md"
+    },
+    {
+      "id": "onboarding",
+      "name": "onboarding",
+      "description": "Optimize post-signup onboarding, user activation, first-run experiences, empty states, and time-to-value. Use when users sign up but do not reach the product's aha moment or continue using it.",
+      "category": "business",
+      "tags": [
+        "onboarding"
+      ],
+      "triggers": [
+        "onboarding",
+        "optimize",
+        "post",
+        "signup",
+        "user",
+        "activation",
+        "first",
+        "run",
+        "experiences",
+        "empty",
+        "states",
+        "time"
+      ],
+      "path": "skills/onboarding/SKILL.md"
     },
     {
       "id": "onboarding-cro",

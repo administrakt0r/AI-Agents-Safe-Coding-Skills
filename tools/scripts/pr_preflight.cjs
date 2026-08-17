@@ -231,7 +231,7 @@ function main() {
     }
 
     if (pullRequestBody !== null && !result.prBody.hasQualityChecklist) {
-      console.error("PR body must include the Quality Bar Checklist section from the template.");
+      console.error("PR body must include a completed Quality Bar Checklist with no unchecked items.");
       process.exit(1);
     }
   }
