@@ -3,6 +3,7 @@ import re
 import argparse
 import sys
 import io
+import json
 import yaml
 from collections.abc import Mapping
 from datetime import date, datetime
@@ -38,6 +39,28 @@ WHEN_TO_USE_PATTERNS = [
 
 def has_when_to_use_section(content):
     return any(pattern.search(content) for pattern in WHEN_TO_USE_PATTERNS)
+
+
+def load_exclusion_policy():
+    policy_path = find_repo_root(__file__) / "tools" / "config" / "skill-exclusion-policy.json"
+    try:
+        with policy_path.open(encoding="utf-8") as policy_file:
+            return json.load(policy_file)
+    except (OSError, json.JSONDecodeError) as error:
+        raise RuntimeError(f"Unable to load skill exclusion policy: {error}") from error
+
+
+def is_excluded_skill(skill_id, metadata, policy):
+    blocked_risks = {str(value).lower() for value in policy.get("blocked_risk_levels", [])}
+    blocked_categories = {str(value).lower() for value in policy.get("blocked_categories", [])}
+    if str(metadata.get("risk", "")).lower() in blocked_risks:
+        return True
+    if str(metadata.get("category", "")).lower() in blocked_categories:
+        return True
+    return any(
+        re.search(pattern, skill_id, re.IGNORECASE)
+        for pattern in policy.get("blocked_name_patterns", [])
+    )
 
 def normalize_yaml_value(value):
     if isinstance(value, Mapping):
@@ -87,6 +110,7 @@ def collect_validation_results(skills_dir, strict_mode=False):
 
     valid_risk_levels = ["none", "safe", "critical", "offensive", "unknown"]
     date_pattern = re.compile(r'^\d{4}-\d{2}-\d{2}$')  # YYYY-MM-DD format
+    exclusion_policy = load_exclusion_policy()
 
     for root, dirs, files in os.walk(skills_dir):
         # Skip .disabled or hidden directories
@@ -116,6 +140,11 @@ def collect_validation_results(skills_dir, strict_mode=False):
             if fm_errors:
                 for fe in fm_errors:
                     errors.append(f"❌ {rel_path}: YAML Structure Error - {fe}")
+
+            skill_id = os.path.basename(root)
+            if is_excluded_skill(skill_id, metadata, exclusion_policy):
+                errors.append(f"❌ {rel_path}: Skill is excluded by the security-content policy.")
+                continue
 
             # 2. Metadata Schema Checks
             if "name" not in metadata:

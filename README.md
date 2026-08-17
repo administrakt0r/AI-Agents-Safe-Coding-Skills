@@ -1,3 +1,4 @@
+<!-- registry-sync: version=9.1.0; skills=1280; stars=0; updated_at=2026-08-17T21:12:52+00:00 -->
 <p align="center">
   <img src="assets/banner.svg" width="100%" alt="AI Agents Safe Coding Skills" />
 </p>
@@ -254,6 +255,15 @@ a consolidated release checklist.
 ```
 
 ---
+
+## Repo Contributors
+
+We officially thank the following contributors for their help in making this repository awesome!
+
+- [@github-actions[bot]](https://github.com/apps/github-actions)
+- [@administrakt0r](https://github.com/administrakt0r)
+- [@google-labs-jules[bot]](https://github.com/apps/google-labs-jules)
+- [@grayfoxer](https://github.com/grayfoxer)
 
 ## 🌐 More From The Author
 

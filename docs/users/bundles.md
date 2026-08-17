@@ -51,38 +51,6 @@ _For everyone. Install these first._
 
 ---
 
-## Security & Compliance
-
-### 🛡️ The "Security Engineer" Pack
-
-_For pentesting, auditing, and hardening._
-
-**Plugin status:** Codex plugin-safe · Claude plugin-safe
-
-- [`ethical-hacking-methodology`](../../skills/ethical-hacking-methodology/): The Bible of ethical hacking.
-- [`burp-suite-testing`](../../skills/burp-suite-testing/): Web vulnerability scanning.
-- [`top-web-vulnerabilities`](../../skills/top-web-vulnerabilities/): OWASP-aligned vulnerability taxonomy.
-- [`linux-privilege-escalation`](../../skills/linux-privilege-escalation/): Advanced Linux security assessment.
-- [`cloud-penetration-testing`](../../skills/cloud-penetration-testing/): AWS/Azure/GCP security.
-- [`security-auditor`](../../skills/security-auditor/): Comprehensive security audits.
-- [`vulnerability-scanner`](../../skills/vulnerability-scanner/): Advanced vulnerability analysis.
-
-### 🔐 The "Security Developer" Pack
-
-_For building secure applications._
-
-**Plugin status:** Codex plugin-safe · Claude plugin-safe
-
-- [`api-security-best-practices`](../../skills/api-security-best-practices/): Secure API design patterns.
-- [`auth-implementation-patterns`](../../skills/auth-implementation-patterns/): JWT, OAuth2, session management.
-- [`backend-security-coder`](../../skills/backend-security-coder/): Secure backend coding practices.
-- [`frontend-security-coder`](../../skills/frontend-security-coder/): XSS prevention and client-side security.
-- [`cc-skill-security-review`](../../skills/cc-skill-security-review/): Security checklist for features.
-- [`pci-compliance`](../../skills/pci-compliance/): Payment card security standards.
-
-
----
-
 ## 🌐 Web Development
 
 ### 🌐 The "Web Wizard" Pack
@@ -466,7 +434,6 @@ _For teams building or operating around Odoo-based business systems._
 - [`odoo-sales-crm-expert`](../../skills/odoo-sales-crm-expert/): Optimize sales pipelines, leads, and forecasting.
 - [`odoo-ecommerce-configurator`](../../skills/odoo-ecommerce-configurator/): Configure storefront, catalog, and order flows.
 - [`odoo-performance-tuner`](../../skills/odoo-performance-tuner/): Diagnose and improve slow Odoo instances.
-- [`odoo-security-rules`](../../skills/odoo-security-rules/): Apply secure access controls and rule design.
 - [`odoo-docker-deployment`](../../skills/odoo-docker-deployment/): Deploy and run Odoo in Docker-based environments.
 
 ### ☁️ The "Azure AI & Cloud" Pack
@@ -673,4 +640,4 @@ Found a skill that should be in a bundle? Or want to create a new bundle? [Open 
 
 ---
 
-_Last updated: March 2026 | Total Skills: 1,274+ | Total Bundles: 37_
+_Last updated: March 2026 | Total Skills: 1,274+ | Total Bundles: 35_

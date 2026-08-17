@@ -67,58 +67,6 @@
       ]
     },
     {
-      "id": "security-audit-web-app",
-      "name": "Security Audit for a Web App",
-      "description": "Structured workflow for baseline AppSec review and risk triage.",
-      "category": "security",
-      "relatedBundles": [
-        "security-core",
-        "ops-core"
-      ],
-      "steps": [
-        {
-          "title": "Define scope and threat model",
-          "goal": "Identify critical assets, trust boundaries, and threat scenarios.",
-          "recommendedSkills": [
-            "ethical-hacking-methodology",
-            "threat-modeling-expert",
-            "attack-tree-construction"
-          ],
-          "notes": "Document in-scope targets, assumptions, and out-of-scope constraints."
-        },
-        {
-          "title": "Review authentication and authorization",
-          "goal": "Find broken auth patterns and access-control weaknesses.",
-          "recommendedSkills": [
-            "broken-authentication",
-            "auth-implementation-patterns",
-            "idor-testing"
-          ],
-          "notes": "Prioritize account takeover and privilege escalation paths."
-        },
-        {
-          "title": "Assess API and input security",
-          "goal": "Detect high-impact API and injection risks.",
-          "recommendedSkills": [
-            "api-security-best-practices",
-            "api-fuzzing-bug-bounty",
-            "top-web-vulnerabilities"
-          ],
-          "notes": "Map findings to severity and exploitability, not only CVSS."
-        },
-        {
-          "title": "Harden and verify",
-          "goal": "Translate findings into concrete remediations and retest.",
-          "recommendedSkills": [
-            "security-auditor",
-            "sast-configuration",
-            "verification-before-completion"
-          ],
-          "notes": "Track remediation owners and target dates; verify each fix with evidence."
-        }
-      ]
-    },
-    {
       "id": "build-ai-agent-system",
       "name": "Build an AI Agent System",
       "description": "Workflow to design, implement, and evaluate a production-ready AI agent.",
@@ -326,62 +274,6 @@
       ]
     },
     {
-      "id": "audit-skill-malicious-behavior",
-      "name": "Audit a Skill for Malicious or Unsafe Behavior",
-      "description": "Review exactly one skill for malicious prompt patterns, unsafe commands, suspicious scripts, or hidden tool abuse and either harden it or mark it for removal.",
-      "category": "maintenance",
-      "relatedBundles": [
-        "security-core",
-        "ops-core"
-      ],
-      "prerequisites": [
-        "Read data/maintenance/ledger.json before selecting a skill.",
-        "Confirm the target skill is not already active or recently resolved.",
-        "Apply the English-only policy before deeper security review."
-      ],
-      "requiredArtifacts": [
-        "Updated data/maintenance/ledger.json entry",
-        "Dated log in docs/maintainers/agent-runs/",
-        "Linked PR or issue for human review"
-      ],
-      "steps": [
-        {
-          "title": "Select one review target",
-          "goal": "Pick one high-risk or not-yet-reviewed skill.",
-          "recommendedSkills": [
-            "project-skill-audit",
-            "audit-skills"
-          ],
-          "notes": "Prefer skills with no recent audit history, elevated risk metadata, or command-heavy instructions."
-        },
-        {
-          "title": "Inspect prompts, commands, and scripts",
-          "goal": "Detect malicious prompt engineering, dangerous command delivery, suspicious network or filesystem behavior, and hidden tool abuse.",
-          "recommendedSkills": [
-            "skill-scanner",
-            "security-auditor"
-          ],
-          "notes": "Review SKILL.md instructions, helper scripts, examples, and referenced files together rather than in isolation."
-        },
-        {
-          "title": "Harden or mark for removal",
-          "goal": "Either make the skill safe or create a removal recommendation with evidence.",
-          "recommendedSkills": [
-            "verification-before-completion"
-          ],
-          "notes": "Do not keep a risky skill in circulation without either a verified hardening pass or a removal handoff."
-        },
-        {
-          "title": "Log and hand off",
-          "goal": "Record the outcome and route it to human review.",
-          "recommendedSkills": [
-            "verification-before-completion"
-          ],
-          "notes": "Update the ledger, write a dated run log, and link the resulting PR or issue."
-        }
-      ]
-    },
-    {
       "id": "import-or-modernize-skill",
       "name": "Import or Modernize a Skill",
       "description": "Add exactly one high-value new skill or refresh one trusted upstream skill source while enforcing English-first and safety review requirements.",
@@ -414,8 +306,7 @@
           "title": "Validate the source",
           "goal": "Reject unsafe or non-English-first imports before spending time on integration.",
           "recommendedSkills": [
-            "skill-scanner",
-            "audit-skills"
+            "project-skill-audit"
           ],
           "notes": "Review prompts, commands, licensing notes, and structural quality before importing or refreshing anything."
         },

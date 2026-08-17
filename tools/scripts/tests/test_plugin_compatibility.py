@@ -109,7 +109,7 @@ class PluginCompatibilityTests(unittest.TestCase):
         report = plugin_compatibility.build_report(REPO_ROOT / "skills")
         entries = plugin_compatibility.compatibility_by_skill_id(report)
 
-        for skill_id in ("audit-skills", "molykit", "using-git-worktrees"):
+        for skill_id in ("molykit", "using-git-worktrees"):
             self.assertEqual(entries[skill_id]["targets"]["codex"], "blocked")
             self.assertEqual(entries[skill_id]["targets"]["claude"], "blocked")
             self.assertIn("absolute_host_path", entries[skill_id]["reasons"])
