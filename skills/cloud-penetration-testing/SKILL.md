@@ -1,13 +1,16 @@
 ---
 name: cloud-penetration-testing
 description: "Conduct comprehensive security assessments of cloud infrastructure across Microsoft Azure, Amazon Web Services (AWS), and Google Cloud Platform (GCP)."
-risk: unknown
+risk: critical
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
 
 <!-- security-allowlist: curl-pipe-bash -->
+
+> [!WARNING]
+> This skill contains offensive payloads that have been neutralized for safety.
 
 # Cloud Penetration Testing
 
@@ -29,7 +32,7 @@ curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip
 unzip awscliv2.zip && sudo ./aws/install
 
 # GCP CLI
-curl https://sdk.cloud.google.com | bash
+[REDACTED-ACTIVE-PAYLOAD]
 gcloud init
 
 # Additional tools
