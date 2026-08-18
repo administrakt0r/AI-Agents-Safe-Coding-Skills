@@ -4,6 +4,7 @@
     "core-dev": {
       "description": "Core development skills across languages, frameworks, and backend/frontend fundamentals.",
       "skills": [
+        "2slides-ppt-generator",
         "agent-framework-azure-ai-py",
         "agentmail",
         "algolia-search",
@@ -621,6 +622,7 @@
     "automation-core": {
       "description": "Automation platforms, workflow tooling, and business systems.",
       "skills": [
+        "2slides-ppt-generator",
         "3d-web-experience",
         "activecampaign-automation",
         "ai-agent-development",
@@ -1086,6 +1088,7 @@
     "docs-core": {
       "description": "Documents, spreadsheets, presentations, and office workflows.",
       "skills": [
+        "2slides-ppt-generator",
         "akf-trust-metadata",
         "azure-ai-translation-document-py",
         "canvas-design",
