@@ -350,6 +350,14 @@
       "outcome": "Imported the advanced-evaluation skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-ai-projects-py": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-19",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating SDK version from v2.0.0b4 to v2.4.0.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-projects-py",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
