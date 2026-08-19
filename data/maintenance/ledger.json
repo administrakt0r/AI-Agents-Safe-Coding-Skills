@@ -355,7 +355,7 @@
       "status": "normalized",
       "lastReviewedAt": "2026-08-19",
       "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by updating SDK version from v2.0.0b4 to v2.4.0.",
+      "outcome": "Modernized the skill by updating SDK version reference from v2.0.0b4 to v2.4.0 in documentation. Validated that code snippets (client init, agents, threads) are still accurate for 2.4.0.",
       "linkedIssueOrPr": "PR-jules-modernize-azure-ai-projects-py",
       "nextAction": "Review updated SKILL.md for accuracy."
     }
