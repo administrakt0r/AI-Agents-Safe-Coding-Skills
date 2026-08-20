@@ -350,6 +350,14 @@
       "outcome": "Imported the advanced-evaluation skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-ai-contentsafety-java": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-08-20",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from 1.1.0-beta.1 to 1.0.20 based on current Maven documentation.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-contentsafety-java",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
