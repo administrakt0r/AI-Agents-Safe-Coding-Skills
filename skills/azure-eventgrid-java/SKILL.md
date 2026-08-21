@@ -16,7 +16,7 @@ Build event-driven applications using the Azure Event Grid SDK for Java.
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-messaging-eventgrid</artifactId>
-    <version>4.27.0</version>
+    <version>4.31.8</version>
 </dependency>
 ```
 
