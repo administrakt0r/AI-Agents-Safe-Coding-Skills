@@ -19,11 +19,14 @@ dotnet add package Azure.Messaging.EventGrid
 # For namespaces (pull delivery)
 dotnet add package Azure.Messaging.EventGrid.Namespaces
 
+# System events support (required for v5.0.0+)
+dotnet add package Azure.Messaging.EventGrid.SystemEvents
+
 # For CloudNative CloudEvents interop
 dotnet add package Microsoft.Azure.Messaging.EventGrid.CloudNativeCloudEvents
 ```
 
-**Current Version**: 4.28.0 (stable)
+**Current Version**: 5.0.0 (stable)
 
 ## Environment Variables
 
@@ -475,6 +478,7 @@ catch (RequestFailedException)
 |-----|---------|---------|
 | `Azure.Messaging.EventGrid` | Topics/Domains (this SDK) | `dotnet add package Azure.Messaging.EventGrid` |
 | `Azure.Messaging.EventGrid.Namespaces` | Pull delivery | `dotnet add package Azure.Messaging.EventGrid.Namespaces` |
+| `Azure.Messaging.EventGrid.SystemEvents` | System events support | `dotnet add package Azure.Messaging.EventGrid.SystemEvents` |
 | `Azure.Identity` | Authentication | `dotnet add package Azure.Identity` |
 | `Microsoft.Azure.WebJobs.Extensions.EventGrid` | Azure Functions trigger | `dotnet add package Microsoft.Azure.WebJobs.Extensions.EventGrid` |
 
