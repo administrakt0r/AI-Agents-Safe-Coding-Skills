@@ -350,6 +350,14 @@
       "outcome": "Imported the advanced-evaluation skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/3d-web-experience": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-08-22",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the 3d-web-experience skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, Apache-2.0 license compatibility, and prompt injection safety scan (clean).",
+      "linkedIssueOrPr": "PR-jules-import-3d-web-experience",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
