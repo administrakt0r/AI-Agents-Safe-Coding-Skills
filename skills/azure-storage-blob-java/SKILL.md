@@ -1,9 +1,11 @@
 ---
 name: azure-storage-blob-java
 description: "Build blob storage applications using the Azure Storage Blob SDK for Java."
-risk: unknown
-source: community
-date_added: "2026-02-27"
+metadata:
+  version: 12.35.1
+  risk: unknown
+  source: community
+  date_added: "2026-02-27"
 ---
 
 # Azure Storage Blob SDK for Java
@@ -16,7 +18,7 @@ Build blob storage applications using the Azure Storage Blob SDK for Java.
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-storage-blob</artifactId>
-    <version>12.33.0</version>
+    <version>12.35.1</version>
 </dependency>
 ```
 

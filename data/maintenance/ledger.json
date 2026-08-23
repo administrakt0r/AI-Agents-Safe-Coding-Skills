@@ -358,6 +358,14 @@
       "outcome": "Modernized skill to Azure.Messaging.EventGrid version 5.0.0.",
       "linkedIssueOrPr": "PR-modernize-azure-eventgrid-dotnet",
       "nextAction": "Review updated SKILL.md for accuracy."
+    },
+    "skills/azure-storage-blob-java": {
+      "status": "normalized",
+      "lastReviewedAt": "2026-08-23",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from 12.33.0 to 12.35.1 based on current Maven documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-storage-blob-java",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
