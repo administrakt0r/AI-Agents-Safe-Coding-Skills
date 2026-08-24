@@ -52,7 +52,14 @@ jobs:
               prAuthor = pr.data.user.login;
               prTitle = pr.data.title;
               prBranch = pr.data.head.ref;
-              headSha = context.payload.check_suite.head_sha;
+              headSha = pr.data.head.sha;
+              if (!headSha) {
+                headSha = context.payload.check_suite.head_sha;
+              }
+              if (!headSha) {
+                core.setOutput('skip', 'true');
+                return;
+              }
             } else if (context.eventName === 'workflow_run') {
               const runs = await github.rest.actions.listWorkflowRunsForRepo({
                 owner: context.repo.owner,
@@ -76,7 +83,14 @@ jobs:
               prAuthor = pulls.data[0].user.login;
               prTitle = pulls.data[0].title;
               prBranch = pulls.data[0].head.ref;
-              headSha = context.payload.workflow_run.head_sha;
+              headSha = pulls.data[0].head.sha;
+              if (!headSha) {
+                headSha = context.payload.workflow_run.head_sha;
+              }
+              if (!headSha) {
+                core.setOutput('skip', 'true');
+                return;
+              }
             }
 
             core.setOutput('pr_number', prNumber);
