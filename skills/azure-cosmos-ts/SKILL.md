@@ -1,8 +1,9 @@
 ---
 name: azure-cosmos-ts
 description: Azure Cosmos DB JavaScript/TypeScript SDK (@azure/cosmos) for data plane operations. Use for CRUD operations on documents, queries, bulk operations, and container management.
-risk: unknown
+risk: safe
 source: community
+category: database
 date_added: '2026-02-27'
 ---
 
@@ -20,7 +21,7 @@ Data plane SDK for Azure Cosmos DB NoSQL API operations — CRUD on documents, q
 npm install @azure/cosmos @azure/identity
 ```
 
-**Current Version**: 4.9.0  
+**Current Version**: 4.10.0
 **Node.js**: >= 20.0.0
 
 ## Environment Variables
