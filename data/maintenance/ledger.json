@@ -382,6 +382,14 @@
       "outcome": "Modernized azure-identity-dotnet skill by updating Azure.Identity NuGet package version from v1.17.1 to v1.21.0 (Stable) and v1.18.0-beta.2 to v1.18.0-beta.3 (Preview).",
       "linkedIssueOrPr": "PR-jules-modernize-azure-identity-dotnet",
       "nextAction": "Review updated SKILL.md for accuracy."
+    },
+    "sources/sickn33/agentic-awesome-skills/acceptance-orchestrator": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-08-25",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the acceptance-orchestrator skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+      "linkedIssueOrPr": "PR-jules-import-acceptance-orchestrator",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
