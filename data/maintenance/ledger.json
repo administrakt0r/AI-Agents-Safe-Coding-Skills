@@ -374,6 +374,14 @@
       "outcome": "Modernized the skill by updating version from 4.9.0 to 4.10.0 and updating the frontmatter schema to the modernized schema.",
       "linkedIssueOrPr": "PR-modernize-azure-cosmos-ts",
       "nextAction": "Review updated SKILL.md for accuracy."
+    },
+    "skills/azure-identity-dotnet": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-08-25",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized azure-identity-dotnet skill by updating Azure.Identity NuGet package version from v1.17.1 to v1.21.0 (Stable) and v1.18.0-beta.2 to v1.18.0-beta.3 (Preview).",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-identity-dotnet",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
