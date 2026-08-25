@@ -22,7 +22,7 @@ dotnet add package Microsoft.Extensions.Azure
 dotnet add package Azure.Identity.Broker
 ```
 
-**Current Versions**: Stable v1.17.1, Preview v1.18.0-beta.2
+**Current Versions**: Stable v1.21.0, Preview v1.18.0-beta.3
 
 ## Environment Variables
 
