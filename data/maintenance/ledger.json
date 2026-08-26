@@ -390,6 +390,14 @@
       "outcome": "Imported the acceptance-orchestrator skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-acceptance-orchestrator",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-storage-blob-java": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-08-26",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from 12.33.0 to 12.35.1.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-storage-blob-java",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
