@@ -1,7 +1,7 @@
 ---
 name: azure-communication-common-java
 description: "Azure Communication Services common utilities for Java. Use when working with CommunicationTokenCredential, user identifiers, token refresh, or shared authentication across ACS services."
-risk: unknown
+risk: safe
 source: community
 date_added: "2026-02-27"
 ---
@@ -16,7 +16,7 @@ Shared authentication utilities and data structures for Azure Communication Serv
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-communication-common</artifactId>
-    <version>1.4.0</version>
+    <version>1.4.8</version>
 </dependency>
 ```
 
