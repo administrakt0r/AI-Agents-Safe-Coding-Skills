@@ -293,7 +293,7 @@ agent = client.agents.create_agent(
 - references/deployments.md: Deployment enumeration
 - references/datasets-indexes.md: Dataset and index operations
 - references/async-patterns.md: Async client usage
-- references/api-reference.md: Complete API reference for all 373 SDK exports (v2.0.0b4)
+- references/api-reference.md: Complete API reference for all 373 SDK exports (v2.5.0)
 - scripts/run_batch_evaluation.py: CLI tool for batch evaluations
 
 ## When to Use
