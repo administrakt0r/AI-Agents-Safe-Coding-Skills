@@ -414,6 +414,14 @@
       "outcome": "Imported the events skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-events",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "skills/azure-storage-blob-java": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-08-29",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized azure-storage-blob-java skill by updating Azure.Storage.Blob Maven package version from v12.33.0 to v12.35.1 (Stable).",
+      "linkedIssueOrPr": "PR-modernize-azure-storage-blob-java",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
