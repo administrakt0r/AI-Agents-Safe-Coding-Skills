@@ -414,6 +414,14 @@
       "outcome": "Imported the events skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-events",
       "nextAction": "Monitor the imported skill for upstream updates."
+    },
+    "sources/coreyhaines31/marketingskills/attribution": {
+      "status": "monitoring",
+      "lastReviewedAt": "2026-08-30",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Imported the attribution skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+      "linkedIssueOrPr": "PR-jules-import-attribution",
+      "nextAction": "Monitor the imported skill for upstream updates."
     }
   }
 }
