@@ -94,6 +94,12 @@ jobs:
             // Auto-merge eligible label
             const isAutoMergeLabel = false; // Can be extended
 
+            if (!headSha) {
+              core.setOutput('skip', 'true');
+              core.info('headSha is not set, skipping check runs.');
+              return;
+            }
+
             const requiredChecks = ['pr-policy', 'source-validation', 'artifact-preview', 'dedup-check'];
             const { data: checkRuns } = await github.rest.checks.listForRef({
               owner: context.repo.owner,
