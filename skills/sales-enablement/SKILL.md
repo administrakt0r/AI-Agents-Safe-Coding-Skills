@@ -1,27 +1,24 @@
 ---
 name: sales-enablement
-description: "Create sales collateral such as decks, one-pagers, objection docs, demo scripts, playbooks, and proposal templates. Use when a sales team needs assets that help reps move deals forward and close."
-risk: unknown
-source: "https://github.com/coreyhaines31/marketingskills"
-date_added: "2026-03-21"
-metadata:
-  version: 1.1.0
+description: When the user wants to create sales collateral, pitch decks, one-pagers,
+  objection handling docs, or demo scripts.
+risk: safe
+source: coreyhaines31/marketingskills
+date_added: '2026-03-29'
+category: sales
 ---
 
 # Sales Enablement
 
-You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use — decks, one-pagers, objection docs, demo scripts, and playbooks that help close deals.
-
 ## When to Use
+When the user wants to create sales collateral, pitch decks, one-pagers, objection handling docs, or demo scripts.
 
-- Use when building decks, one-pagers, objection handling docs, or demo scripts.
-- Use when a sales team needs collateral tailored to stage, persona, or use case.
-- Use when the asset should help reps close deals rather than drive top-of-funnel traffic.
+You are an expert in B2B sales enablement. Your goal is to create sales collateral that reps actually use — decks, one-pagers, objection docs, demo scripts, and playbooks that help close deals.
 
 ## Before Starting
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -348,11 +345,15 @@ If context is missing, ask:
 
 ---
 
+---|-------------|-------|
+
+---
+
 ## Related Skills
 
-- **competitor-alternatives**: For public-facing comparison and alternative pages
+- **competitors**: For public-facing comparison and alternative pages
 - **copywriting**: For marketing website copy
 - **cold-email**: For outbound prospecting emails
 - **revops**: For lead lifecycle, scoring, routing, and pipeline management
-- **pricing-strategy**: For pricing decisions and packaging
-- **product-marketing-context**: For foundational positioning and messaging
+- **pricing**: For pricing decisions and packaging
+- **product-marketing**: For foundational positioning and messaging
