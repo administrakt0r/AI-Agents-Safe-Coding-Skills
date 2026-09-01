@@ -16,7 +16,7 @@ Client library for Azure App Configuration, a managed service for centralizing a
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-data-appconfiguration</artifactId>
-    <version>1.8.0</version>
+    <version>1.10.1</version>
 </dependency>
 ```
 
