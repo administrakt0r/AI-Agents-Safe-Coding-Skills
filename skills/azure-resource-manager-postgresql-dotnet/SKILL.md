@@ -17,10 +17,9 @@ dotnet add package Azure.ResourceManager.PostgreSql
 dotnet add package Azure.Identity
 ```
 
-**Current Version**: v1.2.0 (GA)  
+**Current Version**: v1.4.2 (GA)
 **API Version**: 2023-12-01-preview
 
-> **Note**: This skill focuses on PostgreSQL Flexible Server. Single Server is deprecated and scheduled for retirement.
 
 ## Environment Variables
 
@@ -355,7 +354,6 @@ await server.DeleteAsync(WaitUntil.Completed);
 
 ## Best Practices
 
-1. **Use Flexible Server** — Single Server is deprecated
 2. **Enable zone-redundant HA** — For production workloads
 3. **Use DefaultAzureCredential** — Prefer over connection strings
 4. **Configure Entra ID authentication** — More secure than SQL auth alone
