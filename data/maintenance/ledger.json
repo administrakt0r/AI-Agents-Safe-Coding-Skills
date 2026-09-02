@@ -438,6 +438,14 @@
       "outcome": "Imported the accessibility-compliance-accessibility-audit skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
       "linkedIssueOrPr": "PR-jules-import-accessibility-compliance-accessibility-audit",
       "nextAction": "importing"
+    },
+    "skills/azure-ai-projects-java": {
+      "status": "reviewed",
+      "outcome": "Modernized the skill by updating version from 1.0.0-beta.1 to 2.4.0 and updating API calls based on latest documentation.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-projects-java",
+      "nextAction": "Review updated SKILL.md for accuracy.",
+      "lastReviewedAt": "2026-09-02",
+      "reviewerAgent": "stale-skill-modernizer"
     }
   }
 }

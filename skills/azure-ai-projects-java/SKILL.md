@@ -16,7 +16,7 @@ High-level SDK for Azure AI Foundry project management with access to connection
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-ai-projects</artifactId>
-    <version>1.0.0-beta.1</version>
+    <version>2.4.0</version>
 </dependency>
 ```
 
@@ -34,7 +34,8 @@ import com.azure.identity.DefaultAzureCredentialBuilder;
 
 AIProjectClientBuilder builder = new AIProjectClientBuilder()
     .endpoint(System.getenv("PROJECT_ENDPOINT"))
-    .credential(new DefaultAzureCredentialBuilder().build());
+    .credential(new DefaultAzureCredentialBuilder().build())
+    .allowPreview(true);
 ```
 
 ## Client Hierarchy
@@ -47,9 +48,9 @@ The SDK provides multiple sub-clients for different operations:
 | `DatasetsClient` | Upload documents and manage datasets |
 | `DeploymentsClient` | Enumerate AI model deployments |
 | `IndexesClient` | Create and manage search indexes |
-| `EvaluationsClient` | Run AI model evaluations |
-| `EvaluatorsClient` | Manage evaluator configurations |
-| `SchedulesClient` | Manage scheduled operations |
+| `EvaluationRulesClient` | Run AI model evaluations |
+| `BetaEvaluatorsClient` | Manage evaluator configurations |
+| `BetaSchedulesClient` | Manage scheduled operations |
 
 ```java
 // Build sub-clients from builder
@@ -57,7 +58,9 @@ ConnectionsClient connectionsClient = builder.buildConnectionsClient();
 DatasetsClient datasetsClient = builder.buildDatasetsClient();
 DeploymentsClient deploymentsClient = builder.buildDeploymentsClient();
 IndexesClient indexesClient = builder.buildIndexesClient();
-EvaluationsClient evaluationsClient = builder.buildEvaluationsClient();
+EvaluationRulesClient evaluationRulesClient = builder.buildEvaluationRulesClient();
+BetaEvaluatorsClient evaluatorsClient = builder.beta().buildBetaEvaluatorsClient();
+BetaSchedulesClient schedulesClient = builder.beta().buildBetaSchedulesClient();
 ```
 
 ## Core Operations
@@ -72,7 +75,7 @@ PagedIterable<Connection> connections = connectionsClient.listConnections();
 for (Connection connection : connections) {
     System.out.println("Name: " + connection.getName());
     System.out.println("Type: " + connection.getType());
-    System.out.println("Credential Type: " + connection.getCredentials().getType());
+    System.out.println("Credential Type: " + connection.getCredential().getType());
 }
 ```
 
@@ -115,7 +118,7 @@ The SDK exposes OpenAI's official SDK for evaluations:
 ```java
 import com.openai.services.EvalService;
 
-EvalService evalService = evaluationsClient.getOpenAIClient();
+EvalService evalService = evaluationRulesClient.getOpenAIClient();
 // Use OpenAI evaluation APIs directly
 ```
 
