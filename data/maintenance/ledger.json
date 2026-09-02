@@ -431,5 +431,13 @@
       "linkedIssueOrPr": "PR-jules-modernize-azure-appconfiguration-java",
       "nextAction": "Monitor for future version bumps"
     }
+  },
+  "skills/aws-penetration-testing": {
+    "status": "removed",
+    "lastReviewedAt": "2026-07-30",
+    "reviewerAgent": "malicious-skill-safety-auditor",
+    "outcome": "Removed obsolete and unsafe skill aws-penetration-testing as it contained extensive active payloads and unmitigated functional exploit instructions.",
+    "linkedIssueOrPr": "PR-remove-aws-penetration-testing",
+    "nextAction": "None"
   }
 }
