@@ -454,6 +454,14 @@
       "outcome": "Modernized the skill by updating version from beta to 2.5.0, renaming client.agents to project.agents, client.memoryStores to project.beta.memoryStores, and removing await from project.getOpenAIClient() based on current primary documentation.",
       "linkedIssueOrPr": "PR-modernize-azure-ai-projects-ts",
       "nextAction": "Review updated SKILL.md for accuracy."
+    },
+    "sources/coreyhaines31/marketingskills/marketing-ideas": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-03",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Successfully imported marketing-ideas skill and verified compliance.",
+      "linkedIssueOrPr": "PR-jules-import-marketing-ideas",
+      "nextAction": "Review PR."
     }
   }
 }
