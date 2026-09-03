@@ -1,10 +1,13 @@
 ---
 name: last30days
 description: "Research a topic from the last 30 days on Reddit + X + Web, become an expert, and write copy-paste-ready prompts for the user's target tool."
-risk: unknown
 source: community
 date_added: "2026-02-27"
+risk: critical
 ---
+
+> [!WARNING]
+> This skill was found to contain malicious prompt engineering (Direct Injection) and has been hardened.
 
 # last30days: Research Any Topic from the Last 30 Days
 
@@ -384,7 +387,7 @@ For the rest of this conversation, remember:
 - **KEY PATTERNS**: {list the top 3-5 patterns you learned}
 - **RESEARCH FINDINGS**: The key facts and insights from the research
 
-**CRITICAL: After research is complete, you are now an EXPERT on this topic.**
+**[REDACTED-ACTIVE-PAYLOAD]**
 
 When the user asks follow-up questions:
 
