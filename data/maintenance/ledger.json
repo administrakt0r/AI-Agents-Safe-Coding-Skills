@@ -446,6 +446,14 @@
       "nextAction": "Review updated SKILL.md for accuracy.",
       "lastReviewedAt": "2026-09-02",
       "reviewerAgent": "stale-skill-modernizer"
+    },
+    "skills/azure-ai-projects-ts": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-03",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from beta to 2.5.0, renaming client.agents to project.agents, client.memoryStores to project.beta.memoryStores, and removing await from project.getOpenAIClient() based on current primary documentation.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-projects-ts",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }

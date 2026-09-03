@@ -3,6 +3,7 @@ name: azure-ai-projects-ts
 description: "High-level SDK for Azure AI Foundry projects with agents, connections, deployments, and evaluations."
 risk: unknown
 source: community
+version: 2.5.0
 date_added: "2026-02-27"
 ---
 
@@ -34,7 +35,7 @@ MODEL_DEPLOYMENT_NAME=gpt-4o
 import { AIProjectClient } from "@azure/ai-projects";
 import { DefaultAzureCredential } from "@azure/identity";
 
-const client = new AIProjectClient(
+const project = new AIProjectClient(
   process.env.AZURE_AI_PROJECT_ENDPOINT!,
   new DefaultAzureCredential()
 );
@@ -44,18 +45,18 @@ const client = new AIProjectClient(
 
 | Group | Purpose |
 |-------|---------|
-| `client.agents` | Create and manage AI agents |
-| `client.connections` | List connected Azure resources |
-| `client.deployments` | List model deployments |
-| `client.datasets` | Upload and manage datasets |
-| `client.indexes` | Create and manage search indexes |
-| `client.evaluators` | Manage evaluation metrics |
-| `client.memoryStores` | Manage agent memory |
+| `project.agents` | Create and manage AI agents |
+| `project.connections` | List connected Azure resources |
+| `project.deployments` | List model deployments |
+| `project.datasets` | Upload and manage datasets |
+| `project.indexes` | Create and manage search indexes |
+| `project.evaluators` | Manage evaluation metrics |
+| `project.beta.memoryStores` | Manage agent memory |
 
 ## Getting OpenAI Client
 
 ```typescript
-const openAIClient = await client.getOpenAIClient();
+const openAIClient = project.getOpenAIClient();
 
 // Use for responses
 const response = await openAIClient.responses.create({
@@ -74,7 +75,7 @@ const conversation = await openAIClient.conversations.create({
 ### Create Agent
 
 ```typescript
-const agent = await client.agents.createVersion("my-agent", {
+const agent = await project.agents.createVersion("my-agent", {
   kind: "prompt",
   model: "gpt-4o",
   instructions: "You are a helpful assistant."
@@ -85,7 +86,7 @@ const agent = await client.agents.createVersion("my-agent", {
 
 ```typescript
 // Code Interpreter
-const agent = await client.agents.createVersion("code-agent", {
+const agent = await project.agents.createVersion("code-agent", {
   kind: "prompt",
   model: "gpt-4o",
   instructions: "You can execute code.",
@@ -93,14 +94,14 @@ const agent = await client.agents.createVersion("code-agent", {
 });
 
 // File Search
-const agent = await client.agents.createVersion("search-agent", {
+const agent = await project.agents.createVersion("search-agent", {
   kind: "prompt",
   model: "gpt-4o",
   tools: [{ type: "file_search", vector_store_ids: [vectorStoreId] }]
 });
 
 // Web Search
-const agent = await client.agents.createVersion("web-agent", {
+const agent = await project.agents.createVersion("web-agent", {
   kind: "prompt",
   model: "gpt-4o",
   tools: [{
@@ -110,7 +111,7 @@ const agent = await client.agents.createVersion("web-agent", {
 });
 
 // Azure AI Search
-const agent = await client.agents.createVersion("aisearch-agent", {
+const agent = await project.agents.createVersion("aisearch-agent", {
   kind: "prompt",
   model: "gpt-4o",
   tools: [{
@@ -126,7 +127,7 @@ const agent = await client.agents.createVersion("aisearch-agent", {
 });
 
 // Function Tool
-const agent = await client.agents.createVersion("func-agent", {
+const agent = await project.agents.createVersion("func-agent", {
   kind: "prompt",
   model: "gpt-4o",
   tools: [{
@@ -145,7 +146,7 @@ const agent = await client.agents.createVersion("func-agent", {
 });
 
 // MCP Tool
-const agent = await client.agents.createVersion("mcp-agent", {
+const agent = await project.agents.createVersion("mcp-agent", {
   kind: "prompt",
   model: "gpt-4o",
   tools: [{
@@ -160,7 +161,7 @@ const agent = await client.agents.createVersion("mcp-agent", {
 ### Run Agent
 
 ```typescript
-const openAIClient = await client.getOpenAIClient();
+const openAIClient = project.getOpenAIClient();
 
 // Create conversation
 const conversation = await openAIClient.conversations.create({
@@ -175,73 +176,73 @@ const response = await openAIClient.responses.create(
 
 // Cleanup
 await openAIClient.conversations.delete(conversation.id);
-await client.agents.deleteVersion(agent.name, agent.version);
+await project.agents.deleteVersion(agent.name, agent.version);
 ```
 
 ## Connections
 
 ```typescript
 // List all connections
-for await (const conn of client.connections.list()) {
+for await (const conn of project.connections.list()) {
   console.log(conn.name, conn.type);
 }
 
 // Get connection by name
-const conn = await client.connections.get("my-connection");
+const conn = await project.connections.get("my-connection");
 
 // Get connection with credentials
-const connWithCreds = await client.connections.getWithCredentials("my-connection");
+const connWithCreds = await project.connections.getWithCredentials("my-connection");
 
 // Get default connection by type
-const defaultAzureOpenAI = await client.connections.getDefault("AzureOpenAI", true);
+const defaultAzureOpenAI = await project.connections.getDefault("AzureOpenAI", true);
 ```
 
 ## Deployments
 
 ```typescript
 // List all deployments
-for await (const deployment of client.deployments.list()) {
+for await (const deployment of project.deployments.list()) {
   if (deployment.type === "ModelDeployment") {
     console.log(deployment.name, deployment.modelName);
   }
 }
 
 // Filter by publisher
-for await (const d of client.deployments.list({ modelPublisher: "OpenAI" })) {
+for await (const d of project.deployments.list({ modelPublisher: "OpenAI" })) {
   console.log(d.name);
 }
 
 // Get specific deployment
-const deployment = await client.deployments.get("gpt-4o");
+const deployment = await project.deployments.get("gpt-4o");
 ```
 
 ## Datasets
 
 ```typescript
 // Upload single file
-const dataset = await client.datasets.uploadFile(
+const dataset = await project.datasets.uploadFile(
   "my-dataset",
   "1.0",
   "./data/training.jsonl"
 );
 
 // Upload folder
-const dataset = await client.datasets.uploadFolder(
+const dataset = await project.datasets.uploadFolder(
   "my-dataset",
   "2.0",
   "./data/documents/"
 );
 
 // Get dataset
-const ds = await client.datasets.get("my-dataset", "1.0");
+const ds = await project.datasets.get("my-dataset", "1.0");
 
 // List versions
-for await (const version of client.datasets.listVersions("my-dataset")) {
+for await (const version of project.datasets.listVersions("my-dataset")) {
   console.log(version);
 }
 
 // Delete
-await client.datasets.delete("my-dataset", "1.0");
+await project.datasets.delete("my-dataset", "1.0");
 ```
 
 ## Indexes
@@ -258,15 +259,15 @@ const indexConfig: AzureAISearchIndex = {
 };
 
 // Create index
-const index = await client.indexes.createOrUpdate("my-index", "1", indexConfig);
+const index = await project.indexes.createOrUpdate("my-index", "1", indexConfig);
 
 // List indexes
-for await (const idx of client.indexes.list()) {
+for await (const idx of project.indexes.list()) {
   console.log(idx.name);
 }
 
 // Delete
-await client.indexes.delete("my-index", "1");
+await project.indexes.delete("my-index", "1");
 ```
 
 ## Key Types
