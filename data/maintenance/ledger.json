@@ -462,6 +462,14 @@
       "outcome": "Successfully imported marketing-ideas skill and verified compliance.",
       "linkedIssueOrPr": "PR-jules-import-marketing-ideas",
       "nextAction": "Review PR."
+    },
+    "skills/azure-ai-vision-imageanalysis-java": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-04",
+      "reviewerAgent": "jules",
+      "outcome": "Modernized azure-ai-vision-imageanalysis-java to use stable version 1.0.1 instead of beta.",
+      "linkedIssueOrPr": "PR-modernize-azure-ai-vision-imageanalysis-java",
+      "nextAction": "None"
     }
   }
 }
