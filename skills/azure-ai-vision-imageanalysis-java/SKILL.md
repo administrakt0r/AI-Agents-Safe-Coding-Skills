@@ -16,7 +16,7 @@ Build image analysis applications using the Azure AI Vision Image Analysis SDK f
 <dependency>
     <groupId>com.azure</groupId>
     <artifactId>azure-ai-vision-imageanalysis</artifactId>
-    <version>1.1.0-beta.1</version>
+    <version>1.0.1</version>
 </dependency>
 ```
 
