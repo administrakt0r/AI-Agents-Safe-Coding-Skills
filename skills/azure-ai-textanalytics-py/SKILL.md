@@ -13,7 +13,7 @@ Client library for Azure AI Language service NLP capabilities including sentimen
 ## Installation
 
 ```bash
-pip install azure-ai-textanalytics
+pip install azure-ai-textanalytics==5.4.0
 ```
 
 ## Environment Variables
