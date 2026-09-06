@@ -40,7 +40,7 @@ Content Understanding operations are asynchronous long-running operations:
 
 1. **Begin Analysis** — Start the analysis operation with `begin_analyze()` (returns a poller)
 2. **Poll for Results** — Poll until analysis completes (SDK handles this with `.result()`)
-3. **Process Results** — Extract structured results from `AnalyzeResult.contents`
+3. **Process Results** — Extract structured results from `AnalysisResult.contents`
 
 ## Prebuilt Analyzers
 
@@ -57,7 +57,7 @@ Content Understanding operations are asynchronous long-running operations:
 ```python
 import os
 from azure.ai.contentunderstanding import ContentUnderstandingClient
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 from azure.identity import DefaultAzureCredential
 
 endpoint = os.environ["CONTENTUNDERSTANDING_ENDPOINT"]
@@ -69,7 +69,7 @@ client = ContentUnderstandingClient(
 # Analyze document from URL
 poller = client.begin_analyze(
     analyzer_id="prebuilt-documentSearch",
-    inputs=[AnalyzeInput(url="https://example.com/document.pdf")]
+    inputs=[AnalysisInput(url="https://example.com/document.pdf")]
 )
 
 result = poller.result()
@@ -82,10 +82,10 @@ print(content.markdown)
 ## Access Document Content Details
 
 ```python
-from azure.ai.contentunderstanding.models import MediaContentKind, DocumentContent
+from azure.ai.contentunderstanding.models import AnalysisContentKind, DocumentContent
 
 content = result.contents[0]
-if content.kind == MediaContentKind.DOCUMENT:
+if content.kind == AnalysisContentKind.DOCUMENT:
     document_content: DocumentContent = content  # type: ignore
     print(document_content.start_page_number)
 ```
@@ -93,11 +93,11 @@ if content.kind == MediaContentKind.DOCUMENT:
 ## Analyze Image
 
 ```python
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 
 poller = client.begin_analyze(
     analyzer_id="prebuilt-imageSearch",
-    inputs=[AnalyzeInput(url="https://example.com/image.jpg")]
+    inputs=[AnalysisInput(url="https://example.com/image.jpg")]
 )
 result = poller.result()
 content = result.contents[0]
@@ -107,11 +107,11 @@ print(content.markdown)
 ## Analyze Video
 
 ```python
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 
 poller = client.begin_analyze(
     analyzer_id="prebuilt-videoSearch",
-    inputs=[AnalyzeInput(url="https://example.com/video.mp4")]
+    inputs=[AnalysisInput(url="https://example.com/video.mp4")]
 )
 
 result = poller.result()
@@ -131,11 +131,11 @@ for frame in content.key_frames:
 ## Analyze Audio
 
 ```python
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 
 poller = client.begin_analyze(
     analyzer_id="prebuilt-audioSearch",
-    inputs=[AnalyzeInput(url="https://example.com/audio.mp3")]
+    inputs=[AnalysisInput(url="https://example.com/audio.mp3")]
 )
 
 result = poller.result()
@@ -177,11 +177,11 @@ analyzer = client.create_analyzer(
 )
 
 # Use custom analyzer
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 
 poller = client.begin_analyze(
     analyzer_id="my-invoice-analyzer",
-    inputs=[AnalyzeInput(url="https://example.com/invoice.pdf")]
+    inputs=[AnalysisInput(url="https://example.com/invoice.pdf")]
 )
 
 result = poller.result()
@@ -212,7 +212,7 @@ client.delete_analyzer("my-custom-analyzer")
 import asyncio
 import os
 from azure.ai.contentunderstanding.aio import ContentUnderstandingClient
-from azure.ai.contentunderstanding.models import AnalyzeInput
+from azure.ai.contentunderstanding.models import AnalysisInput
 from azure.identity.aio import DefaultAzureCredential
 
 async def analyze_document():
@@ -225,7 +225,7 @@ async def analyze_document():
     ) as client:
         poller = await client.begin_analyze(
             analyzer_id="prebuilt-documentSearch",
-            inputs=[AnalyzeInput(url="https://example.com/doc.pdf")]
+            inputs=[AnalysisInput(url="https://example.com/doc.pdf")]
         )
         result = await poller.result()
         content = result.contents[0]
@@ -241,15 +241,15 @@ asyncio.run(analyze_document())
 | `DocumentContent` | PDF, images, Office docs | Pages, tables, figures, paragraphs |
 | `AudioVisualContent` | Audio, video files | Transcript phrases, timing, key frames |
 
-Both derive from `MediaContent` which provides basic info and markdown representation.
+Both derive from `AnalysisContent` which provides basic info and markdown representation.
 
 ## Model Imports
 
 ```python
 from azure.ai.contentunderstanding.models import (
-    AnalyzeInput,
-    AnalyzeResult,
-    MediaContentKind,
+    AnalysisInput,
+    AnalysisResult,
+    AnalysisContentKind,
     DocumentContent,
     AudioVisualContent,
 )
@@ -264,7 +264,7 @@ from azure.ai.contentunderstanding.models import (
 
 ## Best Practices
 
-1. **Use `begin_analyze` with `AnalyzeInput`** — this is the correct method signature
+1. **Use `begin_analyze` with `AnalysisInput`** — this is the correct method signature
 2. **Access results via `result.contents[0]`** — results are returned as a list
 3. **Use prebuilt analyzers** for common scenarios (document/image/audio/video search)
 4. **Create custom analyzers** only for domain-specific field extraction
