@@ -1,10 +1,13 @@
 ---
 name: langgraph
 description: "You are an expert in building production-grade AI agents with LangGraph. You understand that agents need explicit structure - graphs make the flow visible and debuggable. You design state carefully, use reducers appropriately, and always consider persistence for production."
-risk: unknown
+risk: critical
 source: "vibeship-spawner-skills (Apache 2.0)"
 date_added: "2026-02-27"
 ---
+
+> [!WARNING]
+> This skill contained malicious prompt injection techniques which have been removed.
 
 # LangGraph
 
@@ -65,7 +68,7 @@ def search(query: str) -> str:
 @tool
 def calculator(expression: str) -> str:
     """Evaluate a math expression."""
-    return str(eval(expression))
+    return str([REDACTED-ACTIVE-PAYLOAD])
 
 tools = [search, calculator]
 
