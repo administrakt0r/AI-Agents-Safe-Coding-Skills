@@ -1,6 +1,6 @@
 ---
 name: azure-ai-translation-text-py
-description: Azure AI Text Translation SDK for real-time text translation, transliteration, language detection, and dictionary lookup. Use for translating text content in applications.
+description: Azure AI Text Translation SDK for real-time text translation, transliteration, . Use for translating text content in applications.
 risk: unknown
 source: community
 date_added: '2026-02-27'
@@ -13,7 +13,7 @@ Client library for Azure AI Translator text translation service for real-time te
 ## Installation
 
 ```bash
-pip install azure-ai-translation-text
+pip install azure-ai-translation-text==2.0.0
 ```
 
 ## Environment Variables
@@ -71,7 +71,7 @@ client = TextTranslationClient(
 # Translate to a single language
 result = client.translate(
     body=["Hello, how are you?", "Welcome to Azure!"],
-    to=["es"]  # Spanish
+    to_language=["es"]  # Spanish
 )
 
 for item in result:
@@ -85,7 +85,7 @@ for item in result:
 ```python
 result = client.translate(
     body=["Hello, world!"],
-    to=["es", "fr", "de", "ja"]  # Spanish, French, German, Japanese
+    to_language=["es", "fr", "de", "ja"]  # Spanish, French, German, Japanese
 )
 
 for item in result:
@@ -99,23 +99,9 @@ for item in result:
 ```python
 result = client.translate(
     body=["Bonjour le monde"],
-    from_parameter="fr",  # Source is French
-    to=["en", "es"]
+    from_language="fr",  # Source is French
+    to_language=["en", "es"]
 )
-```
-
-## Language Detection
-
-```python
-result = client.translate(
-    body=["Hola, como estas?"],
-    to=["en"]
-)
-
-for item in result:
-    if item.detected_language:
-        print(f"Detected language: {item.detected_language.language}")
-        print(f"Confidence: {item.detected_language.score:.2f}")
 ```
 
 ## Transliteration
@@ -133,44 +119,6 @@ result = client.transliterate(
 for item in result:
     print(f"Transliterated: {item.text}")
     print(f"Script: {item.script}")
-```
-
-## Dictionary Lookup
-
-Find alternate translations and definitions:
-
-```python
-result = client.lookup_dictionary_entries(
-    body=["fly"],
-    from_parameter="en",
-    to="es"
-)
-
-for item in result:
-    print(f"Source: {item.normalized_source} ({item.display_source})")
-    for translation in item.translations:
-        print(f"  Translation: {translation.normalized_target}")
-        print(f"  Part of speech: {translation.pos_tag}")
-        print(f"  Confidence: {translation.confidence:.2f}")
-```
-
-## Dictionary Examples
-
-Get usage examples for translations:
-
-```python
-from azure.ai.translation.text.models import DictionaryExampleTextItem
-
-result = client.lookup_dictionary_examples(
-    body=[DictionaryExampleTextItem(text="fly", translation="volar")],
-    from_parameter="en",
-    to="es"
-)
-
-for item in result:
-    for example in item.examples:
-        print(f"Source: {example.source_prefix}{example.source_term}{example.source_suffix}")
-        print(f"Target: {example.target_prefix}{example.target_term}{example.target_suffix}")
 ```
 
 ## Get Supported Languages
@@ -191,24 +139,7 @@ for code, lang in languages.transliteration.items():
     for script in lang.scripts:
         print(f"    {script.code} -> {[t.code for t in script.to_scripts]}")
 
-# Dictionary languages
-print("\nDictionary languages:")
-for code, lang in languages.dictionary.items():
-    print(f"  {code}: {lang.name}")
-```
 
-## Break Sentence
-
-Identify sentence boundaries:
-
-```python
-result = client.find_sentence_boundaries(
-    body=["Hello! How are you? I hope you are well."],
-    language="en"
-)
-
-for item in result:
-    print(f"Sentence lengths: {item.sent_len}")
 ```
 
 ## Translation Options
@@ -216,21 +147,15 @@ for item in result:
 ```python
 result = client.translate(
     body=["Hello, world!"],
-    to=["de"],
+    to_language=["de"],
     text_type="html",           # "plain" or "html"
     profanity_action="Marked",  # "NoAction", "Deleted", "Marked"
     profanity_marker="Asterisk", # "Asterisk", "Tag"
-    include_alignment=True,      # Include word alignment
-    include_sentence_length=True # Include sentence boundaries
 )
 
 for item in result:
     translation = item.translations[0]
     print(f"Translated: {translation.text}")
-    if translation.alignment:
-        print(f"Alignment: {translation.alignment.proj}")
-    if translation.sent_len:
-        print(f"Sentence lengths: {translation.sent_len.src_sent_len}")
 ```
 
 ## Async Client
@@ -246,7 +171,7 @@ async def translate_text():
     ) as client:
         result = await client.translate(
             body=["Hello, world!"],
-            to=["es"]
+            to_language=["es"]
         )
         print(result[0].translations[0].text)
 ```
@@ -257,10 +182,6 @@ async def translate_text():
 |--------|-------------|
 | `translate` | Translate text to one or more languages |
 | `transliterate` | Convert text between scripts |
-| `detect` | Detect language of text |
-| `find_sentence_boundaries` | Identify sentence boundaries |
-| `lookup_dictionary_entries` | Dictionary lookup for translations |
-| `lookup_dictionary_examples` | Get usage examples |
 | `get_supported_languages` | List supported languages |
 
 ## Best Practices
@@ -271,7 +192,6 @@ async def translate_text():
 4. **Cache language list** — Supported languages don't change frequently
 5. **Handle profanity** appropriately for your application
 6. **Use html text_type** when translating HTML content
-7. **Include alignment** for applications needing word mapping
 
 ## When to Use
 This skill is applicable to execute the workflow or actions described in the overview.
