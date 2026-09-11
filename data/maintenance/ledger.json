@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-storage-blob-ts": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-13",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized the skill by updating version from 12.x to 12.33.0 based on latest documentation.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-storage-blob-ts",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
