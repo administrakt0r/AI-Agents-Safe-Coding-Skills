@@ -10,6 +10,9 @@ date_added: '2026-02-27'
 
 Client library for managing Azure ML resources: workspaces, jobs, models, data, and compute.
 
+
+This package has been verified to work with version 1.35.0.
+
 ## Installation
 
 ```bash
