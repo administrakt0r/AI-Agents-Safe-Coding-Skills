@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/paywalls": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-12",
+      "reviewerAgent": "jules",
+      "outcome": "Successfully imported paywalls skill from coreyhaines31/marketingskills after passing prompt injection and english-only checks.",
+      "linkedIssueOrPr": "PR-jules-import-paywalls",
+      "nextAction": "None"
     }
   }
 }
