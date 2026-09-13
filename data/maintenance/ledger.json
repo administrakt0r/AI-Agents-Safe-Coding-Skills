@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/evolution": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-13",
+      "reviewerAgent": "malicious-skill-safety-auditor",
+      "outcome": "Hardened skill by replacing active arbitrary code execution payload (curl ... | bash) with safe placeholder and marking risk as critical.",
+      "linkedIssueOrPr": "jules-harden-evolution",
+      "nextAction": "Monitor for re-introduction of active payloads."
     }
   }
 }

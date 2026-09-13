@@ -1,11 +1,12 @@
 ---
 name: evolution
 description: "This skill enables makepad-skills to self-improve continuously during development."
-risk: unknown
+risk: critical
 source: community
 ---
 
-<!-- security-allowlist: curl-pipe-bash -->
+> [!WARNING]
+> This skill contains [REDACTED-ACTIVE-PAYLOAD] commands that have been flagged as malicious. Do not execute these directly.
 
 # Makepad Skills Evolution
 
@@ -31,7 +32,7 @@ For reliable automatic triggering, use Claude Code hooks. Install with `--with-h
 
 ```bash
 # Install makepad-skills with hooks enabled
-curl -fsSL https://raw.githubusercontent.com/ZhangHanDong/makepad-skills/main/install.sh | bash -s -- --with-hooks
+[REDACTED-ACTIVE-PAYLOAD]
 ```
 
 This will install hooks to `.claude/hooks/` and configure `.claude/settings.json`:
