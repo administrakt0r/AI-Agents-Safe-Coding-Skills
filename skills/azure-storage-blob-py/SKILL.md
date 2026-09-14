@@ -33,7 +33,7 @@ from azure.storage.blob import BlobServiceClient
 credential = DefaultAzureCredential()
 account_url = "https://<account>.blob.core.windows.net"
 
-blob_service_client = BlobServiceClient(account_url, credential=credential)
+blob_service_client = BlobServiceClient(account_url=account_url, credential=credential)
 ```
 
 ## Client Hierarchy
@@ -193,7 +193,7 @@ from azure.storage.blob.aio import BlobServiceClient
 async def upload_async():
     credential = DefaultAzureCredential()
     
-    async with BlobServiceClient(account_url, credential=credential) as client:
+    async with BlobServiceClient(account_url=account_url, credential=credential) as client:
         blob_client = client.get_blob_client("mycontainer", "sample.txt")
         
         with open("./file.txt", "rb") as data:
@@ -201,7 +201,7 @@ async def upload_async():
 
 # Download async
 async def download_async():
-    async with BlobServiceClient(account_url, credential=credential) as client:
+    async with BlobServiceClient(account_url=account_url, credential=credential) as client:
         blob_client = client.get_blob_client("mycontainer", "sample.txt")
         
         stream = await blob_client.download_blob()
