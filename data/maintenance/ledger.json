@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-storage-blob-py": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-14",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized azure-storage-blob-py skill by updating the BlobServiceClient constructor to use kwargs (account_url=account_url) to align with best practices and confirmed against latest stable version 12.30.1.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-storage-blob-py",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
