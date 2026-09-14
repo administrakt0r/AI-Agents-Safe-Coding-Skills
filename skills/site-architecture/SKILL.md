@@ -1,27 +1,27 @@
 ---
 name: site-architecture
-description: "Plan or restructure website hierarchy, navigation, URL patterns, breadcrumbs, and internal linking. Use when mapping pages, sections, and site structure, but not for XML sitemap auditing or schema markup."
-risk: unknown
-source: "https://github.com/coreyhaines31/marketingskills"
-date_added: "2026-03-21"
-metadata:
-  version: 1.1.0
+description: Plan, map, or restructure website page hierarchy, navigation, URL structure, or internal linking.
+risk: safe
+source: coreyhaines31/marketingskills
+category: marketing
+date_added: "2024-05-20"
 ---
 
 # Site Architecture
 
-You are an information architecture expert. Your goal is to help plan website structure — page hierarchy, navigation, URL patterns, and internal linking — so the site is intuitive for users and optimized for search engines.
-
 ## When to Use
 
-- Use when planning or restructuring page hierarchy, navigation, and URL structure.
-- Use when mapping site sections, breadcrumbs, and internal linking.
-- Use when the user asks how pages should be organized, not how an XML sitemap should be generated.
+Use this skill when the user wants to plan, map, or restructure their website's page hierarchy, navigation, URL structure, or internal linking. Also use when the user mentions "sitemap," "site map," "visual sitemap," "site structure," "page hierarchy," "information architecture," "IA," "navigation design," "URL structure," "breadcrumbs," "internal linking strategy," "website planning," "what pages do I need," "how should I organize my site," or "site navigation."
+
+Use this whenever someone is planning what pages a website should have and how they connect. NOT for XML sitemaps (that's technical SEO — see `seo-audit`). For SEO audits, see `seo-audit`. For structured data, see `schema`.
+
+
+You are an information architecture expert. Your goal is to help plan website structure — page hierarchy, navigation, URL patterns, and internal linking — so the site is intuitive for users and optimized for search engines.
 
 ## Before Planning
 
 **Check for product marketing context first:**
-If `.agents/product-marketing-context.md` exists (or `.claude/product-marketing-context.md` in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
+If `.agents/product-marketing.md` exists (or `.claude/product-marketing.md`, or the legacy `product-marketing-context.md` filename, in older setups), read it before asking questions. Use that context and only ask for information not already covered or specific to this task.
 
 Gather this context (ask if not provided):
 
@@ -272,7 +272,7 @@ graph TD
 | Type | Purpose | Example |
 |------|---------|---------|
 | Navigational | Move between sections | Header, footer, sidebar links |
-| Contextual | Related content within text | "Learn more about analytics at `/features/analytics`" |
+| Contextual | Related content within text | "Learn more about [analytics](/features/analytics)" |
 | Hub-and-spoke | Connect cluster content to hub | Blog posts linking to pillar page |
 | Cross-section | Connect related pages across sections | Feature page linking to related case study |
 
@@ -361,6 +361,6 @@ Mermaid diagram showing page relationships and navigation zones. Use `graph TD` 
 - **content-strategy**: For planning what content to create and topic clusters
 - **programmatic-seo**: For building SEO pages at scale with templates and data
 - **seo-audit**: For technical SEO, on-page optimization, and indexation issues
-- **page-cro**: For optimizing individual pages for conversion
-- **schema-markup**: For implementing breadcrumb and site navigation structured data
-- **competitor-alternatives**: For comparison page frameworks and URL patterns
+- **cro**: For optimizing individual pages for conversion
+- **schema**: For implementing breadcrumb and site navigation structured data
+- **competitors**: For comparison page frameworks and URL patterns
