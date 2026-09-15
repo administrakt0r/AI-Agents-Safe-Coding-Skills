@@ -13,7 +13,7 @@ Client library for Azure AI Translator document translation service for batch do
 ## Installation
 
 ```bash
-pip install azure-ai-translation-document
+pip install azure-ai-translation-document==2.0.0
 ```
 
 ## Environment Variables
@@ -57,7 +57,7 @@ client = DocumentTranslationClient(
 ## Basic Document Translation
 
 ```python
-from azure.ai.translation.document import DocumentTranslationInput, TranslationTarget
+from azure.ai.translation.document.models import DocumentTranslationInput, TranslationTarget
 
 source_url = os.environ["AZURE_SOURCE_CONTAINER_URL"]
 target_url = os.environ["AZURE_TARGET_CONTAINER_URL"]
@@ -163,7 +163,7 @@ client.cancel_translation(operation_id)
 ## Using Glossary
 
 ```python
-from azure.ai.translation.document import TranslationGlossary
+from azure.ai.translation.document.models import TranslationGlossary
 
 poller = client.begin_translation(
     inputs=[
