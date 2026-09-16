@@ -21,7 +21,7 @@ dotnet add package Azure.ResourceManager.Sql
 dotnet add package Azure.Identity
 ```
 
-**Current Versions**: Stable v1.3.0, Preview v1.4.0-beta.3
+**Current Versions**: Stable v1.4.0
 
 ## Environment Variables
 

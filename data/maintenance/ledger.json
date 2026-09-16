@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "skills/azure-resource-manager-sql-dotnet": {
+      "status": "reviewed",
+      "lastReviewedAt": "2026-09-16",
+      "reviewerAgent": "stale-skill-modernizer",
+      "outcome": "Modernized azure-resource-manager-sql-dotnet skill by updating version from v1.3.0 to v1.4.0 based on latest NuGet package.",
+      "linkedIssueOrPr": "PR-jules-modernize-azure-resource-manager-sql-dotnet",
+      "nextAction": "Review updated SKILL.md for accuracy."
     }
   }
 }
