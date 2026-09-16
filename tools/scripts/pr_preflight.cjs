@@ -122,6 +122,10 @@ function loadPullRequestBody(eventPath) {
     return null;
   }
 
+  if (!fs.existsSync(eventPath)) {
+    return null;
+  }
+
   const rawEvent = fs.readFileSync(path.resolve(eventPath), "utf8");
   const event = JSON.parse(rawEvent);
   return event.pull_request?.body || "";
