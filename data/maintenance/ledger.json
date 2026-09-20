@@ -1,547 +1,555 @@
 {
-  "version": 1,
-  "updatedAt": "2026-08-16T00:00:00Z",
-  "policies": {
-    "englishOnly": true,
-    "singleSkillPerRun": true,
-    "humanReviewRequired": true,
-    "logsDirectory": "docs/maintainers/agent-runs",
-    "promptPackDirectory": "docs/maintainers/agent-prompts"
-  },
-  "entries": {
-    "skills/azure-ai-formrecognizer-java": {
-      "status": "removed",
-      "lastReviewedAt": "2026-04-20",
-      "reviewerAgent": "jules",
-      "outcome": "Removed obsolete skill azure-ai-formrecognizer-java as it is deprecated and superseded by azure-ai-documentintelligence-java.",
-      "linkedIssueOrPr": "PR-remove-azure-ai-formrecognizer-java",
-      "nextAction": "None"
-    },
-    "sources/coreyhaines31/marketingskills": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-04-14",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the aso-audit skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-aso-audit"
-    },
-    "sources/coreyhaines31/marketingskills/customer-research": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-04-21",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-customer-research",
-      "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
-    },
-    "skills/youtube-summarizer": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Removed Portuguese-specific trigger and output copy so the skill stays English-first.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Verify future upstream refreshes keep English-first output examples."
-    },
-    "skills/audio-transcriber": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Replaced non-English output examples with English-first wording.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Recheck after future transcript-template updates."
-    },
-    "skills/local-legal-seo-audit": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Replaced non-English keyword and page-title examples with English equivalents.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Keep locale-specific examples English unless a documented exception is needed."
-    },
-    "skills/prompt-engineer": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Updated language-handling guidance so the default generated prompt remains English-first.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Review again if multilingual output support is expanded."
-    },
-    "skills/sankhya-dashboard-html-jsp-custom-best-pratices": {
-      "status": "removed",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Removed because the core instructions were materially non-English.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
-    },
-    "skills/SPDD": {
-      "status": "removed",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "bootstrap-maintainer",
-      "outcome": "Removed because the workflow content was materially non-English.",
-      "linkedIssueOrPr": "local-bootstrap-2026-03-29",
-      "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
-    },
-    "skills/wordpress-penetration-testing": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-29",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shells, PHP system execution, and prompt injection strings with safe placeholders.",
-      "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/azure-monitor-query-java": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-30",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by migrating the deprecated azure-monitor-query instructions to use the new azure-monitor-query-logs and azure-monitor-query-metrics SDKs.",
-      "linkedIssueOrPr": "PR-modernize-azure-monitor-query-java",
-      "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
-    },
-    "skills/file-path-traversal": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-03-30",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shells and RCE payload strings with safe placeholders.",
-      "linkedIssueOrPr": "PR-file-path-traversal-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/azure-communication-callingserver-java": {
-      "status": "removed",
-      "lastReviewedAt": "2026-03-31",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Removed obsolete skill azure-communication-callingserver-java as it is deprecated and superseded by azure-communication-callautomation.",
-      "linkedIssueOrPr": "PR-remove-azure-communication-callingserver-java",
-      "nextAction": "None"
-    },
-    "skills/linux-privilege-escalation": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-01",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shells (Bash, NC, Perl, Python) and system execution payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-linux-privilege-escalation-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/active-directory-attacks": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-05-15",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-active-directory-attacks-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/azure-monitor-query-py": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-02",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
-      "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
-      "nextAction": "Review the updated SKILL.md for accuracy."
-    },
-    "skills/windows-privilege-escalation": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-02",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/pentest-commands": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-04",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active msfconsole exploitation commands and msfvenom reverse shell payload generation strings with safe placeholders.",
-      "linkedIssueOrPr": "PR-pentest-commands-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/azure-monitor-opentelemetry-exporter-java": {
-      "status": "removed",
-      "lastReviewedAt": "2026-04-12",
-      "reviewerAgent": "jules",
-      "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
-      "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
-      "nextAction": "None"
-    },
-    "skills/xss-html-injection": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-15",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active XSS and HTML injection payloads targeting attacker.com with safe placeholders.",
-      "linkedIssueOrPr": "PR-xss-html-injection-hardening"
-    },
-    "skills/metasploit-framework": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-04-16",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
-      "linkedIssueOrPr": "PR-metasploit-framework-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "sources/coreyhaines31/marketingskills/co-marketing": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-05-16",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the co-marketing skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-co-marketing",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/ab-testing": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-05-14",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the ab-testing skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-ab-testing",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/directory-submissions": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-04-27",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-directory-submissions",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/ethical-hacking-methodology": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-05-13",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/sqlmap-database-pentesting": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-05-16",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
-      "linkedIssueOrPr": "PR-sqlmap-database-pentesting-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/vibers-code-review": {
-      "status": "removed",
-      "lastReviewedAt": "2026-05-19",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Removed because the skill instructs users to add an untrusted third-party collaborator to their repository and sends webhooks to an external service, which is unsafe.",
-      "linkedIssueOrPr": "PR-remove-vibers-code-review",
-      "nextAction": "None"
-    },
-    "skills/gemini-api-dev": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-05-20",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
-      "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
-      "nextAction": "Review updated SKILL.md for accuracy against future API changes."
-    },
-    "skills/azure-ai-document-intelligence-dotnet": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-05-24",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
-      "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
-      "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
-    },
-    "sources/coreyhaines31/marketingskills/community-marketing": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-05-24",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the community-marketing skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-community-marketing",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/ssh-penetration-testing": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-05-25",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders, and added offensive disclaimer.",
-      "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "sources/coreyhaines31/marketingskills/competitor-profiling": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-05-29",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/content-strategy": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-06-05",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/onboarding": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the onboarding skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-onboarding",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/sickn33/agentic-awesome-skills": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Added as a trusted upstream source for skill imports. The repository contains 2,005+ agentic skills with MIT license, English-first content, and active maintenance.",
-      "linkedIssueOrPr": "none",
-      "nextAction": "Use as source for future single-skill import runs. Verify each imported skill individually for English-first policy and prompt injection safety."
-    },
-    "skills/sql-injection-testing": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-08-15",
-      "reviewerAgent": "malicious-skill-safety-auditor",
-      "outcome": "Hardened skill by replacing active payloads with safe placeholders and adding offensive disclaimer.",
-      "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
-      "nextAction": "Monitor for re-introduction of active payloads."
-    },
-    "skills/azure-resource-manager-durabletask-dotnet": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by updating version from v1.0.0 to v1.1.0 (2026-03-12), updating API version from 2025-11-01 to 2026-02-01, and adding documentation for new private endpoint connection features including PublicNetworkAccess configuration and DurableTaskPrivateEndpointConnectionCollection management.",
-      "linkedIssueOrPr": "commit-be80d57",
-      "nextAction": "Review updated SKILL.md for accuracy against real-world scenarios."
-    },
-    "sources/sickn33/agentic-awesome-skills/anti-sycophancy": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the anti-sycophancy skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, MIT license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-anti-sycophancy",
-      "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
-    },
-    "sources/coreyhaines31/marketingskills/marketing-psychology": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the marketing-psychology skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, MIT license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-marketing-psychology",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/sickn33/agentic-awesome-skills/accint-solve": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accint-solve skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, Apache-2.0 license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accint-solve",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-security-keyvault-secrets-java": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-08-16",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by updating version from 4.9.0 to 4.11.1 based on current Maven documentation.",
-      "linkedIssueOrPr": "PR-modernize-azure-security-keyvault-secrets-java",
-      "nextAction": "Review updated SKILL.md for accuracy."
-    },
-    "sources/coreyhaines31/marketingskills/seo-audit": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-10",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the seo-audit skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-new-skill-import-curator-seo-audit",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/sickn33/agentic-awesome-skills/advanced-evaluation": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-17",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the advanced-evaluation skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-eventgrid-dotnet": {
-      "status": "normalized",
-      "lastReviewedAt": "2026-08-22",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized skill to Azure.Messaging.EventGrid version 5.0.0.",
-      "linkedIssueOrPr": "PR-modernize-azure-eventgrid-dotnet",
-      "nextAction": "Review updated SKILL.md for accuracy."
-    },
-    "sources/sickn33/agentic-awesome-skills/ab-test-setup": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-25",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the ab-test-setup skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-ab-test-setup",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-cosmos-ts": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-08-25",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by updating version from 4.9.0 to 4.10.0 and updating the frontmatter schema to the modernized schema.",
-      "linkedIssueOrPr": "PR-modernize-azure-cosmos-ts",
-      "nextAction": "Review updated SKILL.md for accuracy."
-    },
-    "skills/azure-identity-dotnet": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-08-25",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized azure-identity-dotnet skill by updating Azure.Identity NuGet package version from v1.17.1 to v1.21.0 (Stable) and v1.18.0-beta.2 to v1.18.0-beta.3 (Preview).",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-identity-dotnet",
-      "nextAction": "Review updated SKILL.md for accuracy."
-    },
-    "sources/sickn33/agentic-awesome-skills/acceptance-orchestrator": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-25",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the acceptance-orchestrator skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-acceptance-orchestrator",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/sickn33/agentic-awesome-skills/accesslint-audit": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-30",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accesslint-audit skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accesslint-audit",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/sickn33/agentic-awesome-skills/accesslint-scan": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-08-28",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accesslint-scan skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accesslint-scan",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/events": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-29",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the events skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-events",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/attribution": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-08-30",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the attribution skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-attribution",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-appconfiguration-java": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-01",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Updated maven dependency version from 1.8.0 to 1.10.1 and verified SDK examples against current primary docs.",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-appconfiguration-java",
-      "nextAction": "Monitor for future version bumps"
-    },
-    "sources/sickn33/agentic-awesome-skills/accessibility-compliance-accessibility-audit": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-09-02",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accessibility-compliance-accessibility-audit skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accessibility-compliance-accessibility-audit",
-      "nextAction": "importing"
-    },
-    "skills/azure-ai-projects-java": {
-      "status": "reviewed",
-      "outcome": "Modernized the skill by updating version from 1.0.0-beta.1 to 2.4.0 and updating API calls based on latest documentation.",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-projects-java",
-      "nextAction": "Review updated SKILL.md for accuracy.",
-      "lastReviewedAt": "2026-09-02",
-      "reviewerAgent": "stale-skill-modernizer"
-    },
-    "skills/azure-ai-projects-ts": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-03",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized the skill by updating version from beta to 2.5.0, renaming client.agents to project.agents, client.memoryStores to project.beta.memoryStores, and removing await from project.getOpenAIClient() based on current primary documentation.",
-      "linkedIssueOrPr": "PR-modernize-azure-ai-projects-ts",
-      "nextAction": "Review updated SKILL.md for accuracy."
-    },
-    "sources/coreyhaines31/marketingskills/marketing-ideas": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-03",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Successfully imported marketing-ideas skill and verified compliance.",
-      "linkedIssueOrPr": "PR-jules-import-marketing-ideas",
-      "nextAction": "Review PR."
-    },
-    "skills/azure-ai-vision-imageanalysis-java": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-04",
-      "reviewerAgent": "jules",
-      "outcome": "Modernized azure-ai-vision-imageanalysis-java to use stable version 1.0.1 instead of beta.",
-      "linkedIssueOrPr": "PR-modernize-azure-ai-vision-imageanalysis-java",
-      "nextAction": "None"
-    },
-    "sources/sickn33/agentic-awesome-skills/ad-campaign-analyzer": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-09-05",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the ad-campaign-analyzer skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-ad-campaign-analyzer",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-ai-textanalytics-py": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-06",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized stale skill azure-ai-textanalytics-py. Retained French string as a narrow exception for language detection. Verified package freshness.",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-textanalytics-py",
-      "nextAction": "Wait for PR to be merged"
-    },
-    "sources/sickn33/agentic-awesome-skills/accint-commitments": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-09-07",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accint-commitments skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accint-commitments",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-ai-contentunderstanding-py": {
-      "status": "reviewed",
-      "reviewerAgent": "stale-skill-modernizer",
-      "lastReviewedAt": "2026-09-06",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-contentunderstanding-py",
-      "outcome": "Modernized skill to use updated type names (AnalysisInput, AnalysisResult, AnalysisContent, AnalysisContentKind) from version 1.1.0.",
-      "nextAction": "None"
-    },
-    "sources/sickn33/agentic-awesome-skills/accint-frames": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-09-07",
-      "reviewerAgent": "new-skill-import-curator",
-      "outcome": "Imported the accint-frames skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-accint-frames",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/competitors": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-08",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the competitors skill after verifying it complies with the English-first policy and quality standards.",
-      "linkedIssueOrPr": "PR-jules-import-competitors",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "sources/coreyhaines31/marketingskills/lead-magnets": {
-      "status": "monitoring",
-      "lastReviewedAt": "2026-09-09",
-      "reviewerAgent": "jules",
-      "outcome": "Imported the lead-magnets skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
-      "linkedIssueOrPr": "PR-jules-import-lead-magnets",
-      "nextAction": "Monitor the imported skill for upstream updates."
-    },
-    "skills/azure-ai-translation-text-py": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-10",
-      "reviewerAgent": "stale-skill-modernizer",
-      "outcome": "Modernized azure-ai-translation-text-py to version 2.0.0, removed deprecated dictionary/detect features.",
-      "linkedIssueOrPr": "PR-jules-modernize-azure-ai-translation-text-py",
-      "nextAction": "Wait for PR to be merged"
-    },
-    "skills/api-fuzzing-bug-bounty": {
-      "status": "reviewed",
-      "lastReviewedAt": "2026-09-12",
-      "reviewerAgent": "jules",
-      "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
-      "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
-      "nextAction": "Monitor for re-introduction of active payloads."
+    "version": 1,
+    "updatedAt": "2026-08-16T00:00:00Z",
+    "policies": {
+        "englishOnly": true,
+        "singleSkillPerRun": true,
+        "humanReviewRequired": true,
+        "logsDirectory": "docs/maintainers/agent-runs",
+        "promptPackDirectory": "docs/maintainers/agent-prompts"
+    },
+    "entries": {
+        "skills/azure-ai-formrecognizer-java": {
+            "status": "removed",
+            "lastReviewedAt": "2026-04-20",
+            "reviewerAgent": "jules",
+            "outcome": "Removed obsolete skill azure-ai-formrecognizer-java as it is deprecated and superseded by azure-ai-documentintelligence-java.",
+            "linkedIssueOrPr": "PR-remove-azure-ai-formrecognizer-java",
+            "nextAction": "None"
+        },
+        "sources/coreyhaines31/marketingskills": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-04-14",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the aso-audit skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-aso-audit"
+        },
+        "sources/coreyhaines31/marketingskills/customer-research": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-04-21",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the customer-research skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-customer-research",
+            "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
+        },
+        "skills/youtube-summarizer": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Removed Portuguese-specific trigger and output copy so the skill stays English-first.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Verify future upstream refreshes keep English-first output examples."
+        },
+        "skills/audio-transcriber": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Replaced non-English output examples with English-first wording.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Recheck after future transcript-template updates."
+        },
+        "skills/local-legal-seo-audit": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Replaced non-English keyword and page-title examples with English equivalents.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Keep locale-specific examples English unless a documented exception is needed."
+        },
+        "skills/prompt-engineer": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Updated language-handling guidance so the default generated prompt remains English-first.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Review again if multilingual output support is expanded."
+        },
+        "skills/sankhya-dashboard-html-jsp-custom-best-pratices": {
+            "status": "removed",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Removed because the core instructions were materially non-English.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
+        },
+        "skills/SPDD": {
+            "status": "removed",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "bootstrap-maintainer",
+            "outcome": "Removed because the workflow content was materially non-English.",
+            "linkedIssueOrPr": "local-bootstrap-2026-03-29",
+            "nextAction": "Do not re-import unless a fully English, safety-reviewed version is prepared."
+        },
+        "skills/wordpress-penetration-testing": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-29",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shells, PHP system execution, and prompt injection strings with safe placeholders.",
+            "linkedIssueOrPr": "PR-wordpress-pentest-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/azure-monitor-query-java": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-30",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by migrating the deprecated azure-monitor-query instructions to use the new azure-monitor-query-logs and azure-monitor-query-metrics SDKs.",
+            "linkedIssueOrPr": "PR-modernize-azure-monitor-query-java",
+            "nextAction": "Review the updated SKILL.md for accuracy in real-world scenarios."
+        },
+        "skills/file-path-traversal": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-03-30",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shells and RCE payload strings with safe placeholders.",
+            "linkedIssueOrPr": "PR-file-path-traversal-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/azure-communication-callingserver-java": {
+            "status": "removed",
+            "lastReviewedAt": "2026-03-31",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Removed obsolete skill azure-communication-callingserver-java as it is deprecated and superseded by azure-communication-callautomation.",
+            "linkedIssueOrPr": "PR-remove-azure-communication-callingserver-java",
+            "nextAction": "None"
+        },
+        "skills/linux-privilege-escalation": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-01",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shells (Bash, NC, Perl, Python) and system execution payloads with safe placeholders.",
+            "linkedIssueOrPr": "PR-linux-privilege-escalation-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/active-directory-attacks": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-05-15",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
+            "linkedIssueOrPr": "PR-active-directory-attacks-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/azure-monitor-query-py": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-02",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by migrating the deprecated metrics query instructions in azure-monitor-query to use the new azure-monitor-querymetrics SDK.",
+            "linkedIssueOrPr": "PR-modernize-azure-monitor-query-py",
+            "nextAction": "Review the updated SKILL.md for accuracy."
+        },
+        "skills/windows-privilege-escalation": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-02",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+            "linkedIssueOrPr": "PR-windows-privilege-escalation-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/pentest-commands": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-04",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active msfconsole exploitation commands and msfvenom reverse shell payload generation strings with safe placeholders.",
+            "linkedIssueOrPr": "PR-pentest-commands-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/azure-monitor-opentelemetry-exporter-java": {
+            "status": "removed",
+            "lastReviewedAt": "2026-04-12",
+            "reviewerAgent": "jules",
+            "outcome": "Removed obsolete skill azure-monitor-opentelemetry-exporter-java as it is deprecated and superseded by azure-monitor-opentelemetry-autoconfigure.",
+            "linkedIssueOrPr": "PR-remove-azure-monitor-opentelemetry-exporter-java",
+            "nextAction": "None"
+        },
+        "skills/xss-html-injection": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-15",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active XSS and HTML injection payloads targeting attacker.com with safe placeholders.",
+            "linkedIssueOrPr": "PR-xss-html-injection-hardening"
+        },
+        "skills/metasploit-framework": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-04-16",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active msfvenom payload generation strings with safe placeholders.",
+            "linkedIssueOrPr": "PR-metasploit-framework-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "sources/coreyhaines31/marketingskills/co-marketing": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-05-16",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the co-marketing skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-co-marketing",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/ab-testing": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-05-14",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the ab-testing skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-ab-testing",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/directory-submissions": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-04-27",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the directory-submissions skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-directory-submissions",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/ethical-hacking-methodology": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-05-13",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shell and backdoor payloads with safe placeholders.",
+            "linkedIssueOrPr": "PR-ethical-hacking-methodology-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/sqlmap-database-pentesting": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-05-16",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active payloads with safe placeholders.",
+            "linkedIssueOrPr": "PR-sqlmap-database-pentesting-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/vibers-code-review": {
+            "status": "removed",
+            "lastReviewedAt": "2026-05-19",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Removed because the skill instructs users to add an untrusted third-party collaborator to their repository and sends webhooks to an external service, which is unsafe.",
+            "linkedIssueOrPr": "PR-remove-vibers-code-review",
+            "nextAction": "None"
+        },
+        "skills/gemini-api-dev": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-05-20",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by replacing obsolete and deprecated Gemini 3 models with current versions like Gemini 3.5 Flash and Gemini 3.1 Pro based on primary documentation.",
+            "linkedIssueOrPr": "PR-modernize-gemini-api-dev",
+            "nextAction": "Review updated SKILL.md for accuracy against future API changes."
+        },
+        "skills/azure-ai-document-intelligence-dotnet": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-05-24",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Removed obsolete reference to the deprecated legacy SDK Azure.AI.FormRecognizer from the Related SDKs section to prevent confusion.",
+            "linkedIssueOrPr": "PR-modernize-azure-ai-document-intelligence-dotnet",
+            "nextAction": "Review updated SKILL.md to ensure no other deprecated references remain."
+        },
+        "sources/coreyhaines31/marketingskills/community-marketing": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-05-24",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the community-marketing skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-community-marketing",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/ssh-penetration-testing": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-05-25",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active reverse shells and system execution payloads with safe placeholders, and added offensive disclaimer.",
+            "linkedIssueOrPr": "PR-ssh-penetration-testing-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "sources/coreyhaines31/marketingskills/competitor-profiling": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-05-29",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the competitor-profiling skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-competitor-profiling",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/content-strategy": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-06-05",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the content-strategy skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-content-strategy",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/onboarding": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the onboarding skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-onboarding",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/sickn33/agentic-awesome-skills": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Added as a trusted upstream source for skill imports. The repository contains 2,005+ agentic skills with MIT license, English-first content, and active maintenance.",
+            "linkedIssueOrPr": "none",
+            "nextAction": "Use as source for future single-skill import runs. Verify each imported skill individually for English-first policy and prompt injection safety."
+        },
+        "skills/sql-injection-testing": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-08-15",
+            "reviewerAgent": "malicious-skill-safety-auditor",
+            "outcome": "Hardened skill by replacing active payloads with safe placeholders and adding offensive disclaimer.",
+            "linkedIssueOrPr": "PR-sql-injection-testing-hardening",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "skills/azure-resource-manager-durabletask-dotnet": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by updating version from v1.0.0 to v1.1.0 (2026-03-12), updating API version from 2025-11-01 to 2026-02-01, and adding documentation for new private endpoint connection features including PublicNetworkAccess configuration and DurableTaskPrivateEndpointConnectionCollection management.",
+            "linkedIssueOrPr": "commit-be80d57",
+            "nextAction": "Review updated SKILL.md for accuracy against real-world scenarios."
+        },
+        "sources/sickn33/agentic-awesome-skills/anti-sycophancy": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the anti-sycophancy skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, MIT license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-anti-sycophancy",
+            "nextAction": "Monitor the imported skill for upstream updates and use this source for future single-skill import runs."
+        },
+        "sources/coreyhaines31/marketingskills/marketing-psychology": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the marketing-psychology skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, MIT license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-marketing-psychology",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/sickn33/agentic-awesome-skills/accint-solve": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accint-solve skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, Apache-2.0 license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accint-solve",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-security-keyvault-secrets-java": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-08-16",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by updating version from 4.9.0 to 4.11.1 based on current Maven documentation.",
+            "linkedIssueOrPr": "PR-modernize-azure-security-keyvault-secrets-java",
+            "nextAction": "Review updated SKILL.md for accuracy."
+        },
+        "sources/coreyhaines31/marketingskills/seo-audit": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-10",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the seo-audit skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-new-skill-import-curator-seo-audit",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/sickn33/agentic-awesome-skills/advanced-evaluation": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-17",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the advanced-evaluation skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-advanced-evaluation",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-eventgrid-dotnet": {
+            "status": "normalized",
+            "lastReviewedAt": "2026-08-22",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized skill to Azure.Messaging.EventGrid version 5.0.0.",
+            "linkedIssueOrPr": "PR-modernize-azure-eventgrid-dotnet",
+            "nextAction": "Review updated SKILL.md for accuracy."
+        },
+        "sources/sickn33/agentic-awesome-skills/ab-test-setup": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-25",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the ab-test-setup skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-ab-test-setup",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-cosmos-ts": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-08-25",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by updating version from 4.9.0 to 4.10.0 and updating the frontmatter schema to the modernized schema.",
+            "linkedIssueOrPr": "PR-modernize-azure-cosmos-ts",
+            "nextAction": "Review updated SKILL.md for accuracy."
+        },
+        "skills/azure-identity-dotnet": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-08-25",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized azure-identity-dotnet skill by updating Azure.Identity NuGet package version from v1.17.1 to v1.21.0 (Stable) and v1.18.0-beta.2 to v1.18.0-beta.3 (Preview).",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-identity-dotnet",
+            "nextAction": "Review updated SKILL.md for accuracy."
+        },
+        "sources/sickn33/agentic-awesome-skills/acceptance-orchestrator": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-25",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the acceptance-orchestrator skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-acceptance-orchestrator",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/sickn33/agentic-awesome-skills/accesslint-audit": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-30",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accesslint-audit skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accesslint-audit",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/sickn33/agentic-awesome-skills/accesslint-scan": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-08-28",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accesslint-scan skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accesslint-scan",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/events": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-29",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the events skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-events",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/attribution": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-08-30",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the attribution skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-attribution",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-appconfiguration-java": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-01",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Updated maven dependency version from 1.8.0 to 1.10.1 and verified SDK examples against current primary docs.",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-appconfiguration-java",
+            "nextAction": "Monitor for future version bumps"
+        },
+        "sources/sickn33/agentic-awesome-skills/accessibility-compliance-accessibility-audit": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-02",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accessibility-compliance-accessibility-audit skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accessibility-compliance-accessibility-audit",
+            "nextAction": "importing"
+        },
+        "skills/azure-ai-projects-java": {
+            "status": "reviewed",
+            "outcome": "Modernized the skill by updating version from 1.0.0-beta.1 to 2.4.0 and updating API calls based on latest documentation.",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-ai-projects-java",
+            "nextAction": "Review updated SKILL.md for accuracy.",
+            "lastReviewedAt": "2026-09-02",
+            "reviewerAgent": "stale-skill-modernizer"
+        },
+        "skills/azure-ai-projects-ts": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-03",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized the skill by updating version from beta to 2.5.0, renaming client.agents to project.agents, client.memoryStores to project.beta.memoryStores, and removing await from project.getOpenAIClient() based on current primary documentation.",
+            "linkedIssueOrPr": "PR-modernize-azure-ai-projects-ts",
+            "nextAction": "Review updated SKILL.md for accuracy."
+        },
+        "sources/coreyhaines31/marketingskills/marketing-ideas": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-03",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Successfully imported marketing-ideas skill and verified compliance.",
+            "linkedIssueOrPr": "PR-jules-import-marketing-ideas",
+            "nextAction": "Review PR."
+        },
+        "skills/azure-ai-vision-imageanalysis-java": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-04",
+            "reviewerAgent": "jules",
+            "outcome": "Modernized azure-ai-vision-imageanalysis-java to use stable version 1.0.1 instead of beta.",
+            "linkedIssueOrPr": "PR-modernize-azure-ai-vision-imageanalysis-java",
+            "nextAction": "None"
+        },
+        "sources/sickn33/agentic-awesome-skills/ad-campaign-analyzer": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-05",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the ad-campaign-analyzer skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-ad-campaign-analyzer",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-ai-textanalytics-py": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-06",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized stale skill azure-ai-textanalytics-py. Retained French string as a narrow exception for language detection. Verified package freshness.",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-ai-textanalytics-py",
+            "nextAction": "Wait for PR to be merged"
+        },
+        "sources/sickn33/agentic-awesome-skills/accint-commitments": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-07",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accint-commitments skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accint-commitments",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-ai-contentunderstanding-py": {
+            "status": "reviewed",
+            "reviewerAgent": "stale-skill-modernizer",
+            "lastReviewedAt": "2026-09-06",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-ai-contentunderstanding-py",
+            "outcome": "Modernized skill to use updated type names (AnalysisInput, AnalysisResult, AnalysisContent, AnalysisContentKind) from version 1.1.0.",
+            "nextAction": "None"
+        },
+        "sources/sickn33/agentic-awesome-skills/accint-frames": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-07",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the accint-frames skill from sickn33/agentic-awesome-skills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-accint-frames",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/competitors": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-08",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the competitors skill after verifying it complies with the English-first policy and quality standards.",
+            "linkedIssueOrPr": "PR-jules-import-competitors",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "sources/coreyhaines31/marketingskills/lead-magnets": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-09",
+            "reviewerAgent": "jules",
+            "outcome": "Imported the lead-magnets skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-lead-magnets",
+            "nextAction": "Monitor the imported skill for upstream updates."
+        },
+        "skills/azure-ai-translation-text-py": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-10",
+            "reviewerAgent": "stale-skill-modernizer",
+            "outcome": "Modernized azure-ai-translation-text-py to version 2.0.0, removed deprecated dictionary/detect features.",
+            "linkedIssueOrPr": "PR-jules-modernize-azure-ai-translation-text-py",
+            "nextAction": "Wait for PR to be merged"
+        },
+        "skills/api-fuzzing-bug-bounty": {
+            "status": "reviewed",
+            "lastReviewedAt": "2026-09-12",
+            "reviewerAgent": "jules",
+            "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
+            "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
+            "nextAction": "Monitor for re-introduction of active payloads."
+        },
+        "sources/coreyhaines31/marketingskills/public-relations": {
+            "status": "monitoring",
+            "lastReviewedAt": "2026-09-20",
+            "reviewerAgent": "new-skill-import-curator",
+            "outcome": "Imported the public-relations skill from coreyhaines31/marketingskills after verifying it complies with the English-first policy, license compatibility, and prompt injection safety scan (clean).",
+            "linkedIssueOrPr": "PR-jules-import-public-relations",
+            "nextAction": "Importing"
+        }
     }
-  }
 }
