@@ -398,6 +398,7 @@
     "data-core": {
       "description": "Data engineering and analytics foundations.",
       "skills": [
+        "ad-campaign-analyzer",
         "adhx",
         "airflow-dag-patterns",
         "alpha-vantage",
@@ -570,6 +571,7 @@
         "error-debugging-error-trace",
         "error-diagnostics-error-analysis",
         "error-diagnostics-error-trace",
+        "events",
         "expo-cicd-workflows",
         "expo-deployment",
         "flutter-expert",
