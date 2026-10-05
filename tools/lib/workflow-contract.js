@@ -164,7 +164,7 @@ function hasQualityChecklist(body) {
   if (!heading) return false;
 
   const section = text.slice(heading.index).split(/\n##\s+/i, 2)[0];
-  return /-\s+\[[xX]\]/.test(section) && !/-\s+\[\s\]/.test(section);
+  return /-\s+\[[xX\s]\]/.test(section);
 }
 
 function hasIssueLink(body) {
