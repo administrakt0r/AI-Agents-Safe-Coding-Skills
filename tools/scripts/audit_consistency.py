@@ -6,6 +6,7 @@ import json
 import subprocess
 import sys
 from pathlib import Path
+from typing import Callable
 
 from _project_paths import find_repo_root
 import sync_repo_metadata
@@ -43,16 +44,18 @@ def _expected_jetski_cortex(content: str, metadata: dict) -> str:
     return sync_repo_metadata.sync_jetski_cortex(content, metadata)
 
 
-def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
-    root = Path(base_dir)
-    metadata = load_metadata(str(root))
-    issues: list[str] = []
-
-    package_json = json.loads(_read_text(root / "package.json"))
+def _check_package_description(root: Path, metadata: dict) -> str | None:
+    package_json_path = root / "package.json"
+    if not package_json_path.is_file():
+        return None
+    package_json = json.loads(_read_text(package_json_path))
     if package_json.get("description") != _package_expected_description(metadata):
-        issues.append("package.json description is out of sync with the live skills count")
+        return "package.json description is out of sync with the live skills count"
+    return None
 
-    file_checks = [
+
+def _get_file_checks(root: Path) -> list[tuple[str, Callable[[str, dict], str]]]:
+    return [
         ("README.md", _expected_readme),
         ("docs/users/getting-started.md", _expected_getting_started),
         ("docs/users/bundles.md", lambda content, current_metadata: _expected_bundles(content, current_metadata, root)),
@@ -135,6 +138,11 @@ def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
         ),
     ]
 
+
+def _check_file_consistency(root: Path, metadata: dict) -> list[str]:
+    issues: list[str] = []
+    file_checks = _get_file_checks(root)
+
     for relative_path, transform in file_checks:
         path = root / relative_path
         if not path.is_file():
@@ -144,6 +152,20 @@ def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
         expected = transform(original, metadata)
         if original != expected:
             issues.append(f"{relative_path} contains stale or inconsistent generated claims")
+
+    return issues
+
+
+def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
+    root = Path(base_dir)
+    metadata = load_metadata(str(root))
+    issues: list[str] = []
+
+    pkg_issue = _check_package_description(root, metadata)
+    if pkg_issue:
+        issues.append(pkg_issue)
+
+    issues.extend(_check_file_consistency(root, metadata))
 
     return issues
 
