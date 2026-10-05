@@ -75,35 +75,8 @@ def find_dangling_links(content: str, skill_root: Path) -> list[str]:
     return broken_links
 
 
-def build_skill_report(skill_root: Path, skills_dir: Path) -> dict[str, object]:
-    skill_file = skill_root / "SKILL.md"
-    rel_dir = skill_root.relative_to(skills_dir).as_posix()
-    rel_file = f"{rel_dir}/SKILL.md"
+def audit_frontmatter(metadata: dict[str, object], folder_name: str) -> list[Finding]:
     findings: list[Finding] = []
-
-    if skill_file.is_symlink():
-        findings.append(
-            Finding(
-                "warning",
-                "symlinked_skill_markdown",
-                "SKILL.md is a symlink and was not audited for safety or usability.",
-            )
-        )
-        return finalize_skill_report(rel_dir, rel_file, findings)
-
-    try:
-        content = skill_file.read_text(encoding="utf-8")
-    except Exception as exc:  # pragma: no cover - defensive guard
-        findings.append(Finding("error", "unreadable_file", f"Unable to read SKILL.md: {exc}"))
-        return finalize_skill_report(rel_dir, rel_file, findings)
-
-    metadata, fm_errors = parse_frontmatter(content, rel_file)
-    if metadata is None:
-        findings.append(Finding("error", "invalid_frontmatter", "Missing or malformed YAML frontmatter."))
-        return finalize_skill_report(rel_dir, rel_file, findings)
-
-    for error in fm_errors:
-        findings.append(Finding("error", "invalid_frontmatter", error))
 
     name = metadata.get("name")
     description = metadata.get("description")
@@ -111,12 +84,12 @@ def build_skill_report(skill_root: Path, skills_dir: Path) -> dict[str, object]:
     source = metadata.get("source")
     date_added = metadata.get("date_added")
 
-    if name != skill_root.name:
+    if name != folder_name:
         findings.append(
             Finding(
                 "error",
                 "name_mismatch",
-                f"Frontmatter name '{name}' does not match folder name '{skill_root.name}'.",
+                f"Frontmatter name '{name}' does not match folder name '{folder_name}'.",
             )
         )
 
@@ -174,6 +147,12 @@ def build_skill_report(skill_root: Path, skills_dir: Path) -> dict[str, object]:
             )
         )
 
+    return findings
+
+
+def audit_content(content: str, skill_root: Path, risk: object) -> list[Finding]:
+    findings: list[Finding] = []
+
     if not has_when_to_use_section(content):
         findings.append(Finding("warning", "missing_when_to_use", "Missing a recognized 'When to Use' section."))
 
@@ -210,6 +189,42 @@ def build_skill_report(skill_root: Path, skills_dir: Path) -> dict[str, object]:
                 "Offensive skill is missing the required 'AUTHORIZED USE ONLY' disclaimer.",
             )
         )
+
+    return findings
+
+
+def build_skill_report(skill_root: Path, skills_dir: Path) -> dict[str, object]:
+    skill_file = skill_root / "SKILL.md"
+    rel_dir = skill_root.relative_to(skills_dir).as_posix()
+    rel_file = f"{rel_dir}/SKILL.md"
+    findings: list[Finding] = []
+
+    if skill_file.is_symlink():
+        findings.append(
+            Finding(
+                "warning",
+                "symlinked_skill_markdown",
+                "SKILL.md is a symlink and was not audited for safety or usability.",
+            )
+        )
+        return finalize_skill_report(rel_dir, rel_file, findings)
+
+    try:
+        content = skill_file.read_text(encoding="utf-8")
+    except Exception as exc:  # pragma: no cover - defensive guard
+        findings.append(Finding("error", "unreadable_file", f"Unable to read SKILL.md: {exc}"))
+        return finalize_skill_report(rel_dir, rel_file, findings)
+
+    metadata, fm_errors = parse_frontmatter(content, rel_file)
+    if metadata is None:
+        findings.append(Finding("error", "invalid_frontmatter", "Missing or malformed YAML frontmatter."))
+        return finalize_skill_report(rel_dir, rel_file, findings)
+
+    for error in fm_errors:
+        findings.append(Finding("error", "invalid_frontmatter", error))
+
+    findings.extend(audit_frontmatter(metadata, skill_root.name))
+    findings.extend(audit_content(content, skill_root, metadata.get("risk")))
 
     return finalize_skill_report(rel_dir, rel_file, findings)
 
