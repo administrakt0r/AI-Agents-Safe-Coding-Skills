@@ -96,6 +96,7 @@ def inspect_repo():
                 check=True,
                 capture_output=True,
                 text=True,
+                shell=False,
             )
         except subprocess.CalledProcessError as exc:
             print("\n❌ git clone failed.", file=sys.stderr)
