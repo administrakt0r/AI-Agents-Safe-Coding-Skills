@@ -82,6 +82,47 @@ class MarketTests(unittest.TestCase):
         self.assertEqual(result["provider"], "finviz")
         self.assertEqual(calls, ["yahoo", "finviz"])
 
+    def test_get_quote_success(self) -> None:
+        fake_data = {
+            "provider": "yahoo",
+            "price": 150.0,
+            "currency": "USD",
+            "market_cap": 2500000000000.0,
+            "volume": 50000000.0,
+            "high_52w": 180.0,
+            "low_52w": 120.0,
+        }
+        with patch("tools.market._collect_market_data", return_value=fake_data) as mock_collect:
+            quote = market.get_quote("  aapl  ")
+
+        mock_collect.assert_called_once_with("AAPL")
+        self.assertEqual(quote["ticker"], "AAPL")
+        self.assertEqual(quote["provider"], "yahoo")
+        self.assertEqual(quote["price"], 150.0)
+        self.assertEqual(quote["currency"], "USD")
+        self.assertEqual(quote["market_cap"], 2500000000000.0)
+        self.assertEqual(quote["volume"], 50000000.0)
+        self.assertEqual(quote["high_52w"], 180.0)
+        self.assertEqual(quote["low_52w"], 120.0)
+        self.assertIn("as_of_utc", quote)
+
+    def test_get_quote_default_currency(self) -> None:
+        fake_data = {
+            "provider": "finviz",
+            "price": 200.0,
+        }
+        with patch("tools.market._collect_market_data", return_value=fake_data):
+            quote = market.get_quote("MSFT")
+
+        self.assertEqual(quote["currency"], "USD")
+
+    def test_get_quote_no_data_raises_runtime_error(self) -> None:
+        with patch("tools.market._collect_market_data", return_value=None):
+            with self.assertRaises(RuntimeError) as ctx:
+                market.get_quote("UNKNOWN")
+
+        self.assertIn("No quote data available for UNKNOWN", str(ctx.exception))
+
     def test_http_get_json_retries_then_succeeds(self) -> None:
         class FakeResponse:
             def __init__(self, status_code: int, payload: Optional[dict] = None) -> None:
