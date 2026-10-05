@@ -122,6 +122,20 @@ class PluginCompatibilityTests(unittest.TestCase):
         self.assertEqual(entries["playwright-skill"]["targets"]["claude"], "supported")
         self.assertEqual(entries["playwright-skill"]["setup"]["type"], "manual")
 
+    def test_compatibility_by_path(self):
+        report = {
+            "skills": [
+                {
+                    "id": "sample-skill",
+                    "path": "skills/sample-skill",
+                    "targets": {"codex": "supported", "claude": "supported"},
+                }
+            ]
+        }
+        by_path = plugin_compatibility.compatibility_by_path(report)
+        self.assertIn("skills/sample-skill", by_path)
+        self.assertEqual(by_path["skills/sample-skill"]["id"], "sample-skill")
+
 
 if __name__ == "__main__":
     unittest.main()
