@@ -246,10 +246,8 @@ class RedliningValidator:
                     if elem.tag == deltext_tag:
                         elem.tag = t_tag
 
-                # Move all children of w:del to its parent before removing w:del
-                for child in reversed(list(del_elem)):
-                    parent.insert(del_index, child)
-                parent.remove(del_elem)
+                # Replace w:del with its children in parent
+                parent[del_index : del_index + 1] = del_elem
 
     def _extract_text_content(self, root):
         """Extract text content from Word XML, preserving paragraph structure.
