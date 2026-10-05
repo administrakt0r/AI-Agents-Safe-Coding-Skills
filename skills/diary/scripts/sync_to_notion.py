@@ -18,6 +18,7 @@ import sys
 import re
 import json
 import requests
+from concurrent.futures import ThreadPoolExecutor
 from datetime import datetime
 from pathlib import Path
 
@@ -345,11 +346,15 @@ def update_business_section(page_id: str, metadata: dict, business_blocks: list)
         # Find the block AFTER which to insert (the Business heading itself)
         after_block_id = all_blocks[business_start]["id"]
 
-    for block in blocks_to_delete:
+    def _delete_block(block):
         try:
             requests.delete(f"{NOTION_API}/blocks/{block['id']}", headers=HEADERS)
         except Exception:
             pass
+
+    if blocks_to_delete:
+        with ThreadPoolExecutor(max_workers=min(10, len(blocks_to_delete))) as executor:
+            list(executor.map(_delete_block, blocks_to_delete))
 
     # Insert new Business blocks after the heading, or at the end of the page
     for i in range(0, len(business_blocks), 100):
