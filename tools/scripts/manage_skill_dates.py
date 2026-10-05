@@ -14,7 +14,6 @@ import re
 import sys
 import argparse
 from datetime import datetime
-from pathlib import Path
 import yaml
 from _project_paths import find_repo_root
 
