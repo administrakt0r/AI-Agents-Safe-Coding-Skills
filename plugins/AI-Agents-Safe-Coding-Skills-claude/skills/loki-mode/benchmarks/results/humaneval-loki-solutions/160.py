@@ -3,6 +3,44 @@
 # Attempts: 1
 # Passed: True
 
+import ast
+
+def _safe_eval(expr_str):
+    allowed_ops = {
+        ast.Add: lambda a, b: a + b,
+        ast.Sub: lambda a, b: a - b,
+        ast.Mult: lambda a, b: a * b,
+        ast.FloorDiv: lambda a, b: a // b,
+        ast.Pow: lambda a, b: a ** b,
+        ast.Div: lambda a, b: a / b,
+    }
+
+    def _eval(node):
+        if isinstance(node, ast.Expression):
+            return _eval(node.body)
+        elif isinstance(node, ast.Constant) and isinstance(node.value, (int, float)):
+            return node.value
+        elif isinstance(node, ast.BinOp):
+            left = _eval(node.left)
+            right = _eval(node.right)
+            op_type = type(node.op)
+            if op_type in allowed_ops:
+                return allowed_ops[op_type](left, right)
+            raise ValueError(f"Unsupported operator: {op_type}")
+        elif isinstance(node, ast.UnaryOp):
+            operand = _eval(node.operand)
+            if isinstance(node.op, ast.UAdd):
+                return +operand
+            elif isinstance(node.op, ast.USub):
+                return -operand
+            raise ValueError(f"Unsupported unary operator: {type(node.op)}")
+        else:
+            raise ValueError(f"Unsupported AST node: {type(node)}")
+
+    tree = ast.parse(expr_str, mode='eval')
+    return _eval(tree)
+
+
 def do_algebra(operator, operand):
     """
     Given two lists operator, and operand. The first list has basic algebra operations, and 
@@ -31,4 +69,4 @@ def do_algebra(operator, operand):
     expression = str(operand[0])
     for i, op in enumerate(operator):
         expression += op + str(operand[i + 1])
-    return eval(expression)
+    return _safe_eval(expression)
