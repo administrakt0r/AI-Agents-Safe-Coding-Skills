@@ -2,6 +2,9 @@ import os
 import json
 import re
 import sys
+import concurrent.futures
+from collections.abc import Mapping
+from datetime import date, datetime
 
 import yaml
 from _project_paths import find_repo_root
@@ -161,6 +164,15 @@ def infer_category(skill_info, metadata, body_text):
 
     return infer_dynamic_category(str(skill_info.get("id", "")))
 
+def normalize_yaml_value(value):
+    if isinstance(value, Mapping):
+        return {key: normalize_yaml_value(val) for key, val in value.items()}
+    if isinstance(value, list):
+        return [normalize_yaml_value(item) for item in value]
+    if isinstance(value, (date, datetime)):
+        return value.isoformat()
+    return value
+
 def parse_frontmatter(content):
     """
     Parses YAML frontmatter, sanitizing unquoted values containing @.
@@ -190,14 +202,85 @@ def parse_frontmatter(content):
     sanitized_yaml = '\n'.join(sanitized_lines)
     
     try:
-        return yaml.safe_load(sanitized_yaml) or {}
+        parsed = yaml.safe_load(sanitized_yaml) or {}
+        parsed = normalize_yaml_value(parsed)
+        if not isinstance(parsed, Mapping):
+            return {}
+        return dict(parsed)
     except yaml.YAMLError as e:
         print(f"⚠️ YAML parsing error: {e}")
         return {}
 
+
+def _process_skill_file(file_info):
+    root, skill_path, skills_dir = file_info
+    dir_name = os.path.basename(root)
+    parent_dir = os.path.basename(os.path.dirname(root))
+
+    # Default values
+    rel_path = os.path.relpath(root, os.path.dirname(skills_dir))
+    # Force forward slashes for cross-platform JSON compatibility
+    skill_info = {
+        "id": dir_name,
+        "path": rel_path.replace(os.sep, '/'),
+        "category": parent_dir if parent_dir != "skills" else None,  # Will be overridden by frontmatter if present
+        "category_confidence": None,
+        "category_reason": None,
+        "name": dir_name.replace("-", " ").title(),
+        "description": "",
+        "risk": "unknown",
+        "source": "unknown",
+        "date_added": None
+    }
+
+    try:
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except Exception as e:
+        print(f"⚠️ Error reading {skill_path}: {e}")
+        return None
+
+    # Parse Metadata
+    metadata = parse_frontmatter(content)
+
+    body = content
+    fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if fm_match:
+        body = content[fm_match.end():].strip()
+
+    # Merge Metadata (frontmatter takes priority)
+    if "name" in metadata: skill_info["name"] = metadata["name"]
+    if "description" in metadata: skill_info["description"] = metadata["description"]
+    if "risk" in metadata: skill_info["risk"] = metadata["risk"]
+    if "source" in metadata: skill_info["source"] = metadata["source"]
+    if "date_added" in metadata: skill_info["date_added"] = metadata["date_added"]
+
+    # Category: prefer frontmatter, then folder structure, then default
+    inferred_category, confidence, reason = infer_category(skill_info, metadata, body)
+    skill_info["category"] = inferred_category or "uncategorized"
+    skill_info["category_confidence"] = confidence
+    skill_info["category_reason"] = reason
+
+    # Fallback for description if missing in frontmatter (legacy support)
+    if not skill_info["description"]:
+        # Simple extraction of first non-header paragraph
+        lines = body.split('\n')
+        desc_lines = []
+        for line in lines:
+            if line.startswith('#') or not line.strip():
+                if desc_lines: break
+                continue
+            desc_lines.append(line.strip())
+
+        if desc_lines:
+            skill_info["description"] = " ".join(desc_lines)[:250].strip()
+
+    return skill_info
+
+
 def generate_index(skills_dir, output_file):
     print(f"🏗️ Generating index from: {skills_dir}")
-    skills = []
+    skill_files = []
 
     for root, dirs, files in os.walk(skills_dir):
         # Skip .disabled or hidden directories
@@ -205,68 +288,12 @@ def generate_index(skills_dir, output_file):
         
         if "SKILL.md" in files:
             skill_path = os.path.join(root, "SKILL.md")
-            dir_name = os.path.basename(root)
-            parent_dir = os.path.basename(os.path.dirname(root))
-            
-            # Default values
-            rel_path = os.path.relpath(root, os.path.dirname(skills_dir))
-            # Force forward slashes for cross-platform JSON compatibility
-            skill_info = {
-                "id": dir_name,
-                "path": rel_path.replace(os.sep, '/'),
-                "category": parent_dir if parent_dir != "skills" else None,  # Will be overridden by frontmatter if present
-                "category_confidence": None,
-                "category_reason": None,
-                "name": dir_name.replace("-", " ").title(),
-                "description": "",
-                "risk": "unknown",
-                "source": "unknown",
-                "date_added": None
-            }
-            
-            try:
-                with open(skill_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-            except Exception as e:
-                print(f"⚠️ Error reading {skill_path}: {e}")
-                continue
+            skill_files.append((root, skill_path, skills_dir))
 
-            # Parse Metadata
-            metadata = parse_frontmatter(content)
+    with concurrent.futures.ProcessPoolExecutor() as executor:
+        results = executor.map(_process_skill_file, skill_files)
 
-            body = content
-            fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-            if fm_match:
-                body = content[fm_match.end():].strip()
-            
-            # Merge Metadata (frontmatter takes priority)
-            if "name" in metadata: skill_info["name"] = metadata["name"]
-            if "description" in metadata: skill_info["description"] = metadata["description"]
-            if "risk" in metadata: skill_info["risk"] = metadata["risk"]
-            if "source" in metadata: skill_info["source"] = metadata["source"]
-            if "date_added" in metadata: skill_info["date_added"] = metadata["date_added"]
-            
-            # Category: prefer frontmatter, then folder structure, then default
-            inferred_category, confidence, reason = infer_category(skill_info, metadata, body)
-            skill_info["category"] = inferred_category or "uncategorized"
-            skill_info["category_confidence"] = confidence
-            skill_info["category_reason"] = reason
-            
-            # Fallback for description if missing in frontmatter (legacy support)
-            if not skill_info["description"]:
-                # Simple extraction of first non-header paragraph
-                lines = body.split('\n')
-                desc_lines = []
-                for line in lines:
-                    if line.startswith('#') or not line.strip():
-                        if desc_lines: break
-                        continue
-                    desc_lines.append(line.strip())
-                
-                if desc_lines:
-                    skill_info["description"] = " ".join(desc_lines)[:250].strip()
-
-            skills.append(skill_info)
+    skills = [s for s in results if s is not None]
 
     # Sort validation: by name
     skills.sort(key=lambda x: (x["name"].lower(), x["id"].lower()))
