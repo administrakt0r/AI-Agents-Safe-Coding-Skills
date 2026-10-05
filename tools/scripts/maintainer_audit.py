@@ -14,27 +14,26 @@ from update_readme import configure_utf8_output, load_metadata
 from validate_ledger import validate_ledger
 
 
-def get_git_status(base_dir: str | Path) -> list[str]:
-    result = subprocess.run(
-        ["git", "status", "--short"],
-        cwd=str(base_dir),
-        check=True,
-        capture_output=True,
-        text=True,
-    )
-    return [line for line in result.stdout.splitlines() if line.strip()]
-
-
 def build_audit_summary(
     base_dir: str | Path,
     warning_budget_checker=check_warning_budget,
     consistency_finder=find_local_consistency_issues,
-    git_status_resolver=get_git_status,
+    git_status_resolver=None,
 ) -> dict:
     root = Path(base_dir)
     metadata = load_metadata(str(root))
     consistency_issues = consistency_finder(root)
-    git_status = git_status_resolver(root)
+    if git_status_resolver is not None:
+        git_status = git_status_resolver(root)
+    else:
+        result = subprocess.run(
+            ["git", "status", "--short"],
+            cwd=str(root),
+            check=True,
+            capture_output=True,
+            text=True,
+        )
+        git_status = [line for line in result.stdout.splitlines() if line.strip()]
 
     return {
         "repo": metadata["repo"],
