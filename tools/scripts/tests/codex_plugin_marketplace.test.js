@@ -12,6 +12,7 @@ const marketplace = JSON.parse(fs.readFileSync(marketplacePath, "utf8"));
 const editorialBundles = JSON.parse(fs.readFileSync(editorialBundlesPath, "utf8")).bundles || [];
 const compatibility = JSON.parse(fs.readFileSync(compatibilityPath, "utf8")).skills || [];
 const compatibilityById = new Map(compatibility.map((skill) => [skill.id, skill]));
+const pluginsByName = new Map((marketplace.plugins || []).map((plugin) => [plugin.name, plugin]));
 const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf8"));
 
 assert.strictEqual(
@@ -80,7 +81,7 @@ for (const skill of compatibility) {
 
 for (const bundle of editorialBundles) {
   const bundlePluginName = `antigravity-bundle-${bundle.id}`;
-  const bundleEntry = marketplace.plugins.find((plugin) => plugin.name === bundlePluginName);
+  const bundleEntry = pluginsByName.get(bundlePluginName);
   const codexSupported = bundle.skills.every(
     (skill) => compatibilityById.get(skill.id)?.targets?.codex === "supported",
   );
