@@ -10,7 +10,6 @@ Usage:
 
 import os
 import re
-import json
 import sys
 import argparse
 import yaml
