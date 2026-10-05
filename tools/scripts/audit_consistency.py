@@ -23,24 +23,12 @@ def _package_expected_description(metadata: dict) -> str:
     )
 
 
-def _expected_readme(content: str, metadata: dict) -> str:
-    return sync_repo_metadata.sync_readme_copy(apply_metadata(content, metadata), metadata)
-
-
-def _expected_getting_started(content: str, metadata: dict) -> str:
-    return sync_repo_metadata.sync_getting_started(content, metadata)
-
-
 def _expected_bundles(content: str, metadata: dict, root: Path) -> str:
     return sync_repo_metadata.sync_bundles_doc(content, metadata, root)
 
 
 def _expected_regex_sync(content: str, replacements: list[tuple[str, str]]) -> str:
     return sync_repo_metadata.sync_regex_text(content, replacements)
-
-
-def _expected_jetski_cortex(content: str, metadata: dict) -> str:
-    return sync_repo_metadata.sync_jetski_cortex(content, metadata)
 
 
 def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
@@ -53,10 +41,15 @@ def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
         issues.append("package.json description is out of sync with the live skills count")
 
     file_checks = [
-        ("README.md", _expected_readme),
-        ("docs/users/getting-started.md", _expected_getting_started),
+        (
+            "README.md",
+            lambda content, current_metadata: sync_repo_metadata.sync_readme_copy(
+                apply_metadata(content, current_metadata), current_metadata
+            ),
+        ),
+        ("docs/users/getting-started.md", sync_repo_metadata.sync_getting_started),
         ("docs/users/bundles.md", lambda content, current_metadata: _expected_bundles(content, current_metadata, root)),
-        ("docs/integrations/jetski-cortex.md", _expected_jetski_cortex),
+        ("docs/integrations/jetski-cortex.md", sync_repo_metadata.sync_jetski_cortex),
         (
             "docs/users/claude-code-skills.md",
             lambda content, current_metadata: _expected_regex_sync(
