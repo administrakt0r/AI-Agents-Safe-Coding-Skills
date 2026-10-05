@@ -96,6 +96,82 @@
       "runtime_files": []
     },
     {
+      "id": "accesslint-audit",
+      "path": "skills/accesslint-audit",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "accesslint-scan",
+      "path": "skills/accesslint-scan",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "accint-commitments",
+      "path": "skills/accint-commitments",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "accint-frames",
+      "path": "skills/accint-frames",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "accint-solve",
       "path": "skills/accint-solve",
       "targets": {
@@ -117,6 +193,25 @@
     {
       "id": "activecampaign-automation",
       "path": "skills/activecampaign-automation",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "ad-campaign-analyzer",
+      "path": "skills/ad-campaign-analyzer",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -1788,6 +1883,25 @@
     {
       "id": "async-python-patterns",
       "path": "skills/async-python-patterns",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "attribution",
+      "path": "skills/attribution",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -6332,6 +6446,25 @@
       "runtime_files": []
     },
     {
+      "id": "competitors",
+      "path": "skills/competitors",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
       "id": "comprehensive-review-full-review",
       "path": "skills/comprehensive-review-full-review",
       "targets": {
@@ -8983,6 +9116,25 @@
     {
       "id": "event-store-design",
       "path": "skills/event-store-design",
+      "targets": {
+        "codex": "supported",
+        "claude": "supported"
+      },
+      "setup": {
+        "type": "none",
+        "summary": "",
+        "docs": null
+      },
+      "reasons": [],
+      "blocked_reasons": {
+        "codex": [],
+        "claude": []
+      },
+      "runtime_files": []
+    },
+    {
+      "id": "events",
+      "path": "skills/events",
       "targets": {
         "codex": "supported",
         "claude": "supported"
@@ -22930,10 +23082,10 @@
     }
   ],
   "summary": {
-    "total_skills": 1200,
+    "total_skills": 1208,
     "supported": {
-      "codex": 1177,
-      "claude": 1189
+      "codex": 1185,
+      "claude": 1197
     },
     "blocked": {
       "codex": 23,
