@@ -42,6 +42,7 @@ const LOCAL_TEST_COMMANDS = [
   [path.join(TOOL_SCRIPTS, "run-python.js"), path.join(TOOL_TESTS, "test_whatsapp_config_logging_security.py")],
   [path.join(TOOL_SCRIPTS, "run-python.js"), path.join(TOOL_TESTS, "test_maintainer_audit.py")],
   [path.join(TOOL_SCRIPTS, "run-python.js"), path.join(TOOL_TESTS, "test_validate_skills_headings.py")],
+  [path.join(TOOL_SCRIPTS, "run-python.js"), path.join(TOOL_TESTS, "test_validate_skills_helpers.py")],
 ];
 const NETWORK_TEST_COMMANDS = [
   [path.join(TOOL_SCRIPTS, "run-python.js"), path.join(TOOL_TESTS, "inspect_microsoft_repo.py")],
