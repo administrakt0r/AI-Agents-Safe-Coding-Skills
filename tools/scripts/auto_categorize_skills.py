@@ -130,87 +130,75 @@ def categorize_skill(skill_name, description):
     
     return None
 
-def auto_categorize(skills_dir, dry_run=False):
-    """Auto-categorize skills and update SKILL.md files"""
-    skills = []
-    categorized_count = 0
-    already_categorized = 0
-    failed_count = 0
-    
-    for root, dirs, files in os.walk(skills_dir):
-        dirs[:] = [d for d in dirs if not d.startswith('.')]
+def _process_skill_file(skill_path, skill_id, dry_run=False):
+    """
+    Process a single SKILL.md file, attempt auto-categorization if needed.
+    Returns a dict with processing outcome or None if file cannot/should not be processed.
+    """
+    try:
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            content = f.read()
         
-        if "SKILL.md" in files:
-            skill_path = os.path.join(root, "SKILL.md")
-            skill_id = os.path.basename(root)
-            
-            try:
-                with open(skill_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
+        # Extract frontmatter and body
+        fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+        if not fm_match:
+            return None
+
+        fm_text = fm_match.group(1)
+        body = content[fm_match.end():]
+
+        try:
+            metadata = yaml.safe_load(fm_text) or {}
+        except yaml.YAMLError as e:
+            print(f"⚠️ {skill_id}: YAML error - {e}")
+            return None
+
+        skill_name = metadata.get('name', skill_id)
+        description = metadata.get('description', '')
+        current_category = metadata.get('category', 'uncategorized')
+
+        # Skip if already has a meaningful category
+        if current_category and current_category != 'uncategorized':
+            return {
+                'id': skill_id,
+                'name': skill_name,
+                'current': current_category,
+                'action': 'SKIP'
+            }
+
+        # Try to auto-categorize
+        new_category = categorize_skill(skill_name, description)
+
+        if new_category:
+            if not dry_run:
+                metadata['category'] = new_category
+                new_fm = yaml.dump(metadata, sort_keys=False, allow_unicode=True, width=1000).strip()
+                new_content = f"---\n{new_fm}\n---" + body
                 
-                # Extract frontmatter and body
-                fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-                if not fm_match:
-                    continue
-                
-                fm_text = fm_match.group(1)
-                body = content[fm_match.end():]
-                
-                try:
-                    metadata = yaml.safe_load(fm_text) or {}
-                except yaml.YAMLError as e:
-                    print(f"⚠️ {skill_id}: YAML error - {e}")
-                    continue
-                
-                skill_name = metadata.get('name', skill_id)
-                description = metadata.get('description', '')
-                current_category = metadata.get('category', 'uncategorized')
-                
-                # Skip if already has a meaningful category
-                if current_category and current_category != 'uncategorized':
-                    already_categorized += 1
-                    skills.append({
-                        'id': skill_id,
-                        'name': skill_name,
-                        'current': current_category,
-                        'action': 'SKIP'
-                    })
-                    continue
-                
-                # Try to auto-categorize
-                new_category = categorize_skill(skill_name, description)
-                
-                if new_category:
-                    skills.append({
-                        'id': skill_id,
-                        'name': skill_name,
-                        'current': current_category,
-                        'new': new_category,
-                        'action': 'UPDATE'
-                    })
-                    
-                    if not dry_run:
-                        metadata['category'] = new_category
-                        new_fm = yaml.dump(metadata, sort_keys=False, allow_unicode=True, width=1000).strip()
-                        new_content = f"---\n{new_fm}\n---" + body
-                        
-                        with open(skill_path, 'w', encoding='utf-8') as f:
-                            f.write(new_content)
-                    
-                    categorized_count += 1
-                else:
-                    skills.append({
-                        'id': skill_id,
-                        'name': skill_name,
-                        'current': current_category,
-                        'action': 'FAILED'
-                    })
-                    failed_count += 1
-                    
-            except Exception as e:
-                print(f"❌ Error processing {skill_id}: {str(e)}")
-    
-    # Print report
+                with open(skill_path, 'w', encoding='utf-8') as f:
+                    f.write(new_content)
+
+            return {
+                'id': skill_id,
+                'name': skill_name,
+                'current': current_category,
+                'new': new_category,
+                'action': 'UPDATE'
+            }
+        else:
+            return {
+                'id': skill_id,
+                'name': skill_name,
+                'current': current_category,
+                'action': 'FAILED'
+            }
+
+    except Exception as e:
+        print(f"❌ Error processing {skill_id}: {str(e)}")
+        return None
+
+def _print_categorization_report(skills, categorized_count, already_categorized, failed_count, dry_run=False):
+    """Print auto-categorization summary report."""
     print("\n" + "="*70)
     print("AUTO-CATEGORIZATION REPORT")
     print("="*70)
@@ -231,6 +219,35 @@ def auto_categorize(skills_dir, dry_run=False):
         print(f"\n🔍 DRY RUN MODE - No changes made")
     else:
         print(f"\n💾 Changes saved to SKILL.md files")
+
+def auto_categorize(skills_dir, dry_run=False):
+    """Auto-categorize skills and update SKILL.md files"""
+    skills = []
+    categorized_count = 0
+    already_categorized = 0
+    failed_count = 0
+
+    for root, dirs, files in os.walk(skills_dir):
+        dirs[:] = [d for d in dirs if not d.startswith('.')]
+
+        if "SKILL.md" in files:
+            skill_path = os.path.join(root, "SKILL.md")
+            skill_id = os.path.basename(root)
+
+            res = _process_skill_file(skill_path, skill_id, dry_run=dry_run)
+            if not res:
+                continue
+
+            skills.append(res)
+            action = res['action']
+            if action == 'UPDATE':
+                categorized_count += 1
+            elif action == 'SKIP':
+                already_categorized += 1
+            elif action == 'FAILED':
+                failed_count += 1
+
+    _print_categorization_report(skills, categorized_count, already_categorized, failed_count, dry_run=dry_run)
     
     return categorized_count
 
