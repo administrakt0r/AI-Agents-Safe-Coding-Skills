@@ -98,13 +98,26 @@ function validateTextBoxPosition(slideData, bodyDimensions) {
       const distanceFromBottom = slideHeightInches - bottomEdge;
 
       if (fontSize > 12 && distanceFromBottom < minBottomMargin) {
-        const getText = () => {
-          if (typeof el.text === 'string') return el.text;
-          if (Array.isArray(el.text)) return el.text.find(t => t.text)?.text || '';
-          if (Array.isArray(el.items)) return el.items.find(item => item.text)?.text || '';
-          return '';
-        };
-        const textPrefix = getText().substring(0, 50) + (getText().length > 50 ? '...' : '');
+        let fullText = '';
+        if (typeof el.text === 'string') {
+          fullText = el.text;
+        } else if (Array.isArray(el.text)) {
+          for (let i = 0; i < el.text.length; i++) {
+            if (el.text[i]?.text) {
+              fullText = el.text[i].text;
+              break;
+            }
+          }
+        } else if (Array.isArray(el.items)) {
+          for (let i = 0; i < el.items.length; i++) {
+            if (el.items[i]?.text) {
+              fullText = el.items[i].text;
+              break;
+            }
+          }
+        }
+
+        const textPrefix = fullText.length > 50 ? fullText.substring(0, 50) + '...' : fullText;
 
         errors.push(
           `Text box "${textPrefix}" ends too close to bottom edge ` +
