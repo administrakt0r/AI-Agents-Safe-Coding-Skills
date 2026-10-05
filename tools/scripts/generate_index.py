@@ -9,7 +9,7 @@ from datetime import date, datetime
 import yaml
 from _project_paths import find_repo_root
 from plugin_compatibility import build_report as build_plugin_compatibility_report
-from plugin_compatibility import compatibility_by_path as plugin_compatibility_by_path
+from plugin_compatibility import compatibility_by_key
 
 # Ensure UTF-8 output for Windows compatibility
 if sys.platform == 'win32':
@@ -854,7 +854,7 @@ def generate_index(skills_dir, output_file, compatibility_report=None):
     skills = []
     if compatibility_report is None:
         compatibility_report = build_plugin_compatibility_report(pathlib.Path(skills_dir))
-    compatibility_lookup = plugin_compatibility_by_path(compatibility_report)
+    compatibility_lookup = compatibility_by_key(compatibility_report, "path")
 
     for root, dirs, files in os.walk(skills_dir):
         # Skip .disabled or hidden directories

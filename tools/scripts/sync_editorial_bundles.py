@@ -11,7 +11,7 @@ from typing import Any
 
 from _project_paths import find_repo_root
 from plugin_compatibility import build_report as build_plugin_compatibility_report
-from plugin_compatibility import compatibility_by_skill_id, sync_plugin_compatibility
+from plugin_compatibility import compatibility_by_key, sync_plugin_compatibility
 from update_readme import configure_utf8_output, load_metadata
 
 
@@ -695,7 +695,7 @@ def load_editorial_bundles(root: Path) -> list[dict[str, Any]]:
 def sync_editorial_bundles(root: Path) -> None:
     metadata = load_metadata(str(root))
     compatibility_report = sync_plugin_compatibility(root)
-    compatibility = compatibility_by_skill_id(compatibility_report)
+    compatibility = compatibility_by_key(compatibility_report, "id")
     bundles = load_editorial_bundles(root)
     bundle_support = {
         bundle["id"]: _bundle_target_status(bundle, compatibility)
@@ -741,7 +741,7 @@ def main() -> int:
     if args.check:
         metadata = load_metadata(str(root))
         compatibility_report = build_plugin_compatibility_report(root / "skills")
-        compatibility = compatibility_by_skill_id(compatibility_report)
+        compatibility = compatibility_by_key(compatibility_report, "id")
         bundles = load_editorial_bundles(root)
         expected_doc = render_bundles_doc(root, metadata, bundles, compatibility)
         current_doc = (root / "docs" / "users" / "bundles.md").read_text(encoding="utf-8")

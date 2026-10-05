@@ -34,7 +34,7 @@ class EditorialBundlesTests(unittest.TestCase):
     def setUp(self):
         self.manifest_bundles = editorial_bundles.load_editorial_bundles(REPO_ROOT)
         self.compatibility_report = plugin_compatibility.load_plugin_compatibility(REPO_ROOT)
-        self.compatibility_by_id = plugin_compatibility.compatibility_by_skill_id(self.compatibility_report)
+        self.compatibility_by_id = plugin_compatibility.compatibility_by_key(self.compatibility_report, "id")
 
     def test_manifest_has_unique_ids_and_existing_skills(self):
         bundle_ids = [bundle["id"] for bundle in self.manifest_bundles]
