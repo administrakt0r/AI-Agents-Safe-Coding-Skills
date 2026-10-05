@@ -107,7 +107,9 @@ class PluginCompatibilityTests(unittest.TestCase):
 
     def test_repo_sample_skills_have_expected_status(self):
         report = plugin_compatibility.build_report(REPO_ROOT / "skills")
-        entries = plugin_compatibility.compatibility_by_skill_id(report)
+        entries = plugin_compatibility.compatibility_by_key(report, "id")
+        path_entries = plugin_compatibility.compatibility_by_key(report, "path")
+        self.assertIn("skills/project-skill-audit", path_entries)
 
         for skill_id in ("molykit", "using-git-worktrees"):
             self.assertEqual(entries[skill_id]["targets"]["codex"], "blocked")

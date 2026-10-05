@@ -7,7 +7,7 @@ import subprocess
 import sys
 from pathlib import Path
 
-from plugin_compatibility import compatibility_by_skill_id, load_plugin_compatibility
+from plugin_compatibility import compatibility_by_key, load_plugin_compatibility
 from sync_editorial_bundles import load_editorial_bundles, render_bundles_doc
 from update_readme import configure_utf8_output, find_repo_root, load_metadata, update_readme
 
@@ -189,7 +189,7 @@ def sync_bundles_doc(content: str, metadata: dict, base_dir: str | Path | None =
     template_path = root / "tools" / "templates" / "editorial-bundles.md.tmpl"
     if manifest_path.is_file() and template_path.is_file():
         bundles = load_editorial_bundles(root)
-        compatibility = compatibility_by_skill_id(load_plugin_compatibility(root))
+        compatibility = compatibility_by_key(load_plugin_compatibility(root), "id")
         return render_bundles_doc(root, metadata, bundles, compatibility)
 
     bundle_count = count_documented_bundles(content)

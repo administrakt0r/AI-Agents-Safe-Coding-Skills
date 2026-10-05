@@ -307,12 +307,11 @@ def load_plugin_compatibility(root: Path) -> dict[str, Any]:
     return sync_plugin_compatibility(root)
 
 
-def compatibility_by_skill_id(report: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    return {skill["id"]: skill for skill in report.get("skills", [])}
-
-
-def compatibility_by_path(report: dict[str, Any]) -> dict[str, dict[str, Any]]:
-    return {skill["path"]: skill for skill in report.get("skills", [])}
+def compatibility_by_key(report: dict[str, Any], key: str = "id") -> dict[str, dict[str, Any]]:
+    """
+    Returns a lookup dictionary mapping skill entries by the specified attribute key (e.g. 'id' or 'path').
+    """
+    return {skill[key]: skill for skill in report.get("skills", []) if key in skill}
 
 
 def parse_args() -> argparse.Namespace:
