@@ -4,6 +4,7 @@ Test Script: Verify Microsoft Skills Sync Coverage and Flat Name Uniqueness
 Ensures all skills are captured and no directory name collisions exist.
 """
 
+import ast
 import re
 import io
 import shutil
@@ -16,6 +17,25 @@ from pathlib import Path
 from collections import defaultdict
 
 MS_REPO = "https://github.com/microsoft/skills.git"
+
+
+def verify_subprocess_security() -> None:
+    """Verify that all subprocess calls in this script pass arguments as a list and avoid shell=True."""
+    script_path = Path(__file__).resolve()
+    tree = ast.parse(script_path.read_text(encoding="utf-8"), filename=str(script_path))
+    for node in ast.walk(tree):
+        if isinstance(node, ast.Call):
+            is_subprocess_call = False
+            if isinstance(node.func, ast.Attribute) and node.func.attr == "run":
+                if isinstance(node.func.value, ast.Name) and node.func.value.id == "subprocess":
+                    is_subprocess_call = True
+            if is_subprocess_call:
+                for kw in node.keywords:
+                    if kw.arg == "shell":
+                        if isinstance(kw.value, ast.Constant) and kw.value.value is True:
+                            raise ValueError(f"Insecure subprocess invocation with shell=True found in {script_path}")
+                if node.args and not isinstance(node.args[0], (ast.List, ast.Tuple)):
+                    raise ValueError(f"Subprocess call must pass command as a list/tuple in {script_path}")
 
 
 def create_clone_target(prefix: str) -> Path:
@@ -238,6 +258,7 @@ def analyze_skill_locations():
 
 if __name__ == "__main__":
     configure_utf8_output()
+    verify_subprocess_security()
     try:
         results = analyze_skill_locations()
 
