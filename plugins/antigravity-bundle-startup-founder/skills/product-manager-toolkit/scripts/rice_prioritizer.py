@@ -174,10 +174,17 @@ def format_output(features: List[Dict], analysis: Dict, roadmap: List[Dict]) -> 
     # Top prioritized features
     output.append("\n📊 TOP PRIORITIZED FEATURES\n")
     for i, feature in enumerate(features[:10], 1):
-        output.append(f"{i}. {feature.get('name', 'Unnamed')}")
-        output.append(f"   RICE Score: {feature['rice_score']}")
-        output.append(f"   Reach: {feature.get('reach', 0)} | Impact: {feature.get('impact', 'medium')} | "
-                     f"Confidence: {feature.get('confidence', 'medium')} | Effort: {feature.get('effort', 'm')}")
+        name = feature.get('name', 'Unnamed')
+        rice_score = feature['rice_score']
+        reach = feature.get('reach', 0)
+        impact = feature.get('impact', 'medium')
+        confidence = feature.get('confidence', 'medium')
+        effort = feature.get('effort', 'm')
+
+        output.append(f"{i}. {name}")
+        output.append(f"   RICE Score: {rice_score}")
+        output.append(f"   Reach: {reach} | Impact: {impact} | "
+                     f"Confidence: {confidence} | Effort: {effort}")
         output.append("")
     
     # Portfolio analysis
