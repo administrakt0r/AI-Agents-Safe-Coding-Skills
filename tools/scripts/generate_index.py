@@ -849,7 +849,115 @@ def parse_frontmatter(content):
         print(f"⚠️ YAML parsing error: {e}")
         return {}
 
+def extract_fallback_description(content: str) -> str:
+    """Extract first non-header paragraph from markdown body as fallback description."""
+    body = content
+    fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
+    if fm_match:
+        body = content[fm_match.end():].strip()
+
+    lines = body.split('\n')
+    desc_lines = []
+    for line in lines:
+        if line.startswith('#') or not line.strip():
+            if desc_lines:
+                break
+            continue
+        desc_lines.append(line.strip())
+
+    if desc_lines:
+        return " ".join(desc_lines)[:250].strip()
+    return ""
+
+
+def resolve_skill_category(skill_id, name, description, metadata_category=None, default_category=None):
+    """Resolve and normalize category based on frontmatter, folder structure, inference, and overrides."""
+    category = default_category
+    if metadata_category is not None:
+        category = metadata_category
+    elif category is None:
+        inferred_category = infer_category(skill_id, name, description)
+        category = inferred_category or "uncategorized"
+
+    if skill_id in CURATED_CATEGORY_OVERRIDES:
+        category = CURATED_CATEGORY_OVERRIDES[skill_id]
+
+    return normalize_category(category)
+
+
+def process_skill_file(root, skills_dir, compatibility_lookup):
+    """Parse SKILL.md in root directory and build skill info dictionary, or return None if skipped/invalid."""
+    skill_path = os.path.join(root, "SKILL.md")
+    if os.path.islink(skill_path):
+        print(f"⚠️ Skipping symlinked SKILL.md: {skill_path}")
+        return None
+
+    dir_name = os.path.basename(root)
+    parent_dir = os.path.basename(os.path.dirname(root))
+    rel_path = os.path.relpath(root, os.path.dirname(skills_dir))
+
+    skill_info = {
+        "id": dir_name,
+        "path": rel_path.replace(os.sep, '/'),
+        "category": parent_dir if parent_dir != "skills" else None,
+        "name": dir_name.replace("-", " ").title(),
+        "description": "",
+        "risk": "unknown",
+        "source": "unknown",
+        "date_added": None,
+        "plugin": {
+            "targets": {
+                "codex": "supported",
+                "claude": "supported",
+            },
+            "setup": {
+                "type": "none",
+                "summary": "",
+                "docs": None,
+            },
+            "reasons": [],
+        },
+    }
+
+    try:
+        with open(skill_path, 'r', encoding='utf-8') as f:
+            content = f.read()
+    except Exception as e:
+        print(f"⚠️ Error reading {skill_path}: {e}")
+        return None
+
+    metadata = parse_frontmatter(content)
+
+    if "name" in metadata: skill_info["name"] = metadata["name"]
+    if "description" in metadata: skill_info["description"] = metadata["description"]
+    if "risk" in metadata: skill_info["risk"] = metadata["risk"]
+    if "source" in metadata: skill_info["source"] = metadata["source"]
+    if "date_added" in metadata: skill_info["date_added"] = metadata["date_added"]
+
+    skill_info["category"] = resolve_skill_category(
+        skill_info["id"],
+        skill_info["name"],
+        skill_info["description"],
+        metadata_category=metadata.get("category"),
+        default_category=skill_info["category"],
+    )
+
+    plugin_info = compatibility_lookup.get(skill_info["path"])
+    if plugin_info:
+        skill_info["plugin"] = {
+            "targets": dict(plugin_info["targets"]),
+            "setup": dict(plugin_info["setup"]),
+            "reasons": list(plugin_info["reasons"]),
+        }
+
+    if not skill_info["description"]:
+        skill_info["description"] = extract_fallback_description(content)
+
+    return skill_info
+
+
 def generate_index(skills_dir, output_file, compatibility_report=None):
+    """Main function to generate the JSON index."""
     print(f"🏗️ Generating index from: {skills_dir}")
     skills = []
     if compatibility_report is None:
@@ -861,98 +969,9 @@ def generate_index(skills_dir, output_file, compatibility_report=None):
         dirs[:] = [d for d in dirs if not d.startswith('.')]
         
         if "SKILL.md" in files:
-            skill_path = os.path.join(root, "SKILL.md")
-            if os.path.islink(skill_path):
-                print(f"⚠️ Skipping symlinked SKILL.md: {skill_path}")
-                continue
-            dir_name = os.path.basename(root)
-            parent_dir = os.path.basename(os.path.dirname(root))
-            
-            # Default values
-            rel_path = os.path.relpath(root, os.path.dirname(skills_dir))
-            # Force forward slashes for cross-platform JSON compatibility
-            skill_info = {
-                "id": dir_name,
-                "path": rel_path.replace(os.sep, '/'),
-                "category": parent_dir if parent_dir != "skills" else None,  # Will be overridden by frontmatter if present
-                "name": dir_name.replace("-", " ").title(),
-                "description": "",
-                "risk": "unknown",
-                "source": "unknown",
-                "date_added": None,
-                "plugin": {
-                    "targets": {
-                        "codex": "supported",
-                        "claude": "supported",
-                    },
-                    "setup": {
-                        "type": "none",
-                        "summary": "",
-                        "docs": None,
-                    },
-                    "reasons": [],
-                },
-            }
-            
-            try:
-                with open(skill_path, 'r', encoding='utf-8') as f:
-                    content = f.read()
-            except Exception as e:
-                print(f"⚠️ Error reading {skill_path}: {e}")
-                continue
-
-            # Parse Metadata
-            metadata = parse_frontmatter(content)
-            
-            # Merge Metadata (frontmatter takes priority)
-            if "name" in metadata: skill_info["name"] = metadata["name"]
-            if "description" in metadata: skill_info["description"] = metadata["description"]
-            if "risk" in metadata: skill_info["risk"] = metadata["risk"]
-            if "source" in metadata: skill_info["source"] = metadata["source"]
-            if "date_added" in metadata: skill_info["date_added"] = metadata["date_added"]
-            
-            # Category: prefer frontmatter, then folder structure, then conservative inference
-            if "category" in metadata:
-                skill_info["category"] = metadata["category"]
-            elif skill_info["category"] is None:
-                inferred_category = infer_category(
-                    skill_info["id"],
-                    skill_info["name"],
-                    skill_info["description"],
-                )
-                skill_info["category"] = inferred_category or "uncategorized"
-            if skill_info["id"] in CURATED_CATEGORY_OVERRIDES:
-                skill_info["category"] = CURATED_CATEGORY_OVERRIDES[skill_info["id"]]
-            skill_info["category"] = normalize_category(skill_info["category"])
-
-            plugin_info = compatibility_lookup.get(skill_info["path"])
-            if plugin_info:
-                skill_info["plugin"] = {
-                    "targets": dict(plugin_info["targets"]),
-                    "setup": dict(plugin_info["setup"]),
-                    "reasons": list(plugin_info["reasons"]),
-                }
-            
-            # Fallback for description if missing in frontmatter (legacy support)
-            if not skill_info["description"]:
-                body = content
-                fm_match = re.search(r'^---\s*\n(.*?)\n---', content, re.DOTALL)
-                if fm_match:
-                    body = content[fm_match.end():].strip()
-                
-                # Simple extraction of first non-header paragraph
-                lines = body.split('\n')
-                desc_lines = []
-                for line in lines:
-                    if line.startswith('#') or not line.strip():
-                        if desc_lines: break
-                        continue
-                    desc_lines.append(line.strip())
-                
-                if desc_lines:
-                    skill_info["description"] = " ".join(desc_lines)[:250].strip()
-
-            skills.append(skill_info)
+            skill_info = process_skill_file(root, skills_dir, compatibility_lookup)
+            if skill_info:
+                skills.append(skill_info)
 
     # Sort validation: by name
     skills.sort(key=lambda x: (x["name"].lower(), x["id"].lower()))
