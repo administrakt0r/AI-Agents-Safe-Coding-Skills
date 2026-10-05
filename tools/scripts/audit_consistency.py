@@ -27,10 +27,6 @@ def _expected_readme(content: str, metadata: dict) -> str:
     return sync_repo_metadata.sync_readme_copy(apply_metadata(content, metadata), metadata)
 
 
-def _expected_getting_started(content: str, metadata: dict) -> str:
-    return sync_repo_metadata.sync_getting_started(content, metadata)
-
-
 def _expected_bundles(content: str, metadata: dict, root: Path) -> str:
     return sync_repo_metadata.sync_bundles_doc(content, metadata, root)
 
@@ -54,7 +50,7 @@ def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
 
     file_checks = [
         ("README.md", _expected_readme),
-        ("docs/users/getting-started.md", _expected_getting_started),
+        ("docs/users/getting-started.md", sync_repo_metadata.sync_getting_started),
         ("docs/users/bundles.md", lambda content, current_metadata: _expected_bundles(content, current_metadata, root)),
         ("docs/integrations/jetski-cortex.md", _expected_jetski_cortex),
         (
