@@ -117,16 +117,17 @@ def check_locale_completeness(locale_files: list) -> dict:
     
     return {'passed': passed, 'issues': issues}
 
-def flatten_keys(d, prefix=''):
+def flatten_keys(d, prefix='', result=None):
     """Flatten nested dict keys."""
-    keys = set()
+    if result is None:
+        result = set()
     for k, v in d.items():
         new_key = f"{prefix}.{k}" if prefix else k
         if isinstance(v, dict):
-            keys.update(flatten_keys(v, new_key))
+            flatten_keys(v, new_key, result)
         else:
-            keys.add(new_key)
-    return keys
+            result.add(new_key)
+    return result
 
 def check_hardcoded_strings(project_path: Path) -> dict:
     """Check for hardcoded strings in code files."""
