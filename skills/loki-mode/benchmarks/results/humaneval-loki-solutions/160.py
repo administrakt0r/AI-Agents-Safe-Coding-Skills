@@ -3,6 +3,41 @@
 # Attempts: 1
 # Passed: True
 
+import ast
+
+def _safe_eval(node):
+    if isinstance(node, ast.Expression):
+        return _safe_eval(node.body)
+    elif isinstance(node, ast.Constant):
+        if isinstance(node.value, (int, float)):
+            return node.value
+        raise ValueError(f"Unsupported constant value: {node.value}")
+    elif isinstance(node, ast.BinOp):
+        left = _safe_eval(node.left)
+        right = _safe_eval(node.right)
+        if isinstance(node.op, ast.Add):
+            return left + right
+        elif isinstance(node.op, ast.Sub):
+            return left - right
+        elif isinstance(node.op, ast.Mult):
+            return left * right
+        elif isinstance(node.op, ast.FloorDiv):
+            return left // right
+        elif isinstance(node.op, ast.Pow):
+            return left ** right
+        else:
+            raise ValueError(f"Unsupported operator: {type(node.op)}")
+    elif isinstance(node, ast.UnaryOp):
+        operand = _safe_eval(node.operand)
+        if isinstance(node.op, ast.UAdd):
+            return +operand
+        elif isinstance(node.op, ast.USub):
+            return -operand
+        else:
+            raise ValueError(f"Unsupported operator: {type(node.op)}")
+    else:
+        raise ValueError(f"Unsupported node type: {type(node)}")
+
 def do_algebra(operator, operand):
     """
     Given two lists operator, and operand. The first list has basic algebra operations, and 
@@ -31,4 +66,5 @@ def do_algebra(operator, operand):
     expression = str(operand[0])
     for i, op in enumerate(operator):
         expression += op + str(operand[i + 1])
-    return eval(expression)
+    parsed = ast.parse(expression, mode="eval")
+    return _safe_eval(parsed)
