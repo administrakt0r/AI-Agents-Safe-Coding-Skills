@@ -74,7 +74,7 @@ def build_about_topics() -> list[str]:
     return list(RECOMMENDED_TOPICS)
 
 
-def run_cli_command(args: list[str], dry_run: bool = False) -> None:
+def _run_cli_command(args: list[str], dry_run: bool = False) -> None:
     if dry_run:
         print(f"[dry-run] {' '.join(args)}")
         return
@@ -85,7 +85,7 @@ def run_cli_command(args: list[str], dry_run: bool = False) -> None:
 def sync_github_about(
     metadata: dict,
     dry_run: bool,
-    runner=run_cli_command,
+    runner=_run_cli_command,
 ) -> None:
     description = build_about_description(metadata)
     repo = metadata["repo"]
