@@ -85,6 +85,40 @@ class EdgarTests(unittest.TestCase):
                 edgar._request_json("https://example.com", session)
         self.assertEqual(session.get.call_count, edgar._MAX_RETRIES)
 
+    @patch("tools.edgar._request_json")
+    def test_get_cik_success_and_formatting(self, mock_request_json: Mock) -> None:
+        mock_request_json.return_value = {
+            "0": {"ticker": "AAPL", "cik_str": 320193},
+            "1": {"ticker": "MSFT", "cik_str": 789019},
+        }
+        self.assertEqual(edgar.get_cik("aapl"), "0000320193")
+        self.assertEqual(edgar.get_cik("MSFT"), "0000789019")
+
+    @patch("tools.edgar._request_json")
+    def test_get_cik_ticker_variants(self, mock_request_json: Mock) -> None:
+        mock_request_json.return_value = {
+            "0": {"ticker": "BRK.B", "cik_str": 1067983},
+        }
+        self.assertEqual(edgar.get_cik("BRK-B"), "0001067983")
+
+    @patch("tools.edgar._request_json")
+    def test_get_cik_not_found(self, mock_request_json: Mock) -> None:
+        mock_request_json.return_value = {
+            "0": {"ticker": "AAPL", "cik_str": 320193},
+        }
+        self.assertIsNone(edgar.get_cik("NONEXISTENT"))
+
+    @patch("tools.edgar._request_json")
+    def test_get_cik_handles_malformed_lookup_entries(self, mock_request_json: Mock) -> None:
+        mock_request_json.return_value = {
+            "0": "invalid_entry_not_a_dict",
+            "1": {"ticker": "", "cik_str": 123},
+            "2": {"ticker": "NVDA"},
+            "3": {"ticker": "GOOGL", "cik_str": 1652044},
+        }
+        self.assertEqual(edgar.get_cik("GOOGL"), "0001652044")
+        self.assertIsNone(edgar.get_cik("NVDA"))
+
 
 if __name__ == "__main__":
     unittest.main()

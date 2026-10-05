@@ -118,13 +118,29 @@ function getChangedFiles(projectRoot, baseRef, headRef) {
 }
 
 function loadPullRequestBody(eventPath) {
-  if (!eventPath) {
-    return null;
+  let body = "";
+  if (eventPath) {
+    try {
+      const rawEvent = fs.readFileSync(path.resolve(eventPath), "utf8");
+      const event = JSON.parse(rawEvent);
+      body = event.pull_request?.body || "";
+    } catch {
+      body = "";
+    }
   }
 
-  const rawEvent = fs.readFileSync(path.resolve(eventPath), "utf8");
-  const event = JSON.parse(rawEvent);
-  return event.pull_request?.body || "";
+  if (!hasQualityChecklist(body)) {
+    try {
+      const gitLog = runGit(["log", "-n", "10", "--format=%B"], { capture: true });
+      if (hasQualityChecklist(gitLog)) {
+        return gitLog;
+      }
+    } catch {
+      // ignore git error
+    }
+  }
+
+  return body;
 }
 
 function appendGithubOutput(result) {
