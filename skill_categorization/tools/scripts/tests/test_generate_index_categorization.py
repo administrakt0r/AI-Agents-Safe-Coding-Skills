@@ -12,9 +12,19 @@ def assert_equal(actual, expected, label):
     assert actual == expected, f"{label}: expected={expected!r} actual={actual!r}"
 
 
+def test_normalize_category():
+    assert_equal(normalize_category(None), None, "normalize_category None input")
+    assert_equal(normalize_category(""), None, "normalize_category empty string")
+    assert_equal(normalize_category("   "), None, "normalize_category whitespace-only string")
+    assert_equal(normalize_category("Cloud DevOps"), "cloud-devops", "normalize_category mixed case and spaces")
+    assert_equal(normalize_category("web_engineering_tool"), "web-engineering-tool", "normalize_category underscores to hyphens")
+    assert_equal(normalize_category("  --Data--Science-- "), "data-science", "normalize_category leading/trailing and multiple hyphens")
+    assert_equal(normalize_category("AI & ML (Deep Learning!)"), "ai-ml-deep-learning", "normalize_category special characters stripping")
+    assert_equal(normalize_category("front-end"), "front-end", "normalize_category valid kebab-case untouched")
+
+
 def run_tests():
-    category = normalize_category("Cloud DevOps")
-    assert_equal(category, "cloud-devops", "normalize category")
+    test_normalize_category()
 
     skill_info = {
         "id": "secure-api-gateway",
