@@ -96,6 +96,29 @@ source: self
             self.assertIn("missing_examples", finding_codes)
             self.assertIn("missing_limitations", finding_codes)
 
+    def test_audit_frontmatter_and_content_helpers(self):
+        # Directly test the extracted audit_frontmatter and audit_content helpers
+        metadata = {
+            "name": "wrong-name",
+            "description": None,
+            "risk": "invalid-risk",
+            "date_added": "invalid-date",
+        }
+        fm_findings = audit_skills.audit_frontmatter(metadata, "correct-name")
+        fm_codes = {f.code for f in fm_findings}
+        self.assertIn("name_mismatch", fm_codes)
+        self.assertIn("missing_description", fm_codes)
+        self.assertIn("invalid_risk", fm_codes)
+        self.assertIn("missing_source", fm_codes)
+        self.assertIn("invalid_date_added", fm_codes)
+
+        content_findings = audit_skills.audit_content("Empty content", Path("."), risk="offensive")
+        content_codes = {f.code for f in content_findings}
+        self.assertIn("missing_when_to_use", content_codes)
+        self.assertIn("missing_examples", content_codes)
+        self.assertIn("missing_limitations", content_codes)
+        self.assertIn("missing_authorized_use_only", content_codes)
+
     def test_audit_flags_blocking_errors(self):
         with tempfile.TemporaryDirectory() as temp_dir:
             root = Path(temp_dir)
