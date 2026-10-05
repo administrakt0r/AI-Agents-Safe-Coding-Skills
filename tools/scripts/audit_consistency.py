@@ -39,10 +39,6 @@ def _expected_regex_sync(content: str, replacements: list[tuple[str, str]]) -> s
     return sync_repo_metadata.sync_regex_text(content, replacements)
 
 
-def _expected_jetski_cortex(content: str, metadata: dict) -> str:
-    return sync_repo_metadata.sync_jetski_cortex(content, metadata)
-
-
 def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
     root = Path(base_dir)
     metadata = load_metadata(str(root))
@@ -56,7 +52,7 @@ def find_local_consistency_issues(base_dir: str | Path) -> list[str]:
         ("README.md", _expected_readme),
         ("docs/users/getting-started.md", _expected_getting_started),
         ("docs/users/bundles.md", lambda content, current_metadata: _expected_bundles(content, current_metadata, root)),
-        ("docs/integrations/jetski-cortex.md", _expected_jetski_cortex),
+        ("docs/integrations/jetski-cortex.md", sync_repo_metadata.sync_jetski_cortex),
         (
             "docs/users/claude-code-skills.md",
             lambda content, current_metadata: _expected_regex_sync(
