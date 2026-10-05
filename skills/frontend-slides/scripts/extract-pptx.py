@@ -12,6 +12,7 @@ Requires: pip install python-pptx
 import json
 import os
 import sys
+from concurrent.futures import ThreadPoolExecutor
 from pptx import Presentation
 
 
@@ -22,6 +23,7 @@ def extract_pptx(file_path, output_dir="."):
     """
     prs = Presentation(file_path)
     slides_data = []
+    image_writes = []
 
     # Create assets directory for extracted images
     assets_dir = os.path.join(output_dir, "assets")
@@ -54,8 +56,7 @@ def extract_pptx(file_path, output_dir="."):
                 image_name = f"slide{slide_num + 1}_img{len(slide_data['images']) + 1}.{image_ext}"
                 image_path = os.path.join(assets_dir, image_name)
 
-                with open(image_path, "wb") as f:
-                    f.write(image_bytes)
+                image_writes.append((image_path, image_bytes))
 
                 slide_data["images"].append(
                     {
@@ -71,6 +72,15 @@ def extract_pptx(file_path, output_dir="."):
             slide_data["notes"] = notes_frame.text
 
         slides_data.append(slide_data)
+
+    def _write_image(item):
+        path, data = item
+        with open(path, "wb") as f:
+            f.write(data)
+
+    if image_writes:
+        with ThreadPoolExecutor() as executor:
+            list(executor.map(_write_image, image_writes))
 
     return slides_data
 
