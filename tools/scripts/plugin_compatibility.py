@@ -299,14 +299,6 @@ def sync_plugin_compatibility(root: Path) -> dict[str, Any]:
     return report
 
 
-def load_plugin_compatibility(root: Path) -> dict[str, Any]:
-    root = Path(root)
-    path = root / PLUGIN_COMPATIBILITY_PATH
-    if path.is_file():
-        return json.loads(path.read_text(encoding="utf-8"))
-    return sync_plugin_compatibility(root)
-
-
 def compatibility_by_skill_id(report: dict[str, Any]) -> dict[str, dict[str, Any]]:
     return {skill["id"]: skill for skill in report.get("skills", [])}
 
