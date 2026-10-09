@@ -542,6 +542,14 @@
       "outcome": "Hardened skill by replacing active reverse shells, RCE payloads, XXE, SSRF, and SQLi vectors with safe placeholders and adding an offensive disclaimer.",
       "linkedIssueOrPr": "PR-jules-harden-api-fuzzing-bug-bounty",
       "nextAction": "Monitor for re-introduction of active payloads."
+    },
+    "sources/sickn33/agentic-awesome-skills/agent-evaluation": {
+      "status": "rejected-prompt-injection",
+      "lastReviewedAt": "2026-09-19",
+      "reviewerAgent": "new-skill-import-curator",
+      "outcome": "Rejected the agent-evaluation skill from sickn33/agentic-awesome-skills because its auxiliary file references/architecture-sketches.md contains prompt injection patterns (e.g. 'system prompt').",
+      "linkedIssueOrPr": "PR-jules-import-agent-evaluation-rejected",
+      "nextAction": "None"
     }
   }
 }
